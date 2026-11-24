@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -3484,14 +3492,16 @@
 Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange Admin Center: <a href="https://admin.exchange.microsoft.com">https://admin.exchange.microsoft.com</a></p>
 <h2 id="2-mail-contacts">2. Mail contacts<a class="headerlink" href="#2-mail-contacts" title="Permanent link">&para;</a></h2>
 <p>Mail contacts hebben geen Entra-account. Ze worden enkel gebruikt om informatie op te slaan die in het adresboek verschijnt.</p>
-<p><strong>Zo maak je een mail contact aan:</strong>
-1. Ga naar <strong>EAC &gt; Recipients &gt; Contacts &gt; Add a mail contact</strong>.
-2. Vul in:
-- First name, Last name, Initials
-- Display name (wordt weergegeven in het adresboek)
-- Alias en External email address
-3. Voeg eventueel meer details toe.
-4. Klik op <strong>Next &gt; Create</strong>.</p>
+<p><strong>Zo maak je een mail contact aan:</strong></p>
+<ol>
+<li>Ga naar <strong>EAC &gt; Recipients &gt; Contacts &gt; Add a mail contact</strong>.</li>
+<li>Vul in:</li>
+<li>First name, Last name, Initials</li>
+<li>Display name (wordt weergegeven in het adresboek)</li>
+<li>Alias en External email address</li>
+<li>Voeg eventueel meer details toe.</li>
+<li>Klik op <strong>Next &gt; Create</strong>.</li>
+</ol>
 <p><strong>Zo test je een mail contact</strong></p>
 <p>Nadat je een mail contact hebt aangemaakt, moet je controleren of het correct werkt.</p>
 <h4 id="het-adresboek-controleren">Het adresboek controleren<a class="headerlink" href="#het-adresboek-controleren" title="Permanent link">&para;</a></h4>
@@ -3501,21 +3511,25 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Klik op <strong>To</strong></li>
 <li>Zoek naar de naam van het mail contact</li>
 </ol>
-<p>✅ Controleer:
-- Het contact verschijnt in de adreslijst
-- De display name is correct
-- Het externe e-mailadres is correct</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Het contact verschijnt in de adreslijst</li>
+<li>De display name is correct</li>
+<li>Het externe e-mailadres is correct</li>
+</ul>
 <h2 id="3-distribution-list-distribution-group">3. Distribution list (Distribution group)<a class="headerlink" href="#3-distribution-list-distribution-group" title="Permanent link">&para;</a></h2>
 <p>Een distribution list wordt gebruikt om e-mails tegelijk naar meerdere gebruikers te sturen. Ze heeft geen eigen mailbox. E-mails die naar de groep worden gestuurd, worden automatisch doorgestuurd naar alle leden.</p>
-<p><strong>Zo maak je een distribution list aan:</strong>
-1. Ga naar <strong>EAC &gt; Recipients &gt; Groups &gt; Add a group</strong>.
-2. Kies <strong>Distribution</strong>.
-3. Vul in:
-- Name
-- Display name (wordt weergegeven in het adresboek)
-- Alias / e-mailadres
-4. Voeg leden toe (gebruikers die de e-mails zullen ontvangen).
-5. Klik op <strong>Next &gt; Create</strong>.</p>
+<p><strong>Zo maak je een distribution list aan:</strong></p>
+<ol>
+<li>Ga naar <strong>EAC &gt; Recipients &gt; Groups &gt; Add a group</strong>.</li>
+<li>Kies <strong>Distribution</strong>.</li>
+<li>Vul in:</li>
+<li>Name</li>
+<li>Display name (wordt weergegeven in het adresboek)</li>
+<li>Alias / e-mailadres</li>
+<li>Voeg leden toe (gebruikers die de e-mails zullen ontvangen).</li>
+<li>Klik op <strong>Next &gt; Create</strong>.</li>
+</ol>
 <p><strong>Zo test je een distribution list</strong></p>
 <p>Nadat je een distribution list hebt aangemaakt, moet je controleren of ze correct werkt.</p>
 <h4 id="het-adresboek-controleren_1">Het adresboek controleren<a class="headerlink" href="#het-adresboek-controleren_1" title="Permanent link">&para;</a></h4>
@@ -3525,10 +3539,12 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Klik op <strong>To</strong></li>
 <li>Zoek naar de distribution list</li>
 </ol>
-<p>✅ Controleer:
-- De groep verschijnt in de adreslijst
-- De display name is correct
-- Je kan ze als ontvanger selecteren</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De groep verschijnt in de adreslijst</li>
+<li>De display name is correct</li>
+<li>Je kan ze als ontvanger selecteren</li>
+</ul>
 <h4 id="een-testmail-verzenden">Een testmail verzenden<a class="headerlink" href="#een-testmail-verzenden" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open <strong>Outlook (web of desktop)</strong></li>
@@ -3536,10 +3552,12 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Geef de distribution list in het veld <strong>To</strong> in</li>
 <li>Verzend de e-mail</li>
 </ol>
-<p>✅ Controleer:
-- De e-mail wordt zonder fouten verzonden
-- Alle leden ontvangen de e-mail
-- Elk lid ontvangt het bericht in zijn eigen mailbox</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt zonder fouten verzonden</li>
+<li>Alle leden ontvangen de e-mail</li>
+<li>Elk lid ontvangt het bericht in zijn eigen mailbox</li>
+</ul>
 <h2 id="4-shared-mailbox">4. Shared mailbox<a class="headerlink" href="#4-shared-mailbox" title="Permanent link">&para;</a></h2>
 <p>Een <strong>shared mailbox</strong> is een mailbox waartoe meerdere gebruikers toegang hebben om e-mailberichten te lezen en te verzenden. Ze wordt doorgaans gebruikt voor generieke e-mailadressen zoals <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong> of <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong>, zodat een team berichten gezamenlijk kan beheren.</p>
 <p>Shared mailboxes hebben geen eigen aanmeldgegevens: bevoegde gebruikers openen ze vanuit hun eigen Outlook-account. Berichten die vanuit de shared mailbox worden verzonden, lijken afkomstig te zijn van het gedeelde adres en niet van de individuele gebruiker.</p>
@@ -3577,22 +3595,28 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <h4 id="stap-1-toegang-controleren-in-outlook">Stap 1: Toegang controleren in Outlook<a class="headerlink" href="#stap-1-toegang-controleren-in-outlook" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open <strong>Outlook (desktop of web)</strong></li>
-<li>Voeg de shared mailbox toe:</li>
+<li>Voeg de shared mailbox toe:<ul>
 <li>Klik op je account</li>
 <li>Kies <strong>Add shared folder or mailbox</strong></li>
 <li>Geef het adres van de shared mailbox in</li>
+</ul>
+</li>
 </ol>
-<p>✅ Controleer:
-- De shared mailbox verschijnt in Outlook
-- Je kan mappen openen (Inbox, Sent Items, enz.)
-- Je kan e-mails lezen</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De shared mailbox verschijnt in Outlook</li>
+<li>Je kan mappen openen (Inbox, Sent Items, enz.)</li>
+<li>Je kan e-mails lezen</li>
+</ul>
 <h4 id="stap-2-een-testmail-ontvangen">Stap 2: Een testmail ontvangen<a class="headerlink" href="#stap-2-een-testmail-ontvangen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Stuur een e-mail <strong>naar het adres van de shared mailbox</strong> (vanuit een ander account)</li>
 </ol>
-<p>✅ Controleer:
-- De e-mail komt aan in de shared mailbox
-- Alle gebruikers met toegang kunnen het bericht zien</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail komt aan in de shared mailbox</li>
+<li>Alle gebruikers met toegang kunnen het bericht zien</li>
+</ul>
 <h4 id="stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden">Stap 3: Een e-mail VANUIT de shared mailbox verzenden<a class="headerlink" href="#stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open een nieuwe e-mail</li>
@@ -3600,22 +3624,28 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Selecteer het adres van de shared mailbox in het veld From</li>
 <li>Verzend een e-mail</li>
 </ol>
-<p>✅ Controleer:
-- De e-mail wordt succesvol verzonden
-- De ontvanger ziet het <strong>adres van de shared mailbox</strong> als afzender (niet je persoonlijke account)</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt succesvol verzonden</li>
+<li>De ontvanger ziet het <strong>adres van de shared mailbox</strong> als afzender (niet je persoonlijke account)</li>
+</ul>
 <h4 id="stap-4-testen-met-meerdere-gebruikers">Stap 4: Testen met meerdere gebruikers<a class="headerlink" href="#stap-4-testen-met-meerdere-gebruikers" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Meld aan met een andere gebruiker die toegang heeft</li>
 <li>Open de shared mailbox</li>
 </ol>
-<p>✅ Controleer:
-- Beide gebruikers zien dezelfde e-mails
-- Beide gebruikers kunnen berichten lezen en beheren</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Beide gebruikers zien dezelfde e-mails</li>
+<li>Beide gebruikers kunnen berichten lezen en beheren</li>
+</ul>
 <h4 id="stap-5-machtigingen-testen">Stap 5: Machtigingen testen<a class="headerlink" href="#stap-5-machtigingen-testen" title="Permanent link">&para;</a></h4>
 <p>Als er machtigingen zijn geconfigureerd:</p>
-<p>✅ Controleer:
-- Full Access → de gebruiker kan de mailbox openen en beheren
-- Send As → de gebruiker kan verzenden als de shared mailbox</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Full Access → de gebruiker kan de mailbox openen en beheren</li>
+<li>Send As → de gebruiker kan verzenden als de shared mailbox</li>
+</ul>
 <h2 id="5-resource-mailbox">5. Resource mailbox<a class="headerlink" href="#5-resource-mailbox" title="Permanent link">&para;</a></h2>
 <p>Een <strong>resource mailbox</strong> vertegenwoordigt een vergaderruimte of een stuk apparatuur dat voor evenementen en vergaderingen kan worden gereserveerd. Deze mailboxen helpen organisaties om gedeelde resources efficiënt te beheren.</p>
 <h3 id="51-types-resource-mailboxen">5.1. Types resource mailboxen<a class="headerlink" href="#51-types-resource-mailboxen" title="Permanent link">&para;</a></h3>
@@ -3661,33 +3691,41 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Zoek de room- of equipment-mailbox</li>
 <li>Selecteer ze en voeg ze toe aan de vergadering</li>
 </ol>
-<p>✅ Controleer:
-- De resource verschijnt in de vergadering
-- Ze is zichtbaar in de scheduling assistant</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De resource verschijnt in de vergadering</li>
+<li>Ze is zichtbaar in de scheduling assistant</li>
+</ul>
 <h4 id="stap-4-het-vergaderverzoek-verzenden">Stap 4: Het vergaderverzoek verzenden<a class="headerlink" href="#stap-4-het-vergaderverzoek-verzenden" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Klik op <strong>Send</strong></li>
 </ol>
-<p>✅ Controleer:
-- Het vergaderverzoek wordt verzonden
-- De resource mailbox <strong>aanvaardt of weigert</strong> het verzoek automatisch</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Het vergaderverzoek wordt verzonden</li>
+<li>De resource mailbox <strong>aanvaardt of weigert</strong> het verzoek automatisch</li>
+</ul>
 <h4 id="stap-5-de-reservering-controleren">Stap 5: De reservering controleren<a class="headerlink" href="#stap-5-de-reservering-controleren" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open je agenda</li>
 <li>Open de agenda van de resource (indien beschikbaar)</li>
 </ol>
-<p>✅ Controleer:
-- De vergadering verschijnt in je agenda
-- De vergadering verschijnt ook in de agenda van de resource
-- Het tijdslot is gemarkeerd als <strong>busy</strong></p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De vergadering verschijnt in je agenda</li>
+<li>De vergadering verschijnt ook in de agenda van de resource</li>
+<li>Het tijdslot is gemarkeerd als <strong>busy</strong></li>
+</ul>
 <h4 id="stap-6-dubbele-boeking-testen">Stap 6: Dubbele boeking testen<a class="headerlink" href="#stap-6-dubbele-boeking-testen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Maak een tweede vergadering op hetzelfde tijdstip</li>
 <li>Voeg dezelfde resource toe</li>
 </ol>
-<p>✅ Controleer:
-- De resource mailbox <strong>weigert</strong> de tweede boeking
-- Outlook toont dat de ruimte al bezet is</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De resource mailbox <strong>weigert</strong> de tweede boeking</li>
+<li>Outlook toont dat de ruimte al bezet is</li>
+</ul>
 <h2 id="6-opties-voor-mailboxbeheer">6. Opties voor mailboxbeheer<a class="headerlink" href="#6-opties-voor-mailboxbeheer" title="Permanent link">&para;</a></h2>
 <p>Wanneer je de eigenschappen van een mailbox opent, kan je veel opties configureren.</p>
 <h3 id="61-e-mailadressen">6.1. E-mailadressen<a class="headerlink" href="#61-e-mailadressen" title="Permanent link">&para;</a></h3>
@@ -3734,9 +3772,11 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Voeg een nieuw e-mailadres (alias) toe aan een mailbox</li>
 <li>Stuur een testmail naar de alias</li>
 </ol>
-<p>✅ Controleer:
-- De e-mail wordt in de mailbox afgeleverd
-- De gebruiker kan het bericht lezen</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt in de mailbox afgeleverd</li>
+<li>De gebruiker kan het bericht lezen</li>
+</ul>
 <h4 id="stap-2-verzenden-vanuit-verschillende-adressen-testen">Stap 2: Verzenden vanuit verschillende adressen testen<a class="headerlink" href="#stap-2-verzenden-vanuit-verschillende-adressen-testen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open een nieuwe e-mail in Outlook</li>
@@ -3744,41 +3784,51 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Selecteer de mailbox of alias</li>
 <li>Verzend een e-mail</li>
 </ol>
-<p>✅ Controleer:
-- De e-mail wordt succesvol verzonden
-- De ontvanger ziet het juiste afzenderadres</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt succesvol verzonden</li>
+<li>De ontvanger ziet het juiste afzenderadres</li>
+</ul>
 <h4 id="stap-3-delegatie-machtigingen-testen">Stap 3: Delegatie (machtigingen) testen<a class="headerlink" href="#stap-3-delegatie-machtigingen-testen" title="Permanent link">&para;</a></h4>
 <p>Als je machtigingen hebt geconfigureerd (bv. Full Access of Send As):</p>
 <ol>
 <li>Meld aan als de gemachtigde gebruiker</li>
 <li>Open de mailbox</li>
 </ol>
-<p>✅ Controleer:
-- Full Access → de gebruiker kan de mailbox openen en lezen
-- Send As → de gebruiker kan e-mails verzenden als die mailbox</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Full Access → de gebruiker kan de mailbox openen en lezen</li>
+<li>Send As → de gebruiker kan e-mails verzenden als die mailbox</li>
+</ul>
 <h4 id="stap-4-e-mail-doorsturen-testen">Stap 4: E-mail doorsturen testen<a class="headerlink" href="#stap-4-e-mail-doorsturen-testen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Stuur een e-mail naar de mailbox</li>
 <li>Controleer de bestemming van het doorsturen</li>
 </ol>
-<p>✅ Controleer:
-- De e-mail wordt doorgestuurd naar het juiste adres
-- (Optioneel) De oorspronkelijke mailbox ontvangt het bericht ook</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt doorgestuurd naar het juiste adres</li>
+<li>(Optioneel) De oorspronkelijke mailbox ontvangt het bericht ook</li>
+</ul>
 <h4 id="stap-5-beperkingen-voor-berichtlevering-testen">Stap 5: Beperkingen voor berichtlevering testen<a class="headerlink" href="#stap-5-beperkingen-voor-berichtlevering-testen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Configureer toegelaten of geblokkeerde afzenders</li>
 <li>Verzend testmails vanuit verschillende accounts</li>
 </ol>
-<p>✅ Controleer:
-- Toegelaten gebruikers kunnen berichten verzenden
-- Geblokkeerde gebruikers ontvangen een foutmelding</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Toegelaten gebruikers kunnen berichten verzenden</li>
+<li>Geblokkeerde gebruikers ontvangen een foutmelding</li>
+</ul>
 <h4 id="stap-6-limieten-voor-berichtgrootte-testen">Stap 6: Limieten voor berichtgrootte testen<a class="headerlink" href="#stap-6-limieten-voor-berichtgrootte-testen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Verzend een e-mail met een grote bijlage</li>
 </ol>
-<p>✅ Controleer:
-- Als de grootte de limiet overschrijdt → wordt het bericht geweigerd
-- Als de grootte binnen de limiet valt → wordt het bericht geleverd</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Als de grootte de limiet overschrijdt → wordt het bericht geweigerd</li>
+<li>Als de grootte binnen de limiet valt → wordt het bericht geleverd</li>
+</ul>
 <h2 id="7-outlook">7. Outlook<a class="headerlink" href="#7-outlook" title="Permanent link">&para;</a></h2>
 <h3 id="71-het-veld-from">7.1. Het veld From<a class="headerlink" href="#71-het-veld-from" title="Permanent link">&para;</a></h3>
 <p>Wanneer een gebruiker mailboxdelegatie krijgt, kan hij e-mails verzenden vanaf het e-mailadres van een andere gebruiker.
@@ -3890,9 +3940,9 @@ Daarvoor moet je ervoor zorgen dat het veld From zichtbaar is. Zo kan je bij het
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

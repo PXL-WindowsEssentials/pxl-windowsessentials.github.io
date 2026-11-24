@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2495,22 +2503,24 @@
 
 
 <h1 id="veelgebruikte-cmdlets">Veelgebruikte cmdlets<a class="headerlink" href="#veelgebruikte-cmdlets" title="Permanent link">&para;</a></h1>
-<p>In dit hoofdstuk geven we een overzicht van enkele veelgebruikte commando's. We introduceren cmdlets in de volgende categorieën:
-- Algemene cmdlets
-- Cmdlets voor systeemdiagnose
-- Netwerkgerelateerde cmdlets</p>
+<p>In dit hoofdstuk geven we een overzicht van enkele veelgebruikte commando's. We introduceren cmdlets in de volgende categorieën:</p>
+<ul>
+<li>Algemene cmdlets</li>
+<li>Cmdlets voor systeemdiagnose</li>
+<li>Netwerkgerelateerde cmdlets</li>
+</ul>
 <p>Alle onderstaande cmdlets hebben één of meer parameters met hun eigen functionaliteit. Gebruik de cmdlet <code>Get-Help</code> om te leren wat ze kunnen.</p>
 <h2 id="algemene-cmdlets">Algemene cmdlets<a class="headerlink" href="#algemene-cmdlets" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Get-History</strong></li>
-</ul>
+<li>
+<p><strong>Get-History</strong></p>
 <p>Telkens wanneer we een cmdlet ingeven, wordt die bewaard in een txt-bestand in het gebruikersprofiel (<code>$Env:AppData\Microsoft\Windows\PowerShell\PSReadLine</code>). Je kan in het bestand zoeken, of je kan de geschiedenis van de cmdlets bekijken met de cmdlet <code>Get-History</code>.</p>
-<ul>
-<li><strong>Get-Content</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>Get-Content</strong></p>
 <p>Als je de inhoud van een bestand in PowerShell wil zien, kan je de cmdlet <code>Get-Content</code> gebruiken.</p>
-<p>Bijvoorbeeld:
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PS C:\PXL\Bach&gt; Get-Content .\studenten.txt
+<p>Bijvoorbeeld:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PS C:\PXL\Bach&gt; Get-Content .\studenten.txt
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Aelric Vornan
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Lyra Thalwyn
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Dren Solakar
@@ -2523,33 +2533,37 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Selene Araveth
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>PS C:\PXL\Bach&gt;
 </span></code></pre></div>
-- <strong>Clear-Host</strong></p>
+</li>
+<li>
+<p><strong>Clear-Host</strong></p>
 <p>Als het PowerShell-terminalvenster vol raakt, kan je het scherm van de shell leegmaken met <code>Clear-Host</code>.</p>
-<ul>
-<li><strong>Restart-Computer</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>Restart-Computer</strong></p>
 <p>Via PowerShell kan je de computer ook herstarten met <code>Restart-Computer</code>.</p>
+</li>
+</ul>
 <h2 id="cmdlets-voor-systeemdiagnose">Cmdlets voor systeemdiagnose<a class="headerlink" href="#cmdlets-voor-systeemdiagnose" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Get|Stop-Process</strong></li>
-</ul>
+<li>
+<p><strong>Get|Stop-Process</strong></p>
 <p>Alle processen die op je systeem draaien, kunnen via PowerShell beheerd worden. Afhankelijk van de actie die je op de processen wil uitvoeren, moet je een ander verb in de cmdlet gebruiken:
-  - <strong>Get-Process</strong>: geeft een overzicht van de huidige actieve processen op je systeem.
-  - <strong>Stop-Process</strong>: stopt een bepaald proces op je systeem. <code>Stop-Process -Name msedge</code> stopt alle Edge-processen die momenteel op het systeem draaien.</p>
-<ul>
-<li><strong>Get|Start|Stop-Service</strong></li>
-</ul>
+- <strong>Get-Process</strong>: geeft een overzicht van de huidige actieve processen op je systeem.
+- <strong>Stop-Process</strong>: stopt een bepaald proces op je systeem. <code>Stop-Process -Name msedge</code> stopt alle Edge-processen die momenteel op het systeem draaien.</p>
+</li>
+<li>
+<p><strong>Get|Start|Stop-Service</strong></p>
 <p>Alle services die op je systeem geconfigureerd zijn, kunnen beheerd worden met <code>&lt;Verb&gt;-Service</code>. Met het juiste verb en de juiste parameters kan je de services controleren (als administrator):
-  - <strong>Get-Service</strong>: geeft een overzicht van alle momenteel geconfigureerde services op je systeem.
-  - <strong>Start-Service</strong>: start een specifieke service via de parameter <code>-Name</code>. <code>Start-Service -Name XboxNetApiSvc</code> start de Xbox Networking-service op je systeem.
-  - <strong>Stop-Service</strong>: stopt een specifieke service. <code>Stop-Service -Name XboxNetApiSvc</code> stopt de Xbox Networking-service.</p>
-<ul>
-<li><strong>Get-EventLog</strong></li>
-</ul>
+- <strong>Get-Service</strong>: geeft een overzicht van alle momenteel geconfigureerde services op je systeem.
+- <strong>Start-Service</strong>: start een specifieke service via de parameter <code>-Name</code>. <code>Start-Service -Name XboxNetApiSvc</code> start de Xbox Networking-service op je systeem.
+- <strong>Stop-Service</strong>: stopt een specifieke service. <code>Stop-Service -Name XboxNetApiSvc</code> stopt de Xbox Networking-service.</p>
+</li>
+<li>
+<p><strong>Get-EventLog</strong></p>
 <p>Met deze cmdlet kan je zoeken in de Windows-eventlogbestanden. <code>Get-EventLog -LogName System</code> geeft alle System-logs. Met extra parameters kan je de logs verder verfijnen.</p>
-<ul>
-<li><strong>Get-Disk</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>Get-Disk</strong></p>
 <p>Deze cmdlet geeft je een overzicht van alle geïnstalleerde ssd's.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PS C:\PXL\Bach&gt; Get-Disk
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -2558,9 +2572,9 @@
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>------ ------------- -------------                    ------------         -----------------      ---------- ----------
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>0      SK hynix P... ACE4_2E00_2B07_E1D8_2EE4_AC00... Healthy              Online                  953.87 GB GPT
 </span></code></pre></div>
-<ul>
-<li><strong>Get-NetAdapter</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>Get-NetAdapter</strong></p>
 <p>Deze cmdlet geeft je een overzicht van alle beschikbare netwerkadapters met bijbehorend MAC-adres en LinkSpeed.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PS C:\PXL\Bach&gt; Get-NetAdapter
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -2574,31 +2588,33 @@
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Ethernet                  Realtek PCIe GbE Family Controller           13 Disconnected E0-73-E7-DE-A4-D9          0 bps
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Ethernet 4                VirtualBox Host-Only Ethernet Adapter         3 Up           0A-00-27-00-00-03         1 Gbps
 </span></code></pre></div>
-<ul>
-<li><strong>Get-Partition</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>Get-Partition</strong></p>
 <p>Deze cmdlet geeft je een overzicht van alle partities van alle ssd's in je systeem.</p>
 <p>```
-  PS C:\PXL\Bach&gt; Get-Partition</p>
+PS C:\PXL\Bach&gt; Get-Partition</p>
 <p>DiskPath: \?\scsi#disk&amp;ven_nvme&amp;prod_sk_hynix_pc801_h#5&amp;11da39da&amp;0&amp;000000#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}</p>
 <p>PartitionNumber  DriveLetter Offset                                        Size Type
----------------  ----------- ------                                        ---- ----
-  1                           1048576                                     499 MB System
-  2                           524288000                                   128 MB Reserved
-  3                C           658505728                                943.72 GB Basic
-  4                           1013968797696                              9.54 GB Recovery
-  ```</p>
-<ul>
-<li><strong>Get-Computerinfo</strong></li>
-</ul>
+  ---------------  ----------- ------                                        ---- ----
+1                           1048576                                     499 MB System
+2                           524288000                                   128 MB Reserved
+3                C           658505728                                943.72 GB Basic
+4                           1013968797696                              9.54 GB Recovery
+```</p>
+</li>
+<li>
+<p><strong>Get-Computerinfo</strong></p>
 <p>Geeft een gedetailleerde lijst met informatie over je systeem.</p>
+</li>
+</ul>
 <h2 id="netwerkgerelateerde-cmdlets">Netwerkgerelateerde cmdlets<a class="headerlink" href="#netwerkgerelateerde-cmdlets" title="Permanent link">&para;</a></h2>
 <p>De commando's die in deze paragraaf worden uitgelegd, worden vaak gebruikt door systeem- en netwerkengineers. De meest gebruikte commando's zijn echter geen PowerShell-cmdlets. Het zijn ingebouwde Windows-toepassingen (te vinden in <code>C:\Windows\System32</code>) die afstammen van MS-DOS-batch en nog steeds beschikbaar zijn in PowerShell of Command Prompt. Omdat deze commando's (eigenlijk toepassingen) nog vaak gebruikt worden, leggen we het gebruik ervan uit en geven we ook het juiste PowerShell-alternatief. Beide kunnen gebruikt worden.</p>
 <ul>
-<li><strong>ipconfig</strong></li>
-</ul>
+<li>
+<p><strong>ipconfig</strong></p>
 <p>Dit commando geeft een overzicht van alle netwerkadapters en de bijbehorende netwerkconfiguraties: IP, DNS, ...</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PS C:\PXL\Bach&gt; ipconfig
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PS C:\PXL\Bach&gt; ipconfig
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Windows IP Configuration
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -2639,12 +2655,12 @@
 </span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a> Subnet Mask . . . . . . . . . . . : 255.255.240.0
 </span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a> Default Gateway . . . . . . . . . :
 </span></code></pre></div>
-  Door de parameter <code>/All</code> toe te voegen krijg je alle netwerkdetails voor elke adapter.</p>
+<p>Door de parameter <code>/All</code> toe te voegen krijg je alle netwerkdetails voor elke adapter.</p>
 <p>Als je PowerShell wil gebruiken, kan je de volgende cmdlets gebruiken:</p>
 <ul>
 <li><strong>Get-NetIpConfiguration</strong></li>
 </ul>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PS C:\PXL\Bach&gt; Get-NetIPConfiguration
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PS C:\PXL\Bach&gt; Get-NetIPConfiguration
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> InterfaceAlias       : VMware Network Adapter VMnet2
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> InterfaceIndex       : 19
@@ -2667,8 +2683,10 @@
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                        fec0:0:0:ffff::3
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>....
 </span></code></pre></div>
-   - <strong>Get-DnsClientServerAddress</strong>: geeft een overzicht van alle geconfigureerde DNS-servers per netwerkadapter.
-   <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PS C:\PXL\Bach&gt; Get-DnsClientServerAddress
+<ul>
+<li><strong>Get-DnsClientServerAddress</strong>: geeft een overzicht van alle geconfigureerde DNS-servers per netwerkadapter.</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PS C:\PXL\Bach&gt; Get-DnsClientServerAddress
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a> InterfaceAlias               Interface Address ServerAddresses
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                              Index     Family
@@ -2693,14 +2711,14 @@
 </span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a> Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
 </span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a> vEthernet (WSL (Hyper-V f...        71 IPv4    {}
 </span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a> vEthernet (WSL (Hyper-V f...        71 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
-</span></code></pre></div></p>
-<ul>
-<li><strong>netstat</strong></li>
-</ul>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>netstat</strong></p>
 <p>Dit commando geeft een overzicht van alle huidige netwerkverbindingen voor UDP en TCP.
-  - <code>-a</code>: toont alle verbindingen en luisterpoorten.
-  - <code>-n</code>: lost de IP-adressen niet op en toont het ruwe poortnummer.
-  - <code>-p PROTO</code>: toont enkel verbindingen voor het opgegeven protocol. <code>netstat -n -p TCP</code> toont de huidige TCP-verbindingen.</p>
+- <code>-a</code>: toont alle verbindingen en luisterpoorten.
+- <code>-n</code>: lost de IP-adressen niet op en toont het ruwe poortnummer.
+- <code>-p PROTO</code>: toont enkel verbindingen voor het opgegeven protocol. <code>netstat -n -p TCP</code> toont de huidige TCP-verbindingen.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PS C:\PXL\Bach&gt; netstat -n -p TCP
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Active Connections
@@ -2716,11 +2734,11 @@
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>TCP    192.168.0.215:51816    40.79.150.120:443      ESTABLISHED
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>TCP    192.168.0.215:65421    3.121.238.86:443       ESTABLISHED
 </span></code></pre></div>
-<ul>
-<li><strong>ping</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>ping</strong></p>
 <p>Dit commando test of een bepaald IP-adres bereikbaar is. Standaard stuurt dit commando 4 ICMP-echo's naar het opgegeven IP-adres en toont het resultaat en de statistieken.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>PS C:\PXL\Bach&gt; ping 8.8.8.8
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>PS C:\PXL\Bach&gt; ping 8.8.8.8
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Pinging 8.8.8.8 with 32 bytes of data:
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Reply from 8.8.8.8: bytes=32 time=19ms TTL=117
@@ -2733,9 +2751,11 @@
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Approximate round trip times in milli-seconds:
 </span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    Minimum = 17ms, Maximum = 19ms, Average = 18ms
 </span></code></pre></div>
-  - <code>-t</code>: voert een continue ping uit tot je het commando beëindigt</p>
+<ul>
+<li><code>-t</code>: voert een continue ping uit tot je het commando beëindigt</li>
+</ul>
 <p>Als je de PowerShell-variant wil gebruiken, kan je de cmdlet <code>Test-Connection</code> gebruiken.</p>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PS C:\PXL\Bach&gt; Test-Connection 8.8.8.8
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PS C:\PXL\Bach&gt; Test-Connection 8.8.8.8
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Source        Destination     IPV4Address      IPV6Address                              Bytes    Time(ms)
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>------        -----------     -----------      -----------                              -----    --------
@@ -2744,7 +2764,9 @@
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>5CD322B2D8    8.8.8.8         8.8.4.4          2001:4860:4860::8888                     32       18
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>5CD322B2D8    8.8.8.8         8.8.8.8          2001:4860:4860::8888                     32       19
 </span></code></pre></div>
-- <strong>nslookup</strong></p>
+</li>
+<li>
+<p><strong>nslookup</strong></p>
 <p>Met dit commando kan je een DNS-lookup uitvoeren (een naam omzetten naar een IP-adres):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>PS C:\PXL\Bach&gt; nslookup pxl.be
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Server:  hass02.dnsresv6.prd.telenet-ops.be
@@ -2761,9 +2783,9 @@
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>----                                           ----   ---   -------    ---------
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>pxl.be                                         A      3288  Answer     193.190.154.242
 </span></code></pre></div>
-<ul>
-<li><strong>tracert</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>tracert</strong></p>
 <p>Tracert is een afkorting van traceroute. Met dit commando kan je elke hop identificeren die een pakket doorloopt voordat het zijn bestemming bereikt. Als het pakket zijn bestemming niet bereikt, kan je met dit commando onderzoeken hoe het pakket gerouteerd wordt en waar het misgaat.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>PS C:\PXL\Bach&gt; tracert -d 8.8.8.8
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
@@ -2799,6 +2821,8 @@
 </span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>                       216.239.62.189
 </span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>                       8.8.8.8
 </span></code></pre></div>
+</li>
+</ul>
 
 
   <nav class="md-tags" >
@@ -2877,9 +2901,9 @@
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -3151,15 +3159,17 @@
 </ul>
 <h3 id="32-task-manager">3.2. Task Manager<a class="headerlink" href="#32-task-manager" title="Permanent link">&para;</a></h3>
 <p><img alt="TaskManager" src="../assets/TaskManager.png" /></p>
-<p>Je kan processen beheren via de Windows Task Manager. Je kan:
-- Een proces beëindigen
-- Een nieuw proces starten
-- Actieve processen, applicaties en services monitoren
-- De systeemresources van een proces, applicatie of service analyseren
-- Een nieuw proces of een nieuwe applicatie starten
-- Opstartprogramma's in- of uitschakelen
-- De algemene systeemprestaties controleren
-- ...</p>
+<p>Je kan processen beheren via de Windows Task Manager. Je kan:</p>
+<ul>
+<li>Een proces beëindigen</li>
+<li>Een nieuw proces starten</li>
+<li>Actieve processen, applicaties en services monitoren</li>
+<li>De systeemresources van een proces, applicatie of service analyseren</li>
+<li>Een nieuw proces of een nieuwe applicatie starten</li>
+<li>Opstartprogramma's in- of uitschakelen</li>
+<li>De algemene systeemprestaties controleren</li>
+<li>...</li>
+</ul>
 <h3 id="33-management-console-services">3.3. Management Console: Services<a class="headerlink" href="#33-management-console-services" title="Permanent link">&para;</a></h3>
 <p><img alt="ServicesMMC" src="../assets/MMCServices.png" /></p>
 <p>In de Microsoft Management Console (Services) kan je services beheren door:</p>
@@ -3171,12 +3181,14 @@
 </ul>
 <h2 id="4-windows-updates">4. Windows Updates<a class="headerlink" href="#4-windows-updates" title="Permanent link">&para;</a></h2>
 <p><img alt="WindowsUpdateTypes" src="../assets/WindowsUpdateTypes.png" /></p>
-<p>In Windows Settings kan je Windows-updates downloaden en installeren en de geschiedenis van geïnstalleerde updates bekijken. Microsoft deelt Windows-updates in in vijf verschillende types:
-1. <strong>Feature update</strong>: een grote release met nieuwe functies, verbeteringen en af en toe aanpassingen aan de gebruikersinterface. De versie van Windows verandert, bijvoorbeeld van 23H2 naar 24H2. Deze updates verschijnen doorgaans één keer per jaar. <em>Deze update wijzigt het eerste deel van het build number.</em>
-2. <strong>Quality update</strong>: een kleinere release die gericht is op het oplossen van bugs, het patchen van beveiligingslekken en het verbeteren van de systeemstabiliteit, zonder nieuwe functies toe te voegen. <em>Elke quality update krijgt een uniek Knowledge Base-nummer (KB) en verhoogt het tweede deel van het Windows build number.</em>
-3. <strong>Driver updates</strong>: de meeste updates van hardwarestuurprogramma's worden via Windows Update geleverd en geïnstalleerd.
-4. <strong>Definition updates</strong>: definitie-updates voor malware van Microsoft Defender Antivirus worden via Windows Update geleverd.
-5. <strong>Other updates</strong>: omvatten optionele software, patches en niet-kritieke verbeteringen voor bijkomende Microsoft- of externe producten.</p>
+<p>In Windows Settings kan je Windows-updates downloaden en installeren en de geschiedenis van geïnstalleerde updates bekijken. Microsoft deelt Windows-updates in in vijf verschillende types:</p>
+<ol>
+<li><strong>Feature update</strong>: een grote release met nieuwe functies, verbeteringen en af en toe aanpassingen aan de gebruikersinterface. De versie van Windows verandert, bijvoorbeeld van 23H2 naar 24H2. Deze updates verschijnen doorgaans één keer per jaar. <em>Deze update wijzigt het eerste deel van het build number.</em></li>
+<li><strong>Quality update</strong>: een kleinere release die gericht is op het oplossen van bugs, het patchen van beveiligingslekken en het verbeteren van de systeemstabiliteit, zonder nieuwe functies toe te voegen. <em>Elke quality update krijgt een uniek Knowledge Base-nummer (KB) en verhoogt het tweede deel van het Windows build number.</em></li>
+<li><strong>Driver updates</strong>: de meeste updates van hardwarestuurprogramma's worden via Windows Update geleverd en geïnstalleerd.</li>
+<li><strong>Definition updates</strong>: definitie-updates voor malware van Microsoft Defender Antivirus worden via Windows Update geleverd.</li>
+<li><strong>Other updates</strong>: omvatten optionele software, patches en niet-kritieke verbeteringen voor bijkomende Microsoft- of externe producten.</li>
+</ol>
 <h2 id="5-event-viewer">5. Event Viewer<a class="headerlink" href="#5-event-viewer" title="Permanent link">&para;</a></h2>
 <p>De <strong>Windows Event Viewer</strong> is een ingebouwde tool om systeemlogboeken te monitoren en te beheren. Hiermee kunnen gebruikers systeemactiviteiten opvolgen, fouten opsporen en problemen oplossen. Gebeurtenissen worden ingedeeld in verschillende logboeken, waarvan de belangrijkste Windows-logboeken <strong>Application</strong>, <strong>Security</strong> en <strong>System</strong> zijn.
 Daarnaast bevat de sectie <strong>Applications and Services Logs</strong> gedetailleerde logboeken voor afzonderlijke Windows-componenten en geïnstalleerde toepassingen.</p>
@@ -3251,23 +3263,31 @@ Daarnaast bevat de sectie <strong>Applications and Services Logs</strong> gedeta
 <li><strong>Primary</strong>: waar Windows 11, toepassingen en gebruikersgegevens worden opgeslagen.</li>
 </ul>
 <p>Voordat een partitie door het besturingssysteem gebruikt kan worden, moet ze geformatteerd worden met een bestandssysteem. Een bestandssysteem is een structuur die bestanden en mappen op een opslagmedium organiseert, beheert en toegankelijk maakt. Er zijn verschillende bestandssystemen beschikbaar:</p>
-<p><strong>FAT32</strong>
-- Oud bestandssysteem
-- Brede compatibiliteit: Windows, macOS, Linux, enz.
-- Beperkingen: maximale bestandsgrootte van 4 GB, maximale partitiegrootte van 8 TB
-- Wordt nog vaak gebruikt voor draagbare opslagmedia omwille van de brede ondersteuning door besturingssystemen</p>
-<p><strong>NTFS</strong>
-- Standaardbestandssysteem van Microsoft
-- Ondersteunt zeer grote bestanden en schijven
-- Functies: bestandsmachtigingen, encryptie, compressie, journaling voor gegevensintegriteit</p>
-<p><strong>EXT4</strong>
-- Standaardbestandssysteem van Linux
-- Verwerkt grote bestanden en opslagvolumes
-- Functies: journaling voor gegevensintegriteit</p>
-<p><strong>APFS</strong>
-- Standaardbestandssysteem van macOS
-- Ondersteunt grote bestanden en schijven
-- Functies: compressie, ingebouwde encryptie, sterke mechanismen voor gegevensintegriteit</p>
+<p><strong>FAT32</strong></p>
+<ul>
+<li>Oud bestandssysteem</li>
+<li>Brede compatibiliteit: Windows, macOS, Linux, enz.</li>
+<li>Beperkingen: maximale bestandsgrootte van 4 GB, maximale partitiegrootte van 8 TB</li>
+<li>Wordt nog vaak gebruikt voor draagbare opslagmedia omwille van de brede ondersteuning door besturingssystemen</li>
+</ul>
+<p><strong>NTFS</strong></p>
+<ul>
+<li>Standaardbestandssysteem van Microsoft</li>
+<li>Ondersteunt zeer grote bestanden en schijven</li>
+<li>Functies: bestandsmachtigingen, encryptie, compressie, journaling voor gegevensintegriteit</li>
+</ul>
+<p><strong>EXT4</strong></p>
+<ul>
+<li>Standaardbestandssysteem van Linux</li>
+<li>Verwerkt grote bestanden en opslagvolumes</li>
+<li>Functies: journaling voor gegevensintegriteit</li>
+</ul>
+<p><strong>APFS</strong></p>
+<ul>
+<li>Standaardbestandssysteem van macOS</li>
+<li>Ondersteunt grote bestanden en schijven</li>
+<li>Functies: compressie, ingebouwde encryptie, sterke mechanismen voor gegevensintegriteit</li>
+</ul>
 <p>NTFS is het standaardbestandssysteem van Windows, ontworpen om grote bestanden en opslagmedia aan te kunnen. Het biedt geavanceerde functies zoals bestandsmachtigingen, encryptie, compressie en journaling om beveiliging en gegevensintegriteit te garanderen.</p>
 <h3 id="61-wat-zijn-ntfs-machtigingen">6.1. Wat zijn NTFS-machtigingen<a class="headerlink" href="#61-wat-zijn-ntfs-machtigingen" title="Permanent link">&para;</a></h3>
 <p>NTFS-machtigingen bepalen <strong>wie toegang heeft tot bestanden en mappen</strong> op een Windows-systeem en <strong>wat gebruikers ermee mogen doen</strong>.</p>
@@ -3324,28 +3344,40 @@ Daarnaast bevat de sectie <strong>Applications and Services Logs</strong> gedeta
 <h4 id="wat-wordt-er-in-de-registry-opgeslagen">Wat wordt er in de Registry opgeslagen?<a class="headerlink" href="#wat-wordt-er-in-de-registry-opgeslagen" title="Permanent link">&para;</a></h4>
 <p>De Registry bevat:</p>
 <ul>
-<li><strong>Systeeminstellingen</strong></li>
+<li><strong>Systeeminstellingen</strong><ul>
 <li>Hardwareconfiguratie</li>
 <li>Stuurprogramma's en services</li>
-<li><strong>Gebruikersinstellingen</strong></li>
+</ul>
+</li>
+<li><strong>Gebruikersinstellingen</strong><ul>
 <li>Bureaubladinstellingen</li>
 <li>Persoonlijke voorkeuren</li>
-<li><strong>Softwareconfiguratie</strong></li>
+</ul>
+</li>
+<li><strong>Softwareconfiguratie</strong><ul>
 <li>Geïnstalleerde programma's</li>
 <li>Toepassingsinstellingen</li>
-<li><strong>Beveiligingsinstellingen</strong></li>
+</ul>
+</li>
+<li><strong>Beveiligingsinstellingen</strong><ul>
 <li>Policies en toegangsbeheer</li>
 </ul>
+</li>
+</ul>
 <h4 id="waarom-is-de-registry-belangrijk">Waarom is de Registry belangrijk?<a class="headerlink" href="#waarom-is-de-registry-belangrijk" title="Permanent link">&para;</a></h4>
-<p>Windows gebruikt de Registry voortdurend:
-- Wanneer het systeem opstart
-- Wanneer een gebruiker aanmeldt
-- Wanneer programma's draaien</p>
+<p>Windows gebruikt de Registry voortdurend:</p>
+<ul>
+<li>Wanneer het systeem opstart</li>
+<li>Wanneer een gebruiker aanmeldt</li>
+<li>Wanneer programma's draaien</li>
+</ul>
 <p>⚠️ <strong>Belangrijk:</strong>
-Als je de verkeerde instelling wijzigt, kan dat:
-- Je systeem kapotmaken
-- Fouten veroorzaken
-- Verhinderen dat Windows opstart</p>
+Als je de verkeerde instelling wijzigt, kan dat:</p>
+<ul>
+<li>Je systeem kapotmaken</li>
+<li>Fouten veroorzaken</li>
+<li>Verhinderen dat Windows opstart</li>
+</ul>
 <p>👉 Wees altijd voorzichtig wanneer je met de Registry werkt.</p>
 <h3 id="72-structuur-van-de-registry">7.2. Structuur van de Registry<a class="headerlink" href="#72-structuur-van-de-registry" title="Permanent link">&para;</a></h3>
 <p>De Registry heeft een <strong>boomstructuur</strong>, vergelijkbaar met mappen en bestanden.</p>
@@ -3523,9 +3555,9 @@ Als je de verkeerde instelling wijzigt, kan dat:
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

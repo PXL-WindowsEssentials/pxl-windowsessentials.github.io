@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2505,17 +2513,19 @@
 
 
 <h1 id="microsoft-365-admin-center">Microsoft 365 Admin Center<a class="headerlink" href="#microsoft-365-admin-center" title="Permanent link">&para;</a></h1>
-<p>De belangrijkste toegang tot je Microsoft 365-abonnement is het <a href="https://admin.microsoft.com">M365 Admin Center</a> (admin.microsoft.com). In dit admin center kan je alle items configureren die over alle diensten van je abonnement heen gebruikt worden:
-- <strong>Users</strong>: maak gebruikers in je organisatie aan en beheer ze, zoals medewerkers of studenten. Je kan ook hun machtigingsniveau instellen of hun wachtwoord resetten.
-- <strong>Teams &amp; groups</strong>: maak groepen in je organisatie aan en beheer ze, zoals een Microsoft 365-groep, Microsoft 365 Teams, distributiegroep, beveiligingsgroep of gedeelde mailbox.
-- <strong>Roles</strong>: wijs ingebouwde Microsoft Entra-rollen (Microsoft Entra ID) toe aan gebruikers die toegang nodig hebben tot andere admin centers en resources in Microsoft Entra ID, zoals gebruikers, groepen en apps die de Microsoft Graph API gebruiken.
-- <strong>Resources</strong>: maak resources aan en beheer ze, zoals een SharePoint-sitecollectie.
-- <strong>Billing</strong>: bekijk, koop of annuleer abonnementen voor je organisatie. Bekijk vorige factureringsoverzichten of het aantal toegewezen licenties per gebruiker.
-- <strong>Support</strong>: bekijk bestaande serviceaanvragen of maak nieuwe aan.
-- <strong>Settings</strong>: beheer globale instellingen voor apps zoals e-mail, sites en Microsoft 365. Wijzig je wachtwoordbeleid en vervaldatum. Voeg domeinnamen zoals contoso.com toe en werk ze bij. Wijzig het profiel van je organisatie en de releasevoorkeuren. En kies of partners toegang hebben tot je admin center.
-- <strong>Setup</strong>: beheer bestaande domeinen, schakel multi-factor authentication in en beheer het, beheer de beheerderstoegang, migreer gebruikersmailboxen naar Microsoft 365, beheer feature-updates en help gebruikers bij het installeren van hun apps in Microsoft 365.
-- <strong>Reports</strong>: zie in één oogopslag hoe je organisatie Microsoft 365 gebruikt, met gedetailleerde rapporten over e-mailgebruik, Microsoft 365-activaties en meer.
-- <strong>Health</strong>: bekijk de status (health) in één oogopslag. Je kan ook meer details en de statusgeschiedenis bekijken.</p>
+<p>De belangrijkste toegang tot je Microsoft 365-abonnement is het <a href="https://admin.microsoft.com">M365 Admin Center</a> (admin.microsoft.com). In dit admin center kan je alle items configureren die over alle diensten van je abonnement heen gebruikt worden:</p>
+<ul>
+<li><strong>Users</strong>: maak gebruikers in je organisatie aan en beheer ze, zoals medewerkers of studenten. Je kan ook hun machtigingsniveau instellen of hun wachtwoord resetten.</li>
+<li><strong>Teams &amp; groups</strong>: maak groepen in je organisatie aan en beheer ze, zoals een Microsoft 365-groep, Microsoft 365 Teams, distributiegroep, beveiligingsgroep of gedeelde mailbox.</li>
+<li><strong>Roles</strong>: wijs ingebouwde Microsoft Entra-rollen (Microsoft Entra ID) toe aan gebruikers die toegang nodig hebben tot andere admin centers en resources in Microsoft Entra ID, zoals gebruikers, groepen en apps die de Microsoft Graph API gebruiken.</li>
+<li><strong>Resources</strong>: maak resources aan en beheer ze, zoals een SharePoint-sitecollectie.</li>
+<li><strong>Billing</strong>: bekijk, koop of annuleer abonnementen voor je organisatie. Bekijk vorige factureringsoverzichten of het aantal toegewezen licenties per gebruiker.</li>
+<li><strong>Support</strong>: bekijk bestaande serviceaanvragen of maak nieuwe aan.</li>
+<li><strong>Settings</strong>: beheer globale instellingen voor apps zoals e-mail, sites en Microsoft 365. Wijzig je wachtwoordbeleid en vervaldatum. Voeg domeinnamen zoals contoso.com toe en werk ze bij. Wijzig het profiel van je organisatie en de releasevoorkeuren. En kies of partners toegang hebben tot je admin center.</li>
+<li><strong>Setup</strong>: beheer bestaande domeinen, schakel multi-factor authentication in en beheer het, beheer de beheerderstoegang, migreer gebruikersmailboxen naar Microsoft 365, beheer feature-updates en help gebruikers bij het installeren van hun apps in Microsoft 365.</li>
+<li><strong>Reports</strong>: zie in één oogopslag hoe je organisatie Microsoft 365 gebruikt, met gedetailleerde rapporten over e-mailgebruik, Microsoft 365-activaties en meer.</li>
+<li><strong>Health</strong>: bekijk de status (health) in één oogopslag. Je kan ook meer details en de statusgeschiedenis bekijken.</li>
+</ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Door SSO (Single Sign-On) moet je het Microsoft Admin Center altijd openen in een privévenster van je browser of in een andere browser dan die je voor je PXL-e-mailadres gebruikt. Zo kan je aanmelden met het juiste adminaccount en niet met je schoolaccount via SSO.</p>
@@ -2558,11 +2568,13 @@
 </table>
 <p>Je hoeft niet alle URL's van buiten te kennen. In het Microsoft 365 admin center is er een pagina met alle beschikbare admin centers voor je abonnement, met directe links ernaar.</p>
 <h2 id="toegangsbeveiliging">Toegangsbeveiliging<a class="headerlink" href="#toegangsbeveiliging" title="Permanent link">&para;</a></h2>
-<p>Microsoft 365 gebruikt een RBAC-beveiligingssysteem. RBAC staat voor:
-- <strong>R</strong>ole
-- <strong>B</strong>ased
-- <strong>A</strong>ccess
-- <strong>C</strong>ontrol</p>
+<p>Microsoft 365 gebruikt een RBAC-beveiligingssysteem. RBAC staat voor:</p>
+<ul>
+<li><strong>R</strong>ole</li>
+<li><strong>B</strong>ased</li>
+<li><strong>A</strong>ccess</li>
+<li><strong>C</strong>ontrol</li>
+</ul>
 <p>Dit beveiligingsprincipe wordt algemeen gebruikt in alle online en on-premises oplossingen. Het belangrijkste doel van RBAC is om altijd een duidelijk overzicht te hebben van de toegangsrechten van elke gebruiker, en te vermijden dat een gebruiker dubbele toegang krijgt. Dat gebeurt met behulp van rollen. RBAC bepaalt dat toegangsrechten enkel aan een rol kunnen worden toegekend. Als een gebruiker deze toegang nodig heeft, moet de gebruiker de rol krijgen. Aan één rol kunnen meerdere toegangsrechten worden toegekend (dit is vaak het geval).</p>
 <p>Met Microsoft 365 kan je je eigen rollen aanmaken. Dat wordt echter niet als best practice beschouwd wanneer je net begint met M365, vanwege de grote hoeveelheid toegangsrechten die toegekend kunnen worden. Het is dan ook het best om de ingebouwde rollen van Microsoft te gebruiken tot je vertrouwd bent met alle toegangsrechten die toegekend kunnen worden.</p>
 <table>
@@ -2608,12 +2620,14 @@
 </tbody>
 </table>
 <h3 id="algemeen-advies-voor-rollen">Algemeen advies voor rollen<a class="headerlink" href="#algemeen-advies-voor-rollen" title="Permanent link">&para;</a></h3>
-<p>RBAC biedt geweldige mogelijkheden, maar kan ook misbruikt worden. Om misbruik van RBAC in Microsoft 365 te vermijden, moeten enkele algemene richtlijnen gevolgd worden:
-- Slechts enkele personen mogen de rol Global Administrator hebben. M365 waarschuwt je ook wanneer er te veel Global Administrators in je abonnement zijn.
-- Pas altijd het principe van <strong>Least Privilege</strong> toe: geef enkel toegang als de gebruiker die toegang nodig heeft voor zijn werk. Als hij die toegang niet nodig heeft om zijn job uit te oefenen, heeft hij die toegang in het algemeen niet nodig.
-- Gebruik altijd MFA voor alle rollen (dit wordt door Microsoft afgedwongen).
-- Probeer een rol altijd toe te kennen aan een gebruikersgroep in plaats van rechtstreeks aan een gebruiker. Zo hou je een beter overzicht.
-- Zorg er altijd voor dat je een "Break the glass"-adminaccount hebt. Dit is een specifieke gebruiker waarvan de aanmeldgegevens meestal in een kluis worden bewaard en die enkel gebruikt wordt wanneer alle andere beheerders buitengesloten zijn.</p>
+<p>RBAC biedt geweldige mogelijkheden, maar kan ook misbruikt worden. Om misbruik van RBAC in Microsoft 365 te vermijden, moeten enkele algemene richtlijnen gevolgd worden:</p>
+<ul>
+<li>Slechts enkele personen mogen de rol Global Administrator hebben. M365 waarschuwt je ook wanneer er te veel Global Administrators in je abonnement zijn.</li>
+<li>Pas altijd het principe van <strong>Least Privilege</strong> toe: geef enkel toegang als de gebruiker die toegang nodig heeft voor zijn werk. Als hij die toegang niet nodig heeft om zijn job uit te oefenen, heeft hij die toegang in het algemeen niet nodig.</li>
+<li>Gebruik altijd MFA voor alle rollen (dit wordt door Microsoft afgedwongen).</li>
+<li>Probeer een rol altijd toe te kennen aan een gebruikersgroep in plaats van rechtstreeks aan een gebruiker. Zo hou je een beter overzicht.</li>
+<li>Zorg er altijd voor dat je een "Break the glass"-adminaccount hebt. Dit is een specifieke gebruiker waarvan de aanmeldgegevens meestal in een kluis worden bewaard en die enkel gebruikt wordt wanneer alle andere beheerders buitengesloten zijn.</li>
+</ul>
 
 
   <nav class="md-tags" >
@@ -2699,9 +2713,9 @@
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2615,14 +2623,16 @@
 </ul>
 <p><img alt="EntraStaticGroup" src="../assets/EntraStaticGroup.png" /></p>
 <h2 id="2-dynamische-groepen">2. Dynamische groepen<a class="headerlink" href="#2-dynamische-groepen" title="Permanent link">&para;</a></h2>
-<p>In plaats van groepen handmatig te beheren, kan je dynamische groepen aanmaken, waarbij gebruikers of toestellen automatisch worden toegevoegd of verwijderd op basis van hun eigenschappen.
-- Vul net als bij het aanmaken van een statische groep de groepsgegevens in. Selecteer bij <strong>Membership type</strong> Dynamic User.
-- Klik op <strong>Add dynamic query</strong>.
-- Kies een <strong>property</strong>.
-- Selecteer een <strong>operator</strong>.
-- Geef een <strong>value</strong> in voor de regel.
-- Klik op <strong>Save</strong> om de dynamische regel toe te passen.
-- Klik op <strong>Create</strong> om het aanmaken van de groep af te ronden.</p>
+<p>In plaats van groepen handmatig te beheren, kan je dynamische groepen aanmaken, waarbij gebruikers of toestellen automatisch worden toegevoegd of verwijderd op basis van hun eigenschappen.</p>
+<ul>
+<li>Vul net als bij het aanmaken van een statische groep de groepsgegevens in. Selecteer bij <strong>Membership type</strong> Dynamic User.</li>
+<li>Klik op <strong>Add dynamic query</strong>.</li>
+<li>Kies een <strong>property</strong>.</li>
+<li>Selecteer een <strong>operator</strong>.</li>
+<li>Geef een <strong>value</strong> in voor de regel.</li>
+<li>Klik op <strong>Save</strong> om de dynamische regel toe te passen.</li>
+<li>Klik op <strong>Create</strong> om het aanmaken van de groep af te ronden.</li>
+</ul>
 <p>Leden worden niet onmiddellijk aan een dynamische groep toegevoegd. Microsoft geeft aan dat het tot 24 uur kan duren voordat een dynamische groep volledig is opgevuld. In de praktijk gebeurt dat meestal binnen enkele seconden tot enkele minuten, afhankelijk van het aantal gebruikers in je Entra-directory.</p>
 <!-- <video controls autoplay loop muted playsinline preload="metadata" src="assets/EntraDynamicGroup.mp4" aria-label="EntraStaticGroup"></video> -->
 <video controls autoplay loop muted playsinline>
@@ -2636,18 +2646,22 @@
 <code>["France", "Belgium", "Netherlands"]</code></p>
 </div>
 <h2 id="licenties-aan-groepen-toewijzen">Licenties aan groepen toewijzen<a class="headerlink" href="#licenties-aan-groepen-toewijzen" title="Permanent link">&para;</a></h2>
-<p>Net zoals je licenties aan individuele gebruikers kan toewijzen, kan je ze ook aan groepen toewijzen. Een typische workflow is:
-- Maak een dynamische Security Group aan.
-- Wijs een licentie toe aan deze dynamische groep.
-- Wanneer een nieuwe gebruiker met een specifieke eigenschap wordt aangemaakt, wordt hij automatisch aan de groep toegevoegd en krijgt hij de licentie.</p>
-<p>Onderstaande stappen tonen hoe je een licentie aan een groep toewijst:
-- Ga naar <strong><a href="https://admin.microsoft.com">https://admin.microsoft.com</a></strong>.
-- Navigeer in het linkermenu naar <strong>Teams &amp; groups</strong> en klik op <strong>Active teams &amp; groups</strong>.
-- Selecteer in het bovenste menu <strong>Security groups</strong>.
-- Klik op de groep waaraan je een licentie wil toewijzen.
-- Selecteer <strong>Licenses and apps</strong>.
-- Kies de gewenste licentie.
-- Klik op <strong>Save changes</strong>.</p>
+<p>Net zoals je licenties aan individuele gebruikers kan toewijzen, kan je ze ook aan groepen toewijzen. Een typische workflow is:</p>
+<ul>
+<li>Maak een dynamische Security Group aan.</li>
+<li>Wijs een licentie toe aan deze dynamische groep.</li>
+<li>Wanneer een nieuwe gebruiker met een specifieke eigenschap wordt aangemaakt, wordt hij automatisch aan de groep toegevoegd en krijgt hij de licentie.</li>
+</ul>
+<p>Onderstaande stappen tonen hoe je een licentie aan een groep toewijst:</p>
+<ul>
+<li>Ga naar <strong><a href="https://admin.microsoft.com">https://admin.microsoft.com</a></strong>.</li>
+<li>Navigeer in het linkermenu naar <strong>Teams &amp; groups</strong> en klik op <strong>Active teams &amp; groups</strong>.</li>
+<li>Selecteer in het bovenste menu <strong>Security groups</strong>.</li>
+<li>Klik op de groep waaraan je een licentie wil toewijzen.</li>
+<li>Selecteer <strong>Licenses and apps</strong>.</li>
+<li>Kies de gewenste licentie.</li>
+<li>Klik op <strong>Save changes</strong>.</li>
+</ul>
 <!-- <video controls autoplay loop muted playsinline preload="metadata" src="assets/EntraGroupLicense.mp4" aria-label="EntraStaticGroup"></video> -->
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/EntraGroupLicense.mp4" type="video/mp4">
@@ -2677,13 +2691,15 @@
 <li><strong>Groep Global administrator</strong>: deze groep moet zo weinig mogelijk leden bevatten en mag enkel gebruikt worden voor taken die volledige toegang vereisen.</li>
 </ul>
 <h3 id="microsoft-learn">Microsoft Learn<a class="headerlink" href="#microsoft-learn" title="Permanent link">&para;</a></h3>
-<p>Op de volgende Microsoft Learn-pagina vind je een gedetailleerd overzicht van groepsbeheer:
-- Een groep aanmaken
-- Leden of eigenaars aan een groep toevoegen
-- Leden of eigenaars van een groep verwijderen
-- Groepsinstellingen bewerken
-- Een groep verwijderen
-- Een rol aan een groep toewijzen</p>
+<p>Op de volgende Microsoft Learn-pagina vind je een gedetailleerd overzicht van groepsbeheer:</p>
+<ul>
+<li>Een groep aanmaken</li>
+<li>Leden of eigenaars aan een groep toevoegen</li>
+<li>Leden of eigenaars van een groep verwijderen</li>
+<li>Groepsinstellingen bewerken</li>
+<li>Een groep verwijderen</li>
+<li>Een rol aan een groep toewijzen</li>
+</ul>
 <p><a href="https://docs.azure.cn/en-us/entra/fundamentals/how-to-manage-groups">Microsoft Learn: Manage Groups</a></p>
 
 
@@ -2777,9 +2793,9 @@
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

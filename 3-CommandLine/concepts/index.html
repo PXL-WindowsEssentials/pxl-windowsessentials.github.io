@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2685,29 +2693,35 @@
 
 
 <h1 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
-<p>Alle moderne besturingssystemen bieden twee methodes om met het besturingssysteem zelf te werken:
-- <strong>GUI</strong>: <strong>G</strong>raphical <strong>U</strong>ser <strong>I</strong>nterface
-- <strong>CLI</strong>: <strong>C</strong>ommand <strong>L</strong>ine <strong>I</strong>nterface</p>
+<p>Alle moderne besturingssystemen bieden twee methodes om met het besturingssysteem zelf te werken:</p>
+<ul>
+<li><strong>GUI</strong>: <strong>G</strong>raphical <strong>U</strong>ser <strong>I</strong>nterface</li>
+<li><strong>CLI</strong>: <strong>C</strong>ommand <strong>L</strong>ine <strong>I</strong>nterface</li>
+</ul>
 <p>In dit hoofdstuk richten we ons op de tweede van deze twee belangrijkste interactiemethodes.</p>
 <h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
-<p>Hoewel de GUI een van de meest gebruikte interactiemethodes voor Windows is, geeft de CLI (eens je ze onder de knie hebt) je diepgaandere controle over het besturingssysteem zelf. Met de CLI kan je onder meer uitvoeren:
-- Bestandsbeheer
-- Systeemconfiguratie
-- Gebruikersbeheer
-- Diagnostiek
-- Applicatiebeheer
-- Beveiligingsbeheer
-- ...</p>
+<p>Hoewel de GUI een van de meest gebruikte interactiemethodes voor Windows is, geeft de CLI (eens je ze onder de knie hebt) je diepgaandere controle over het besturingssysteem zelf. Met de CLI kan je onder meer uitvoeren:</p>
+<ul>
+<li>Bestandsbeheer</li>
+<li>Systeemconfiguratie</li>
+<li>Gebruikersbeheer</li>
+<li>Diagnostiek</li>
+<li>Applicatiebeheer</li>
+<li>Beveiligingsbeheer</li>
+<li>...</li>
+</ul>
 <p>Als systeem- en netwerkengineer is het noodzakelijk dat je de CLI kan gebruiken, zeker voor Windows en alle cloudgerelateerde services.</p>
 <p>De eerste versie van de Microsoft-besturingssystemen, MS-DOS (en alle andere besturingssystemen in het begin van het computertijdperk), was uitsluitend tekstgebaseerd, waardoor de CLI de enige beschikbare interactiemethode was. Vanaf Windows 1.0 ontwikkelde Microsoft de eerste GUI, die je kon uitvoeren nadat je de specifieke GUI-applicatie had gestart. Tot Windows XP steunden de Windows-versies sterk op de kernfuncties van MS-DOS en draaiden ze dus bovenop de CLI van MS-DOS.</p>
 <p>Vanaf Windows XP ontwikkelde Microsoft het besturingssysteem van de grond af opnieuw en werd de GUI de belangrijkste interactiemethode van het besturingssysteem. De GUI draaide niet langer bovenop de CLI, maar was een integraal onderdeel van het besturingssysteem. Omdat de meeste power users echter gewend waren aan de CLI, hield Microsoft de CLI in leven via de applicatie Windows Command Prompt. Zelfs in de moderne versie Windows 11 is Command Prompt nog altijd beschikbaar.</p>
 <p>In het begin van de jaren 2000 raakte Command Prompt echter achterop en werd de nood aan een krachtigere en flexibelere CLI steeds groter. Om aan die behoefte te voldoen, ontwikkelde Microsoft PowerShell. Dit is een objectgeoriënteerde shell met geavanceerdere functionaliteit en de mainstream-shell voor alle services van Microsoft.</p>
 <p>In de rest van deze cursus gebruiken we enkel PowerShell voor CLI-interactie met Windows.</p>
 <h3 id="powershell-starten">PowerShell starten<a class="headerlink" href="#powershell-starten" title="Permanent link">&para;</a></h3>
-<p>Je kan PowerShell op drie manieren starten:
-- Via de PowerShell-terminalapp
-- Via de Terminal-app
-- Via Visual Studio Code</p>
+<p>Je kan PowerShell op drie manieren starten:</p>
+<ul>
+<li>Via de PowerShell-terminalapp</li>
+<li>Via de Terminal-app</li>
+<li>Via Visual Studio Code</li>
+</ul>
 <p>De meeste gebruikers geven de voorkeur aan de Terminal-app omdat je er meerdere tabbladen kan gebruiken. Zo kan je meerdere cmdlets naast elkaar uitvoeren zonder te wachten tot de vorige cmdlet een resultaat geeft.</p>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/Powershell.mp4" type="video/mp4">
@@ -2775,14 +2789,18 @@
 <h4 id="get-command">Get-Command<a class="headerlink" href="#get-command" title="Permanent link">&para;</a></h4>
 <p>De eerste cmdlet is <strong>Get-Command</strong>.
 Met deze cmdlet kan je zoeken in de databank van alle ingeschakelde cmdlets.</p>
-<p>Bijvoorbeeld:
-- <code>Get-Command *process*</code> geeft een lijst van alle PowerShell-cmdlets waarin het woord process voorkomt.
-- <code>Get-Command *user</code> geeft een lijst van alle PowerShell-cmdlets die eindigen op user.
-- <code>Get-Command get-File*</code> geeft een lijst van alle PowerShell-cmdlets die beginnen met get-file.</p>
-<p>De oplettende studenten hebben gemerkt dat de plaatsing van de <code>*</code> belangrijk is, want het resultaat verandert naargelang de plaats van de <code>*</code>:
-- <code>search*</code>: alle cmdlets die beginnen met de zoekterm.
-- <code>*search</code>: alle cmdlets die eindigen op de zoekterm.
-- <code>*search*</code>: alle cmdlets waarin de zoekterm voorkomt.</p>
+<p>Bijvoorbeeld:</p>
+<ul>
+<li><code>Get-Command *process*</code> geeft een lijst van alle PowerShell-cmdlets waarin het woord process voorkomt.</li>
+<li><code>Get-Command *user</code> geeft een lijst van alle PowerShell-cmdlets die eindigen op user.</li>
+<li><code>Get-Command get-File*</code> geeft een lijst van alle PowerShell-cmdlets die beginnen met get-file.</li>
+</ul>
+<p>De oplettende studenten hebben gemerkt dat de plaatsing van de <code>*</code> belangrijk is, want het resultaat verandert naargelang de plaats van de <code>*</code>:</p>
+<ul>
+<li><code>search*</code>: alle cmdlets die beginnen met de zoekterm.</li>
+<li><code>*search</code>: alle cmdlets die eindigen op de zoekterm.</li>
+<li><code>*search*</code>: alle cmdlets waarin de zoekterm voorkomt.</li>
+</ul>
 <h4 id="get-help">Get-Help<a class="headerlink" href="#get-help" title="Permanent link">&para;</a></h4>
 <p>Nu we het commando hebben gevonden dat we zochten, moeten we nog onthouden wat het commando doet en hoe we het moeten gebruiken. Daarvoor kunnen we de cmdlet <code>Get-Help</code> gebruiken. Deze cmdlet geeft een gedetailleerde uitleg over wat de cmdlet doet en hoe we hem moeten gebruiken. Als we de juiste extra parameters meegeven, krijgen we zelfs nog meer details.</p>
 <ul>
@@ -2794,20 +2812,22 @@ Met deze cmdlet kan je zoeken in de databank van alle ingeschakelde cmdlets.</p>
 </ul>
 <h3 id="alias">Alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h3>
 <p>Door de <code>Verb-Noun</code>-syntax kunnen PowerShell-cmdlets lang worden. Bijvoorbeeld: <code>Enable-MicrosoftUpdateServiceManagerClient</code>. Dergelijke cmdlets onthouden en intypen in de terminal kan heel omslachtig zijn. Daarom introduceerde Microsoft het concept van aliassen. Dit zijn afkortingen van de cmdlet of kortere cmdlets. De aliassen zijn korter en dus makkelijker te onthouden. Om de juiste alias van een bepaalde cmdlet te vinden, gebruik je de cmdlet <code>Get-Alias</code>.</p>
-<p>Bijvoorbeeld:
-- <code>Get-Alias *cd*</code>: geeft een overzicht van alle bekende aliassen waarin 'cd' voorkomt
-- <code>Get-Alias -Definition Stop-Process</code>: geeft een overzicht van alle bekende aliassen voor de cmdlet <code>Stop-Process</code>.</p>
+<p>Bijvoorbeeld:</p>
+<ul>
+<li><code>Get-Alias *cd*</code>: geeft een overzicht van alle bekende aliassen waarin 'cd' voorkomt</li>
+<li><code>Get-Alias -Definition Stop-Process</code>: geeft een overzicht van alle bekende aliassen voor de cmdlet <code>Stop-Process</code>.</li>
+</ul>
 <p>De oplettende student heeft gemerkt dat we hetzelfde zoekprincipe met de <code>*</code> gebruiken als bij de cmdlet <code>Get-Command</code>.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <p>Elke cmdlet bestaat uit de cmdlet zelf en extra opties die beschikbaar zijn voor die specifieke cmdlet. Deze opties noemen we <strong>parameters</strong>. Alle parameters roep je aan met het teken <strong>-</strong>, gevolgd door de eigenlijke parameter en, indien nodig, een waarde voor de parameter.</p>
-<p>Bijvoorbeeld:
+<p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Get-Process –Name *chrome*
 </span></code></pre></div>
-In dit voorbeeld vragen we PowerShell om een overzicht van alle huidige processen waarvan de naam <code>chrome</code> bevat.</p>
+<p>In dit voorbeeld vragen we PowerShell om een overzicht van alle huidige processen waarvan de naam <code>chrome</code> bevat.</p>
 <p>Elke cmdlet heeft meerdere parameters die je in dezelfde cmdlet naast elkaar kan gebruiken.</p>
-<p>Bijvoorbeeld:
+<p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Get-ChildItem -File -Recurse -Name *test*
-</span></code></pre></div></p>
+</span></code></pre></div>
 <p>Zoals eerder vermeld is het een titanenwerk om alle cmdlets van buiten te leren, laat staan alle parameters van elke cmdlet. <code>Get-Help cmdlet -Parameter *</code> geeft je een overzicht van alle parameters en hoe je ze correct gebruikt.</p>
 <h4 id="parameters-en-volgorde">Parameters en volgorde<a class="headerlink" href="#parameters-en-volgorde" title="Permanent link">&para;</a></h4>
 <p>Wanneer we leren werken met parameters, is het best om altijd de volledige parameternamen te schrijven. Zo blijven je commando's leesbaar en voorkom je fouten.</p>
@@ -2918,9 +2938,9 @@ Deze gegevens staan in de helppagina's:</p>
 </span></code></pre></div>
 <p><strong>Switch</strong></p>
 <p>Switch-parameters zijn parameters zonder waarde, bijvoorbeeld:</p>
-<p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
 </span></code></pre></div>
-Zowel <code>-Recurse</code> als <code>-Force</code> zijn ofwel aanwezig (<code>$true</code>) ofwel niet aanwezig (<code>$false</code>).</p>
+<p>Zowel <code>-Recurse</code> als <code>-Force</code> zijn ofwel aanwezig (<code>$true</code>) ofwel niet aanwezig (<code>$false</code>).</p>
 
 
   <nav class="md-tags" >
@@ -2999,9 +3019,9 @@ Zowel <code>-Recurse</code> als <code>-Force</code> zijn ofwel aanwezig (<code>$
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

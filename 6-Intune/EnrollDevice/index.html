@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2689,9 +2697,11 @@
 <h1 id="een-toestel-inschrijven-in-intune">Een toestel inschrijven in Intune<a class="headerlink" href="#een-toestel-inschrijven-in-intune" title="Permanent link">&para;</a></h1>
 <h2 id="autopilot">Autopilot<a class="headerlink" href="#autopilot" title="Permanent link">&para;</a></h2>
 <p>Toestellen registreren in Intune houdt in dat je ze toevoegt aan Windows Autopilot. Autopilot koppelt elk toestel aan de Microsoft 365-tenant van je organisatie. Wanneer het toestel opnieuw geïnstalleerd of gereset wordt, verbindt het automatisch opnieuw en blijft het via Intune door de tenant beheerd.</p>
-<p>Autopilot wordt gebruikt om:
-1. <strong>Toestellen te koppelen</strong> aan een Microsoft 365-tenant.
-2. De installatie en configuratie van toestellen tijdens de <strong>Out-of-Box Experience (OOBE)</strong> te <strong>automatiseren</strong>.</p>
+<p>Autopilot wordt gebruikt om:</p>
+<ol>
+<li><strong>Toestellen te koppelen</strong> aan een Microsoft 365-tenant.</li>
+<li>De installatie en configuratie van toestellen tijdens de <strong>Out-of-Box Experience (OOBE)</strong> te <strong>automatiseren</strong>.</li>
+</ol>
 <p><strong>Windows OOBE (Out of Box Experience)</strong> is het initiële installatieproces dat gebruikers begeleidt bij het configureren van een nieuwe Windows-installatie, met instellingen zoals regio, account, netwerk en privacyvoorkeuren.</p>
 <p>Een toestel toevoegen aan Windows Autopilot kan op twee manieren:</p>
 <ol>
@@ -2740,11 +2750,11 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 <li>Open een <strong>elevated</strong> Terminal (uitvoeren als administrator)</li>
 <li>Voer de volgende commando's uit</li>
 </ol>
-<p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Install-Script</span> <span class="n">-Name</span> <span class="nb">Get-WindowsAutopilotInfo</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">Get-WindowsAutopilotInfo</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-OutputFile</span> <span class="n">C</span><span class="p">:\</span><span class="n">AutopilotHWID</span><span class="p">.</span><span class="n">csv</span>
 </span></code></pre></div>
-<em>De onderstaande schermafbeelding toont de uitvoering van bovenstaande commando's</em></p>
+<p><em>De onderstaande schermafbeelding toont de uitvoering van bovenstaande commando's</em></p>
 <p><img alt="Windows11GetWindowsAutopilotInfo" src="../assets/Windows11GetWindowsAutopilotInfo.png" /></p>
 <ol>
 <li><strong>Kopieer AutopilotHWID.csv</strong></li>
@@ -2793,12 +2803,14 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 <h3 id="71-vmware-tools">7.1. VMware Tools<a class="headerlink" href="#71-vmware-tools" title="Permanent link">&para;</a></h3>
 <p>Omdat je je virtuele Windows-machine hebt gereset nadat je het PowerShell-script Get-WindowsAutopilotInfo had uitgevoerd, werd je Windows 11-omgeving volledig gereset en werd ook VMware Tools verwijderd. Wil je functies zoals kopiëren en plakken tussen je host en de virtuele machine opnieuw gebruiken en de schermresolutie verbeteren, dan moet je VMware Tools opnieuw installeren in je virtuele Windows 11-machine.</p>
 <h3 id="72-slaapstand-uitschakelen">7.2. Slaapstand uitschakelen<a class="headerlink" href="#72-slaapstand-uitschakelen" title="Permanent link">&para;</a></h3>
-<p>Je virtuele Windows 11-machine synchroniseert gegevens zoals toestelinformatie, policies en applicaties. Wanneer de VM in slaapstand gaat (wat standaard al na enkele minuten gebeurt), wordt deze synchronisatie onderbroken. Pas de volgende Windows-instelling op je virtuele machine aan om de slaapstand uit te schakelen:
-1. Open <strong>Windows Settings</strong>
-2. Kies in het linkermenu <strong>System</strong> en kies vervolgens <strong>Power</strong>
-3. Configureer de <strong>Screen and sleep timeouts</strong> als volgt
-- <strong>Turn my screen off after</strong>: Never
-- <strong>Make my device sleep after</strong>: Never</p>
+<p>Je virtuele Windows 11-machine synchroniseert gegevens zoals toestelinformatie, policies en applicaties. Wanneer de VM in slaapstand gaat (wat standaard al na enkele minuten gebeurt), wordt deze synchronisatie onderbroken. Pas de volgende Windows-instelling op je virtuele machine aan om de slaapstand uit te schakelen:</p>
+<ol>
+<li>Open <strong>Windows Settings</strong></li>
+<li>Kies in het linkermenu <strong>System</strong> en kies vervolgens <strong>Power</strong></li>
+<li>Configureer de <strong>Screen and sleep timeouts</strong> als volgt</li>
+<li><strong>Turn my screen off after</strong>: Never</li>
+<li><strong>Make my device sleep after</strong>: Never</li>
+</ol>
 <p><img alt="DisableSleep" src="../assets/DisableSleep.png" /></p>
 
 
@@ -2885,9 +2897,9 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

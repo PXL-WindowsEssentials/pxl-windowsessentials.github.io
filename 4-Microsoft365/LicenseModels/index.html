@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2606,40 +2614,52 @@
 
 <h1 id="licenties">Licenties<a class="headerlink" href="#licenties" title="Permanent link">&para;</a></h1>
 <h2 id="tenants-en-csp">Tenants en CSP<a class="headerlink" href="#tenants-en-csp" title="Permanent link">&para;</a></h2>
-<p>Een Microsoft-<strong>tenant</strong> is een toegewijde, geïsoleerde en afzonderlijke instantie van de clouddiensten van Microsoft, zoals Microsoft 365 of Azure, die een organisatie ontvangt wanneer ze zich op die diensten abonneert. Hij fungeert als een centrale container voor het beheer van de gebruikers, licenties, abonnementen en gegevens van een organisatie, volledig gescheiden van andere organisaties. Elke tenant wordt geïdentificeerd door een unieke tenant-ID en een unieke subdomeinnaam in het domein onmicrosoft.com. Elk bedrijf heeft echter zijn eigen domeinnaam. Microsoft biedt je de mogelijkheid om je eigen domein aan je tenant te koppelen. Wanneer dat gebeurt, heeft elke gebruiker in de tenant twee unieke identificatoren:
-- <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#110;&#97;&#109;&#101;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;">&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#110;&#97;&#109;&#101;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;</a> Bv.: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#120;&#50;&#52;&#100;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;">&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#120;&#50;&#52;&#100;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;</a>
-- username@domainname Bv.: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#105;&#116;&#99;&#111;&#110;&#115;&#117;&#108;&#116;&#46;&#98;&#101;">&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#105;&#116;&#99;&#111;&#110;&#115;&#117;&#108;&#116;&#46;&#98;&#101;</a></p>
-<p>M365-abonnementen kunnen niet rechtstreeks bij Microsoft worden aangekocht. Dit moet via een <strong>CSP (Cloud Service Provider)</strong>. Dat zijn wederverkopers van de Microsoft Cloud-diensten. De belangrijkste verantwoordelijkheden van een CSP zijn:
-- De registratie van je M365-tenant.
-- Eerste contactpunt voor support.
-- Verlenging van het M365-abonnement.
-- Heeft altijd beheerdersrechten op je tenant.</p>
+<p>Een Microsoft-<strong>tenant</strong> is een toegewijde, geïsoleerde en afzonderlijke instantie van de clouddiensten van Microsoft, zoals Microsoft 365 of Azure, die een organisatie ontvangt wanneer ze zich op die diensten abonneert. Hij fungeert als een centrale container voor het beheer van de gebruikers, licenties, abonnementen en gegevens van een organisatie, volledig gescheiden van andere organisaties. Elke tenant wordt geïdentificeerd door een unieke tenant-ID en een unieke subdomeinnaam in het domein onmicrosoft.com. Elk bedrijf heeft echter zijn eigen domeinnaam. Microsoft biedt je de mogelijkheid om je eigen domein aan je tenant te koppelen. Wanneer dat gebeurt, heeft elke gebruiker in de tenant twee unieke identificatoren:</p>
+<ul>
+<li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#110;&#97;&#109;&#101;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;">&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#110;&#97;&#109;&#101;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;</a> Bv.: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#120;&#50;&#52;&#100;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;">&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#120;&#50;&#52;&#100;&#46;&#111;&#110;&#109;&#105;&#99;&#114;&#111;&#115;&#111;&#102;&#116;&#46;&#99;&#111;&#109;</a></li>
+<li>username@domainname Bv.: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#105;&#116;&#99;&#111;&#110;&#115;&#117;&#108;&#116;&#46;&#98;&#101;">&#106;&#111;&#104;&#110;&#46;&#100;&#111;&#101;&#64;&#105;&#116;&#99;&#111;&#110;&#115;&#117;&#108;&#116;&#46;&#98;&#101;</a></li>
+</ul>
+<p>M365-abonnementen kunnen niet rechtstreeks bij Microsoft worden aangekocht. Dit moet via een <strong>CSP (Cloud Service Provider)</strong>. Dat zijn wederverkopers van de Microsoft Cloud-diensten. De belangrijkste verantwoordelijkheden van een CSP zijn:</p>
+<ul>
+<li>De registratie van je M365-tenant.</li>
+<li>Eerste contactpunt voor support.</li>
+<li>Verlenging van het M365-abonnement.</li>
+<li>Heeft altijd beheerdersrechten op je tenant.</li>
+</ul>
 <h2 id="prijzen">Prijzen<a class="headerlink" href="#prijzen" title="Permanent link">&para;</a></h2>
-<p>De totale kostprijs van Microsoft 365 is gebaseerd op:
-- Aantal gebruikers = aantal licenties
-- Het abonnementsplan (Subscription Plan)
-- Het abonnementsniveau (Subscription Tier)</p>
+<p>De totale kostprijs van Microsoft 365 is gebaseerd op:</p>
+<ul>
+<li>Aantal gebruikers = aantal licenties</li>
+<li>Het abonnementsplan (Subscription Plan)</li>
+<li>Het abonnementsniveau (Subscription Tier)</li>
+</ul>
 <h3 id="licenties_1">Licenties<a class="headerlink" href="#licenties_1" title="Permanent link">&para;</a></h3>
 <p>Een licentie, of basislicentie, laat gebruikers toe om de functies en diensten te gebruiken die in het abonnementsplan zijn inbegrepen. Wanneer je een abonnement koopt, geef je het aantal licenties op dat je nodig hebt, op basis van het aantal personen in je organisatie. Nadat je een abonnement hebt gekocht, maak je accounts aan voor de personen in je organisatie en wijs je aan elke persoon een licentie toe. Naarmate de behoeften van je organisatie veranderen, kan je extra licenties kopen voor nieuwe personen, of licenties opnieuw toewijzen aan andere gebruikers wanneer iemand de organisatie verlaat.</p>
 <p>Microsoft 365-producten en -diensten zijn beschikbaar als <strong>user subscription licenses (USL's)</strong> en worden gelicentieerd <strong>per gebruiker</strong>. Aan elke gebruiker die toegang heeft tot Microsoft 365-producten en -diensten moet een USL toegewezen zijn. Beheerders beheren licenties in het Microsoft 365 admin center. Ze kunnen de licenties toewijzen aan individuele gebruikers- of gastaccounts.</p>
 <p>Naast volledige USL's biedt Microsoft voor sommige abonnementen add-onlicenties aan. Add-ons bieden extra diensten of functionaliteit bovenop wat in het basisabonnement is inbegrepen. Zo is het mogelijk om één enkele functie aan te kopen in plaats van naar een hoger abonnementsniveau te upgraden.</p>
 <p>Als je bedrijf bijvoorbeeld een E3-abonnement heeft en wil dat alle gebruikers Microsoft Defender for Identity hebben, kan je dit mogelijk als add-on aankopen in plaats van elke gebruiker te upgraden naar een E5-licentie.</p>
 <h3 id="subscription-plans">Subscription Plans<a class="headerlink" href="#subscription-plans" title="Permanent link">&para;</a></h3>
-<p>Microsoft biedt verschillende abonnementsplannen (Subscription Plans) aan:
-- <strong>Microsoft 365 Personal</strong>: Microsoft 365 biedt drie plannen voor thuisgebruikers: Personal, Family en Premium. Personal is voor één persoon en kan op meerdere toestellen gebruikt worden. Family kan gedeeld worden met maximaal zes personen. Premium bevat de voordelen van Family plus AI-abonnementen.
-- <strong>Microsoft 365 Education</strong>: Microsoft 365 Education is enkel beschikbaar voor onderwijsinstellingen. Academische licenties kunnen op maat van elke instelling worden samengesteld, inclusief productiviteits- en beveiligingsoplossingen voor docenten, personeel en studenten. Microsoft 365 Education heeft drie abonnementsplannen voor docenten en studenten met verschillende functies: A1, A3 en A5.
-- <strong>Microsoft 365 for business</strong>: Microsoft 365 for business is ontworpen voor kleine tot middelgrote organisaties met maximaal 300 medewerkers. Het biedt de volledige set Office 365-productiviteitstools en bevat functies voor beveiliging en apparaatbeheer. Er zijn vier abonnementsniveaus met verschillende functies: Microsoft 365 Business Basic, Microsoft 365 Business Standard, Microsoft 365 Business Premium en Microsoft 365 Apps for business.
-- <strong>Microsoft 365 Enterprise</strong>: Microsoft 365 Enterprise is ontworpen voor organisaties van ondernemingsformaat. Het biedt diensten van ondernemingsklasse, waaronder robuuste functies voor bedreigingsbescherming, beveiliging, compliance en analyse. Microsoft 365 Enterprise heeft drie abonnementsniveaus met verschillende functies: Microsoft 365 E3, Microsoft 365 E5 en Microsoft 365 E7.</p>
+<p>Microsoft biedt verschillende abonnementsplannen (Subscription Plans) aan:</p>
+<ul>
+<li><strong>Microsoft 365 Personal</strong>: Microsoft 365 biedt drie plannen voor thuisgebruikers: Personal, Family en Premium. Personal is voor één persoon en kan op meerdere toestellen gebruikt worden. Family kan gedeeld worden met maximaal zes personen. Premium bevat de voordelen van Family plus AI-abonnementen.</li>
+<li><strong>Microsoft 365 Education</strong>: Microsoft 365 Education is enkel beschikbaar voor onderwijsinstellingen. Academische licenties kunnen op maat van elke instelling worden samengesteld, inclusief productiviteits- en beveiligingsoplossingen voor docenten, personeel en studenten. Microsoft 365 Education heeft drie abonnementsplannen voor docenten en studenten met verschillende functies: A1, A3 en A5.</li>
+<li><strong>Microsoft 365 for business</strong>: Microsoft 365 for business is ontworpen voor kleine tot middelgrote organisaties met maximaal 300 medewerkers. Het biedt de volledige set Office 365-productiviteitstools en bevat functies voor beveiliging en apparaatbeheer. Er zijn vier abonnementsniveaus met verschillende functies: Microsoft 365 Business Basic, Microsoft 365 Business Standard, Microsoft 365 Business Premium en Microsoft 365 Apps for business.</li>
+<li><strong>Microsoft 365 Enterprise</strong>: Microsoft 365 Enterprise is ontworpen voor organisaties van ondernemingsformaat. Het biedt diensten van ondernemingsklasse, waaronder robuuste functies voor bedreigingsbescherming, beveiliging, compliance en analyse. Microsoft 365 Enterprise heeft drie abonnementsniveaus met verschillende functies: Microsoft 365 E3, Microsoft 365 E5 en Microsoft 365 E7.</li>
+</ul>
 <h4 id="frontline-workers">Frontline workers<a class="headerlink" href="#frontline-workers" title="Permanent link">&para;</a></h4>
-<p>Organisaties in veel sectoren, zoals retail, productie, horeca en meer, hebben een mix van gebruikerstypes:
-- Information workers, die waarschijnlijk desktops of laptops hebben en vermoedelijk meer met documenten werken dan rechtstreeks met klanten, zoals medewerkers op het hoofdkantoor.
-- Frontline workers, die vaak op tablets of telefoons werken en rechtstreeks met klanten of het grote publiek werken. Ze leveren diensten en ondersteuning, verkopen producten, of zijn medewerkers die rechtstreeks betrokken zijn bij de productie en distributie van producten en diensten. Bijvoorbeeld winkelmedewerkers, zorgverleners en verpleegkundigen, fabrieksarbeiders, enz.</p>
+<p>Organisaties in veel sectoren, zoals retail, productie, horeca en meer, hebben een mix van gebruikerstypes:</p>
+<ul>
+<li>Information workers, die waarschijnlijk desktops of laptops hebben en vermoedelijk meer met documenten werken dan rechtstreeks met klanten, zoals medewerkers op het hoofdkantoor.</li>
+<li>Frontline workers, die vaak op tablets of telefoons werken en rechtstreeks met klanten of het grote publiek werken. Ze leveren diensten en ondersteuning, verkopen producten, of zijn medewerkers die rechtstreeks betrokken zijn bij de productie en distributie van producten en diensten. Bijvoorbeeld winkelmedewerkers, zorgverleners en verpleegkundigen, fabrieksarbeiders, enz.</li>
+</ul>
 <p>Microsoft 365 for frontline workers is geoptimaliseerd voor een vaak mobiel personeelsbestand dat voornamelijk met klanten omgaat, maar ook verbonden moet blijven met de rest van je organisatie. De frontline-abonnementen zijn enkel beschikbaar in het Microsoft 365 Enterprise-plan. Ze richten zich op de essentiële diensten en apps en bieden beperkte online opslag per gebruiker.</p>
 <h3 id="subscription-tiers">Subscription Tiers<a class="headerlink" href="#subscription-tiers" title="Permanent link">&para;</a></h3>
-<p>Elk abonnementsplan is opgedeeld in verschillende niveaus (Tiers):
-- Business Basic, E3
-- Business Standard, E5
-- Business Premium, E7</p>
+<p>Elk abonnementsplan is opgedeeld in verschillende niveaus (Tiers):</p>
+<ul>
+<li>Business Basic, E3</li>
+<li>Business Standard, E5</li>
+<li>Business Premium, E7</li>
+</ul>
 <p>Hoe hoger het nummer, hoe meer functies, diensten en apps beschikbaar zijn voor de eindgebruiker.</p>
 <h3 id="overzicht-van-abonnementen">Overzicht van abonnementen<a class="headerlink" href="#overzicht-van-abonnementen" title="Permanent link">&para;</a></h3>
 <table>
@@ -2768,9 +2788,9 @@
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2494,12 +2502,14 @@
 
 <h1 id="microsoft-365">Microsoft 365<a class="headerlink" href="#microsoft-365" title="Permanent link">&para;</a></h1>
 <h2 id="m365">M365<a class="headerlink" href="#m365" title="Permanent link">&para;</a></h2>
-<p>Microsoft 365 (vaak afgekort tot M365) is een online productiviteitssuite van clouddiensten en -tools. Die bestaat hoofdzakelijk uit:
-- Office-apps
-- Apparaatbeheer (device management)
-- Beveiligingsbeheer
-- Online opslag
-- ...</p>
+<p>Microsoft 365 (vaak afgekort tot M365) is een online productiviteitssuite van clouddiensten en -tools. Die bestaat hoofdzakelijk uit:</p>
+<ul>
+<li>Office-apps</li>
+<li>Apparaatbeheer (device management)</li>
+<li>Beveiligingsbeheer</li>
+<li>Online opslag</li>
+<li>...</li>
+</ul>
 <p>Microsoft 365 wordt gecategoriseerd als SaaS (Software as a Service).</p>
 <p><img alt="M365 SaaS" src="../assets/SaaS.png" /></p>
 <h2 id="geschiedenis">Geschiedenis<a class="headerlink" href="#geschiedenis" title="Permanent link">&para;</a></h2>
@@ -2507,18 +2517,22 @@
 <p>Tussen 2013 en 2019 voegde Microsoft verschillende diensten en functies toe aan de Office 365-abonnementen, zoals OneDrive for Business, Teams en Power BI. Dat werd vooral gedreven door het succes van de Office 365-suite in het onderwijs en bij bedrijven. Daarnaast begon Microsoft zich in die periode ook te richten op device management met de introductie van Microsoft Intune, Endpoint Manager en Azure Active Directory. Die laatste diensten droegen vooral bij aan Mobile Device Management en Mobile Application Management. Ze maakten echter geen deel uit van de Office 365-suite. Het waren afzonderlijke diensten waarop je je kon abonneren.</p>
 <p>In 2020 gaf Microsoft Office 365 een nieuwe naam, Microsoft 365, en bundelde het alle bovenstaande diensten en apps in één suite. Het aantal diensten dat in de abonnementen beschikbaar is, blijft groeien. Inmiddels is zelfs de licentie voor Windows 11 inbegrepen in het Microsoft 365-abonnement.</p>
 <h2 id="apps-en-diensten">Apps en diensten<a class="headerlink" href="#apps-en-diensten" title="Permanent link">&para;</a></h2>
-<p>Microsoft 365 bestaat uit meerdere apps en diensten. In deze cursus richten we ons op de hieronder opgesomde apps en diensten. Voor de meeste van deze apps en diensten leer je hoe je ze configureert voor gangbaar gebruik in het werkveld. Aan elke app is een dienst gekoppeld. Sommige van die diensten kunnen wij configureren en andere niet. Die laatste worden door Microsoft geconfigureerd. Bijvoorbeeld:
-- <strong>Teams</strong>: Microsoft biedt een Teams-applicatie aan die je kan installeren op je host (computer/smartphone) of kan gebruiken via de online Teams-applicatie in je browser. Deze app wordt gebruikt door de eindgebruikers. Het gebruik van deze app kan echter enkel via de Teams-dienst. Deze dienst kan worden geconfigureerd via het online admin center.
-- <strong>Office</strong>: Microsoft biedt ook alle veelgebruikte applicaties aan, zoals Word, Excel, PowerPoint, ... Ofwel via de geïnstalleerde Office-suite op je host, ofwel via de online Office-applicaties in je browser. In tegenstelling tot de Teams-dienst zijn de diensten die aan alle Office-applicaties gekoppeld zijn, niet configureerbaar en hebben ze geen admin center.</p>
-<p>Overzicht van veelgebruikte apps en diensten:
-- <strong>Entra ID</strong>: dienst voor identiteits- en toegangsbeheer voor alle M365-applicaties en -diensten.
-- <strong>Intune</strong>: dienst voor het beheer en de controle van endpointtoestellen binnen één entiteit.
-- <strong>SharePoint</strong>: deze dienst vergemakkelijkt het delen, beheren en organiseren van documenten binnen teams en organisaties.
-- <strong>Exchange</strong>: dienst voor e-mailcommunicatie, agenda's, contacten en taken.
-- <strong>OneDrive</strong>: online opslagoplossing voor persoonlijke bestanden en mappen.
-- <strong>Teams</strong>: platform voor communicatie en samenwerking. Met deze dienst kunnen gebruikers chatten, bellen, vergaderen en samenwerken aan documenten in één omgeving.
-- <strong>Power Automate</strong>: automatiseringstool waarmee eindgebruikers workflows en taken kunnen aanmaken tussen verschillende M365-applicaties en -diensten om de efficiëntie te verhogen.
-- <strong>Engage</strong>: intern sociaalmediaplatform voor medewerkers.</p>
+<p>Microsoft 365 bestaat uit meerdere apps en diensten. In deze cursus richten we ons op de hieronder opgesomde apps en diensten. Voor de meeste van deze apps en diensten leer je hoe je ze configureert voor gangbaar gebruik in het werkveld. Aan elke app is een dienst gekoppeld. Sommige van die diensten kunnen wij configureren en andere niet. Die laatste worden door Microsoft geconfigureerd. Bijvoorbeeld:</p>
+<ul>
+<li><strong>Teams</strong>: Microsoft biedt een Teams-applicatie aan die je kan installeren op je host (computer/smartphone) of kan gebruiken via de online Teams-applicatie in je browser. Deze app wordt gebruikt door de eindgebruikers. Het gebruik van deze app kan echter enkel via de Teams-dienst. Deze dienst kan worden geconfigureerd via het online admin center.</li>
+<li><strong>Office</strong>: Microsoft biedt ook alle veelgebruikte applicaties aan, zoals Word, Excel, PowerPoint, ... Ofwel via de geïnstalleerde Office-suite op je host, ofwel via de online Office-applicaties in je browser. In tegenstelling tot de Teams-dienst zijn de diensten die aan alle Office-applicaties gekoppeld zijn, niet configureerbaar en hebben ze geen admin center.</li>
+</ul>
+<p>Overzicht van veelgebruikte apps en diensten:</p>
+<ul>
+<li><strong>Entra ID</strong>: dienst voor identiteits- en toegangsbeheer voor alle M365-applicaties en -diensten.</li>
+<li><strong>Intune</strong>: dienst voor het beheer en de controle van endpointtoestellen binnen één entiteit.</li>
+<li><strong>SharePoint</strong>: deze dienst vergemakkelijkt het delen, beheren en organiseren van documenten binnen teams en organisaties.</li>
+<li><strong>Exchange</strong>: dienst voor e-mailcommunicatie, agenda's, contacten en taken.</li>
+<li><strong>OneDrive</strong>: online opslagoplossing voor persoonlijke bestanden en mappen.</li>
+<li><strong>Teams</strong>: platform voor communicatie en samenwerking. Met deze dienst kunnen gebruikers chatten, bellen, vergaderen en samenwerken aan documenten in één omgeving.</li>
+<li><strong>Power Automate</strong>: automatiseringstool waarmee eindgebruikers workflows en taken kunnen aanmaken tussen verschillende M365-applicaties en -diensten om de efficiëntie te verhogen.</li>
+<li><strong>Engage</strong>: intern sociaalmediaplatform voor medewerkers.</li>
+</ul>
 
 
   <nav class="md-tags" >
@@ -2597,9 +2611,9 @@
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>

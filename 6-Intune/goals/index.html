@@ -5,6 +5,14 @@
 <html lang="nl" class="no-js">
   <head>
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,7 +70,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v4.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2522,25 +2530,31 @@
 
 <h1 id="doelstellingen-intune">Doelstellingen Intune<a class="headerlink" href="#doelstellingen-intune" title="Permanent link">&para;</a></h1>
 <h2 id="intune-enroll">Intune: Enroll<a class="headerlink" href="#intune-enroll" title="Permanent link">&para;</a></h2>
-<p>De student kan:
-- Een virtuele machine Windows 11 inschrijven in Intune tijdens de Windows OOBE met behulp van Autopilot.</p>
+<p>De student kan:</p>
+<ul>
+<li>Een virtuele machine Windows 11 inschrijven in Intune tijdens de Windows OOBE met behulp van Autopilot.</li>
+</ul>
 <h2 id="intune-configure">Intune: Configure<a class="headerlink" href="#intune-configure" title="Permanent link">&para;</a></h2>
-<p>De student kan:
-- configuratieprofielen toevoegen en toewijzen aan toestellen.
-- via Intune Microsoft Store-apps, MSI- en EXE-bestanden installeren op een Windows 11-virtuele machine.
-- Microsoft Store-apps, MSI- en EXE-bestanden beschikbaar stellen in de Company Portal.
-- raadplegen op welke toestellen een configuratieprofiel is toegepast.
-- raadplegen op welke toestellen een applicatie is geïnstalleerd.
-- een apparaat in Intune synchroniseren om de meest recente beleidsregels en acties op te halen.
-- een apparaat handmatig synchroniseren vanuit de Windows 11-virtuele machine, via de Windows Settings of door de Microsoft Intune Management Extension te herstarten.
-- De MDM instellingen aanpassen om te bepalen welke gebruikers toestellen mogen inschrijven.
-- Een deployment profile (implementatieprofiel) toepassen om de Windows OOBE te automatiseren</p>
+<p>De student kan:</p>
+<ul>
+<li>configuratieprofielen toevoegen en toewijzen aan toestellen.</li>
+<li>via Intune Microsoft Store-apps, MSI- en EXE-bestanden installeren op een Windows 11-virtuele machine.</li>
+<li>Microsoft Store-apps, MSI- en EXE-bestanden beschikbaar stellen in de Company Portal.</li>
+<li>raadplegen op welke toestellen een configuratieprofiel is toegepast.</li>
+<li>raadplegen op welke toestellen een applicatie is geïnstalleerd.</li>
+<li>een apparaat in Intune synchroniseren om de meest recente beleidsregels en acties op te halen.</li>
+<li>een apparaat handmatig synchroniseren vanuit de Windows 11-virtuele machine, via de Windows Settings of door de Microsoft Intune Management Extension te herstarten.</li>
+<li>De MDM instellingen aanpassen om te bepalen welke gebruikers toestellen mogen inschrijven.</li>
+<li>Een deployment profile (implementatieprofiel) toepassen om de Windows OOBE te automatiseren</li>
+</ul>
 <h2 id="intune-protect">Intune: Protect<a class="headerlink" href="#intune-protect" title="Permanent link">&para;</a></h2>
-<p>De student kan:
-- Een bepaalde Entra gebruiker als lokale administrator configureren voor een groep van virtuele machines
-- Windows LAPS configureren
-- Een nieuwe tijdelijk lokaal administrator wachtwoord genereren en opvragen in Intune.
-- zich aanmelden met een lokale administrator op een Windows 11 virtuele machine.</p>
+<p>De student kan:</p>
+<ul>
+<li>Een bepaalde Entra gebruiker als lokale administrator configureren voor een groep van virtuele machines</li>
+<li>Windows LAPS configureren</li>
+<li>Een nieuwe tijdelijk lokaal administrator wachtwoord genereren en opvragen in Intune.</li>
+<li>zich aanmelden met een lokale administrator op een Windows 11 virtuele machine.</li>
+</ul>
 <h2 id="intune-retire">Intune: Retire<a class="headerlink" href="#intune-retire" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Apparaten verwijderen door te wissen, buiten gebruik te stellen of handmatig uit te schrijven</li>
@@ -2623,9 +2637,9 @@
       <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
       
       
-        <script src="../../javascripts/navtoggle.js"></script>
+        <script src="../../javascripts/navtoggle-v4.js"></script>
       
-        <script src="../../javascripts/videobar.js"></script>
+        <script src="../../javascripts/videobar-v4.js"></script>
       
     
   </body>
