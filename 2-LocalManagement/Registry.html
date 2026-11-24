@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registry Editor – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class="active"><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+<ul class="onpage">
+<li class="l1"><a href="#registry-editor">Registry Editor</a></li>
+<li class="l2"><a href="#registry-editor-openen">Registry Editor openen</a></li>
+<li class="l2"><a href="#overzicht-van-de-interface">Overzicht van de interface</a></li>
+<li class="l2"><a href="#veelgebruikte-acties">Veelgebruikte acties</a></li>
+<li class="l3"><a href="#keys-beheren">Keys beheren</a></li>
+<li class="l3"><a href="#values-beheren">Values beheren</a></li>
+<li class="l3"><a href="#exporteren-en-importeren">Exporteren en importeren</a></li>
+<li class="l2"><a href="#praktisch-voorbeeld-een-programma-automatisch-starten-bij-het-aanmelden">Praktisch voorbeeld: een programma automatisch starten bij het aanmelden</a></li>
+<li class="l3"><a href="#doel">Doel</a></li>
+<li class="l3"><a href="#stap-1-open-de-registry-editor">Stap 1: Open de Registry Editor</a></li>
+<li class="l3"><a href="#stap-2-ga-naar-de-juiste-locatie">Stap 2: Ga naar de juiste locatie</a></li>
+<li class="l3"><a href="#stap-3-een-nieuwe-value-aanmaken">Stap 3: Een nieuwe value aanmaken</a></li>
+<li class="l3"><a href="#stap-4-het-pad-naar-het-programma-instellen">Stap 4: Het pad naar het programma instellen</a></li>
+<li class="l3"><a href="#resultaat">Resultaat</a></li>
+<li class="l3"><a href="#extra-uitleg">Extra uitleg</a></li>
+</ul>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="registry-editor">Registry Editor</h1>
+<p>De tool waarmee je de Registry beheert, heet:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>regedit
+</code></pre></div>
+<h2 id="registry-editor-openen">Registry Editor openen</h2>
+<ol>
+<li>Druk op <strong>Win + R</strong></li>
+<li>Typ: <code>regedit</code></li>
+<li>Druk op Enter</li>
+<li>Bevestig indien nodig de toegang als administrator</li>
+</ol>
+<h2 id="overzicht-van-de-interface">Overzicht van de interface</h2>
+<ul>
+<li><strong>Linkerkant</strong> → boomstructuur met keys en mappen</li>
+<li><strong>Rechterkant</strong> → values binnen een geselecteerde key</li>
+</ul>
+<p><img src="assets/Registry.png" alt="Registry" loading="lazy" /></p>
+<h2 id="veelgebruikte-acties">Veelgebruikte acties</h2>
+<h3 id="keys-beheren">Keys beheren</h3>
+<ul>
+<li>Aanmaken: rechtsklik → New → Key</li>
+<li>Verwijderen: rechtsklik → Delete</li>
+</ul>
+<h3 id="values-beheren">Values beheren</h3>
+<ul>
+<li>Aanmaken: rechtsklik → New → kies het type</li>
+<li>Bewerken: dubbelklik op de value</li>
+<li>Hernoemen: rechtsklik → Rename</li>
+</ul>
+<h3 id="exporteren-en-importeren">Exporteren en importeren</h3>
+<ul>
+<li>Exporteren: rechtsklik op een key → Export</li>
+<li>Importeren: dubbelklik op het <code>.reg</code>-bestand of File → Import</li>
+</ul>
+<hr />
+<h2 id="praktisch-voorbeeld-een-programma-automatisch-starten-bij-het-aanmelden">Praktisch voorbeeld: een programma automatisch starten bij het aanmelden</h2>
+<h3 id="doel">Doel</h3>
+<p>In dit voorbeeld leer je hoe je ervoor zorgt dat een programma automatisch start wanneer een gebruiker zich aanmeldt bij Windows.</p>
+<p>👉 We gebruiken <strong>Notepad</strong> als voorbeeld.</p>
+<hr />
+<h3 id="stap-1-open-de-registry-editor">Stap 1: Open de Registry Editor</h3>
+<ol>
+<li>Druk op <strong>Win + R</strong> op je toetsenbord</li>
+<li>Typ <code>regedit</code></li>
+<li>Druk op Enter</li>
+<li>Klik op <strong>Yes</strong> wanneer erom gevraagd wordt (administratormachtiging)</li>
+</ol>
+<p>📌 De Registry Editor wordt geopend.</p>
+<hr />
+<h3 id="stap-2-ga-naar-de-juiste-locatie">Stap 2: Ga naar de juiste locatie</h3>
+<p>Navigeer naar het volgende pad:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+</code></pre></div>
+<p>📌 Op deze locatie staan programma's die automatisch starten wanneer de gebruiker aanmeldt.</p>
+<hr />
+<h3 id="stap-3-een-nieuwe-value-aanmaken">Stap 3: Een nieuwe value aanmaken</h3>
+<ol>
+<li>
+<p>Klik met de rechtermuisknop in het rechterpaneel</p>
+</li>
+<li>
+<p>Kies <strong>New → String Value</strong></p>
+</li>
+<li>
+<p>Geef ze de naam:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>Notepad
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h3 id="stap-4-het-pad-naar-het-programma-instellen">Stap 4: Het pad naar het programma instellen</h3>
+<ol>
+<li>Dubbelklik op de nieuwe value</li>
+<li>Geef het volgende pad in:</li>
+</ol>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>C:\Windows\System32\notepad.exe
+</code></pre></div>
+<ol start="3">
+<li>Klik op <strong>OK</strong></li>
+</ol>
+<p>📌 Hiermee vertel je Windows welk programma gestart moet worden.</p>
+<hr />
+<h3 id="resultaat">Resultaat</h3>
+<p>✅ Telkens wanneer de gebruiker zich aanmeldt, <strong>start Notepad automatisch</strong>.</p>
+<hr />
+<h3 id="extra-uitleg">Extra uitleg</h3>
+<ul>
+<li>De <strong>Run key</strong> wordt gebruikt om programma's te starten bij het aanmelden</li>
+<li>Door <strong>HKEY_CURRENT_USER</strong> te gebruiken, werkt het enkel voor de huidige gebruiker</li>
+<li>Je kan op dezelfde manier meerdere programma's toevoegen</li>
+</ul>
+<p>⚠️ Let op: te veel opstartprogramma's kunnen het systeem vertragen.</p>
+<hr />
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../2-LocalManagement/NTFS.html"><small>← Vorige</small><span>NTFS-machtigingen instellen</span></a>
+    <a class="next" href="../3-CommandLine/goals.html"><small>Volgende →</small><span>Doelstellingen</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

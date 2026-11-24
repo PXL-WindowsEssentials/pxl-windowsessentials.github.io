@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theorie: PowerShell-basis – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class="active"><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+<ul class="onpage">
+<li class="l1"><a href="#interfaces">Interfaces</a></li>
+<li class="l2"><a href="#command-line-interface">Command Line Interface</a></li>
+<li class="l3"><a href="#powershell-starten">PowerShell starten</a></li>
+<li class="l3"><a href="#standaardgebruiker-vs-administrator">Standaardgebruiker vs administrator</a></li>
+<li class="l3"><a href="#cmdlets">Cmdlets</a></li>
+<li class="l3"><a href="#zoeken-en-help">Zoeken en help</a></li>
+<li class="l3"><a href="#alias">Alias</a></li>
+<li class="l3"><a href="#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="interfaces">Interfaces</h1>
+<p>Alle moderne besturingssystemen bieden twee methodes om met het besturingssysteem zelf te werken:</p>
+<ul>
+<li><strong>GUI</strong>: <strong>G</strong>raphical <strong>U</strong>ser <strong>I</strong>nterface</li>
+<li><strong>CLI</strong>: <strong>C</strong>ommand <strong>L</strong>ine <strong>I</strong>nterface</li>
+</ul>
+<p>In dit hoofdstuk richten we ons op de tweede van deze twee belangrijkste interactiemethodes.</p>
+<h2 id="command-line-interface">Command Line Interface</h2>
+<p>Hoewel de GUI een van de meest gebruikte interactiemethodes voor Windows is, geeft de CLI (eens je ze onder de knie hebt) je diepgaandere controle over het besturingssysteem zelf. Met de CLI kan je onder meer uitvoeren:</p>
+<ul>
+<li>Bestandsbeheer</li>
+<li>Systeemconfiguratie</li>
+<li>Gebruikersbeheer</li>
+<li>Diagnostiek</li>
+<li>Applicatiebeheer</li>
+<li>Beveiligingsbeheer</li>
+<li>...</li>
+</ul>
+<p>Als systeem- en netwerkengineer is het noodzakelijk dat je de CLI kan gebruiken, zeker voor Windows en alle cloudgerelateerde services.</p>
+<p>De eerste versie van de Microsoft-besturingssystemen, MS-DOS (en alle andere besturingssystemen in het begin van het computertijdperk), was uitsluitend tekstgebaseerd, waardoor de CLI de enige beschikbare interactiemethode was. Vanaf Windows 1.0 ontwikkelde Microsoft de eerste GUI, die je kon uitvoeren nadat je de specifieke GUI-applicatie had gestart. Tot Windows XP steunden de Windows-versies sterk op de kernfuncties van MS-DOS en draaiden ze dus bovenop de CLI van MS-DOS.</p>
+<p>Vanaf Windows XP ontwikkelde Microsoft het besturingssysteem van de grond af opnieuw en werd de GUI de belangrijkste interactiemethode van het besturingssysteem. De GUI draaide niet langer bovenop de CLI, maar was een integraal onderdeel van het besturingssysteem. Omdat de meeste power users echter gewend waren aan de CLI, hield Microsoft de CLI in leven via de applicatie Windows Command Prompt. Zelfs in de moderne versie Windows 11 is Command Prompt nog altijd beschikbaar.</p>
+<p>In het begin van de jaren 2000 raakte Command Prompt echter achterop en werd de nood aan een krachtigere en flexibelere CLI steeds groter. Om aan die behoefte te voldoen, ontwikkelde Microsoft PowerShell. Dit is een objectgeoriënteerde shell met geavanceerdere functionaliteit en de mainstream-shell voor alle services van Microsoft.</p>
+<p>In de rest van deze cursus gebruiken we enkel PowerShell voor CLI-interactie met Windows.</p>
+<h3 id="powershell-starten">PowerShell starten</h3>
+<p>Je kan PowerShell op drie manieren starten:</p>
+<ul>
+<li>Via de PowerShell-terminalapp</li>
+<li>Via de Terminal-app</li>
+<li>Via Visual Studio Code</li>
+</ul>
+<p>De meeste gebruikers geven de voorkeur aan de Terminal-app omdat je er meerdere tabbladen kan gebruiken. Zo kan je meerdere cmdlets naast elkaar uitvoeren zonder te wachten tot de vorige cmdlet een resultaat geeft.</p>
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/Powershell.mp4" type="video/mp4">
+</video>
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/tabs.mp4" type="video/mp4">
+</video>
+<h3 id="standaardgebruiker-vs-administrator">Standaardgebruiker vs administrator</h3>
+<p>Standaard opent de PowerShell-shell (of je nu de shell opende via de PowerShell-terminalapp of via de Terminal-app) met een standaardgebruikersprofiel. Deze shell draait onder je huidige gebruiker en laat dus alle acties toe volgens je rechten binnen het besturingssysteem. Zodra je echter cmdlets moet uitvoeren waarvoor administratorrechten nodig zijn, moet je PowerShell starten onder het administratorprofiel. Zelfs als je gebruiker lid is van de groep Administrators, moet je PowerShell nog altijd onder het administratorprofiel openen voor administratieve acties.</p>
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/pwsadm.mp4" type="video/mp4">
+</video>
+<h3 id="cmdlets">Cmdlets</h3>
+<p>Wanneer je in PowerShell een actie uitvoert, gebeurt dat altijd via een cmdlet. Een cmdlet is het commando of de actie die je in PowerShell uitvoert. Alle cmdlets zijn op dezelfde manier opgebouwd: <code>Verb-Noun</code></p>
+<p><img src="assets/cmdlet.jpg" alt="VerbNoun" loading="lazy" /></p>
+<p>Het verb (werkwoord) is altijd de actie die we willen uitvoeren en het noun (zelfstandig naamwoord) geeft aan op welk onderdeel we de actie willen uitvoeren.</p>
+<p>De volgende tabel geeft een overzicht van enkele veelgebruikte verbs in PowerShell.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Doel</th>
+<th>Voorbeeldcmdlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get</td>
+<td>Informatie opvragen</td>
+<td>Get-Process</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Een bewerking of proces starten</td>
+<td>Start-Service</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>Een proces of service beëindigen of stoppen</td>
+<td>Stop-Process</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>Gebruikersinvoer opvragen of lezen</td>
+<td>Read-Host</td>
+</tr>
+<tr>
+<td>Write</td>
+<td>Tekst of gegevens uitvoeren</td>
+<td>Write-Output</td>
+</tr>
+<tr>
+<td>New</td>
+<td>Nieuwe items of objecten aanmaken</td>
+<td>New-Item</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.4" class="ext" target="_blank" rel="noopener">Approved Verbs for PowerShell Commands - Microsoft Learn</a></p>
+<h3 id="zoeken-en-help">Zoeken en help</h3>
+<p>Wanneer je PowerShell voor het eerst gebruikt, kan het ontmoedigend zijn. Met meer dan 800 standaardcmdlets in PowerShell is het een titanenwerk om ze allemaal van buiten te kennen. Zelfs ervaren PowerShell-gebruikers kennen niet alle commando's van buiten. Gelukkig heeft Microsoft twee speciaal ontworpen cmdlets om je te helpen de juiste cmdlet voor je taak te vinden.</p>
+<h4 id="get-command">Get-Command</h4>
+<p>De eerste cmdlet is <strong>Get-Command</strong>.
+Met deze cmdlet kan je zoeken in de databank van alle ingeschakelde cmdlets.</p>
+<p>Bijvoorbeeld:</p>
+<ul>
+<li><code>Get-Command *process*</code> geeft een lijst van alle PowerShell-cmdlets waarin het woord process voorkomt.</li>
+<li><code>Get-Command *user</code> geeft een lijst van alle PowerShell-cmdlets die eindigen op user.</li>
+<li><code>Get-Command get-File*</code> geeft een lijst van alle PowerShell-cmdlets die beginnen met get-file.</li>
+</ul>
+<p>De oplettende studenten hebben gemerkt dat de plaatsing van de <code>*</code> belangrijk is, want het resultaat verandert naargelang de plaats van de <code>*</code>:</p>
+<ul>
+<li><code>search*</code>: alle cmdlets die beginnen met de zoekterm.</li>
+<li><code>*search</code>: alle cmdlets die eindigen op de zoekterm.</li>
+<li><code>*search*</code>: alle cmdlets waarin de zoekterm voorkomt.</li>
+</ul>
+<h4 id="get-help">Get-Help</h4>
+<p>Nu we het commando hebben gevonden dat we zochten, moeten we nog onthouden wat het commando doet en hoe we het moeten gebruiken. Daarvoor kunnen we de cmdlet <code>Get-Help</code> gebruiken. Deze cmdlet geeft een gedetailleerde uitleg over wat de cmdlet doet en hoe we hem moeten gebruiken. Als we de juiste extra parameters meegeven, krijgen we zelfs nog meer details.</p>
+<ul>
+<li><code>Get-Help Get-Service</code> opent een samengevatte helppagina van de cmdlet Get-Service</li>
+<li><code>Get-Help Get-Service -Full</code> opent de volledige helppagina van de cmdlet Get-Service</li>
+<li><code>Get-Help Get-Service -Online</code> opent de volledige online helppagina van de cmdlet Get-Service</li>
+<li><code>Get-Help Get-Service -Examples</code> opent een helppagina met enkele veelvoorkomende voorbeelden</li>
+<li><code>Get-Help Get-Service -Parameter *</code> opent een helppagina met een overzicht van alle beschikbare parameters voor de cmdlet Get-Service (meer details over parameters volgen later in deze cursus)</li>
+</ul>
+<h3 id="alias">Alias</h3>
+<p>Door de <code>Verb-Noun</code>-syntax kunnen PowerShell-cmdlets lang worden. Bijvoorbeeld: <code>Enable-MicrosoftUpdateServiceManagerClient</code>. Dergelijke cmdlets onthouden en intypen in de terminal kan heel omslachtig zijn. Daarom introduceerde Microsoft het concept van aliassen. Dit zijn afkortingen van de cmdlet of kortere cmdlets. De aliassen zijn korter en dus makkelijker te onthouden. Om de juiste alias van een bepaalde cmdlet te vinden, gebruik je de cmdlet <code>Get-Alias</code>.</p>
+<p>Bijvoorbeeld:</p>
+<ul>
+<li><code>Get-Alias *cd*</code>: geeft een overzicht van alle bekende aliassen waarin 'cd' voorkomt</li>
+<li><code>Get-Alias -Definition Stop-Process</code>: geeft een overzicht van alle bekende aliassen voor de cmdlet <code>Stop-Process</code>.</li>
+</ul>
+<p>De oplettende student heeft gemerkt dat we hetzelfde zoekprincipe met de <code>*</code> gebruiken als bij de cmdlet <code>Get-Command</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<p>Elke cmdlet bestaat uit de cmdlet zelf en extra opties die beschikbaar zijn voor die specifieke cmdlet. Deze opties noemen we <strong>parameters</strong>. Alle parameters roep je aan met het teken <strong>-</strong>, gevolgd door de eigenlijke parameter en, indien nodig, een waarde voor de parameter.</p>
+<p>Bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>Get-Process –Name *chrome*
+</code></pre></div>
+<p>In dit voorbeeld vragen we PowerShell om een overzicht van alle huidige processen waarvan de naam <code>chrome</code> bevat.</p>
+<p>Elke cmdlet heeft meerdere parameters die je in dezelfde cmdlet naast elkaar kan gebruiken.</p>
+<p>Bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>Get-ChildItem -File -Recurse -Name *test*
+</code></pre></div>
+<p>Zoals eerder vermeld is het een titanenwerk om alle cmdlets van buiten te leren, laat staan alle parameters van elke cmdlet. <code>Get-Help cmdlet -Parameter *</code> geeft je een overzicht van alle parameters en hoe je ze correct gebruikt.</p>
+<h4 id="parameters-en-volgorde">Parameters en volgorde</h4>
+<p>Wanneer we leren werken met parameters, is het best om altijd de volledige parameternamen te schrijven. Zo blijven je commando's leesbaar en voorkom je fouten.</p>
+<p>Cmdlets ondersteunen echter ook positioneel en standaardgedrag.</p>
+<p>Deze twee commando's zijn bijvoorbeeld gelijkwaardig:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Get-Service</span> <span class="tok-n">-Name</span> <span class="tok-n">Spooler</span>
+<span class="tok-nb">Get-Service</span> <span class="tok-n">Spooler</span>
+</code></pre></div>
+<p>Een ander voorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Get-ChildItem</span> <span class="tok-n">-Path</span> <span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">Windows</span>
+<span class="tok-nb">Get-ChildItem</span> <span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">Windows</span>
+</code></pre></div>
+<p>In beide voorbeelden zie je dat het niet nodig is om altijd de volledige parameternaam te schrijven. We moeten echter voorzichtig zijn, want niet alle parameternamen mogen weggelaten worden: elke parameter heeft metadata die bepaalt hoe deze parameter gebruikt kan worden.
+Deze gegevens staan in de helppagina's:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Get-Help</span> <span class="tok-nb">Get-ChildItem</span> <span class="tok-n">-Parameter</span> <span class="tok-n">Path</span>
+<span class="tok-nb">Get-Help</span> <span class="tok-nb">Get-ChildItem</span> <span class="tok-n">-Parameter</span> <span class="tok-p">*</span>
+</code></pre></div>
+<p>De uitvoer bevat metadata zoals:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>Required?                    false|true
+Position?                    named|number
+Default value                true|false
+Accept pipeline input?       true|false
+Accept wildcard characters?  true|false
+</code></pre></div>
+<p>Betekenis van deze velden:</p>
+<ul>
+<li><code>Required?</code>: moet deze parameter opgegeven worden?</li>
+<li><code>Position?</code>: kan hij op volgorde doorgegeven worden (<code>0</code>, <code>1</code>, ...) of moet hij bij naam genoemd worden?</li>
+<li><code>Default value</code>: is er een terugvalwaarde wanneer de parameter weggelaten wordt?</li>
+<li><code>Accept pipeline input?</code>: kunnen waarden uit de pipeline komen?</li>
+<li><code>Accept wildcard characters?</code>: ondersteunt hij patronen zoals <code>*</code> en <code>?</code></li>
+</ul>
+<p>Voorlopig zijn we enkel geïnteresseerd in de eerste drie metadata.</p>
+<p><strong>Required?</strong></p>
+<p>Elke parameter die required is, heeft een waarde nodig wanneer je de cmdlet uitvoert. Geef je de parameter of de waarde niet op, dan vraagt PowerShell ernaar tijdens het uitvoeren van de cmdlet.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span> <span class="tok-nb">copy-item</span>
+
+<span class="tok-n">cmdlet</span> <span class="tok-nb">Copy-Item</span> <span class="tok-n">at</span> <span class="tok-n">command</span> <span class="tok-n">pipeline</span> <span class="tok-k">position</span> <span class="tok-n">1</span>
+<span class="tok-n">Supply</span> <span class="tok-n">values</span> <span class="tok-k">for</span> <span class="tok-n">the</span> <span class="tok-n">following</span> <span class="tok-n">parameters</span><span class="tok-p">:</span>
+<span class="tok-n">Path</span><span class="tok-p">[</span><span class="tok-n">0</span><span class="tok-p">]:</span>
+<span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span>
+</code></pre></div>
+<p><strong>Position?</strong></p>
+<p><code>Position</code> vertelt PowerShell waar een parameterwaarde in het commando mag staan.</p>
+<ul>
+<li><code>named</code> betekent dat je de parameternaam moet schrijven (bijvoorbeeld <code>-Path</code>).</li>
+<li>een getal (<code>0</code>, <code>1</code>, ...) betekent dat je de parameternaam mag weglaten en waarden op volgorde mag doorgeven.</li>
+</ul>
+<p>Je kan dit voor <code>Copy-Item</code> nagaan met:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Get-Help</span> <span class="tok-nb">Copy-Item</span> <span class="tok-n">-Parameter</span> <span class="tok-n">Path</span>
+<span class="tok-nb">Get-Help</span> <span class="tok-nb">Copy-Item</span> <span class="tok-n">-Parameter</span> <span class="tok-n">Destination</span>
+</code></pre></div>
+<p>Bij <code>Copy-Item</code> is <code>Path</code> positioneel <code>0</code> en <code>Destination</code> positioneel <code>1</code>.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span> <span class="tok-nb">get-help</span> <span class="tok-nb">copy-item</span> <span class="tok-n">-Parameter</span> <span class="tok-n">Path</span>
+
+<span class="tok-n">-Path</span> <span class="tok-p">&lt;</span><span class="tok-n">System</span><span class="tok-p">.</span><span class="tok-n">String</span><span class="tok-p">[]&gt;</span>
+    <span class="tok-n">Specifies</span><span class="tok-p">,</span> <span class="tok-n">as</span> <span class="tok-n">a</span> <span class="tok-n">string</span> <span class="tok-n">array</span><span class="tok-p">,</span> <span class="tok-n">the</span> <span class="tok-n">path</span> <span class="tok-n">to</span> <span class="tok-n">the</span> <span class="tok-n">items</span> <span class="tok-n">to</span> <span class="tok-n">copy</span><span class="tok-p">.</span> <span class="tok-n">Wildcard</span> <span class="tok-n">characters</span> <span class="tok-n">are</span> <span class="tok-n">permitted</span><span class="tok-p">.</span>
+
+    <span class="tok-n">Required</span><span class="tok-p">?</span>                    <span class="tok-n">true</span>
+    <span class="tok-k">Position</span><span class="tok-p">?</span>                    <span class="tok-n">0</span>
+    <span class="tok-k">Default</span> <span class="tok-n">value</span>                <span class="tok-n">None</span>
+    <span class="tok-n">Accept</span> <span class="tok-n">pipeline</span> <span class="tok-n">input</span><span class="tok-p">?</span>       <span class="tok-n">True</span> <span class="tok-p">(</span><span class="tok-n">ByPropertyName</span><span class="tok-p">,</span> <span class="tok-n">ByValue</span><span class="tok-p">)</span>
+    <span class="tok-n">Accept</span> <span class="tok-n">wildcard</span> <span class="tok-n">characters</span><span class="tok-p">?</span>  <span class="tok-n">true</span>
+
+<span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span> <span class="tok-nb">get-help</span> <span class="tok-nb">copy-item</span> <span class="tok-n">-Parameter</span> <span class="tok-n">Destination</span>
+
+<span class="tok-n">-Destination</span> <span class="tok-p">&lt;</span><span class="tok-n">System</span><span class="tok-p">.</span><span class="tok-n">String</span><span class="tok-p">&gt;</span>
+    <span class="tok-n">Specifies</span> <span class="tok-n">the</span> <span class="tok-n">path</span> <span class="tok-n">to</span> <span class="tok-n">the</span> <span class="tok-n">new</span> <span class="tok-n">location</span><span class="tok-p">.</span> <span class="tok-n">The</span> <span class="tok-k">default</span> <span class="tok-n">is</span> <span class="tok-n">the</span> <span class="tok-n">current</span> <span class="tok-n">directory</span><span class="tok-p">.</span>
+
+    <span class="tok-n">To</span> <span class="tok-n">rename</span> <span class="tok-n">the</span> <span class="tok-n">item</span> <span class="tok-n">being</span> <span class="tok-n">copied</span><span class="tok-p">,</span> <span class="tok-n">specify</span> <span class="tok-n">a</span> <span class="tok-n">new</span> <span class="tok-n">name</span> <span class="tok-k">in</span> <span class="tok-n">the</span> <span class="tok-n">value</span> <span class="tok-n">of</span> <span class="tok-n">the</span> <span class="tok-n">Destination</span> <span class="tok-k">parameter</span><span class="tok-p">.</span>
+
+    <span class="tok-n">Required</span><span class="tok-p">?</span>                    <span class="tok-n">false</span>
+    <span class="tok-k">Position</span><span class="tok-p">?</span>                    <span class="tok-n">1</span>
+    <span class="tok-k">Default</span> <span class="tok-n">value</span>                <span class="tok-n">Current</span> <span class="tok-n">directory</span>
+    <span class="tok-n">Accept</span> <span class="tok-n">pipeline</span> <span class="tok-n">input</span><span class="tok-p">?</span>       <span class="tok-n">True</span> <span class="tok-p">(</span><span class="tok-n">ByPropertyName</span><span class="tok-p">)</span>
+    <span class="tok-n">Accept</span> <span class="tok-n">wildcard</span> <span class="tok-n">characters</span><span class="tok-p">?</span>  <span class="tok-n">false</span>
+
+<span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span>
+</code></pre></div>
+<p>Deze twee commando's zijn gelijkwaardig:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Copy-Item</span> <span class="tok-n">-Path</span> <span class="tok-p">.\</span><span class="tok-n">notes</span><span class="tok-p">.</span><span class="tok-n">txt</span> <span class="tok-n">-Destination</span> <span class="tok-p">.\</span><span class="tok-n">backup</span><span class="tok-p">\</span><span class="tok-n">notes</span><span class="tok-p">.</span><span class="tok-n">txt</span>
+<span class="tok-nb">Copy-Item</span> <span class="tok-p">.\</span><span class="tok-n">notes</span><span class="tok-p">.</span><span class="tok-n">txt</span> <span class="tok-p">.\</span><span class="tok-n">backup</span><span class="tok-p">\</span><span class="tok-n">notes</span><span class="tok-p">.</span><span class="tok-n">txt</span>
+</code></pre></div>
+<p>Omdat PowerShell op positie koppelt:</p>
+<ul>
+<li>eerste waarde -&gt; <code>Path</code> (positie 0)</li>
+<li>tweede waarde -&gt; <code>Destination</code> (positie 1)</li>
+</ul>
+<p>Als je de volgorde omkeert, verwijst je kopieerbewerking naar de verkeerde bron/bestemming.</p>
+<p><strong>Default</strong></p>
+<p>Als je sommige parameters weglaat, kan PowerShell standaardwaarden gebruiken. Voorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Get-ChildItem</span>
+</code></pre></div>
+<p>Zonder <code>-Path</code> gebruikt het de huidige locatie.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span> <span class="tok-nb">get-help</span> <span class="tok-nb">Get-ChildItem</span> <span class="tok-n">-Parameter</span> <span class="tok-n">path</span>
+
+<span class="tok-n">-Path</span> <span class="tok-p">&lt;</span><span class="tok-n">System</span><span class="tok-p">.</span><span class="tok-n">String</span><span class="tok-p">[]&gt;</span>
+    <span class="tok-n">Specifies</span> <span class="tok-n">a</span> <span class="tok-n">path</span> <span class="tok-n">to</span> <span class="tok-n">one</span> <span class="tok-n">or</span> <span class="tok-n">more</span> <span class="tok-n">locations</span><span class="tok-p">.</span> <span class="tok-n">Wildcards</span> <span class="tok-n">are</span> <span class="tok-n">accepted</span><span class="tok-p">.</span> <span class="tok-n">The</span> <span class="tok-k">default</span> <span class="tok-n">location</span> <span class="tok-n">is</span> <span class="tok-n">the</span> <span class="tok-n">current</span> <span class="tok-n">directory</span> <span class="tok-p">(`</span>
+    <span class="tok-p">.`).</span>
+
+    <span class="tok-n">Required</span><span class="tok-p">?</span>                    <span class="tok-n">false</span>
+    <span class="tok-k">Position</span><span class="tok-p">?</span>                    <span class="tok-n">0</span>
+    <span class="tok-k">Default</span> <span class="tok-n">value</span>                <span class="tok-n">Current</span> <span class="tok-n">directory</span>
+    <span class="tok-n">Accept</span> <span class="tok-n">pipeline</span> <span class="tok-n">input</span><span class="tok-p">?</span>       <span class="tok-n">True</span> <span class="tok-p">(</span><span class="tok-n">ByPropertyName</span><span class="tok-p">,</span> <span class="tok-n">ByValue</span><span class="tok-p">)</span>
+    <span class="tok-n">Accept</span> <span class="tok-n">wildcard</span> <span class="tok-n">characters</span><span class="tok-p">?</span>  <span class="tok-n">true</span>
+
+<span class="tok-nb">PS </span><span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">pws</span><span class="tok-p">&gt;</span>
+</code></pre></div>
+<p><strong>Switch</strong></p>
+<p>Switch-parameters zijn parameters zonder waarde, bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Get-ChildItem</span> <span class="tok-n">-Recurse</span> <span class="tok-n">-Force</span>
+</code></pre></div>
+<p>Zowel <code>-Recurse</code> als <code>-Force</code> zijn ofwel aanwezig (<code>$true</code>) ofwel niet aanwezig (<code>$false</code>).</p>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../3-CommandLine/goals.html"><small>← Vorige</small><span>Doelstellingen</span></a>
+    <a class="next" href="../3-CommandLine/NavigationCreation.html"><small>Volgende →</small><span>Navigeren en bestandsbeheer</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

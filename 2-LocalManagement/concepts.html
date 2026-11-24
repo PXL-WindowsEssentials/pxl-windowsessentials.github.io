@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theorie: lokaal beheer – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class="active"><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+<ul class="onpage">
+<li class="l1"><a href="#lokaal-beheer">Lokaal beheer</a></li>
+<li class="l2"><a href="#1-lokale-gebruikers-en-groepen">1. Lokale gebruikers en groepen</a></li>
+<li class="l3"><a href="#1-1-lokale-groepen">1.1. Lokale groepen</a></li>
+<li class="l3"><a href="#1-2-lokale-gebruikers">1.2. Lokale gebruikers</a></li>
+<li class="l2"><a href="#2-windows-settings">2. Windows Settings</a></li>
+<li class="l2"><a href="#3-task-manager-service-manager">3. Task Manager - Service Manager</a></li>
+<li class="l3"><a href="#3-1-applicatie-vs-service">3.1. Applicatie vs service</a></li>
+<li class="l3"><a href="#3-2-task-manager">3.2. Task Manager</a></li>
+<li class="l3"><a href="#3-3-management-console-services">3.3. Management Console: Services</a></li>
+<li class="l2"><a href="#4-windows-updates">4. Windows Updates</a></li>
+<li class="l2"><a href="#5-event-viewer">5. Event Viewer</a></li>
+<li class="l2"><a href="#6-bestandssystemen-ntfs">6. Bestandssystemen: NTFS</a></li>
+<li class="l3"><a href="#6-1-wat-zijn-ntfs-machtigingen">6.1. Wat zijn NTFS-machtigingen</a></li>
+<li class="l3"><a href="#6-2-basis-ntfs-machtigingen">6.2. Basis-NTFS-machtigingen</a></li>
+<li class="l2"><a href="#7-windows-registry">7. Windows Registry</a></li>
+<li class="l3"><a href="#7-1-wat-is-de-registry">7.1. Wat is de Registry</a></li>
+<li class="l3"><a href="#7-2-structuur-van-de-registry">7.2. Structuur van de Registry</a></li>
+</ul>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="lokaal-beheer">Lokaal beheer</h1>
+<h2 id="1-lokale-gebruikers-en-groepen">1. Lokale gebruikers en groepen</h2>
+<p>Security Identifiers (SID's) zijn unieke alfanumerieke reeksen die gebruikt worden om gebruikers, groepen en security principals te identificeren. Elke gebruiker en elke groep krijgt een unieke SID toegewezen.</p>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers" class="ext" target="_blank" rel="noopener">Microsoft: Security Identifiers</a></p>
+<h3 id="1-1-lokale-groepen">1.1. Lokale groepen</h3>
+<p>Elke Windows-installatie wordt geleverd met een aantal standaardgroepen. De meest gebruikte groepen zijn <strong>Administrators</strong>, <strong>Users</strong> en <strong>Guests</strong>. Door gebruikers aan een bepaalde groep toe te voegen, krijgen ze automatisch de machtigingen van die groep.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Groep</th>
+<th style="text-align:left">Beschrijving</th>
+<th style="text-align:right">SID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Administrators</strong></td>
+<td style="text-align:left">De ingebouwde groep Administrators heeft volledige controle over de computer, waardoor de leden systeeminstellingen en bestanden kunnen beheren en andere gebruikersaccounts kunnen configureren en beheren. Leden van deze groep hebben onbeperkte toegang en rechten om vrijwel elke taak op het systeem uit te voeren.</td>
+<td style="text-align:right">S-1-5-32-544</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td style="text-align:left">De ingebouwde groep Users bestaat uit standaardgebruikers met beperkte rechten, bedoeld om dagelijkse taken uit te voeren zonder systeeminstellingen of kritieke bestanden te kunnen wijzigen. Leden van deze groep hebben toegang tot hun eigen mappen en kunnen basistoepassingen uitvoeren, maar kunnen geen systeembrede wijzigingen aanbrengen.</td>
+<td style="text-align:right">S-1-5-32-545</td>
+</tr>
+<tr>
+<td><strong>Guests</strong></td>
+<td style="text-align:left">De ingebouwde groep Guests is bedoeld voor tijdelijke of occasionele toegang tot de computer, met zeer beperkte rechten. Leden van deze groep hebben minimale machtigingen, kunnen enkel hun eigen gegevens beheren en hebben beperkte interactie met het systeem.</td>
+<td style="text-align:right">S-1-5-32-546</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="1-2-lokale-gebruikers">1.2. Lokale gebruikers</h3>
+<p>Elke standaard Windows-installatie bevat verschillende ingebouwde gebruikersaccounts, maar die zijn standaard uitgeschakeld.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Gebruiker</th>
+<th style="text-align:left">Beschrijving</th>
+<th style="text-align:right">SID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Administrator</strong></td>
+<td style="text-align:left">De standaard lokale Administrator-account is een gebruikersaccount voor systeembeheer. Deze account is lid van de groep Administrators. De Administrator-account heeft volledige controle over bestanden, mappen, services en andere resources op het lokale toestel. Ze kan andere lokale gebruikers aanmaken, gebruikersrechten toewijzen en machtigingen beheren. De standaard Administrator-account kan niet worden verwijderd of vergrendeld, maar wel hernoemd. Standaard is de ingebouwde Administrator-account uitgeschakeld.</td>
+<td style="text-align:right">S-1-5-domain-500</td>
+</tr>
+<tr>
+<td><strong>Guest</strong></td>
+<td style="text-align:left">Met de Guest-account kunnen tijdelijke gebruikers aanmelden met beperkte rechten. Standaard is de Guest-account uitgeschakeld en heeft ze een leeg wachtwoord. Omdat de Guest-account anonieme toegang kan bieden, wordt ze beschouwd als een beveiligingsrisico. Het is dan ook een best practice om de Guest-account uitgeschakeld te laten, tenzij het gebruik ervan noodzakelijk is.</td>
+<td style="text-align:right">S-1-5-domain-501</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Om alle ingebouwde gebruikers en groepen te bekijken, open je het lokale gebruikers- en groepsbeheer in Windows.</em></p>
+<ul>
+<li>Tijdens de Windows-installatie wordt de gebruiker die je aanmaakt automatisch toegevoegd aan de groep &quot;Administrators&quot;.</li>
+<li>Alle gebruikers die je daarna aanmaakt, worden automatisch toegevoegd aan de groep &quot;Users&quot;. Om een andere gebruiker beheerdersrechten te geven, moet je hem toevoegen aan de groep &quot;Administrators&quot;.</li>
+</ul>
+<h2 id="2-windows-settings">2. Windows Settings</h2>
+<p>Windows Settings biedt gebruikers een centrale interface om hun systeemvoorkeuren en -instellingen aan te passen en te configureren.</p>
+<p>De meeste systeemvoorkeuren en -instellingen zijn inmiddels geïntegreerd in Windows Settings. Sommige geavanceerdere of specifiekere instellingen moeten echter nog steeds via het Control Panel worden geconfigureerd.</p>
+<p><img src="assets/Settingsvscontrol.png" alt="SettingsVsControlPanel" loading="lazy" /></p>
+<h2 id="3-task-manager-service-manager">3. Task Manager - Service Manager</h2>
+<h3 id="3-1-applicatie-vs-service">3.1. Applicatie vs service</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Applicatie</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software die ontworpen is om specifieke taken en functies voor de gebruiker uit te voeren.</td>
+<td>Software die op de achtergrond draait en specifieke functies of taken aanbiedt aan andere programma's of systemen.</td>
+</tr>
+<tr>
+<td>Wordt doorgaans bediend via een gebruikersinterface (GUI), waarmee gebruikers de functies kunnen gebruiken.</td>
+<td>Heeft geen gebruikersinterface. Wordt gestart, gestopt en bewaakt door de Service Control Manager (SCM, <code>services.exe</code>). Beheerders beheren ze meestal via de Services-console (<code>services.msc</code>); de instellingen worden opgeslagen in de registry.</td>
+</tr>
+<tr>
+<td>Wordt gestart en uitgevoerd door de eindgebruiker.</td>
+<td>Start vaak automatisch, meestal zonder tussenkomst van de gebruiker.</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Proces</strong>: elke applicatie of service bestaat uit één of meer processen. Een proces is een actief programma dat door het besturingssysteem wordt uitgevoerd en resources zoals geheugen en CPU-tijd gebruikt.</li>
+</ul>
+<h3 id="3-2-task-manager">3.2. Task Manager</h3>
+<p><img src="assets/TaskManager.png" alt="TaskManager" loading="lazy" /></p>
+<p>Je kan processen beheren via de Windows Task Manager. Je kan:</p>
+<ul>
+<li>Een proces beëindigen</li>
+<li>Een nieuw proces starten</li>
+<li>Actieve processen, applicaties en services monitoren</li>
+<li>De systeemresources van een proces, applicatie of service analyseren</li>
+<li>Een nieuw proces of een nieuwe applicatie starten</li>
+<li>Opstartprogramma's in- of uitschakelen</li>
+<li>De algemene systeemprestaties controleren</li>
+<li>...</li>
+</ul>
+<h3 id="3-3-management-console-services">3.3. Management Console: Services</h3>
+<p><img src="assets/MMCServices.png" alt="ServicesMMC" loading="lazy" /></p>
+<p>In de Microsoft Management Console (Services) kan je services beheren door:</p>
+<ul>
+<li>Services te zoeken door de kolomhoofdingen te filteren</li>
+<li>Services te starten</li>
+<li>Services te stoppen</li>
+<li>Het opstarttype van een service te wijzigen</li>
+</ul>
+<h2 id="4-windows-updates">4. Windows Updates</h2>
+<p><img src="assets/WindowsUpdateTypes.png" alt="WindowsUpdateTypes" loading="lazy" /></p>
+<p>In Windows Settings kan je Windows-updates downloaden en installeren en de geschiedenis van geïnstalleerde updates bekijken. Microsoft deelt Windows-updates in in vijf verschillende types:</p>
+<ol>
+<li><strong>Feature update</strong>: een grote release met nieuwe functies, verbeteringen en af en toe aanpassingen aan de gebruikersinterface. De versie van Windows verandert, bijvoorbeeld van 23H2 naar 24H2. Deze updates verschijnen doorgaans één keer per jaar. <em>Deze update wijzigt het eerste deel van het build number.</em></li>
+<li><strong>Quality update</strong>: een kleinere release die gericht is op het oplossen van bugs, het patchen van beveiligingslekken en het verbeteren van de systeemstabiliteit, zonder nieuwe functies toe te voegen. <em>Elke quality update krijgt een uniek Knowledge Base-nummer (KB) en verhoogt het tweede deel van het Windows build number.</em></li>
+<li><strong>Driver updates</strong>: de meeste updates van hardwarestuurprogramma's worden via Windows Update geleverd en geïnstalleerd.</li>
+<li><strong>Definition updates</strong>: definitie-updates voor malware van Microsoft Defender Antivirus worden via Windows Update geleverd.</li>
+<li><strong>Other updates</strong>: omvatten optionele software, patches en niet-kritieke verbeteringen voor bijkomende Microsoft- of externe producten.</li>
+</ol>
+<h2 id="5-event-viewer">5. Event Viewer</h2>
+<p>De <strong>Windows Event Viewer</strong> is een ingebouwde tool om systeemlogboeken te monitoren en te beheren. Hiermee kunnen gebruikers systeemactiviteiten opvolgen, fouten opsporen en problemen oplossen. Gebeurtenissen worden ingedeeld in verschillende logboeken, waarvan de belangrijkste Windows-logboeken <strong>Application</strong>, <strong>Security</strong> en <strong>System</strong> zijn.
+Daarnaast bevat de sectie <strong>Applications and Services Logs</strong> gedetailleerde logboeken voor afzonderlijke Windows-componenten en geïnstalleerde toepassingen.</p>
+<p>Elke gebeurtenis krijgt een uniek Event ID, waarmee je logboeken kan filteren en specifieke problemen sneller kan opsporen.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Gebeurtenis</th>
+<th>Logboekcategorie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4624</td>
+<td>Succesvolle aanmelding van een gebruiker</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>4647</td>
+<td>Afmelding van een gebruiker</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>4625</td>
+<td>Mislukte aanmeldpoging</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Opstarten van het systeem</td>
+<td>System</td>
+</tr>
+<tr>
+<td>6006</td>
+<td>Afsluiten van het systeem</td>
+<td>System</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Onjuist afsluiten van het systeem</td>
+<td>System</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Systeemlogboeken gewist</td>
+<td>System</td>
+</tr>
+<tr>
+<td>1102</td>
+<td>Beveiligingslogboeken gewist</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>Netwerkverbinding tot stand gebracht</td>
+<td>Applications and Services Logs &gt; Microsoft &gt; Windows &gt; NetworkProfile</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Windows-update gedownload</td>
+<td>Applications and Services Logs &gt; Microsoft &gt; Windows &gt; WindowsUpdateClient</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-bestandssystemen-ntfs">6. Bestandssystemen: NTFS</h2>
+<p>Voordat je Windows installeert op een ssd of harde schijf, moet het opslagmedium gepartitioneerd worden. Een standaard Windows 11-installatie maakt tijdens de setup vier partities aan.</p>
+<ul>
+<li><strong>System</strong>: bevat de opstartbestanden en de bootloader.</li>
+<li><strong>MSR</strong>: bewaart metadata van het systeem.</li>
+<li><strong>Recovery</strong>: gegevens voor de Windows Recovery Environment (WinRE).</li>
+<li><strong>Primary</strong>: waar Windows 11, toepassingen en gebruikersgegevens worden opgeslagen.</li>
+</ul>
+<p>Voordat een partitie door het besturingssysteem gebruikt kan worden, moet ze geformatteerd worden met een bestandssysteem. Een bestandssysteem is een structuur die bestanden en mappen op een opslagmedium organiseert, beheert en toegankelijk maakt. Er zijn verschillende bestandssystemen beschikbaar:</p>
+<p><strong>FAT32</strong></p>
+<ul>
+<li>Oud bestandssysteem</li>
+<li>Brede compatibiliteit: Windows, macOS, Linux, enz.</li>
+<li>Beperkingen: maximale bestandsgrootte van 4 GB, maximale partitiegrootte van 8 TB</li>
+<li>Wordt nog vaak gebruikt voor draagbare opslagmedia omwille van de brede ondersteuning door besturingssystemen</li>
+</ul>
+<p><strong>NTFS</strong></p>
+<ul>
+<li>Standaardbestandssysteem van Microsoft</li>
+<li>Ondersteunt zeer grote bestanden en schijven</li>
+<li>Functies: bestandsmachtigingen, encryptie, compressie, journaling voor gegevensintegriteit</li>
+</ul>
+<p><strong>EXT4</strong></p>
+<ul>
+<li>Standaardbestandssysteem van Linux</li>
+<li>Verwerkt grote bestanden en opslagvolumes</li>
+<li>Functies: journaling voor gegevensintegriteit</li>
+</ul>
+<p><strong>APFS</strong></p>
+<ul>
+<li>Standaardbestandssysteem van macOS</li>
+<li>Ondersteunt grote bestanden en schijven</li>
+<li>Functies: compressie, ingebouwde encryptie, sterke mechanismen voor gegevensintegriteit</li>
+</ul>
+<p>NTFS is het standaardbestandssysteem van Windows, ontworpen om grote bestanden en opslagmedia aan te kunnen. Het biedt geavanceerde functies zoals bestandsmachtigingen, encryptie, compressie en journaling om beveiliging en gegevensintegriteit te garanderen.</p>
+<h3 id="6-1-wat-zijn-ntfs-machtigingen">6.1. Wat zijn NTFS-machtigingen</h3>
+<p>NTFS-machtigingen bepalen <strong>wie toegang heeft tot bestanden en mappen</strong> op een Windows-systeem en <strong>wat gebruikers ermee mogen doen</strong>.</p>
+<p>Ze maken deel uit van het NTFS-bestandssysteem, het standaardbestandssysteem in Windows.</p>
+<h4 id="waarom-zijn-ntfs-machtigingen-belangrijk">Waarom zijn NTFS-machtigingen belangrijk?</h4>
+<p>Met NTFS-machtigingen kan je:</p>
+<ul>
+<li>📁 De toegang tot bestanden en mappen controleren</li>
+<li>👤 Verschillende rechten geven aan verschillende gebruikers</li>
+<li>🔐 Gevoelige gegevens beschermen</li>
+<li>🏫 Werken in een gecontroleerde omgeving (school, bedrijf, enz.)</li>
+</ul>
+<h3 id="6-2-basis-ntfs-machtigingen">6.2. Basis-NTFS-machtigingen</h3>
+<p>In deze cursus behandelen we enkel de <strong>basismachtigingen</strong>.</p>
+<h4 id="overzicht-van-de-belangrijkste-machtigingen">Overzicht van de belangrijkste machtigingen</h4>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Machtiging</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Read</strong></td>
+<td>De inhoud van een bestand of map bekijken, samen met de kenmerken en machtigingen ervan</td>
+</tr>
+<tr>
+<td><strong>Read &amp; Execute</strong></td>
+<td>Read + programma's en scripts uitvoeren</td>
+</tr>
+<tr>
+<td><strong>List Folder Contents</strong></td>
+<td>Read &amp; Execute, enkel voor mappen: de bestanden en submappen erin bekijken</td>
+</tr>
+<tr>
+<td><strong>Write</strong></td>
+<td>Nieuwe bestanden en mappen aanmaken en de inhoud van bestanden wijzigen, maar <strong>niet</strong> verwijderen of lezen</td>
+</tr>
+<tr>
+<td><strong>Modify</strong></td>
+<td>Read &amp; Execute + Write + <strong>verwijderen</strong></td>
+</tr>
+<tr>
+<td><strong>Full Control</strong></td>
+<td>Modify + <strong>machtigingen wijzigen</strong> en <strong>eigenaarschap overnemen</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="7-windows-registry">7. Windows Registry</h2>
+<h3 id="7-1-wat-is-de-registry">7.1. Wat is de Registry</h3>
+<p>De <strong>Windows Registry</strong> is een centrale databank waarin Windows en toepassingen hun instellingen en configuratie bewaren.</p>
+<p>Vroeger werden instellingen opgeslagen in afzonderlijke bestanden (zoals <code>.ini</code>-bestanden). Dat was moeilijker te beheren. De Registry lost dit op door alles in één gestructureerd systeem op te slaan.</p>
+<h4 id="wat-wordt-er-in-de-registry-opgeslagen">Wat wordt er in de Registry opgeslagen?</h4>
+<p>De Registry bevat:</p>
+<ul>
+<li><strong>Systeeminstellingen</strong>
+<ul>
+<li>Hardwareconfiguratie</li>
+<li>Stuurprogramma's en services</li>
+</ul>
+</li>
+<li><strong>Gebruikersinstellingen</strong>
+<ul>
+<li>Bureaubladinstellingen</li>
+<li>Persoonlijke voorkeuren</li>
+</ul>
+</li>
+<li><strong>Softwareconfiguratie</strong>
+<ul>
+<li>Geïnstalleerde programma's</li>
+<li>Toepassingsinstellingen</li>
+</ul>
+</li>
+<li><strong>Beveiligingsinstellingen</strong>
+<ul>
+<li>Policies en toegangsbeheer</li>
+</ul>
+</li>
+</ul>
+<h4 id="waarom-is-de-registry-belangrijk">Waarom is de Registry belangrijk?</h4>
+<p>Windows gebruikt de Registry voortdurend:</p>
+<ul>
+<li>Wanneer het systeem opstart</li>
+<li>Wanneer een gebruiker aanmeldt</li>
+<li>Wanneer programma's draaien</li>
+</ul>
+<p>⚠️ <strong>Belangrijk:</strong>
+Als je de verkeerde instelling wijzigt, kan dat:</p>
+<ul>
+<li>Je systeem kapotmaken</li>
+<li>Fouten veroorzaken</li>
+<li>Verhinderen dat Windows opstart</li>
+</ul>
+<p>👉 Wees altijd voorzichtig wanneer je met de Registry werkt.</p>
+<h3 id="7-2-structuur-van-de-registry">7.2. Structuur van de Registry</h3>
+<p>De Registry heeft een <strong>boomstructuur</strong>, vergelijkbaar met mappen en bestanden.</p>
+<h4 id="structuuroverzicht">Structuuroverzicht</h4>
+<ul>
+<li><strong>Root keys</strong> → bovenste niveau, zoals schijven (bv. <code>HKEY_LOCAL_MACHINE</code>, <code>HKEY_CURRENT_USER</code>)</li>
+<li><strong>Keys</strong> → zoals mappen</li>
+<li><strong>Subkeys</strong> → keys binnenin andere keys, zoals submappen</li>
+<li><strong>Values</strong> → de eigenlijke instellingen, zoals bestanden. Elke value heeft een <strong>naam</strong>, een <strong>type</strong> (bv. <code>REG_SZ</code>, <code>REG_DWORD</code>) en <strong>data</strong>.</li>
+<li><strong>Hives</strong> → de bestanden op schijf waarin de registry wordt opgeslagen (bv. <code>SYSTEM</code>, <code>SOFTWARE</code>, <code>NTUSER.DAT</code>). Windows laadt ze bij het opstarten onder de root keys.</li>
+</ul>
+<h4 id="de-belangrijkste-root-keys">De belangrijkste root keys</h4>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Root key</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HKEY_LOCAL_MACHINE (HKLM)</td>
+<td>Systeembrede instellingen (hardware, stuurprogramma's, services, geïnstalleerde software)</td>
+</tr>
+<tr>
+<td>HKEY_CURRENT_USER (HKCU)</td>
+<td>Instellingen van de aangemelde gebruiker; verwijst naar de key van die gebruiker onder HKU</td>
+</tr>
+<tr>
+<td>HKEY_USERS (HKU)</td>
+<td>Profielen van de momenteel geladen gebruikers (per SID), plus <code>.DEFAULT</code></td>
+</tr>
+<tr>
+<td>HKEY_CLASSES_ROOT (HKCR)</td>
+<td>Bestandsassociaties en COM-objecten; gecombineerde weergave van <code>HKLM\SOFTWARE\Classes</code> en <code>HKCU\Software\Classes</code></td>
+</tr>
+<tr>
+<td>HKEY_CURRENT_CONFIG (HKCC)</td>
+<td>Huidig hardwareprofiel; verwijst naar een subkey van HKLM</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="voorbeeldpad">Voorbeeldpad</h4>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+</code></pre></div>
+<ul>
+<li><code>HKEY_CURRENT_USER</code> → root key</li>
+<li><code>Software\Microsoft\Windows\CurrentVersion\Explorer</code> → keys en subkeys</li>
+<li><code>Advanced</code> → key die de instellingen van File Explorer bevat</li>
+</ul>
+<h4 id="types-values">Types values</h4>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Beschrijving</th>
+<th>Voorbeeld</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REG_SZ</td>
+<td>Tekstwaarde</td>
+<td><code>DisplayName</code> van een service</td>
+</tr>
+<tr>
+<td>REG_EXPAND_SZ</td>
+<td>Tekst met omgevingsvariabelen die bij het lezen worden uitgebreid</td>
+<td><code>%SystemRoot%\System32\spoolsv.exe</code></td>
+</tr>
+<tr>
+<td>REG_MULTI_SZ</td>
+<td>Lijst van tekstwaarden</td>
+<td><code>DependOnService</code> van een service</td>
+</tr>
+<tr>
+<td>REG_DWORD</td>
+<td>32-bitgetal, vaak gebruikt als aan/uit (0/1)</td>
+<td><code>HideFileExt</code>, <code>Start</code></td>
+</tr>
+<tr>
+<td>REG_QWORD</td>
+<td>64-bitgetal</td>
+<td>Tijdstempels, grote tellers</td>
+</tr>
+<tr>
+<td>REG_BINARY</td>
+<td>Binaire gegevens</td>
+<td>Hardware- en beveiligingsinstellingen</td>
+</tr>
+</tbody>
+</table></div>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../2-LocalManagement/goals.html"><small>← Vorige</small><span>Doelstellingen</span></a>
+    <a class="next" href="../2-LocalManagement/UserManagement.html"><small>Volgende →</small><span>Lokale gebruikers en groepen</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

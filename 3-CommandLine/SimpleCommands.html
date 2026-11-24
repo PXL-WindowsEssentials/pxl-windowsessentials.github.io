@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veelgebruikte cmdlets – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class="active"><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+<ul class="onpage">
+<li class="l1"><a href="#veelgebruikte-cmdlets">Veelgebruikte cmdlets</a></li>
+<li class="l2"><a href="#algemene-cmdlets">Algemene cmdlets</a></li>
+<li class="l2"><a href="#cmdlets-voor-systeemdiagnose">Cmdlets voor systeemdiagnose</a></li>
+</ul>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="veelgebruikte-cmdlets">Veelgebruikte cmdlets</h1>
+<p>In dit hoofdstuk geven we een overzicht van enkele veelgebruikte commando's. We introduceren cmdlets in de volgende categorieën:</p>
+<ul>
+<li>Algemene cmdlets</li>
+<li>Cmdlets voor systeemdiagnose</li>
+<li>Netwerkgerelateerde cmdlets</li>
+</ul>
+<p>Alle onderstaande cmdlets hebben één of meer parameters met hun eigen functionaliteit. Gebruik de cmdlet <code>Get-Help</code> om te leren wat ze kunnen.</p>
+<h2 id="algemene-cmdlets">Algemene cmdlets</h2>
+<ul>
+<li>
+<p><strong>Get-History</strong></p>
+<p>Telkens wanneer we een cmdlet ingeven, wordt die bewaard in een txt-bestand in het gebruikersprofiel (<code>$Env:AppData\Microsoft\Windows\PowerShell\PSReadLine</code>). Je kan in het bestand zoeken, of je kan de geschiedenis van de cmdlets bekijken met de cmdlet <code>Get-History</code>.</p>
+</li>
+<li>
+<p><strong>Get-Content</strong></p>
+<p>Als je de inhoud van een bestand in PowerShell wil zien, kan je de cmdlet <code>Get-Content</code> gebruiken.</p>
+<p>Bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Bach&gt; Get-Content .\studenten.txt
+Aelric Vornan
+Lyra Thalwyn
+Dren Solakar
+Maelis Virel
+Torven Kray
+Isara Delune
+Kaelen Mirthas
+Nyra Quellis
+Jorak Fenmoor
+Selene Araveth
+PS C:\PXL\Bach&gt;
+</code></pre></div>
+</li>
+<li>
+<p><strong>Clear-Host</strong></p>
+<p>Als het PowerShell-terminalvenster vol raakt, kan je het scherm van de shell leegmaken met <code>Clear-Host</code>.</p>
+</li>
+<li>
+<p><strong>Restart-Computer</strong></p>
+<p>Via PowerShell kan je de computer ook herstarten met <code>Restart-Computer</code>.</p>
+</li>
+</ul>
+<h2 id="cmdlets-voor-systeemdiagnose">Cmdlets voor systeemdiagnose</h2>
+<ul>
+<li>
+<p><strong>Get|Stop-Process</strong></p>
+<p>Alle processen die op je systeem draaien, kunnen via PowerShell beheerd worden. Afhankelijk van de actie die je op de processen wil uitvoeren, moet je een ander verb in de cmdlet gebruiken:</p>
+<ul>
+<li><strong>Get-Process</strong>: geeft een overzicht van de huidige actieve processen op je systeem.</li>
+<li><strong>Stop-Process</strong>: stopt een bepaald proces op je systeem. <code>Stop-Process -Name msedge</code> stopt alle Edge-processen die momenteel op het systeem draaien.</li>
+</ul>
+</li>
+<li>
+<p><strong>Get|Start|Stop-Service</strong></p>
+<p>Alle services die op je systeem geconfigureerd zijn, kunnen beheerd worden met <code>&lt;Verb&gt;-Service</code>. Met het juiste verb en de juiste parameters kan je de services controleren (als administrator):</p>
+<ul>
+<li><strong>Get-Service</strong>: geeft een overzicht van alle momenteel geconfigureerde services op je systeem.</li>
+<li><strong>Start-Service</strong>: start een specifieke service via de parameter <code>-Name</code>. <code>Start-Service -Name XboxNetApiSvc</code> start de Xbox Networking-service op je systeem.</li>
+<li><strong>Stop-Service</strong>: stopt een specifieke service. <code>Stop-Service -Name XboxNetApiSvc</code> stopt de Xbox Networking-service.</li>
+</ul>
+</li>
+<li>
+<p><strong>Get-EventLog</strong></p>
+<p>Met deze cmdlet kan je zoeken in de Windows-eventlogbestanden. <code>Get-EventLog -LogName System</code> geeft alle System-logs. Met extra parameters kan je de logs verder verfijnen.</p>
+</li>
+<li>
+<p><strong>Get-Disk</strong></p>
+<p>Deze cmdlet geeft je een overzicht van alle geïnstalleerde ssd's.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Bach&gt; Get-Disk
+
+Number Friendly Name Serial Number                    HealthStatus         OperationalStatus      Total Size Partition
+                                                                                                             Style
+------ ------------- -------------                    ------------         -----------------      ---------- ----------
+0      SK hynix P... ACE4_2E00_2B07_E1D8_2EE4_AC00... Healthy              Online                  953.87 GB GPT
+</code></pre></div>
+</li>
+<li>
+<p><strong>Get-NetAdapter</strong></p>
+<p>Deze cmdlet geeft je een overzicht van alle beschikbare netwerkadapters met bijbehorend MAC-adres en LinkSpeed.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Bach&gt; Get-NetAdapter
+
+Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
+----                      --------------------                    ------- ------       ----------             ---------
+VMware Network Adapte...8 VMware Virtual Ethernet Adapter for ...      26 Up           00-50-56-C0-00-08       100 Mbps
+Wi-Fi                     MediaTek Wi-Fi 6E MT7922 (RZ616) 160...      25 Up           74-97-79-C2-FC-25       1.2 Gbps
+VMware Network Adapte...1 VMware Virtual Ethernet Adapter for ...      20 Up           00-50-56-C0-00-01       100 Mbps
+VMware Network Adapte...2 VMware Virtual Ethernet Adapter for ...      19 Up           00-50-56-C0-00-02       100 Mbps
+vEthernet (WSL (Hyper-... Hyper-V Virtual Ethernet Adapter             71 Up           00-15-5D-76-06-2F        10 Gbps
+Ethernet                  Realtek PCIe GbE Family Controller           13 Disconnected E0-73-E7-DE-A4-D9          0 bps
+Ethernet 4                VirtualBox Host-Only Ethernet Adapter         3 Up           0A-00-27-00-00-03         1 Gbps
+</code></pre></div>
+</li>
+<li>
+<p><strong>Get-Partition</strong></p>
+<p>Deze cmdlet geeft je een overzicht van alle partities van alle ssd's in je systeem.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Bach&gt; Get-Partition
+
+
+ DiskPath: \\?\scsi#disk&amp;ven_nvme&amp;prod_sk_hynix_pc801_h#5&amp;11da39da&amp;0&amp;000000#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}
+
+PartitionNumber  DriveLetter Offset                                        Size Type
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<p>1                           1048576                                     499 MB System
+2                           524288000                                   128 MB Reserved
+3                C           658505728                                943.72 GB Basic
+4                           1013968797696                              9.54 GB Recovery</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>
+- **Get-Computerinfo**
+
+Geeft een gedetailleerde lijst met informatie over je systeem.
+
+## Netwerkgerelateerde cmdlets
+
+De commando&#x27;s die in deze paragraaf worden uitgelegd, worden vaak gebruikt door systeem- en netwerkengineers. De meest gebruikte commando&#x27;s zijn echter geen PowerShell-cmdlets. Het zijn ingebouwde Windows-toepassingen (te vinden in `C:\Windows\System32`) die afstammen van MS-DOS-batch en nog steeds beschikbaar zijn in PowerShell of Command Prompt. Omdat deze commando&#x27;s (eigenlijk toepassingen) nog vaak gebruikt worden, leggen we het gebruik ervan uit en geven we ook het juiste PowerShell-alternatief. Beide kunnen gebruikt worden.
+
+- **ipconfig**
+
+Dit commando geeft een overzicht van alle netwerkadapters en de bijbehorende netwerkconfiguraties: IP, DNS, ...
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; ipconfig</p>
+<p>Windows IP Configuration</p>
+<p>Ethernet adapter VMware Network Adapter VMnet1:</p>
+<p>Connection-specific DNS Suffix  . :
+Link-local IPv6 Address . . . . . : fe80::5200:b0d2:3e8d:29d6%20
+IPv4 Address. . . . . . . . . . . : 192.168.169.1
+Subnet Mask . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . :</p>
+<p>Ethernet adapter VMware Network Adapter VMnet8:</p>
+<p>Connection-specific DNS Suffix  . :
+Link-local IPv6 Address . . . . . : fe80::559d:f352:a996:187%26
+IPv4 Address. . . . . . . . . . . : 192.168.224.1
+Subnet Mask . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . :</p>
+<p>Ethernet adapter VMware Network Adapter VMnet2:</p>
+<p>Connection-specific DNS Suffix  . :
+Link-local IPv6 Address . . . . . : fe80::127d:ebff:deb8:7d5e%19
+IPv4 Address. . . . . . . . . . . : 192.168.87.1
+Subnet Mask . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . :</p>
+<p>Ethernet adapter Ethernet:</p>
+<p>Media State . . . . . . . . . . . : Media disconnected
+Connection-specific DNS Suffix  . :</p>
+<p>Ethernet adapter vEthernet (WSL (Hyper-V firewall)):</p>
+<p>Connection-specific DNS Suffix  . :
+Link-local IPv6 Address . . . . . : fe80::e4c3:7254:97e6:8caa%71
+IPv4 Address. . . . . . . . . . . : 172.17.208.1
+Subnet Mask . . . . . . . . . . . : 255.255.240.0
+Default Gateway . . . . . . . . . :</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>Door de parameter `/All` toe te voegen krijg je alle netwerkdetails voor elke adapter.
+
+Als je PowerShell wil gebruiken, kan je de volgende cmdlets gebruiken:
+
+ - **Get-NetIpConfiguration**
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; Get-NetIPConfiguration</p>
+<pre><code>InterfaceAlias       : VMware Network Adapter VMnet2
+InterfaceIndex       : 19
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet2
+IPv4Address          : 192.168.87.1
+IPv6DefaultGateway   :
+IPv4DefaultGateway   :
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet1
+InterfaceIndex       : 20
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet1
+IPv4Address          : 192.168.169.1
+IPv6DefaultGateway   :
+IPv4DefaultGateway   :
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+</code></pre>
+<p>....</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>- **Get-DnsClientServerAddress**: geeft een overzicht van alle geconfigureerde DNS-servers per netwerkadapter.
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; Get-DnsClientServerAddress</p>
+<pre><code>InterfaceAlias               Interface Address ServerAddresses
+                             Index     Family
+--------------               --------- ------- ---------------
+Ethernet 4                           3 IPv4    {}
+Ethernet 4                           3 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+LAN-verbinding* 1                   10 IPv4    {}
+LAN-verbinding* 1                   10 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+LAN-verbinding* 2                    5 IPv4    {}
+LAN-verbinding* 2                    5 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+Wi-Fi                               25 IPv4    {195.130.131.3, 195.130.130.3}
+Wi-Fi                               25 IPv6    {2a02:1800:100::43:2, 2a02:1800:100::43:1, 2a02:1800:100::43:2, 2a02:...
+VMware Network Adapter V...1        20 IPv4    {}
+VMware Network Adapter V...1        20 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+VMware Network Adapter V...8        26 IPv4    {}
+VMware Network Adapter V...8        26 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+VMware Network Adapter V...2        19 IPv4    {}
+VMware Network Adapter V...2        19 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+Ethernet                            13 IPv4    {10.50.40.250, 10.50.40.251}
+Ethernet                            13 IPv6    {}
+Loopback Pseudo-Interface 1          1 IPv4    {}
+Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+vEthernet (WSL (Hyper-V f...        71 IPv4    {}
+vEthernet (WSL (Hyper-V f...        71 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+</code></pre>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>
+- **netstat**
+
+Dit commando geeft een overzicht van alle huidige netwerkverbindingen voor UDP en TCP.
+- `-a`: toont alle verbindingen en luisterpoorten.
+- `-n`: lost de IP-adressen niet op en toont het ruwe poortnummer.
+- `-p PROTO`: toont enkel verbindingen voor het opgegeven protocol. `netstat -n -p TCP` toont de huidige TCP-verbindingen.
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; netstat -n -p TCP</p>
+<p>Active Connections</p>
+<p>Proto  Local Address          Foreign Address        State
+TCP    192.168.0.215:49252    51.144.128.90:443      ESTABLISHED
+TCP    192.168.0.215:51548    20.189.173.12:443      ESTABLISHED
+TCP    192.168.0.215:51745    185.199.110.154:443    ESTABLISHED
+TCP    192.168.0.215:51759    140.82.114.25:443      ESTABLISHED
+TCP    192.168.0.215:51796    3.217.166.173:443      ESTABLISHED
+TCP    192.168.0.215:51797    20.234.76.14:443       TIME_WAIT
+TCP    192.168.0.215:51815    20.223.98.225:443      ESTABLISHED
+TCP    192.168.0.215:51816    40.79.150.120:443      ESTABLISHED
+TCP    192.168.0.215:65421    3.121.238.86:443       ESTABLISHED</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>
+- **ping**
+
+Dit commando test of een bepaald IP-adres bereikbaar is. Standaard stuurt dit commando 4 ICMP-echo&#x27;s naar het opgegeven IP-adres en toont het resultaat en de statistieken.
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; ping 8.8.8.8</p>
+<p>Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=19ms TTL=117
+Reply from 8.8.8.8: bytes=32 time=17ms TTL=117
+Reply from 8.8.8.8: bytes=32 time=18ms TTL=117
+Reply from 8.8.8.8: bytes=32 time=19ms TTL=117</p>
+<p>Ping statistics for 8.8.8.8:
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+Minimum = 17ms, Maximum = 19ms, Average = 18ms</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>- `-t`: voert een continue ping uit tot je het commando beëindigt
+
+Als je de PowerShell-variant wil gebruiken, kan je de cmdlet `Test-Connection` gebruiken.
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; Test-Connection 8.8.8.8</p>
+<p>Source        Destination     IPV4Address      IPV6Address                              Bytes    Time(ms)</p>
+<hr />
+<p>5CD322B2D8    8.8.8.8         8.8.4.4          2001:4860:4860::8844                     32       19
+5CD322B2D8    8.8.8.8         8.8.4.4          2001:4860:4860::8844                     32       18
+5CD322B2D8    8.8.8.8         8.8.4.4          2001:4860:4860::8888                     32       18
+5CD322B2D8    8.8.8.8         8.8.8.8          2001:4860:4860::8888                     32       19</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>- **nslookup**
+
+Met dit commando kan je een DNS-lookup uitvoeren (een naam omzetten naar een IP-adres):
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; nslookup pxl.be
+Server:  hass02.dnsresv6.prd.telenet-ops.be
+Address:  2a02:1800:100::43:2</p>
+<p>Non-authoritative answer:
+Name:    pxl.be
+Address:  193.190.154.242</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>
+Het PowerShell-equivalent van nslookup is `Resolve-DnsName`.
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; Resolve-DnsName pxl.be</p>
+<p>Name                                           Type   TTL   Section    IPAddress</p>
+<hr />
+<p>pxl.be                                         A      3288  Answer     193.190.154.242</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>
+- **tracert**
+
+Tracert is een afkorting van traceroute. Met dit commando kan je elke hop identificeren die een pakket doorloopt voordat het zijn bestemming bereikt. Als het pakket zijn bestemming niet bereikt, kan je met dit commando onderzoeken hoe het pakket gerouteerd wordt en waar het misgaat.
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; tracert -d 8.8.8.8</p>
+<p>Tracing route to 8.8.8.8 over a maximum of 30 hops</p>
+<pre><code>1     4 ms    30 ms     4 ms  192.168.0.1
+2    14 ms    14 ms    20 ms  84.193.80.1
+3    18 ms    15 ms    24 ms  213.224.201.98
+4     *        *        *     Request timed out.
+5    37 ms    19 ms    20 ms  72.14.204.36
+6    21 ms    18 ms    16 ms  142.251.253.185
+7    22 ms    18 ms    19 ms  216.239.62.189
+8    20 ms    20 ms    19 ms  8.8.8.8
+</code></pre>
+<p>Trace complete.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>
+Het PowerShell-equivalent van tracert is `Test-NetConnection -TraceRoute`
+
+</code></pre></div>
+<p>PS C:\PXL\Bach&gt; Test-NetConnection -TraceRoute 8.8.8.8</p>
+<p>ComputerName           : 8.8.8.8
+RemoteAddress          : 8.8.8.8
+InterfaceAlias         : Wi-Fi
+SourceAddress          : 192.168.0.215
+PingSucceeded          : True
+PingReplyDetails (RTT) : 20 ms
+TraceRoute             : 192.168.0.1
+84.193.80.1
+213.224.201.98
+213.224.250.175
+72.14.204.36
+142.251.253.185
+216.239.62.189
+8.8.8.8</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code></code></pre></div>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../3-CommandLine/NavigationCreation.html"><small>← Vorige</small><span>Navigeren en bestandsbeheer</span></a>
+    <a class="next" href="../3-CommandLine/scripts.html"><small>Volgende →</small><span>Scripts en execution policy</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

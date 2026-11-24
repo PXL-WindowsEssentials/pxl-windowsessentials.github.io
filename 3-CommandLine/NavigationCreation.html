@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigeren en bestandsbeheer – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class="active"><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+<ul class="onpage">
+<li class="l1"><a href="#navigeren-en-bestandsbeheer">Navigeren en bestandsbeheer</a></li>
+<li class="l2"><a href="#navigeren-in-de-cli">Navigeren in de CLI</a></li>
+<li class="l3"><a href="#van-directory-veranderen">Van directory veranderen</a></li>
+<li class="l3"><a href="#inhoud-van-een-directory">Inhoud van een directory</a></li>
+<li class="l3"><a href="#environment-variabelen">Environment-variabelen</a></li>
+<li class="l2"><a href="#bestandsbeheer">Bestandsbeheer</a></li>
+<li class="l3"><a href="#een-directory-aanmaken">Een directory aanmaken</a></li>
+<li class="l3"><a href="#een-bestand-aanmaken">Een bestand aanmaken</a></li>
+<li class="l3"><a href="#naam-wijzigen">Naam wijzigen</a></li>
+<li class="l3"><a href="#een-bestand-directory-verwijderen">Een bestand/directory verwijderen</a></li>
+<li class="l3"><a href="#bestand-en-directory-kopieren">Bestand(en)/directory kopiëren</a></li>
+<li class="l3"><a href="#bestand-en-directory-verplaatsen">Bestand(en)/directory verplaatsen</a></li>
+</ul>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="navigeren-en-bestandsbeheer">Navigeren en bestandsbeheer</h1>
+<p>Navigatie en bestandsbeheer zijn twee basisfuncties van alle besturingssystemen. Ze laten het besturingssysteem toe om:</p>
+<ul>
+<li>correct te functioneren,</li>
+<li>nieuwe apps te installeren,</li>
+<li>systeembestanden aan te maken en te beheren,</li>
+<li>...</li>
+</ul>
+<p>Daarnaast kan de eindgebruiker de schijven gebruiken om persoonlijke documenten op te slaan.</p>
+<p>In Windows gebruiken de meeste gebruikers de GUI voor alle taken rond bestandsbeheer. Ervaren systeembeheerders grijpen voor bestandsbeheer in Windows echter vaak naar PowerShell. In dit hoofdstuk bekijken we de meest voorkomende cmdlets voor bestandsbeheer en hoe je ze correct gebruikt.</p>
+<h2 id="navigeren-in-de-cli">Navigeren in de CLI</h2>
+<h3 id="van-directory-veranderen">Van directory veranderen</h3>
+<p>Een van de meest uitgevoerde acties in de CLI is naar een andere directory gaan. Daarvoor gebruiken we de cmdlet <code>Set-Location</code>.</p>
+<p>Bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\Windows&gt; Set-Location System32
+PS C:\Windows\System32&gt;
+</code></pre></div>
+<h4 id="absoluut-vs-relatief-pad">Absoluut vs relatief pad</h4>
+<p>Wanneer we van de ene directory naar de andere gaan, kunnen we twee methodes gebruiken om naar de juiste directory te verwijzen:</p>
+<ul>
+<li>
+<p><strong>Absoluut</strong>: bij deze methode geef je het volledige pad van de directory op, beginnend vanaf het begin van het huidige volume.<br />
+Bijvoorbeeld: we bevinden ons in <code>C:\WinEss</code> en willen naar de map Office16 van Microsoft Office gaan. Dat kan met de cmdlet <code>Set-Location 'C:\Program Files\Microsoft Office\Office16\'</code> of met de alias <code>cd</code>: <code>cd 'C:\Program Files\Microsoft Office\Office16\'</code>.</p>
+</li>
+<li>
+<p><strong>Relatief</strong>: bij deze methode gebruiken we <code>.</code>, <code>..</code> of <code>/</code> om het pad naar de directory op te geven, maar nu wordt het pad opgebouwd vanuit de directory waarin we ons op dat moment bevinden.</p>
+<ul>
+<li><code>.</code> verwijst naar de huidige directory</li>
+<li><code>..</code> verwijst naar de bovenliggende directory in de mappenboom</li>
+<li><code>/</code> of <code>\</code> verwijst naar het begin van de volgende directory in de boom</li>
+</ul>
+<p>Stel dat we de volgende mappenstructuur hebben:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; tree
+Folder PATH listing for volume Windows
+Volume serial number is B2D6-03D9
+C:.
+├───Bach
+│   ├───1ste
+│   ├───2de
+│   └───3de
+└───Grad
+    ├───1ste
+    ├───2de
+    └───3de
+</code></pre></div>
+<p>We bevinden ons in de directory <code>C:\PXL\Bach\3de</code> en willen naar de directory <code>C:\PXL\Grad\1ste</code>. Dan kunnen we het volgende relatieve pad gebruiken: <code>../../Grad/1ste</code></p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Bach\3de&gt; Set-Location ..\..\Grad\1ste\
+PS C:\PXL\Grad\1ste&gt;
+</code></pre></div>
+<p>Geef je geen enkel van de relatieve symbolen op, dan interpreteert PowerShell dit ook als een relatief pad en veronderstelt het dat je naar een object dieper in de boom wil verwijzen, vertrekkend vanuit de huidige directory.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Grad&gt; Set-Location 2de
+PS C:\PXL\Grad\2de&gt;
+</code></pre></div>
+</li>
+</ul>
+<h3 id="inhoud-van-een-directory">Inhoud van een directory</h3>
+<p>Een van de voordelen van File Explorer voor bestandsbeheer is dat we onmiddellijk de inhoud van een directory zien wanneer we erop klikken. Via de CLI moeten we echter een specifieke cmdlet uitvoeren om de inhoud van de huidige directory te zien. Daarvoor kunnen we de cmdlet <code>Get-ChildItem</code> gebruiken.</p>
+<p>Bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:35                Bach
+d-----        13/08/2025     11:36                Grad
+</code></pre></div>
+<p>Standaard toont deze cmdlet de volledige inhoud van de huidige directory. Door de hierboven beschreven padmethodes te gebruiken, kunnen we echter ook de inhoud van eender welke directory bekijken.</p>
+<p>Bijvoorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem C:\PXL\Bach\
+
+
+    Directory: C:\PXL\Bach
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:35                1ste
+d-----        13/08/2025     11:35                2de
+d-----        13/08/2025     11:35                3de
+-a----        13/08/2025     11:57              6 studenten.txt
+-a----        13/08/2025     11:57              6 vakken.txt
+
+
+PS C:\PXL&gt; Get-ChildItem .\Bach\
+
+
+    Directory: C:\PXL\Bach
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:35                1ste
+d-----        13/08/2025     11:35                2de
+d-----        13/08/2025     11:35                3de
+-a----        13/08/2025     11:57              6 studenten.txt
+-a----        13/08/2025     11:57              6 vakken.txt
+</code></pre></div>
+<p>In de laatste uitvoer zien we de volledige inhoud van de directory. Als we enkel de bestanden of enkel de directories willen zien, kunnen we gebruikmaken van de beschikbare parameters van deze cmdlet:</p>
+<ul>
+<li><code>-File</code> toont enkel de bestanden</li>
+<li><code>-Directory</code> toont enkel de directories.</li>
+</ul>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem -File .\Bach\
+
+
+    Directory: C:\PXL\Bach
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        13/08/2025     11:57              6 studenten.txt
+-a----        13/08/2025     11:57              6 vakken.txt
+
+
+PS C:\PXL&gt; Get-ChildItem -Directory .\Bach\
+
+
+    Directory: C:\PXL\Bach
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:35                1ste
+d-----        13/08/2025     11:35                2de
+d-----        13/08/2025     11:35                3de
+
+</code></pre></div>
+<h3 id="environment-variabelen">Environment-variabelen</h3>
+<p>Veel waarden in Windows hangen af van de context waarin een proces draait, zoals de aangemelde gebruiker, de computer of de sessie. Environment-variabelen geven deze waarden een vaste naam, bijvoorbeeld <code>USERPROFILE</code> of <code>TEMP</code>. In PowerShell verwijs je ernaar als <code>$env:NAME</code>. De volgende tabel geeft een overzicht van enkele van de meest voorkomende environment-variabelen.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Variabele</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APPDATA</td>
+<td>Bevat het absolute pad van de map AppData in het gebruikersprofiel</td>
+</tr>
+<tr>
+<td>HOMEDRIVE</td>
+<td>Bevat het volume waarop de profielen worden opgeslagen</td>
+</tr>
+<tr>
+<td>HOMEPATH</td>
+<td>Bevat het absolute pad van de huidige gebruiker</td>
+</tr>
+<tr>
+<td>OneDrive</td>
+<td>Bevat het absolute pad van de OneDrive-map (indien geconfigureerd)</td>
+</tr>
+<tr>
+<td>ProgramFiles</td>
+<td>Bevat het absolute pad van de map Program Files</td>
+</tr>
+<tr>
+<td>SystemDrive</td>
+<td>Bevat de volumeletter waarop het Windows-systeem is geïnstalleerd</td>
+</tr>
+<tr>
+<td>Systemroot</td>
+<td>Bevat het absolute pad van de map Windows</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Bevat de gebruikersnaam van de huidige gebruiker</td>
+</tr>
+<tr>
+<td>USERDOMAIN</td>
+<td>Bevat de domeinnaam waaraan de computer is toegevoegd</td>
+</tr>
+</tbody>
+</table></div>
+<p>Voorbeeld:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL\Bach&gt; cd $Env:HOMEPATH
+PS C:\Users\20004607&gt;cd $Env:SystemRoot
+PS C:\WINDOWS&gt; cd $Env:APPDATA
+PS C:\Users\20004607\AppData\Roaming&gt;
+</code></pre></div>
+<h2 id="bestandsbeheer">Bestandsbeheer</h2>
+<h3 id="een-directory-aanmaken">Een directory aanmaken</h3>
+<p>Een directory aanmaken is een eenvoudige taak die je kan uitvoeren met de cmdlet <code>New-Item -ItemType Directory &lt;dirname&gt;</code></p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; New-Item -ItemType Directory Old
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     14:07                Old
+
+</code></pre></div>
+<p>Om een directory aan te maken kan je ook nog altijd het oude MS-DOS-commando <code>md</code> gebruiken. Dit is geen alias, maar het echte oude MS-DOS-commando dat nog altijd in PowerShell is opgenomen.</p>
+<h3 id="een-bestand-aanmaken">Een bestand aanmaken</h3>
+<p>Een leeg bestand aanmaken is een eenvoudige taak die je kan uitvoeren met de cmdlet <code>New-Item -ItemType File &lt;filename&gt;</code></p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; New-Item -ItemType File Old.txt
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        13/08/2025     14:08              0 Old.txt
+
+</code></pre></div>
+<h3 id="naam-wijzigen">Naam wijzigen</h3>
+<p>De naam van een bestand of map wijzig je met de cmdlet <code>Rename-Item</code>.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem -Directory
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:57                Bach
+d-----        13/08/2025     11:36                Grad
+d-----        13/08/2025     14:07                Old
+
+
+PS C:\PXL&gt; Rename-Item Old New
+PS C:\PXL&gt; Get-ChildItem -Directory
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:57                Bach
+d-----        13/08/2025     11:36                Grad
+d-----        13/08/2025     14:07                New
+
+</code></pre></div>
+<p>Dezelfde cmdlet kan je gebruiken om de naam van een bestand te wijzigen.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem -File
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        13/08/2025     14:08              0 Old.txt
+
+
+PS C:\PXL&gt; Rename-Item .\Old.txt New.txt
+PS C:\PXL&gt; Get-ChildItem -File
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        13/08/2025     14:08              0 New.txt
+</code></pre></div>
+<h3 id="een-bestand-directory-verwijderen">Een bestand/directory verwijderen</h3>
+<p>Een directory of bestand verwijder je met de cmdlet <code>Remove-Item</code>.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem -File
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        13/08/2025     14:08              0 New.txt
+
+
+PS C:\PXL&gt; Remove-Item .\New.txt
+PS C:\PXL&gt; Get-ChildItem -File
+PS C:\PXL&gt;
+</code></pre></div>
+<p>Of een directory verwijderen.</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>PS C:\PXL&gt; Get-ChildItem -Directory
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:57                Bach
+d-----        13/08/2025     11:36                Grad
+d-----        13/08/2025     14:07                New
+
+
+PS C:\PXL&gt; Remove-Item .\New\
+PS C:\PXL&gt; Get-ChildItem -Directory
+
+
+    Directory: C:\PXL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        13/08/2025     11:57                Bach
+d-----        13/08/2025     11:36                Grad
+</code></pre></div>
+<p>Als de directory die je wil verwijderen niet leeg is, moet je de volgende parameters toevoegen: <code>-Recurse -Force</code>. Deze parameters voorkomen fouten bij het uitvoeren van de cmdlet.</p>
+<ul>
+<li><code>-Recurse</code> geeft de cmdlet aan dat alle bestanden en directories in de directory die je verwijdert, ook verwijderd moeten worden</li>
+<li><code>-Force</code> geeft de cmdlet aan dat ze geen toestemming moet vragen om de bestanden en directories in de te verwijderen directory te verwijderen.</li>
+</ul>
+<h3 id="bestand-en-directory-kopieren">Bestand(en)/directory kopiëren</h3>
+<p>Als we een bestand, bestanden, directory of directories naar een andere locatie willen kopiëren, kunnen we de cmdlet <code>Copy-Item</code> gebruiken. Om de specifieke taak uit te voeren, moeten we parameters toevoegen of wildcards gebruiken:</p>
+<ul>
+<li><code>Copy-Item Bach.txt ..\Bach\</code>: kopieert het bestand Bach.txt naar de directory Bach met een relatief pad</li>
+<li><code>Copy-Item * ..\Bach</code>: kopieert alle bestanden en directories naar de directory Bach met een relatief pad</li>
+<li><code>Copy-Item -Recurse -Force 1ste\ ..\Bach\</code>: kopieert de volledige directory en alle subdirectories/bestanden naar de directory Bach met een relatief pad</li>
+</ul>
+<h3 id="bestand-en-directory-verplaatsen">Bestand(en)/directory verplaatsen</h3>
+<p>Als we een bestand, bestanden, directory of directories naar een andere locatie willen verplaatsen, kunnen we de cmdlet <code>Move-Item</code> gebruiken. Om de specifieke taak uit te voeren, moeten we parameters toevoegen of wildcards gebruiken:</p>
+<ul>
+<li><code>Move-Item Bach.txt ..\Bach\</code>: verplaatst het bestand Bach.txt naar de directory Bach met een relatief pad</li>
+<li><code>Move-Item * ..\Bach</code>: verplaatst alle bestanden en directories naar de directory Bach met een relatief pad</li>
+<li><code>Move-Item -Recurse -Force 1ste\ ..\Bach\</code>: verplaatst de volledige directory en alle subdirectories/bestanden naar de directory Bach met een relatief pad</li>
+</ul>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../3-CommandLine/concepts.html"><small>← Vorige</small><span>Theorie: PowerShell-basis</span></a>
+    <a class="next" href="../3-CommandLine/SimpleCommands.html"><small>Volgende →</small><span>Veelgebruikte cmdlets</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

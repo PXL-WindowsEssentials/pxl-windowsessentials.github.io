@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persoonlijk Outlook-account aanmaken – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap" open><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class="active"><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+<ul class="onpage">
+<li class="l1"><a href="#outlook">Outlook</a></li>
+<li class="l2"><a href="#account-aanmaken">Account aanmaken</a></li>
+<li class="l3"><a href="#1-office-com">1. Office.com</a></li>
+<li class="l3"><a href="#2-account-maken">2. Account maken</a></li>
+<li class="l3"><a href="#3-e-mailadres">3. E-mailadres</a></li>
+<li class="l3"><a href="#4-invullen">4. Invullen</a></li>
+</ul>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="outlook">Outlook</h1>
+<p>Met het stappenplan hieronder maak je gratis een Outlook-/Hotmail-account aan. Je hebt dit account nodig om een Microsoft 365 Developer-tenant aan te vragen via je Visual Studio Professional-abonnement.</p>
+<h2 id="account-aanmaken">Account aanmaken</h2>
+<div class="callout warning">
+<p>Gebruik hiervoor een browser waarin je Blackboard of je PXL-e-mailadres NIET raadpleegt. Je PXL-account is namelijk ook een Microsoft-account. Gebruik je dezelfde browser, dan word je mogelijk automatisch aangemeld met je PXL-account in plaats van met het Outlook-/Hotmail-account dat je net hebt aangemaakt.</p>
+</div>
+<h3 id="1-office-com">1. Office.com</h3>
+<ul>
+<li>Surf naar de website <a href="https://office.com" class="ext" target="_blank" rel="noopener">https://office.com</a></li>
+<li>Klik op de knop Aanmelden</li>
+</ul>
+<p><img src="assets/office.png" alt="Office" loading="lazy" /></p>
+<h3 id="2-account-maken">2. Account maken</h3>
+<ul>
+<li>Klik in het volgende venster op de blauwe tekst &quot;Maak nu een account&quot;</li>
+</ul>
+<p><img src="assets/2Maaknuaccount.png" alt="Maakaccount" loading="lazy" /></p>
+<h3 id="3-e-mailadres">3. E-mailadres</h3>
+<ul>
+<li>Vul een e-mailadres in</li>
+</ul>
+<p>Je kan hier een persoonlijk e-mailadres invullen dat je al gebruikt, bijvoorbeeld een Gmail- of iCloud-adres. Je Outlook-account wordt dan aan dat e-mailadres gekoppeld. Je kan ook een volledig nieuw Outlook-e-mailadres aanmaken.</p>
+<p>Wil je een volledig nieuw e-mailadres aanmaken, typ dan het volgende:
+voornaamPXLachternaam@outlook.com</p>
+<p><img src="assets/3email.png" alt="3email" loading="lazy" /></p>
+<p>Volg de overige stappen om je Outlook-account aan te maken.</p>
+<h3 id="4-invullen">4. Invullen</h3>
+<p>Vul daarna in het formulier het e-mailadres in dat je hebt gebruikt. Heb je je persoonlijke e-mailadres aan je Outlook-account gekoppeld, vul dan dat e-mailadres in. Heb je een nieuw Outlook-e-mailadres aangemaakt, vul dan dat nieuwe e-mailadres in.</p>
+<div class="callout info">
+<p>Loop je vast of is iets niet duidelijk? Spreek dan je vaklector aan of stuur hem/haar een e-mail met een schermafdruk.</p>
+</div>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../0-Setup/VisualStudioProNE.html"><small>← Vorige</small><span>Visual Studio Pro (variant met persoonlijk Outlook-account)</span></a>
+    <a class="next" href="../0-Setup/m365developerstenantcreate.html"><small>Volgende →</small><span>Microsoft 365-tenant aanvragen</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

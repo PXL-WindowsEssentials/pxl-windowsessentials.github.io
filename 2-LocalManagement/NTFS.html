@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NTFS-machtigingen instellen – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class="active"><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+<ul class="onpage">
+<li class="l1"><a href="#ntfs">NTFS</a></li>
+<li class="l2"><a href="#ntfs-machtigingen">NTFS-machtigingen</a></li>
+<li class="l3"><a href="#1-overerving-uitschakelen">1. Overerving uitschakelen</a></li>
+<li class="l3"><a href="#2-aangepaste-machtigingen-instellen">2. Aangepaste machtigingen instellen</a></li>
+</ul>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="ntfs">NTFS</h1>
+<p>NTFS is het standaardbestandssysteem voor Windows-besturingssystemen. Hiermee kan je machtigingen voor bestanden en mappen instellen en beheren.</p>
+<h2 id="ntfs-machtigingen">NTFS-machtigingen</h2>
+<p>Standaard erft een bestand of map zijn machtigingen van de bovenliggende map. In Windows kan je in twee stappen aangepaste machtigingen instellen voor een bestand of map:</p>
+<ol>
+<li><strong>Overerving van machtigingen uitschakelen</strong> vanaf de bovenliggende map.</li>
+<li><strong>Je eigen machtigingen toewijzen</strong> aan het bestand of de map.</li>
+</ol>
+<h3 id="1-overerving-uitschakelen">1. Overerving uitschakelen</h3>
+<ul>
+<li>Navigeer naar de map waarvoor je aangepaste machtigingen wil instellen.</li>
+<li>Klik met de rechtermuisknop op de map en selecteer <strong>Properties</strong>.</li>
+<li>Ga naar het tabblad <strong>Security</strong>.</li>
+<li>Klik op <strong>Advanced</strong>.</li>
+<li>Klik op <strong>Disable inheritance</strong>.</li>
+<li>Er verschijnt een pop-up: kies ervoor om overgeërfde machtigingen om te zetten in expliciete machtigingen (<strong>Convert inherited permissions into explicit permissions on this object</strong>).</li>
+<li>Klik op <strong>OK</strong>.</li>
+</ul>
+<p><img src="assets/NTFSDisableInheritance.gif" alt="NTFSDisableInheritance" loading="lazy" /></p>
+<h3 id="2-aangepaste-machtigingen-instellen">2. Aangepaste machtigingen instellen</h3>
+<p>Zo voeg je aangepaste machtigingen toe nadat je de overerving hebt uitgeschakeld:</p>
+<ul>
+<li>Klik in het tabblad Advanced Security Settings op <strong>Add</strong>.</li>
+<li>Klik op <strong>Select a principal</strong>.</li>
+<li>Geef de gebruikersnaam in van de gebruiker aan wie je machtigingen wil geven.</li>
+<li>Klik op <strong>Check Names</strong> om de gebruikersnaam te controleren.</li>
+<li><strong>Vink de selectievakjes aan</strong> van de machtigingen die je wil toewijzen en klik op OK.</li>
+<li>Klik nogmaals op <strong>OK</strong> om te bevestigen.</li>
+</ul>
+<p><img src="assets/NTFSDisableInheritance.gif" alt="NTFSPermissions" loading="lazy" /></p>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../2-LocalManagement/EventViewer.html"><small>← Vorige</small><span>Event Viewer</span></a>
+    <a class="next" href="../2-LocalManagement/Registry.html"><small>Volgende →</small><span>Registry Editor</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>
