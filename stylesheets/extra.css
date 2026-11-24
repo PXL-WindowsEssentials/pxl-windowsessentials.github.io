@@ -9,3 +9,7 @@
 .md-tag{background:rgba(120,144,156,.18);color:var(--md-default-fg-color--light);border-radius:2rem;padding:.1rem .6rem;font-size:.7rem;margin-right:.3rem}
 .md-nav--primary>.md-nav__list>.md-nav__item--nested>.md-nav__link{font-weight:600}
 .md-typeset a{text-decoration:underline;text-decoration-color:rgba(120,144,156,.5)}
+
+.we-navtoggle{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:.5rem;margin:0 .2rem;border-radius:.3rem}
+.we-navtoggle:hover{background:rgba(120,144,156,.18)}
+@media screen and (min-width:76.25em){.we-navtoggle{display:inline-flex;align-items:center}.we-nav-hidden .md-sidebar--primary{display:none}}
