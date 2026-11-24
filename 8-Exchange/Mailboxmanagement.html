@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mailboxbeheer – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class="active"><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+<ul class="onpage">
+<li class="l1"><a href="#mailboxbeheer-in-exchange-online">Mailboxbeheer in Exchange Online</a></li>
+<li class="l2"><a href="#1-gebruikers-e-mail">1. Gebruikers - e-mail</a></li>
+<li class="l2"><a href="#2-mail-contacts">2. Mail contacts</a></li>
+<li class="l2"><a href="#3-distribution-list-distribution-group">3. Distribution list (Distribution group)</a></li>
+<li class="l2"><a href="#4-shared-mailbox">4. Shared mailbox</a></li>
+<li class="l3"><a href="#4-1-veelvoorkomende-gebruiksscenario-s">4.1. Veelvoorkomende gebruiksscenario&#x27;s</a></li>
+<li class="l3"><a href="#4-2-voordelen">4.2. Voordelen</a></li>
+<li class="l3"><a href="#4-3-een-shared-mailbox-aanmaken">4.3. Een shared mailbox aanmaken</a></li>
+<li class="l3"><a href="#4-4-machtigingen">4.4. Machtigingen</a></li>
+<li class="l3"><a href="#4-5-zo-test-je-een-shared-mailbox">4.5. Zo test je een shared mailbox</a></li>
+<li class="l2"><a href="#5-resource-mailbox">5. Resource mailbox</a></li>
+<li class="l3"><a href="#5-1-types-resource-mailboxen">5.1. Types resource mailboxen</a></li>
+<li class="l3"><a href="#5-2-voordelen">5.2. Voordelen</a></li>
+<li class="l3"><a href="#5-3-een-resource-mailbox-aanmaken">5.3. Een resource mailbox aanmaken</a></li>
+<li class="l3"><a href="#5-4-voorbeeldscenario-s">5.4. Voorbeeldscenario&#x27;s</a></li>
+<li class="l3"><a href="#5-5-zo-test-je-een-resource-mailbox-room-of-equipment">5.5. Zo test je een resource mailbox (Room of Equipment)</a></li>
+<li class="l2"><a href="#6-opties-voor-mailboxbeheer">6. Opties voor mailboxbeheer</a></li>
+<li class="l3"><a href="#6-1-e-mailadressen">6.1. E-mailadressen</a></li>
+<li class="l3"><a href="#6-2-delegatie-machtigingen">6.2. Delegatie (machtigingen)</a></li>
+<li class="l3"><a href="#6-3-instellingen-voor-mailflow">6.3. Instellingen voor mailflow</a></li>
+<li class="l3"><a href="#6-4-zo-test-je-de-opties-voor-mailboxbeheer">6.4. Zo test je de opties voor mailboxbeheer</a></li>
+<li class="l2"><a href="#7-outlook">7. Outlook</a></li>
+<li class="l3"><a href="#7-1-het-veld-from">7.1. Het veld From</a></li>
+<li class="l3"><a href="#7-2-shared-mailbox">7.2. Shared mailbox</a></li>
+</ul>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="mailboxbeheer-in-exchange-online">Mailboxbeheer in Exchange Online</h1>
+<h2 id="1-gebruikers-e-mail">1. Gebruikers - e-mail</h2>
+<p>Wanneer je via Entra ID of via het Microsoft admin center een nieuwe gebruiker aanmaakt, wordt automatisch een mailbox aangemaakt. Alle e-mails worden opgeslagen op de Exchange Online-server. Gebruikers kunnen hun mail openen door via Outlook in Microsoft 365 Copilot of via eender welke mailclient met de Exchange Online-server te verbinden.
+Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange Admin Center: https://admin.exchange.microsoft.com</p>
+<h2 id="2-mail-contacts">2. Mail contacts</h2>
+<p>Mail contacts hebben geen Entra-account. Ze worden enkel gebruikt om informatie op te slaan die in het adresboek verschijnt.</p>
+<p><strong>Zo maak je een mail contact aan:</strong></p>
+<ol>
+<li>Ga naar <strong>EAC &gt; Recipients &gt; Contacts &gt; Add a mail contact</strong>.</li>
+<li>Vul in:</li>
+</ol>
+<ul>
+<li>First name, Last name, Initials</li>
+<li>Display name (wordt weergegeven in het adresboek)</li>
+<li>Alias en External email address</li>
+</ul>
+<ol start="3">
+<li>Voeg eventueel meer details toe.</li>
+<li>Klik op <strong>Next &gt; Create</strong>.</li>
+</ol>
+<p><strong>Zo test je een mail contact</strong></p>
+<p>Nadat je een mail contact hebt aangemaakt, moet je controleren of het correct werkt.</p>
+<h4 id="het-adresboek-controleren">Het adresboek controleren</h4>
+<ol>
+<li>Open <strong>Outlook (web of desktop)</strong></li>
+<li>Ga naar <strong>People</strong> of open een nieuwe e-mail</li>
+<li>Klik op <strong>To</strong></li>
+<li>Zoek naar de naam van het mail contact</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Het contact verschijnt in de adreslijst</li>
+<li>De display name is correct</li>
+<li>Het externe e-mailadres is correct</li>
+</ul>
+<h2 id="3-distribution-list-distribution-group">3. Distribution list (Distribution group)</h2>
+<p>Een distribution list wordt gebruikt om e-mails tegelijk naar meerdere gebruikers te sturen. Ze heeft geen eigen mailbox. E-mails die naar de groep worden gestuurd, worden automatisch doorgestuurd naar alle leden.</p>
+<p><strong>Zo maak je een distribution list aan:</strong></p>
+<ol>
+<li>Ga naar <strong>EAC &gt; Recipients &gt; Groups &gt; Add a group</strong>.</li>
+<li>Kies <strong>Distribution</strong>.</li>
+<li>Vul in:</li>
+</ol>
+<ul>
+<li>Name</li>
+<li>Display name (wordt weergegeven in het adresboek)</li>
+<li>Alias / e-mailadres</li>
+</ul>
+<ol start="4">
+<li>Voeg leden toe (gebruikers die de e-mails zullen ontvangen).</li>
+<li>Klik op <strong>Next &gt; Create</strong>.</li>
+</ol>
+<p><strong>Zo test je een distribution list</strong></p>
+<p>Nadat je een distribution list hebt aangemaakt, moet je controleren of ze correct werkt.</p>
+<h4 id="het-adresboek-controleren-2">Het adresboek controleren</h4>
+<ol>
+<li>Open <strong>Outlook (web of desktop)</strong></li>
+<li>Open een nieuwe e-mail</li>
+<li>Klik op <strong>To</strong></li>
+<li>Zoek naar de distribution list</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De groep verschijnt in de adreslijst</li>
+<li>De display name is correct</li>
+<li>Je kan ze als ontvanger selecteren</li>
+</ul>
+<h4 id="een-testmail-verzenden">Een testmail verzenden</h4>
+<ol>
+<li>Open <strong>Outlook (web of desktop)</strong></li>
+<li>Maak een nieuwe e-mail</li>
+<li>Geef de distribution list in het veld <strong>To</strong> in</li>
+<li>Verzend de e-mail</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt zonder fouten verzonden</li>
+<li>Alle leden ontvangen de e-mail</li>
+<li>Elk lid ontvangt het bericht in zijn eigen mailbox</li>
+</ul>
+<h2 id="4-shared-mailbox">4. Shared mailbox</h2>
+<p>Een <strong>shared mailbox</strong> is een mailbox waartoe meerdere gebruikers toegang hebben om e-mailberichten te lezen en te verzenden. Ze wordt doorgaans gebruikt voor generieke e-mailadressen zoals <strong>info@bedrijf.com</strong> of <strong>support@bedrijf.com</strong>, zodat een team berichten gezamenlijk kan beheren.</p>
+<p>Shared mailboxes hebben geen eigen aanmeldgegevens: bevoegde gebruikers openen ze vanuit hun eigen Outlook-account. Berichten die vanuit de shared mailbox worden verzonden, lijken afkomstig te zijn van het gedeelde adres en niet van de individuele gebruiker.</p>
+<h3 id="4-1-veelvoorkomende-gebruiksscenario-s">4.1. Veelvoorkomende gebruiksscenario's</h3>
+<ul>
+<li>Afdelingen zoals HR, Finance of IT-support</li>
+<li>Generieke contactadressen (bv. info@, sales@)</li>
+<li>Teams die een gedeelde werklast of klantencommunicatie beheren</li>
+</ul>
+<h3 id="4-2-voordelen">4.2. Voordelen</h3>
+<ul>
+<li>Geen aparte licentie vereist (tot 50 GB)</li>
+<li>Gedeelde agenda voor teamplanning</li>
+<li>Gecentraliseerd berichtenbeheer</li>
+</ul>
+<h3 id="4-3-een-shared-mailbox-aanmaken">4.3. Een shared mailbox aanmaken</h3>
+<ol>
+<li>Open het <strong>Exchange Admin Center (EAC)</strong>.</li>
+<li>Ga naar <strong>Recipients → Mailboxes → Shared</strong>.</li>
+<li>Klik op <strong>Add a shared mailbox</strong>.</li>
+<li>Geef de display name en het e-mailadres in.</li>
+<li>Wijs de gebruikers toe die toegang nodig hebben.</li>
+</ol>
+<h3 id="4-4-machtigingen">4.4. Machtigingen</h3>
+<ul>
+<li><strong>Full Access</strong>: gebruikers kunnen alle items in de mailbox openen en lezen, en berichten verplaatsen of verwijderen.</li>
+<li><strong>Send As</strong>: gebruikers kunnen e-mails verzenden als de shared mailbox.</li>
+</ul>
+<div class="callout info">
+<p>Wanneer je een Microsoft 365-groep aanmaakt, wordt automatisch een shared mailbox aangemaakt, samen met een gedeelde agenda en een SharePoint-site.</p>
+</div>
+<h3 id="4-5-zo-test-je-een-shared-mailbox">4.5. Zo test je een shared mailbox</h3>
+<p>Nadat je een shared mailbox hebt aangemaakt, moet je controleren of gebruikers er toegang toe hebben en ze correct kunnen gebruiken.</p>
+<h4 id="stap-1-toegang-controleren-in-outlook">Stap 1: Toegang controleren in Outlook</h4>
+<ol>
+<li>Open <strong>Outlook (desktop of web)</strong></li>
+<li>Voeg de shared mailbox toe:
+<ul>
+<li>Klik op je account</li>
+<li>Kies <strong>Add shared folder or mailbox</strong></li>
+<li>Geef het adres van de shared mailbox in</li>
+</ul>
+</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De shared mailbox verschijnt in Outlook</li>
+<li>Je kan mappen openen (Inbox, Sent Items, enz.)</li>
+<li>Je kan e-mails lezen</li>
+</ul>
+<h4 id="stap-2-een-testmail-ontvangen">Stap 2: Een testmail ontvangen</h4>
+<ol>
+<li>Stuur een e-mail <strong>naar het adres van de shared mailbox</strong> (vanuit een ander account)</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail komt aan in de shared mailbox</li>
+<li>Alle gebruikers met toegang kunnen het bericht zien</li>
+</ul>
+<h4 id="stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden">Stap 3: Een e-mail VANUIT de shared mailbox verzenden</h4>
+<ol>
+<li>Open een nieuwe e-mail</li>
+<li>Schakel indien nodig het veld <strong>From</strong> in</li>
+<li>Selecteer het adres van de shared mailbox in het veld From</li>
+<li>Verzend een e-mail</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt succesvol verzonden</li>
+<li>De ontvanger ziet het <strong>adres van de shared mailbox</strong> als afzender (niet je persoonlijke account)</li>
+</ul>
+<h4 id="stap-4-testen-met-meerdere-gebruikers">Stap 4: Testen met meerdere gebruikers</h4>
+<ol>
+<li>Meld aan met een andere gebruiker die toegang heeft</li>
+<li>Open de shared mailbox</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Beide gebruikers zien dezelfde e-mails</li>
+<li>Beide gebruikers kunnen berichten lezen en beheren</li>
+</ul>
+<h4 id="stap-5-machtigingen-testen">Stap 5: Machtigingen testen</h4>
+<p>Als er machtigingen zijn geconfigureerd:</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Full Access → de gebruiker kan de mailbox openen en beheren</li>
+<li>Send As → de gebruiker kan verzenden als de shared mailbox</li>
+</ul>
+<h2 id="5-resource-mailbox">5. Resource mailbox</h2>
+<p>Een <strong>resource mailbox</strong> vertegenwoordigt een vergaderruimte of een stuk apparatuur dat voor evenementen en vergaderingen kan worden gereserveerd. Deze mailboxen helpen organisaties om gedeelde resources efficiënt te beheren.</p>
+<h3 id="5-1-types-resource-mailboxen">5.1. Types resource mailboxen</h3>
+<ul>
+<li><strong>Room mailbox</strong>: vertegenwoordigt een fysieke locatie (bv. Vergaderzaal 1, Auditorium, Lab 2.10)</li>
+<li><strong>Equipment mailbox</strong>: vertegenwoordigt gedeeld gereedschap of toestellen (bv. projector, laptop, voertuig)</li>
+</ul>
+<h3 id="5-2-voordelen">5.2. Voordelen</h3>
+<ul>
+<li>Aanvaardt of weigert vergaderverzoeken automatisch op basis van beschikbaarheid</li>
+<li>Toont de reserveringsstatus in de scheduling assistant</li>
+<li>Helpt dubbele boekingen te vermijden</li>
+</ul>
+<h3 id="5-3-een-resource-mailbox-aanmaken">5.3. Een resource mailbox aanmaken</h3>
+<ol>
+<li>Navigeer in het <strong>Exchange Admin Center</strong> naar <strong>Recipients → Resources</strong>.</li>
+<li>Klik op <strong>Add resource mailbox</strong>.</li>
+<li>Kies tussen een <strong>Room</strong>- of <strong>Equipment</strong>-mailbox.</li>
+<li>Configureer de boekingsopties (automatisch aanvaarden, delegates, maximale duur, enz.).</li>
+</ol>
+<h3 id="5-4-voorbeeldscenario-s">5.4. Voorbeeldscenario's</h3>
+<ul>
+<li>Room mailbox: <em>PXL-Digital Meeting Room 2.10</em> voor personeelsvergaderingen</li>
+<li>Equipment mailbox: <em>Beamer-LokaalA</em> voor gedeelde klasapparatuur</li>
+</ul>
+<h3 id="5-5-zo-test-je-een-resource-mailbox-room-of-equipment">5.5. Zo test je een resource mailbox (Room of Equipment)</h3>
+<p>Nadat je een resource mailbox hebt aangemaakt, moet je controleren of ze gebruikt kan worden om vergaderingen correct te reserveren.</p>
+<h4 id="stap-1-de-outlook-agenda-openen">Stap 1: De Outlook-agenda openen</h4>
+<ol>
+<li>Open <strong>Outlook (desktop of web)</strong></li>
+<li>Ga naar de <strong>Calendar</strong></li>
+</ol>
+<p>📌 Resource mailboxen test je niet via e-mail, maar via de agenda.</p>
+<h4 id="stap-2-een-nieuwe-vergadering-aanmaken">Stap 2: Een nieuwe vergadering aanmaken</h4>
+<ol>
+<li>Klik op <strong>New Event / New Meeting</strong></li>
+<li>Voeg een titel toe (bv. &quot;Test Meeting&quot;)</li>
+<li>Stel een datum en uur in</li>
+</ol>
+<h4 id="stap-3-de-resource-mailbox-toevoegen">Stap 3: De resource mailbox toevoegen</h4>
+<ol>
+<li>Klik op <strong>Location</strong> of <strong>Add room</strong></li>
+<li>Zoek de room- of equipment-mailbox</li>
+<li>Selecteer ze en voeg ze toe aan de vergadering</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De resource verschijnt in de vergadering</li>
+<li>Ze is zichtbaar in de scheduling assistant</li>
+</ul>
+<h4 id="stap-4-het-vergaderverzoek-verzenden">Stap 4: Het vergaderverzoek verzenden</h4>
+<ol>
+<li>Klik op <strong>Send</strong></li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Het vergaderverzoek wordt verzonden</li>
+<li>De resource mailbox <strong>aanvaardt of weigert</strong> het verzoek automatisch</li>
+</ul>
+<h4 id="stap-5-de-reservering-controleren">Stap 5: De reservering controleren</h4>
+<ol>
+<li>Open je agenda</li>
+<li>Open de agenda van de resource (indien beschikbaar)</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De vergadering verschijnt in je agenda</li>
+<li>De vergadering verschijnt ook in de agenda van de resource</li>
+<li>Het tijdslot is gemarkeerd als <strong>busy</strong></li>
+</ul>
+<h4 id="stap-6-dubbele-boeking-testen">Stap 6: Dubbele boeking testen</h4>
+<ol>
+<li>Maak een tweede vergadering op hetzelfde tijdstip</li>
+<li>Voeg dezelfde resource toe</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De resource mailbox <strong>weigert</strong> de tweede boeking</li>
+<li>Outlook toont dat de ruimte al bezet is</li>
+</ul>
+<h2 id="6-opties-voor-mailboxbeheer">6. Opties voor mailboxbeheer</h2>
+<p>Wanneer je de eigenschappen van een mailbox opent, kan je veel opties configureren.</p>
+<h3 id="6-1-e-mailadressen">6.1. E-mailadressen</h3>
+<ul>
+<li>Beheer de e-mailadressen die aan een mailbox gekoppeld zijn door te klikken op <strong>Manage email address types</strong></li>
+</ul>
+<p><img src="assets/Mailboxbeheer1.png" alt="LookupVersionandEdition" loading="lazy" /></p>
+<ul>
+<li>Het vetgedrukte adres is het <strong>primaire SMTP-adres</strong> en is het standaardantwoordadres.</li>
+</ul>
+<p><img src="assets/Mailboxbeheer2.png" alt="LookupVersionandEdition" loading="lazy" /></p>
+<ul>
+<li>Je kan meer adressen toevoegen:
+<ul>
+<li>Klik op <strong>+ Add email address</strong> → kies <strong>SMTP</strong> → geef het adres in.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-delegatie-machtigingen">6.2. Delegatie (machtigingen)</h3>
+<p>Je kan andere gebruikers machtigingen (delegates) geven om deze mailbox te openen of ervan te verzenden:</p>
+<ul>
+<li><strong>Send As</strong> → laat toe om e-mails te verzenden als de eigenaar van de mailbox.</li>
+<li><strong>Send on Behalf Of</strong> → verzendt als delegate, maar de ontvanger ziet &quot;verzonden door delegate namens eigenaar&quot;.</li>
+<li><strong>Read and Manage (Full Access)</strong> → de delegate kan de mailbox openen en lezen, maar niet verzenden (combineer met Send As voor volledige rechten).</li>
+</ul>
+<h3 id="6-3-instellingen-voor-mailflow">6.3. Instellingen voor mailflow</h3>
+<ul>
+<li><strong>Message Size Restrictions</strong>: stel de maximale grootte in voor verzonden/ontvangen berichten (0–153600 KB). Grotere berichten worden met een foutmelding geweigerd.</li>
+<li><strong>Message Delivery Restrictions</strong>: bepaal wie berichten naar deze gebruiker mag sturen.
+<ul>
+<li><em>Accept messages from</em>: toegelaten afzenders</li>
+<li><em>Block messages from</em>: geblokkeerde afzenders</li>
+</ul>
+</li>
+<li><strong>Email Forwarding</strong>: stuur berichten door naar een andere mailbox. Opties:
+<ul>
+<li>Alle e-mails doorsturen naar een andere ontvanger.</li>
+<li>Doorsturen naar een extern e-mailadres.</li>
+<li>Berichten leveren aan zowel de oorspronkelijke mailbox als het doorstuuradres.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-4-zo-test-je-de-opties-voor-mailboxbeheer">6.4. Zo test je de opties voor mailboxbeheer</h3>
+<p>Nadat je mailboxinstellingen hebt gewijzigd, moet je controleren of de configuratie correct werkt.</p>
+<h4 id="stap-1-e-mailadressen-aliassen-testen">Stap 1: E-mailadressen (aliassen) testen</h4>
+<ol>
+<li>Voeg een nieuw e-mailadres (alias) toe aan een mailbox</li>
+<li>Stuur een testmail naar de alias</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt in de mailbox afgeleverd</li>
+<li>De gebruiker kan het bericht lezen</li>
+</ul>
+<h4 id="stap-2-verzenden-vanuit-verschillende-adressen-testen">Stap 2: Verzenden vanuit verschillende adressen testen</h4>
+<ol>
+<li>Open een nieuwe e-mail in Outlook</li>
+<li>Schakel het veld <strong>From</strong> in</li>
+<li>Selecteer de mailbox of alias</li>
+<li>Verzend een e-mail</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt succesvol verzonden</li>
+<li>De ontvanger ziet het juiste afzenderadres</li>
+</ul>
+<h4 id="stap-3-delegatie-machtigingen-testen">Stap 3: Delegatie (machtigingen) testen</h4>
+<p>Als je machtigingen hebt geconfigureerd (bv. Full Access of Send As):</p>
+<ol>
+<li>Meld aan als de gemachtigde gebruiker</li>
+<li>Open de mailbox</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Full Access → de gebruiker kan de mailbox openen en lezen</li>
+<li>Send As → de gebruiker kan e-mails verzenden als die mailbox</li>
+</ul>
+<h4 id="stap-4-e-mail-doorsturen-testen">Stap 4: E-mail doorsturen testen</h4>
+<ol>
+<li>Stuur een e-mail naar de mailbox</li>
+<li>Controleer de bestemming van het doorsturen</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt doorgestuurd naar het juiste adres</li>
+<li>(Optioneel) De oorspronkelijke mailbox ontvangt het bericht ook</li>
+</ul>
+<h4 id="stap-5-beperkingen-voor-berichtlevering-testen">Stap 5: Beperkingen voor berichtlevering testen</h4>
+<ol>
+<li>Configureer toegelaten of geblokkeerde afzenders</li>
+<li>Verzend testmails vanuit verschillende accounts</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Toegelaten gebruikers kunnen berichten verzenden</li>
+<li>Geblokkeerde gebruikers ontvangen een foutmelding</li>
+</ul>
+<h4 id="stap-6-limieten-voor-berichtgrootte-testen">Stap 6: Limieten voor berichtgrootte testen</h4>
+<ol>
+<li>Verzend een e-mail met een grote bijlage</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Als de grootte de limiet overschrijdt → wordt het bericht geweigerd</li>
+<li>Als de grootte binnen de limiet valt → wordt het bericht geleverd</li>
+</ul>
+<h2 id="7-outlook">7. Outlook</h2>
+<h3 id="7-1-het-veld-from">7.1. Het veld From</h3>
+<p>Wanneer een gebruiker mailboxdelegatie krijgt, kan hij e-mails verzenden vanaf het e-mailadres van een andere gebruiker.
+Daarvoor moet je ervoor zorgen dat het veld From zichtbaar is. Zo kan je bij het verzenden van een e-mail het adres van de andere persoon kiezen.</p>
+<p>Volg de onderstaande stappen om het veld From in te schakelen:</p>
+<ol>
+<li>Open de Outlook-app</li>
+<li>Klik in het bovenste menu op <strong>Options</strong>.</li>
+<li>Vink de optie <strong>Show From</strong> aan.</li>
+<li>Het veld <strong>From</strong> is nu zichtbaar.</li>
+<li>Geef in het veld <strong>From</strong> het e-mailadres in van waaruit je het bericht wil verzenden.</li>
+</ol>
+<p><img src="assets/OutlookFromAddress.gif" alt="OutlookFromAddress" loading="lazy" /></p>
+<h3 id="7-2-shared-mailbox">7.2. Shared mailbox</h3>
+<p>Zo voeg je een shared mailbox, of eender welke mailbox waarvoor je <strong>Read and Manage (Full Access)</strong>-machtigingen hebt gekregen, toe aan je Outlook-app.</p>
+<ol>
+<li>Klik op de drie puntjes naast je e-mailadres.</li>
+<li>Selecteer <strong>Add shared folder or mailbox</strong>.</li>
+<li>Geef het e-mailadres van de shared mailbox in.</li>
+<li>Klik op <strong>Continue</strong>.</li>
+<li>Klik op <strong>Close</strong>.</li>
+<li>Sluit het instellingenvenster.</li>
+<li>De shared mailbox en al haar mappen verschijnen nu onder je eigen mailbox.</li>
+</ol>
+<p><img src="assets/OutlookAddSharedMailbox.gif" alt="OutlookAddSharedMailbox" loading="lazy" /></p>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../8-Exchange/concepts.html"><small>← Vorige</small><span>Theorie: Exchange Online</span></a>
+    <a class="next" href="../99-labs/1-Introduction/importVMLabs.html"><small>Volgende →</small><span>Virtuele machine voor de labo's importeren</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>
