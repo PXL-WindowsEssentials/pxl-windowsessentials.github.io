@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Een toestel inschrijven (Autopilot) – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class="active"><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+<ul class="onpage">
+<li class="l1"><a href="#een-toestel-inschrijven-in-intune">Een toestel inschrijven in Intune</a></li>
+<li class="l2"><a href="#autopilot">Autopilot</a></li>
+<li class="l2"><a href="#0-voor-je-begint">0. Voor je begint</a></li>
+<li class="l2"><a href="#1-mdm-user-scope">1. MDM user scope</a></li>
+<li class="l2"><a href="#2-get-windowsautopilotinfo">2. Get-WindowsAutopilotInfo</a></li>
+<li class="l2"><a href="#3-intune-hash-uploaden">3. Intune - Hash uploaden</a></li>
+<li class="l2"><a href="#4-toestel-resetten">4. Toestel resetten</a></li>
+<li class="l2"><a href="#5-microsoft-365-aanmeldgegevens-tijdens-de-oobe">5. Microsoft 365-aanmeldgegevens tijdens de OOBE</a></li>
+<li class="l2"><a href="#6-intune-inschrijving-controleren">6. Intune-inschrijving controleren</a></li>
+<li class="l2"><a href="#7-overige">7. Overige</a></li>
+<li class="l3"><a href="#7-1-vmware-tools">7.1. VMware Tools</a></li>
+<li class="l3"><a href="#7-2-slaapstand-uitschakelen">7.2. Slaapstand uitschakelen</a></li>
+</ul>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="een-toestel-inschrijven-in-intune">Een toestel inschrijven in Intune</h1>
+<h2 id="autopilot">Autopilot</h2>
+<p>Toestellen registreren in Intune houdt in dat je ze toevoegt aan Windows Autopilot. Autopilot koppelt elk toestel aan de Microsoft 365-tenant van je organisatie. Wanneer het toestel opnieuw geïnstalleerd of gereset wordt, verbindt het automatisch opnieuw en blijft het via Intune door de tenant beheerd.</p>
+<p>Autopilot wordt gebruikt om:</p>
+<ol>
+<li><strong>Toestellen te koppelen</strong> aan een Microsoft 365-tenant.</li>
+<li>De installatie en configuratie van toestellen tijdens de <strong>Out-of-Box Experience (OOBE)</strong> te <strong>automatiseren</strong>.</li>
+</ol>
+<p><strong>Windows OOBE (Out of Box Experience)</strong> is het initiële installatieproces dat gebruikers begeleidt bij het configureren van een nieuwe Windows-installatie, met instellingen zoals regio, account, netwerk en privacyvoorkeuren.</p>
+<p>Een toestel toevoegen aan Windows Autopilot kan op twee manieren:</p>
+<ol>
+<li>
+<p><strong>Via de toestelfabrikant</strong>: wanneer je Windows-toestellen aankoopt bij fabrikanten zoals HP, Dell of Lenovo, kan je de hardware hashes van die toestellen opvragen. Een hardware hash is een unieke identificator die de hardwareconfiguratie van een toestel voorstelt. Vóór de levering bezorgt de fabrikant een lijst met hardware hashes, die vervolgens in Intune Autopilot geïmporteerd kunnen worden.</p>
+</li>
+<li>
+<p><strong>Handmatig</strong>: je kan de hardware hash van een toestel ook zelf extraheren met een PowerShell-script en die vervolgens handmatig importeren in Intune Autopilot.</p>
+</li>
+</ol>
+<p>Deze handleiding beschrijft hoe je een virtuele Windows 11-machine als bedrijfseigendom (company-owned device) aan Intune toevoegt.</p>
+<h2 id="0-voor-je-begint">0. Voor je begint</h2>
+<p>Deze handleiding legt uit hoe je je virtuele machine &quot;Windows 11 - lokaal account&quot; registreert in Windows Autopilot door de hardware hash te verzamelen en te uploaden.
+Nadat de virtuele machine als Autopilot-toestel is geregistreerd, reset je ze en rond je de installatie af door aan te melden met een Microsoft Entra-gebruiker uit je Microsoft 365-tenant, waardoor het toestel in Intune wordt ingeschreven.</p>
+<p>Je doorloopt de volgende stappen:</p>
+<ol>
+<li>De MDM user scope in Intune inschakelen</li>
+<li>Het PowerShell-script <strong>Get-WindowsAutopilotInfo</strong> installeren en de hardware hash extraheren.</li>
+<li>De <strong>hardware hash uploaden</strong> naar Intune.</li>
+<li>Het toestel resetten.</li>
+<li>Microsoft 365-aanmeldgegevens ingeven tijdens de OOBE</li>
+<li>De inschrijving van het toestel in Intune controleren</li>
+<li>Overige</li>
+</ol>
+<div class="callout info">
+<p>Het uploaden van de hardware hash van een toestel schrijft het toestel niet in Intune in; het registreert het enkel in Windows Autopilot. Het toestel wordt later, tijdens de Autopilot OOBE-flow, in Intune ingeschreven nadat een gebruiker aanmeldt met Microsoft Entra-aanmeldgegevens.
+Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Microsoft Windows dat gebruikers begeleidt bij het configureren van een nieuw toestel, zoals het kiezen van de taal, het aanmaken van een account en het instellen van voorkeuren.</p>
+</div>
+<h2 id="1-mdm-user-scope">1. MDM user scope</h2>
+<p>In een nieuwe Microsoft 365-tenant is automatische MDM-inschrijving voor gebruikers meestal niet ingeschakeld. Volg deze stappen om MDM-inschrijving voor alle gebruikers in te schakelen:</p>
+<ol>
+<li>Ga naar <a href="https://intune.microsoft.com" class="ext" target="_blank" rel="noopener">intune.microsoft.com</a> en meld aan met een Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
+<li>Selecteer in het linkermenu <strong>Devices</strong>.</li>
+<li>Selecteer onder <strong>Device onboarding</strong> <strong>Enrollment</strong>.</li>
+<li>Selecteer onder <strong>Enrollment options</strong> <strong>Automatic enrollment</strong>.</li>
+<li>Stel <strong>MDM user scope</strong> in op <strong>All</strong> en selecteer vervolgens <strong>Save</strong>.</li>
+</ol>
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/MDMAutomaticEnrollment.mp4" type="video/mp4">
+</video>
+<h2 id="2-get-windowsautopilotinfo">2. Get-WindowsAutopilotInfo</h2>
+<p>Wanneer de installatie van Windows 11 voltooid is en je aangemeld bent:</p>
+<ol>
+<li>Open een <strong>elevated</strong> Terminal (uitvoeren als administrator)</li>
+<li>Voer de volgende commando's uit</li>
+</ol>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code class="lang-powershell"><span class="tok-nb">Set-ExecutionPolicy</span> <span class="tok-n">-ExecutionPolicy</span> <span class="tok-n">RemoteSigned</span>
+<span class="tok-nb">Install-Script</span> <span class="tok-n">-Name</span> <span class="tok-nb">Get-WindowsAutopilotInfo</span>
+<span class="tok-nb">Get-WindowsAutopilotInfo</span><span class="tok-p">.</span><span class="tok-n">ps1</span> <span class="tok-n">-OutputFile</span> <span class="tok-n">C</span><span class="tok-p">:\</span><span class="tok-n">AutopilotHWID</span><span class="tok-p">.</span><span class="tok-n">csv</span>
+</code></pre></div>
+<p><em>De onderstaande schermafbeelding toont de uitvoering van bovenstaande commando's</em></p>
+<p><img src="assets/Windows11GetWindowsAutopilotInfo.png" alt="Windows11GetWindowsAutopilotInfo" loading="lazy" /></p>
+<ol start="3">
+<li><strong>Kopieer AutopilotHWID.csv</strong></li>
+</ol>
+<p>Het PowerShell-script Get-WindowsAutopilotInfo maakt in <code>C:\</code> een bestand AutopilotHWID.csv aan met de hardware hash van je virtuele machine. Kopieer dit CSV-bestand naar je hostmachine. (Zorg dat VMware Tools geïnstalleerd is, zodat kopiëren en plakken werkt.)</p>
+<h2 id="3-intune-hash-uploaden">3. Intune - Hash uploaden</h2>
+<ol>
+<li>Ga naar <a href="https://intune.microsoft.com" class="ext" target="_blank" rel="noopener">intune.microsoft.com</a>.</li>
+<li>Selecteer in het linkermenu <strong>Devices</strong>.</li>
+<li>Selecteer onder <strong>Device onboarding</strong> <strong>Enrollment</strong>.</li>
+<li>Selecteer onder <strong>Windows Autopilot</strong> <strong>Devices</strong>.</li>
+</ol>
+<p><img src="assets/IntuneAutopilot.png" alt="IntuneAutopilot.png" loading="lazy" /></p>
+<ul>
+<li>Klik in <strong>Windows Autopilot devices</strong> in het bovenste menu op <strong>Import</strong> en upload je bestand <strong>AutopilotHWID.csv</strong>.</li>
+<li>De virtuele machine wordt dan geregistreerd als Autopilot-toestel.</li>
+<li>Dit proces kan enkele minuten duren. Je kan de importstatus volgen in het meldingsgebied.</li>
+</ul>
+<h2 id="4-toestel-resetten">4. Toestel resetten</h2>
+<p>Wanneer de importstatus van je Autopilot-toestel <strong>Ready</strong> is, reset je je virtuele Windows 11-machine naar de fabrieksinstellingen met de volgende stappen:</p>
+<ol>
+<li>Open <strong>File Explorer</strong> op je virtuele Windows 11-machine.</li>
+<li>Navigeer naar de volgende map: <code>C:\Windows\System32\Sysprep</code></li>
+<li>Voer <strong>sysprep.exe</strong> uit.</li>
+<li>Klik op <strong>OK</strong> in het pop-upvenster dat verschijnt.</li>
+</ol>
+<p>Na enkele seconden/minuten herstart je toestel en komt het in de Windows 11 OOBE terecht.</p>
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/Sysprep.mp4" type="video/mp4">
+</video>
+<h2 id="5-microsoft-365-aanmeldgegevens-tijdens-de-oobe">5. Microsoft 365-aanmeldgegevens tijdens de OOBE</h2>
+<p>Geef de Microsoft 365-aanmeldgegevens in van de gebruiker Jan Janssens die je tijdens de Entra-labo's hebt aangemaakt.</p>
+<p><img src="assets/OOBEM365Login.png" alt="M365WinSignIn.png" loading="lazy" /></p>
+<p>Beantwoord alle vragen in de Windows OOBE om de Windows-installatie af te ronden.</p>
+<h2 id="6-intune-inschrijving-controleren">6. Intune-inschrijving controleren</h2>
+<p>Zodra de Windows-installatie voltooid is:</p>
+<ol>
+<li>Ga naar <a href="https://intune.microsoft.com" class="ext" target="_blank" rel="noopener">intune.microsoft.com</a> en meld aan met je Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
+<li>Selecteer in het linkermenu <strong>Devices</strong> en selecteer vervolgens <strong>All devices</strong>.</li>
+</ol>
+<p>Je ziet nu een overzicht van alle toestellen die in je Microsoft 365-tenant zijn ingeschreven.</p>
+<p><img src="assets/IntuneDevicesOverview.png" alt="IntuneDevicesOverview.png" loading="lazy" /></p>
+<p><em>Het kan enkele minuten duren voordat alle velden (zoals Compliance en OS version) zijn ingevuld. Deze informatie wordt vanaf je virtuele Windows 11-machine met de Microsoft 365-tenant gesynchroniseerd.</em></p>
+<h2 id="7-overige">7. Overige</h2>
+<h3 id="7-1-vmware-tools">7.1. VMware Tools</h3>
+<p>Omdat je je virtuele Windows-machine hebt gereset nadat je het PowerShell-script Get-WindowsAutopilotInfo had uitgevoerd, werd je Windows 11-omgeving volledig gereset en werd ook VMware Tools verwijderd. Wil je functies zoals kopiëren en plakken tussen je host en de virtuele machine opnieuw gebruiken en de schermresolutie verbeteren, dan moet je VMware Tools opnieuw installeren in je virtuele Windows 11-machine.</p>
+<h3 id="7-2-slaapstand-uitschakelen">7.2. Slaapstand uitschakelen</h3>
+<p>Je virtuele Windows 11-machine synchroniseert gegevens zoals toestelinformatie, policies en applicaties. Wanneer de VM in slaapstand gaat (wat standaard al na enkele minuten gebeurt), wordt deze synchronisatie onderbroken. Pas de volgende Windows-instelling op je virtuele machine aan om de slaapstand uit te schakelen:</p>
+<ol>
+<li>Open <strong>Windows Settings</strong></li>
+<li>Kies in het linkermenu <strong>System</strong> en kies vervolgens <strong>Power</strong></li>
+<li>Configureer de <strong>Screen and sleep timeouts</strong> als volgt</li>
+</ol>
+<ul>
+<li><strong>Turn my screen off after</strong>: Never</li>
+<li><strong>Make my device sleep after</strong>: Never</li>
+</ul>
+<p><img src="assets/DisableSleep.png" alt="DisableSleep" loading="lazy" /></p>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../6-Intune/General.html"><small>← Vorige</small><span>Algemene instellingen en synchronisatie</span></a>
+    <a class="next" href="../6-Intune/AutoPilot.html"><small>Volgende →</small><span>Autopilot en deployment profiles</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

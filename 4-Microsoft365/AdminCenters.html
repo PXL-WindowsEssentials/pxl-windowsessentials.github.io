@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin centers en RBAC – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class="active"><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+<ul class="onpage">
+<li class="l1"><a href="#microsoft-365-admin-center">Microsoft 365 Admin Center</a></li>
+<li class="l2"><a href="#admin-centers-per-dienst">Admin centers per dienst</a></li>
+<li class="l2"><a href="#toegangsbeveiliging">Toegangsbeveiliging</a></li>
+<li class="l3"><a href="#algemeen-advies-voor-rollen">Algemeen advies voor rollen</a></li>
+</ul>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="microsoft-365-admin-center">Microsoft 365 Admin Center</h1>
+<p>De belangrijkste toegang tot je Microsoft 365-abonnement is het <a href="https://admin.microsoft.com" class="ext" target="_blank" rel="noopener">M365 Admin Center</a> (admin.microsoft.com). In dit admin center kan je alle items configureren die over alle diensten van je abonnement heen gebruikt worden:</p>
+<ul>
+<li><strong>Users</strong>: maak gebruikers in je organisatie aan en beheer ze, zoals medewerkers of studenten. Je kan ook hun machtigingsniveau instellen of hun wachtwoord resetten.</li>
+<li><strong>Teams &amp; groups</strong>: maak groepen in je organisatie aan en beheer ze, zoals een Microsoft 365-groep, Microsoft 365 Teams, distributiegroep, beveiligingsgroep of gedeelde mailbox.</li>
+<li><strong>Roles</strong>: wijs ingebouwde Microsoft Entra-rollen (Microsoft Entra ID) toe aan gebruikers die toegang nodig hebben tot andere admin centers en resources in Microsoft Entra ID, zoals gebruikers, groepen en apps die de Microsoft Graph API gebruiken.</li>
+<li><strong>Resources</strong>: maak resources aan en beheer ze, zoals een SharePoint-sitecollectie.</li>
+<li><strong>Billing</strong>: bekijk, koop of annuleer abonnementen voor je organisatie. Bekijk vorige factureringsoverzichten of het aantal toegewezen licenties per gebruiker.</li>
+<li><strong>Support</strong>: bekijk bestaande serviceaanvragen of maak nieuwe aan.</li>
+<li><strong>Settings</strong>: beheer globale instellingen voor apps zoals e-mail, sites en Microsoft 365. Wijzig je wachtwoordbeleid en vervaldatum. Voeg domeinnamen zoals contoso.com toe en werk ze bij. Wijzig het profiel van je organisatie en de releasevoorkeuren. En kies of partners toegang hebben tot je admin center.</li>
+<li><strong>Setup</strong>: beheer bestaande domeinen, schakel multi-factor authentication in en beheer het, beheer de beheerderstoegang, migreer gebruikersmailboxen naar Microsoft 365, beheer feature-updates en help gebruikers bij het installeren van hun apps in Microsoft 365.</li>
+<li><strong>Reports</strong>: zie in één oogopslag hoe je organisatie Microsoft 365 gebruikt, met gedetailleerde rapporten over e-mailgebruik, Microsoft 365-activaties en meer.</li>
+<li><strong>Health</strong>: bekijk de status (health) in één oogopslag. Je kan ook meer details en de statusgeschiedenis bekijken.</li>
+</ul>
+<div class="callout info">
+<p>Door SSO (Single Sign-On) moet je het Microsoft Admin Center altijd openen in een privévenster van je browser of in een andere browser dan die je voor je PXL-e-mailadres gebruikt. Zo kan je aanmelden met het juiste adminaccount en niet met je schoolaccount via SSO.</p>
+</div>
+<h2 id="admin-centers-per-dienst">Admin centers per dienst</h2>
+<p>Wanneer je een specifieke dienst wil configureren, moet je naar het juiste admin center voor die dienst gaan. Het specifieke admin center bundelt alle configuratie-items voor een bepaalde dienst. Zo worden we niet overweldigd door alle instellingen die voor alle diensten geconfigureerd kunnen worden. Hieronder een lijst van de specifieke admin centers die we tijdens de cursus gebruiken:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Dienst</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entra ID</td>
+<td>entra.microsoft.com</td>
+</tr>
+<tr>
+<td>Endpoint manager</td>
+<td>intune.microsoft.com</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>exchange.microsoft.com</td>
+</tr>
+<tr>
+<td>SharePoint</td>
+<td>&lt;tenantname&gt;-admin.sharepoint.com</td>
+</tr>
+<tr>
+<td>Teams</td>
+<td>admin.teams.microsoft.com</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>security.microsoft.com</td>
+</tr>
+</tbody>
+</table></div>
+<p>Je hoeft niet alle URL's van buiten te kennen. In het Microsoft 365 admin center is er een pagina met alle beschikbare admin centers voor je abonnement, met directe links ernaar.</p>
+<h2 id="toegangsbeveiliging">Toegangsbeveiliging</h2>
+<p>Microsoft 365 gebruikt een RBAC-beveiligingssysteem. RBAC staat voor:</p>
+<ul>
+<li><strong>R</strong>ole</li>
+<li><strong>B</strong>ased</li>
+<li><strong>A</strong>ccess</li>
+<li><strong>C</strong>ontrol</li>
+</ul>
+<p>Dit beveiligingsprincipe wordt algemeen gebruikt in alle online en on-premises oplossingen. Het belangrijkste doel van RBAC is om altijd een duidelijk overzicht te hebben van de toegangsrechten van elke gebruiker, en te vermijden dat een gebruiker dubbele toegang krijgt. Dat gebeurt met behulp van rollen. RBAC bepaalt dat toegangsrechten enkel aan een rol kunnen worden toegekend. Als een gebruiker deze toegang nodig heeft, moet de gebruiker de rol krijgen. Aan één rol kunnen meerdere toegangsrechten worden toegekend (dit is vaak het geval).</p>
+<p>Met Microsoft 365 kan je je eigen rollen aanmaken. Dat wordt echter niet als best practice beschouwd wanneer je net begint met M365, vanwege de grote hoeveelheid toegangsrechten die toegekend kunnen worden. Het is dan ook het best om de ingebouwde rollen van Microsoft te gebruiken tot je vertrouwd bent met alle toegangsrechten die toegekend kunnen worden.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Toegang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global administrator</td>
+<td>Heeft volledige beheerdersrechten op M365</td>
+</tr>
+<tr>
+<td>User admin</td>
+<td>Kan gebruikers beheren voor alle admin centers</td>
+</tr>
+<tr>
+<td>Group admin</td>
+<td>Kan groepen beheren voor alle admin centers</td>
+</tr>
+<tr>
+<td>&lt;Admin center&gt; admin</td>
+<td>Heeft volledige toegang tot het specifieke admin center</td>
+</tr>
+<tr>
+<td>License admin</td>
+<td>Kan licenties toekennen, intrekken, opnieuw verwerken, ...</td>
+</tr>
+<tr>
+<td>Billing admin</td>
+<td>Beheert alle factureringsfuncties</td>
+</tr>
+<tr>
+<td>Password admin</td>
+<td>Kan het wachtwoord van niet-beheerders wijzigen</td>
+</tr>
+<tr>
+<td>Service Support admin</td>
+<td>Kan supporttickets openen</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="algemeen-advies-voor-rollen">Algemeen advies voor rollen</h3>
+<p>RBAC biedt geweldige mogelijkheden, maar kan ook misbruikt worden. Om misbruik van RBAC in Microsoft 365 te vermijden, moeten enkele algemene richtlijnen gevolgd worden:</p>
+<ul>
+<li>Slechts enkele personen mogen de rol Global Administrator hebben. M365 waarschuwt je ook wanneer er te veel Global Administrators in je abonnement zijn.</li>
+<li>Pas altijd het principe van <strong>Least Privilege</strong> toe: geef enkel toegang als de gebruiker die toegang nodig heeft voor zijn werk. Als hij die toegang niet nodig heeft om zijn job uit te oefenen, heeft hij die toegang in het algemeen niet nodig.</li>
+<li>Gebruik altijd MFA voor alle rollen (dit wordt door Microsoft afgedwongen).</li>
+<li>Probeer een rol altijd toe te kennen aan een gebruikersgroep in plaats van rechtstreeks aan een gebruiker. Zo hou je een beter overzicht.</li>
+<li>Zorg er altijd voor dat je een &quot;Break the glass&quot;-adminaccount hebt. Dit is een specifieke gebruiker waarvan de aanmeldgegevens meestal in een kluis worden bewaard en die enkel gebruikt wordt wanneer alle andere beheerders buitengesloten zijn.</li>
+</ul>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../4-Microsoft365/concepts.html"><small>← Vorige</small><span>Theorie: Microsoft 365</span></a>
+    <a class="next" href="../4-Microsoft365/LicenseModels.html"><small>Volgende →</small><span>Licenties en abonnementen</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

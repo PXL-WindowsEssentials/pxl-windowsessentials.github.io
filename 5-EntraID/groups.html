@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groepen, licenties en rollen – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class="active"><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+<ul class="onpage">
+<li class="l1"><a href="#groepen">Groepen</a></li>
+<li class="l2"><a href="#groepstypes">Groepstypes</a></li>
+<li class="l2"><a href="#lidmaatschapstypes">Lidmaatschapstypes</a></li>
+<li class="l2"><a href="#1-assigned-groepen">1. Assigned-groepen</a></li>
+<li class="l2"><a href="#2-dynamische-groepen">2. Dynamische groepen</a></li>
+<li class="l2"><a href="#licenties-aan-groepen-toewijzen">Licenties aan groepen toewijzen</a></li>
+<li class="l2"><a href="#rollen-toewijzen">Rollen toewijzen</a></li>
+<li class="l3"><a href="#microsoft-learn">Microsoft Learn</a></li>
+</ul>
+</li>
+</ul></details>
+<details class="chap"><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class=""><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="groepen">Groepen</h1>
+<h2 id="groepstypes">Groepstypes</h2>
+<p>In Entra ID kan je twee verschillende types groepen aanmaken:</p>
+<p><strong>1. Security Group</strong>: een groepstype dat ontworpen is om de toegang van zowel gebruikers als toestellen tot verschillende resources te controleren. Het zorgt voor een consistente toepassing van machtigingen en instellingen voor alle leden.</p>
+<p><strong>2. Microsoft 365 Group</strong>: een groepstype dat ontworpen is voor samenwerking. Wanneer je een Microsoft 365 Group aanmaakt, worden automatisch een <strong>gedeelde agenda</strong>, een <strong>gedeeld e-mailadres</strong> en een <strong>SharePoint-site</strong> ingericht.</p>
+<h2 id="lidmaatschapstypes">Lidmaatschapstypes</h2>
+<p>Wanneer je een groep aanmaakt, kan je verschillende lidmaatschapstypes (membership types) kiezen die bepalen hoe gebruikers of toestellen lid worden:</p>
+<p><strong>1. Assigned</strong>: gebruikers of toestellen worden handmatig aan de groep toegevoegd.</p>
+<p><strong>2. Dynamic User</strong>: gebruikers worden automatisch toegevoegd of verwijderd op basis van vooraf gedefinieerde regels.</p>
+<p><strong>3. Dynamic Device</strong>: toestellen worden automatisch toegevoegd of verwijderd op basis van vooraf gedefinieerde regels.</p>
+<h2 id="1-assigned-groepen">1. Assigned-groepen</h2>
+<ul>
+<li>Ga in Entra ID naar <strong>Groups</strong> en selecteer <strong>New Group</strong>.</li>
+<li><strong>Group type</strong>: kies Security.</li>
+<li><strong>Group name</strong>: geef een naam voor de groep in.</li>
+<li>(Optioneel) Voeg een <strong>groepsbeschrijving</strong> toe.</li>
+<li><strong>Membership type</strong>: selecteer Assigned.</li>
+<li><strong>Owners</strong>: kies de gebruikers die het lidmaatschap van de groep mogen beheren.</li>
+<li><strong>Members</strong>: selecteer de gebruikers die tot deze groep moeten behoren.</li>
+<li>Klik op <strong>Create</strong>.</li>
+</ul>
+<p><img src="assets/EntraStaticGroup.png" alt="EntraStaticGroup" loading="lazy" /></p>
+<h2 id="2-dynamische-groepen">2. Dynamische groepen</h2>
+<p>In plaats van groepen handmatig te beheren, kan je dynamische groepen aanmaken, waarbij gebruikers of toestellen automatisch worden toegevoegd of verwijderd op basis van hun eigenschappen.</p>
+<ul>
+<li>Vul net als bij het aanmaken van een statische groep de groepsgegevens in. Selecteer bij <strong>Membership type</strong> Dynamic User.</li>
+<li>Klik op <strong>Add dynamic query</strong>.</li>
+<li>Kies een <strong>property</strong>.</li>
+<li>Selecteer een <strong>operator</strong>.</li>
+<li>Geef een <strong>value</strong> in voor de regel.</li>
+<li>Klik op <strong>Save</strong> om de dynamische regel toe te passen.</li>
+<li>Klik op <strong>Create</strong> om het aanmaken van de groep af te ronden.</li>
+</ul>
+<p>Leden worden niet onmiddellijk aan een dynamische groep toegevoegd. Microsoft geeft aan dat het tot 24 uur kan duren voordat een dynamische groep volledig is opgevuld. In de praktijk gebeurt dat meestal binnen enkele seconden tot enkele minuten, afhankelijk van het aantal gebruikers in je Entra-directory.</p>
+<!-- ![EntraStaticGroup](assets/EntraDynamicGroup.gif) -->
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/EntraDynamicGroup.mp4" type="video/mp4">
+</video>
+<div class="callout info">
+<p>Als je een regel wil maken waarbij meer dan één waarde aanvaard moet worden, kan je de operator <strong>in</strong> gebruiken. Het veld value moet dan als volgt ingevuld worden: <code>[&quot;&lt;value 1&gt;&quot;, &quot;&lt;value 2&gt;&quot;, ... ]</code></p>
+<p>Voorbeeld:
+<code>[&quot;France&quot;, &quot;Belgium&quot;, &quot;Netherlands&quot;]</code></p>
+</div>
+<h2 id="licenties-aan-groepen-toewijzen">Licenties aan groepen toewijzen</h2>
+<p>Net zoals je licenties aan individuele gebruikers kan toewijzen, kan je ze ook aan groepen toewijzen. Een typische workflow is:</p>
+<ul>
+<li>Maak een dynamische Security Group aan.</li>
+<li>Wijs een licentie toe aan deze dynamische groep.</li>
+<li>Wanneer een nieuwe gebruiker met een specifieke eigenschap wordt aangemaakt, wordt hij automatisch aan de groep toegevoegd en krijgt hij de licentie.</li>
+</ul>
+<p>Onderstaande stappen tonen hoe je een licentie aan een groep toewijst:</p>
+<ul>
+<li>Ga naar <strong>https://admin.microsoft.com</strong>.</li>
+<li>Navigeer in het linkermenu naar <strong>Teams &amp; groups</strong> en klik op <strong>Active teams &amp; groups</strong>.</li>
+<li>Selecteer in het bovenste menu <strong>Security groups</strong>.</li>
+<li>Klik op de groep waaraan je een licentie wil toewijzen.</li>
+<li>Selecteer <strong>Licenses and apps</strong>.</li>
+<li>Kies de gewenste licentie.</li>
+<li>Klik op <strong>Save changes</strong>.</li>
+</ul>
+<!-- ![EntraStaticGroup](assets/EntraGroupLicense.gif) -->
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/EntraGroupLicense.mp4" type="video/mp4">
+</video>
+<h2 id="rollen-toewijzen">Rollen toewijzen</h2>
+<p>In het vorige hoofdstuk (4-Microsoft 365) gaven we een overzicht van alle standaardrollen die beschikbaar zijn in M365. Nu we geleerd hebben hoe we groepen aanmaken, komen we hierop terug en gebruiken we de groepen om rollen toe te wijzen.</p>
+<p>Om een standaardrol aan een groep toe te wijzen, gebruik je een <strong>role-assignable Security Group</strong>. Dit type groep wordt gebruikt om dezelfde beheerdersmachtigingen aan meerdere gebruikers te geven. Dynamische groepen kunnen hiervoor niet gebruikt worden.</p>
+<ol>
+<li>Open in <strong>Entra ID</strong> <strong>Groups</strong> en selecteer <strong>New group</strong>.</li>
+<li>Kies <strong>Security</strong> als groepstype en <strong>Assigned</strong> als lidmaatschapstype.</li>
+<li>Schakel <strong>Microsoft Entra roles can be assigned to the group</strong> in.</li>
+<li>Voeg de vereiste beheerders als leden toe en maak de groep aan.</li>
+<li>Open <strong>Roles</strong>, selecteer de vereiste rol en kies <strong>Add assignments</strong>.</li>
+<li>Selecteer de role-assignable groep en bevestig de toewijzing.</li>
+</ol>
+<video controls autoplay loop muted playsinline preload="metadata">
+  <source src="./assets/RoleGroup.mp4" type="video/mp4">
+</video>
+<p>Elk lid van de groep krijgt de machtigingen die bij de rol horen. Wanneer een gebruiker uit de groep wordt verwijderd, verliest hij ook die machtigingen. Wijs enkel de rol toe die nodig is voor de taken van de groep en gebruik een afzonderlijke groep voor elke rol.</p>
+<p>Voorbeelden uit de praktijk:</p>
+<ul>
+<li><strong>Helpdeskgroep</strong>: leden krijgen de rol <strong>Password administrator</strong>, zodat ze wachtwoorden kunnen resetten zonder volledige beheerdersmachtigingen te krijgen.</li>
+<li><strong>Groep voor gebruikersbeheer</strong>: het IT-supportteam krijgt de rol <strong>User administrator</strong> om gebruikersaccounts aan te maken, uit te schakelen en bij te werken.</li>
+<li><strong>Groep voor licentiebeheer</strong>: het team voor applicatiebeheer krijgt de rol <strong>License administrator</strong> om Microsoft 365-licenties toe te wijzen en te verwijderen.</li>
+<li><strong>Groep Global administrator</strong>: deze groep moet zo weinig mogelijk leden bevatten en mag enkel gebruikt worden voor taken die volledige toegang vereisen.</li>
+</ul>
+<h3 id="microsoft-learn">Microsoft Learn</h3>
+<p>Op de volgende Microsoft Learn-pagina vind je een gedetailleerd overzicht van groepsbeheer:</p>
+<ul>
+<li>Een groep aanmaken</li>
+<li>Leden of eigenaars aan een groep toevoegen</li>
+<li>Leden of eigenaars van een groep verwijderen</li>
+<li>Groepsinstellingen bewerken</li>
+<li>Een groep verwijderen</li>
+<li>Een rol aan een groep toewijzen</li>
+</ul>
+<p><a href="https://docs.azure.cn/en-us/entra/fundamentals/how-to-manage-groups" class="ext" target="_blank" rel="noopener">Microsoft Learn: Manage Groups</a></p>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../5-EntraID/users.html"><small>← Vorige</small><span>Gebruikers</span></a>
+    <a class="next" href="../6-Intune/goals.html"><small>Volgende →</small><span>Doelstellingen</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>

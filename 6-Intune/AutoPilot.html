@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autopilot en deployment profiles – Windows Essentials</title>
+<link rel="stylesheet" href="../_site/site.css">
+<link rel="stylesheet" href="../_site/pygments.css">
+</head>
+<body class="" data-root="../">
+<button id="menubtn" type="button" aria-label="Menu">☰</button>
+<aside id="sidebar">
+  <div class="brand"><a href="../index.html">Windows Essentials</a><span>Offline cursus</span></div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Zoeken in de cursus…  ( / )" autocomplete="off" aria-label="Zoeken in de cursus">
+  </div>
+  <nav>
+    <a class="toclink" href="../inhoudsopgave.html">📑 Inhoudsopgave</a>
+    <details class="chap"><summary>0. Setup</summary><ul>
+<li class=""><a href="../0-Setup/concepts.html">Overzicht setup</a>
+</li>
+<li class=""><a href="../0-Setup/VMwareWorkstation.html">VMware Workstation Pro</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioPro.html">Visual Studio Pro aankopen en M365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/VisualStudioProNE.html">Visual Studio Pro (variant met persoonlijk Outlook-account)</a>
+</li>
+<li class=""><a href="../0-Setup/newoutlook.html">Persoonlijk Outlook-account aanmaken</a>
+</li>
+<li class=""><a href="../0-Setup/m365developerstenantcreate.html">Microsoft 365-tenant aanvragen</a>
+</li>
+<li class=""><a href="../0-Setup/M365secondfactor.html">Tweede verificatiemethode instellen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>1. Introductie Windows</summary><ul>
+<li class=""><a href="../1-Introduction/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../1-Introduction/concepts.html">Theorie: Windows-introductie</a>
+</li>
+<li class=""><a href="../1-Introduction/DownloadWindows.html">Windows 11 ISO downloaden</a>
+</li>
+<li class=""><a href="../1-Introduction/Windows11Installation.html">Windows 11 installeren in VMware</a>
+</li>
+<li class=""><a href="../1-Introduction/Support.html">Support, build numbers en End of Servicing</a>
+</li>
+</ul></details>
+<details class="chap"><summary>2. Lokaal beheer</summary><ul>
+<li class=""><a href="../2-LocalManagement/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/concepts.html">Theorie: lokaal beheer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/UserManagement.html">Lokale gebruikers en groepen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Settings.html">Windows Settings</a>
+</li>
+<li class=""><a href="../2-LocalManagement/ProcessandServices.html">Task Manager en Services</a>
+</li>
+<li class=""><a href="../2-LocalManagement/EventViewer.html">Event Viewer</a>
+</li>
+<li class=""><a href="../2-LocalManagement/NTFS.html">NTFS-machtigingen instellen</a>
+</li>
+<li class=""><a href="../2-LocalManagement/Registry.html">Registry Editor</a>
+</li>
+</ul></details>
+<details class="chap"><summary>3. Command Line</summary><ul>
+<li class=""><a href="../3-CommandLine/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../3-CommandLine/concepts.html">Theorie: PowerShell-basis</a>
+</li>
+<li class=""><a href="../3-CommandLine/NavigationCreation.html">Navigeren en bestandsbeheer</a>
+</li>
+<li class=""><a href="../3-CommandLine/SimpleCommands.html">Veelgebruikte cmdlets</a>
+</li>
+<li class=""><a href="../3-CommandLine/scripts.html">Scripts en execution policy</a>
+</li>
+</ul></details>
+<details class="chap"><summary>4. Microsoft 365</summary><ul>
+<li class=""><a href="../4-Microsoft365/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../4-Microsoft365/concepts.html">Theorie: Microsoft 365</a>
+</li>
+<li class=""><a href="../4-Microsoft365/AdminCenters.html">Admin centers en RBAC</a>
+</li>
+<li class=""><a href="../4-Microsoft365/LicenseModels.html">Licenties en abonnementen</a>
+</li>
+</ul></details>
+<details class="chap"><summary>5. Entra ID</summary><ul>
+<li class=""><a href="../5-EntraID/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../5-EntraID/concepts.html">Theorie: Entra ID</a>
+</li>
+<li class=""><a href="../5-EntraID/users.html">Gebruikers</a>
+</li>
+<li class=""><a href="../5-EntraID/groups.html">Groepen, licenties en rollen</a>
+</li>
+</ul></details>
+<details class="chap" open><summary>6. Intune</summary><ul>
+<li class=""><a href="../6-Intune/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../6-Intune/concepts.html">Theorie: Intune</a>
+</li>
+<li class=""><a href="../6-Intune/General.html">Algemene instellingen en synchronisatie</a>
+</li>
+<li class=""><a href="../6-Intune/EnrollDevice.html">Een toestel inschrijven (Autopilot)</a>
+</li>
+<li class="active"><a href="../6-Intune/AutoPilot.html">Autopilot en deployment profiles</a>
+<ul class="onpage">
+<li class="l1"><a href="#autopilot">Autopilot</a></li>
+<li class="l2"><a href="#hoe-de-onderdelen-samenwerken">Hoe de onderdelen samenwerken</a></li>
+<li class="l2"><a href="#1-autopilot-group-tag">1. Autopilot group tag</a></li>
+<li class="l2"><a href="#2-microsoft-entra-dynamic-device-group">2. Microsoft Entra dynamic device group</a></li>
+<li class="l2"><a href="#3-de-oobe-automatiseren-met-een-deployment-profile">3. De OOBE automatiseren met een deployment profile</a></li>
+<li class="l3"><a href="#3-1-basics">3.1. Basics</a></li>
+<li class="l3"><a href="#3-2-out-of-box-experience-oobe">3.2. Out-of-box experience (OOBE)</a></li>
+<li class="l3"><a href="#3-3-assignments">3.3. Assignments</a></li>
+<li class="l3"><a href="#3-4-review-create">3.4. Review + create</a></li>
+<li class="l2"><a href="#resultaat">Resultaat</a></li>
+</ul>
+</li>
+<li class=""><a href="../6-Intune/ConfigurationPolicies.html">Configuration policies</a>
+</li>
+<li class=""><a href="../6-Intune/Apps.html">Apps uitrollen en Company Portal</a>
+</li>
+</ul></details>
+<details class="chap"><summary>7. Collaboration</summary><ul>
+<li class=""><a href="../7-Collaboration/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../7-Collaboration/concepts.html">Theorie: samenwerking</a>
+</li>
+<li class=""><a href="../7-Collaboration/Sharepoint.html">SharePoint</a>
+</li>
+<li class=""><a href="../7-Collaboration/OneDrive.html">OneDrive</a>
+</li>
+<li class=""><a href="../7-Collaboration/PowerAutomate.html">Power Automate</a>
+</li>
+</ul></details>
+<details class="chap"><summary>8. Exchange Online</summary><ul>
+<li class=""><a href="../8-Exchange/goals.html">Doelstellingen</a>
+</li>
+<li class=""><a href="../8-Exchange/concepts.html">Theorie: Exchange Online</a>
+</li>
+<li class=""><a href="../8-Exchange/Mailboxmanagement.html">Mailboxbeheer</a>
+</li>
+</ul></details>
+<details class="chap"><summary>Labo-omgeving</summary><ul>
+<li class=""><a href="../99-labs/1-Introduction/importVMLabs.html">Virtuele machine voor de labo&#x27;s importeren</a>
+</li>
+</ul></details>
+  </nav>
+  <p class="note">Links met ↗ openen externe websites en vragen internet.</p>
+</aside>
+<section id="results" hidden>
+  <div class="rhead"><strong id="rcount"></strong><button id="rclose" type="button">Sluiten (Esc)</button></div>
+  <ol id="rlist"></ol>
+</section>
+<main id="content">
+  <article>
+<h1 id="autopilot">Autopilot</h1>
+<p>Windows Autopilot bestaat uit twee delen:</p>
+<ol>
+<li><strong>Het toestel registreren.</strong> Je meldt het toestel aan bij Autopilot met zijn hardware hash. Zo weet Microsoft dat het toestel bij jouw tenant hoort. Dit deel heb je al gedaan in <a href="EnrollDevice.html">Een toestel inschrijven</a>. Daar staat ook wat Autopilot, de OOBE en een hardware hash zijn.</li>
+<li><strong>Het opstarten regelen.</strong> Je bepaalt hoe het toestel de eerste keer opstart: welke schermen de gebruiker nog ziet, welke naam het toestel krijgt en welke rechten de eerste gebruiker heeft. Dat doe je met een <strong>deployment profile</strong>. Dit deel behandelt deze pagina.</li>
+</ol>
+<p>Zonder deployment profile moet de gebruiker de <strong>Out-of-Box Experience (OOBE)</strong> zelf doorlopen en alle vragen beantwoorden. Met een deployment profile gebeurt dat automatisch, op dezelfde manier voor elk toestel.</p>
+<h2 id="hoe-de-onderdelen-samenwerken">Hoe de onderdelen samenwerken</h2>
+<p>Om de OOBE te automatiseren heb je drie dingen nodig, die je in deze volgorde aanmaakt:</p>
+<ol>
+<li>Een <strong>group tag</strong> op het geregistreerde Autopilot-toestel.</li>
+<li>Een <strong>dynamic device group</strong> in Microsoft Entra die alle toestellen met die tag verzamelt.</li>
+<li>Een <strong>deployment profile</strong> dat aan die groep is toegewezen. Het bepaalt hoe de OOBE verloopt.</li>
+</ol>
+<p>Wanneer een geregistreerd toestel opstart en verbinding maakt met internet, vraagt Windows aan Autopilot bij welke tenant het hoort en past het deployment profile toe dat eraan is toegewezen.</p>
+<h2 id="1-autopilot-group-tag">1. Autopilot group tag</h2>
+<p>Een group tag is een label dat je aan een toestel hangt. Zo kan Entra het toestel automatisch in de juiste groep plaatsen.</p>
+<ol>
+<li>Ga in Intune naar <strong>Devices</strong> → <strong>Enrollment</strong> → <strong>Windows Autopilot</strong> → <strong>Devices</strong>.</li>
+<li>Selecteer het toestel dat je een label wilt geven.</li>
+<li>Geef een <strong>Group tag</strong> in, bijvoorbeeld <code>EmployeeDevice</code>.</li>
+<li>Klik op <strong>Save</strong>.</li>
+</ol>
+<p><img src="assets/AutopilotDevicesGroupTag.png" alt="AutopilotDevicesGroupTag.png" loading="lazy" /></p>
+<h2 id="2-microsoft-entra-dynamic-device-group">2. Microsoft Entra dynamic device group</h2>
+<p>Een deployment profile wordt toegewezen aan een <strong>toestelgroep</strong> (<em>device group</em>). Maak een dynamic group die automatisch elk Autopilot-toestel met jouw group tag bevat.</p>
+<ol>
+<li>
+<p>Ga naar het <strong>Microsoft Entra admin center</strong> → <strong>Groups</strong> → <strong>New group</strong>.</p>
+</li>
+<li>
+<p>Stel <strong>Group type</strong> in op <strong>Security</strong>, geef de groep een naam en stel <strong>Membership type</strong> in op <strong>Dynamic Device</strong>.</p>
+</li>
+<li>
+<p>Klik op <strong>Add dynamic query</strong> en configureer de regel als volgt:</p>
+<ul>
+<li><strong>Property</strong>: <code>devicePhysicalIds</code></li>
+<li><strong>Operator</strong>: <code>Any</code></li>
+<li><strong>Value</strong>: <code>_ -eq &quot;[OrderID]:EmployeeDevice&quot;</code></li>
+</ul>
+<p>Vervang <code>EmployeeDevice</code> door de group tag die je in stap 1 hebt ingegeven.</p>
+</li>
+</ol>
+<p>In regelsyntax ziet het resultaat er zo uit:</p>
+<div class="codewrap"><button class="copy" type="button" aria-label="Kopieer code">Kopieer</button><pre><code>(device.devicePhysicalIds -any (_ -eq &quot;[OrderID]:EmployeeDevice&quot;))
+</code></pre></div>
+<p><img src="assets/DynamicGroupAutopilotrules.png" alt="DynamicGroupAutopilotrules" loading="lazy" /></p>
+<div class="callout info">
+<p>Dynamic groups worden niet onmiddellijk gevuld. Nadat je de groep hebt opgeslagen of een group tag hebt gewijzigd, kan het even duren voor het toestel als lid verschijnt. Wacht tot het toestel in de groep zit voor je de OOBE van het toestel start.</p>
+</div>
+<h2 id="3-de-oobe-automatiseren-met-een-deployment-profile">3. De OOBE automatiseren met een deployment profile</h2>
+<p>Je automatiseert de Windows OOBE via Intune met een <strong>deployment profile</strong>. Een profiel maak je zo aan:</p>
+<ol>
+<li>Selecteer in het linkermenu <strong>Devices</strong>.</li>
+<li>Selecteer onder <strong>Device onboarding</strong> de optie <strong>Enrollment</strong>.</li>
+<li>Kies onder <strong>Windows Autopilot</strong> voor <strong>Deployment profiles</strong>.</li>
+<li>Klik op <strong>Create profile</strong> en selecteer <strong>Windows PC</strong>.</li>
+</ol>
+<p><img src="assets/IntuneDeploymentProfile.gif" alt="IntuneDeploymentProfile" loading="lazy" /></p>
+<h3 id="3-1-basics">3.1. Basics</h3>
+<ol>
+<li>Geef een naam in.</li>
+<li>(Optioneel) Voeg een beschrijving toe.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
+<p><img src="assets/DeploymentProfile1Basics.png" alt="DeploymentProfile1Basics" loading="lazy" /></p>
+<h3 id="3-2-out-of-box-experience-oobe">3.2. Out-of-box experience (OOBE)</h3>
+<ol>
+<li>Vul de instellingen van de Out-of-box experience in.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
+<p>De meeste opties bepalen of een scherm al dan niet verschijnt tijdens de OOBE. Zet ze waar mogelijk op <strong>Hide</strong> en pas de eigenlijke instellingen toe via configuration profiles. Zo moet de eindgebruiker bij de eerste installatie van het toestel niet door een reeks vragen klikken.</p>
+<p><img src="assets/DeploymentProfile2OOBE.png" alt="DeploymentProfile2OOBE" loading="lazy" /></p>
+<p>De belangrijkste instellingen:</p>
+<p><strong>User account type</strong></p>
+<ul>
+<li><strong>Administrator</strong>: de eerste gebruiker die zich aanmeldt op het toestel krijgt administratorrechten (de gebruiker wordt toegevoegd aan de lokale groep Administrators).</li>
+<li><strong>Standard</strong>: de eerste gebruiker die zich aanmeldt op het toestel krijgt standaardrechten.</li>
+</ul>
+<p><strong>Apply device name template</strong></p>
+<p>Je kan voor elk toestel een unieke naam (hostname) laten genereren op basis van een sjabloon.</p>
+<p>Voorbeeld: <code>PXL-%RAND:5%</code> geeft <code>PXL-56314</code>.</p>
+<p><em>Opgelet: de cijfers worden willekeurig gegenereerd, dus dubbele namen kunnen voorkomen. Een hostname mag maximaal 15 tekens lang zijn, houd het sjabloon dus kort.</em></p>
+<h3 id="3-3-assignments">3.3. Assignments</h3>
+<ol>
+<li>Voeg onder <strong>Included groups</strong> de <strong>dynamic device group</strong> toe die je in stap 2 hebt aangemaakt.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
+<p><img src="assets/DeploymentProfile3Assignments.png" alt="DeploymentProfile3Assignments" loading="lazy" /></p>
+<h3 id="3-4-review-create">3.4. Review + create</h3>
+<ol>
+<li>Controleer de instellingen van het deployment profile.</li>
+<li>Klik op <strong>Create</strong>.</li>
+</ol>
+<p><img src="assets/DeploymentProfile4Review.png" alt="DeploymentProfile4Review" loading="lazy" /></p>
+<h2 id="resultaat">Resultaat</h2>
+<p>Vanaf nu volgt elk Autopilot-toestel met de group tag <code>EmployeeDevice</code> automatisch dit deployment profile: de gebruiker meldt zich aan met zijn Microsoft Entra-account, het toestel wordt in Intune ingeschreven en krijgt zijn configuratie zonder handmatige stappen.</p>
+
+  </article>
+  <nav class="pager">
+    <a class="prev" href="../6-Intune/EnrollDevice.html"><small>← Vorige</small><span>Een toestel inschrijven (Autopilot)</span></a>
+    <a class="next" href="../6-Intune/ConfigurationPolicies.html"><small>Volgende →</small><span>Configuration policies</span></a>
+  </nav>
+</main>
+<button id="clearhits" type="button" hidden>Markeringen wissen</button>
+<div id="lightbox" hidden><img alt=""></div>
+<script src="../_site/search-index.js"></script>
+<script src="../_site/site.js"></script>
+</body>
+</html>
