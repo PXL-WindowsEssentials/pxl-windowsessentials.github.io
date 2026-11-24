@@ -13,3 +13,8 @@
 .we-navtoggle{display:none;background:none;border:0;cursor:pointer;color:inherit;padding:.5rem;margin:0 .2rem;border-radius:.3rem}
 .we-navtoggle:hover{background:rgba(120,144,156,.18)}
 @media screen and (min-width:76.25em){.we-navtoggle{display:inline-flex;align-items:center}.we-nav-hidden .md-sidebar--primary{display:none}}
+.we-vbar{display:flex;flex-wrap:wrap;gap:6px;padding:6px 8px;border:1px solid var(--md-default-fg-color--lightest);border-top:0;border-radius:0 0 6px 6px;background:var(--md-code-bg-color);margin-bottom:1em}
+.we-vbar button{font:inherit;font-size:13px;padding:3px 10px;border:1px solid var(--md-default-fg-color--lightest);background:var(--md-default-bg-color);color:var(--md-default-fg-color);border-radius:6px;cursor:pointer}
+.we-vbar button:hover{border-color:var(--md-accent-fg-color)}
+.we-vbar button.on{background:var(--md-primary-fg-color);color:var(--md-default-bg-color);border-color:var(--md-primary-fg-color)}
+.md-typeset video{display:block;max-width:100%;margin:.8em 0 0;border-radius:6px 6px 0 0}
