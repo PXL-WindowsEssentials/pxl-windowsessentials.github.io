@@ -1,0 +1,3573 @@
+
+
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pxl-windowsessentials.github.io/2-LocalManagement/concepts/">
+      
+      
+      
+      
+        <link rel="prev" href="../goals/">
+      
+      
+        <link rel="next" href="../UserManagement/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.3">
+    
+    
+      
+        <title>Theorie: lokaal beheer - Windows Essentials</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.e2cf241e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Ga naar inhoud
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Windows Essentials" class="md-header__button md-logo" aria-label="Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigatie</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Windows Essentials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Theorie: lokaal beheer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Systeemvoorkeur gebruiken"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Systeemvoorkeur gebruiken" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Zoeken</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Zoeken">
+  <button type="button" class="md-search__button">
+    Zoeken
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Windows Essentials" class="md-nav__button md-logo" aria-label="Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    Windows Essentials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overzicht
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  0. Setup
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  0. Setup
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overzicht setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VMwareWorkstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  VMware Workstation Pro
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioPro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro aankopen en M365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioProNE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro (variant met persoonlijk Outlook-account)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/newoutlook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Persoonlijk Outlook-account aanmaken
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/m365developerstenantcreate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Microsoft 365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/M365secondfactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tweede verificatiemethode instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1. Introductie Windows
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  1. Introductie Windows
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Windows-introductie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/DownloadWindows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 ISO downloaden
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/Windows11Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 installeren in VMware
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/Support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Support, build numbers en End of Servicing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2. Lokaal beheer
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  2. Lokaal beheer
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: lokaal beheer
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: lokaal beheer
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-lokale-gebruikers-en-groepen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Lokale gebruikers en groepen
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Lokale gebruikers en groepen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-lokale-groepen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.1. Lokale groepen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-lokale-gebruikers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.2. Lokale gebruikers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-windows-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Windows Settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-task-manager-service-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Task Manager - Service Manager
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Task Manager - Service Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-applicatie-vs-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1. Applicatie vs service
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-task-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.2. Task Manager
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-management-console-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.3. Management Console: Services
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-windows-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Windows Updates
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-event-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Event Viewer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bestandssystemen-ntfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Bestandssystemen: NTFS
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Bestandssystemen: NTFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-wat-zijn-ntfs-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1. Wat zijn NTFS-machtigingen
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1. Wat zijn NTFS-machtigingen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waarom-zijn-ntfs-machtigingen-belangrijk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Waarom zijn NTFS-machtigingen belangrijk?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-basis-ntfs-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2. Basis-NTFS-machtigingen
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Basis-NTFS-machtigingen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overzicht-van-de-belangrijkste-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Overzicht van de belangrijkste machtigingen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-windows-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Windows Registry
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Windows Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-wat-is-de-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1. Wat is de Registry
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. Wat is de Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wat-wordt-er-in-de-registry-opgeslagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wat wordt er in de Registry opgeslagen?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waarom-is-de-registry-belangrijk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Waarom is de Registry belangrijk?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-structuur-van-de-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2. Structuur van de Registry
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. Structuur van de Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structuuroverzicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structuuroverzicht
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-belangrijkste-root-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        De belangrijkste root keys
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeeldpad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Voorbeeldpad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Types values
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lokale gebruikers en groepen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows Settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProcessandServices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Task Manager en Services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EventViewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NTFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTFS-machtigingen instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Registry Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3. Command Line
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  3. Command Line
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: PowerShell-basis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/NavigationCreation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Navigeren en bestandsbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/SimpleCommands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Veelgebruikte cmdlets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scripts en execution policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4. Microsoft 365
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  4. Microsoft 365
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Microsoft 365
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/AdminCenters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Admin centers en RBAC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/LicenseModels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Licenties en abonnementen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5. Entra ID
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  5. Entra ID
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Entra ID
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gebruikers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Groepen, licenties en rollen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  6. Intune
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  6. Intune
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Intune
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/General/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algemene instellingen en synchronisatie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/EnrollDevice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Een toestel inschrijven (Autopilot)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/AutoPilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Autopilot en deployment profiles
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/ConfigurationPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration policies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/Apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Apps uitrollen en Company Portal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  7. Collaboration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  7. Collaboration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: samenwerking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/Sharepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SharePoint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/OneDrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OneDrive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/PowerAutomate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Power Automate
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  8. Exchange Online
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  8. Exchange Online
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Exchange Online
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/Mailboxmanagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mailboxbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Labo-omgeving
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Labo-omgeving
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-labs/1-Introduction/importVMLabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Virtuele machine voor de labo's importeren
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-lokale-gebruikers-en-groepen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Lokale gebruikers en groepen
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Lokale gebruikers en groepen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-lokale-groepen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.1. Lokale groepen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-lokale-gebruikers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.2. Lokale gebruikers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-windows-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Windows Settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-task-manager-service-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Task Manager - Service Manager
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Task Manager - Service Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-applicatie-vs-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1. Applicatie vs service
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-task-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.2. Task Manager
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-management-console-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.3. Management Console: Services
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-windows-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Windows Updates
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-event-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Event Viewer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bestandssystemen-ntfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Bestandssystemen: NTFS
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Bestandssystemen: NTFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-wat-zijn-ntfs-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1. Wat zijn NTFS-machtigingen
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1. Wat zijn NTFS-machtigingen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waarom-zijn-ntfs-machtigingen-belangrijk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Waarom zijn NTFS-machtigingen belangrijk?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-basis-ntfs-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2. Basis-NTFS-machtigingen
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Basis-NTFS-machtigingen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overzicht-van-de-belangrijkste-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Overzicht van de belangrijkste machtigingen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-windows-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Windows Registry
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Windows Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-wat-is-de-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1. Wat is de Registry
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. Wat is de Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wat-wordt-er-in-de-registry-opgeslagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Wat wordt er in de Registry opgeslagen?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waarom-is-de-registry-belangrijk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Waarom is de Registry belangrijk?
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-structuur-van-de-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2. Structuur van de Registry
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. Structuur van de Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structuuroverzicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structuuroverzicht
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-belangrijkste-root-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        De belangrijkste root keys
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voorbeeldpad" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Voorbeeldpad
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Types values
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigatie" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Overzicht
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../goals/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    2. Lokaal beheer
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="lokaal-beheer">Lokaal beheer<a class="headerlink" href="#lokaal-beheer" title="Permanent link">&para;</a></h1>
+<h2 id="1-lokale-gebruikers-en-groepen">1. Lokale gebruikers en groepen<a class="headerlink" href="#1-lokale-gebruikers-en-groepen" title="Permanent link">&para;</a></h2>
+<p>Security Identifiers (SID's) zijn unieke alfanumerieke reeksen die gebruikt worden om gebruikers, groepen en security principals te identificeren. Elke gebruiker en elke groep krijgt een unieke SID toegewezen.</p>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers">Microsoft: Security Identifiers</a></p>
+<h3 id="11-lokale-groepen">1.1. Lokale groepen<a class="headerlink" href="#11-lokale-groepen" title="Permanent link">&para;</a></h3>
+<p>Elke Windows-installatie wordt geleverd met een aantal standaardgroepen. De meest gebruikte groepen zijn <strong>Administrators</strong>, <strong>Users</strong> en <strong>Guests</strong>. Door gebruikers aan een bepaalde groep toe te voegen, krijgen ze automatisch de machtigingen van die groep.</p>
+<table>
+<thead>
+<tr>
+<th>Groep</th>
+<th style="text-align: left;">Beschrijving</th>
+<th style="text-align: right;">SID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Administrators</strong></td>
+<td style="text-align: left;">De ingebouwde groep Administrators heeft volledige controle over de computer, waardoor de leden systeeminstellingen en bestanden kunnen beheren en andere gebruikersaccounts kunnen configureren en beheren. Leden van deze groep hebben onbeperkte toegang en rechten om vrijwel elke taak op het systeem uit te voeren.</td>
+<td style="text-align: right;">S-1-5-32-544</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td style="text-align: left;">De ingebouwde groep Users bestaat uit standaardgebruikers met beperkte rechten, bedoeld om dagelijkse taken uit te voeren zonder systeeminstellingen of kritieke bestanden te kunnen wijzigen. Leden van deze groep hebben toegang tot hun eigen mappen en kunnen basistoepassingen uitvoeren, maar kunnen geen systeembrede wijzigingen aanbrengen.</td>
+<td style="text-align: right;">S-1-5-32-545</td>
+</tr>
+<tr>
+<td><strong>Guests</strong></td>
+<td style="text-align: left;">De ingebouwde groep Guests is bedoeld voor tijdelijke of occasionele toegang tot de computer, met zeer beperkte rechten. Leden van deze groep hebben minimale machtigingen, kunnen enkel hun eigen gegevens beheren en hebben beperkte interactie met het systeem.</td>
+<td style="text-align: right;">S-1-5-32-546</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-lokale-gebruikers">1.2. Lokale gebruikers<a class="headerlink" href="#12-lokale-gebruikers" title="Permanent link">&para;</a></h3>
+<p>Elke standaard Windows-installatie bevat verschillende ingebouwde gebruikersaccounts, maar die zijn standaard uitgeschakeld.</p>
+<table>
+<thead>
+<tr>
+<th>Gebruiker</th>
+<th style="text-align: left;">Beschrijving</th>
+<th style="text-align: right;">SID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Administrator</strong></td>
+<td style="text-align: left;">De standaard lokale Administrator-account is een gebruikersaccount voor systeembeheer. Deze account is lid van de groep Administrators. De Administrator-account heeft volledige controle over bestanden, mappen, services en andere resources op het lokale toestel. Ze kan andere lokale gebruikers aanmaken, gebruikersrechten toewijzen en machtigingen beheren. De standaard Administrator-account kan niet worden verwijderd of vergrendeld, maar wel hernoemd. Standaard is de ingebouwde Administrator-account uitgeschakeld.</td>
+<td style="text-align: right;">S-1-5-domain-500</td>
+</tr>
+<tr>
+<td><strong>Guest</strong></td>
+<td style="text-align: left;">Met de Guest-account kunnen tijdelijke gebruikers aanmelden met beperkte rechten. Standaard is de Guest-account uitgeschakeld en heeft ze een leeg wachtwoord. Omdat de Guest-account anonieme toegang kan bieden, wordt ze beschouwd als een beveiligingsrisico. Het is dan ook een best practice om de Guest-account uitgeschakeld te laten, tenzij het gebruik ervan noodzakelijk is.</td>
+<td style="text-align: right;">S-1-5-domain-501</td>
+</tr>
+</tbody>
+</table>
+<p><em>Om alle ingebouwde gebruikers en groepen te bekijken, open je het lokale gebruikers- en groepsbeheer in Windows.</em></p>
+<ul>
+<li>Tijdens de Windows-installatie wordt de gebruiker die je aanmaakt automatisch toegevoegd aan de groep "Administrators".</li>
+<li>Alle gebruikers die je daarna aanmaakt, worden automatisch toegevoegd aan de groep "Users". Om een andere gebruiker beheerdersrechten te geven, moet je hem toevoegen aan de groep "Administrators".</li>
+</ul>
+<h2 id="2-windows-settings">2. Windows Settings<a class="headerlink" href="#2-windows-settings" title="Permanent link">&para;</a></h2>
+<p>Windows Settings biedt gebruikers een centrale interface om hun systeemvoorkeuren en -instellingen aan te passen en te configureren.</p>
+<p>De meeste systeemvoorkeuren en -instellingen zijn inmiddels geïntegreerd in Windows Settings. Sommige geavanceerdere of specifiekere instellingen moeten echter nog steeds via het Control Panel worden geconfigureerd.</p>
+<p><img alt="SettingsVsControlPanel" src="../assets/Settingsvscontrol.png" /></p>
+<h2 id="3-task-manager-service-manager">3. Task Manager - Service Manager<a class="headerlink" href="#3-task-manager-service-manager" title="Permanent link">&para;</a></h2>
+<h3 id="31-applicatie-vs-service">3.1. Applicatie vs service<a class="headerlink" href="#31-applicatie-vs-service" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Applicatie</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software die ontworpen is om specifieke taken en functies voor de gebruiker uit te voeren.</td>
+<td>Software die op de achtergrond draait en specifieke functies of taken aanbiedt aan andere programma's of systemen.</td>
+</tr>
+<tr>
+<td>Wordt doorgaans bediend via een gebruikersinterface (GUI), waarmee gebruikers de functies kunnen gebruiken.</td>
+<td>Heeft geen gebruikersinterface. Wordt gestart, gestopt en bewaakt door de Service Control Manager (SCM, <code>services.exe</code>). Beheerders beheren ze meestal via de Services-console (<code>services.msc</code>); de instellingen worden opgeslagen in de registry.</td>
+</tr>
+<tr>
+<td>Wordt gestart en uitgevoerd door de eindgebruiker.</td>
+<td>Start vaak automatisch, meestal zonder tussenkomst van de gebruiker.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Proces</strong>: elke applicatie of service bestaat uit één of meer processen. Een proces is een actief programma dat door het besturingssysteem wordt uitgevoerd en resources zoals geheugen en CPU-tijd gebruikt.</li>
+</ul>
+<h3 id="32-task-manager">3.2. Task Manager<a class="headerlink" href="#32-task-manager" title="Permanent link">&para;</a></h3>
+<p><img alt="TaskManager" src="../assets/TaskManager.png" /></p>
+<p>Je kan processen beheren via de Windows Task Manager. Je kan:
+- Een proces beëindigen
+- Een nieuw proces starten
+- Actieve processen, applicaties en services monitoren
+- De systeemresources van een proces, applicatie of service analyseren
+- Een nieuw proces of een nieuwe applicatie starten
+- Opstartprogramma's in- of uitschakelen
+- De algemene systeemprestaties controleren
+- ...</p>
+<h3 id="33-management-console-services">3.3. Management Console: Services<a class="headerlink" href="#33-management-console-services" title="Permanent link">&para;</a></h3>
+<p><img alt="ServicesMMC" src="../assets/MMCServices.png" /></p>
+<p>In de Microsoft Management Console (Services) kan je services beheren door:</p>
+<ul>
+<li>Services te zoeken door de kolomhoofdingen te filteren</li>
+<li>Services te starten</li>
+<li>Services te stoppen</li>
+<li>Het opstarttype van een service te wijzigen</li>
+</ul>
+<h2 id="4-windows-updates">4. Windows Updates<a class="headerlink" href="#4-windows-updates" title="Permanent link">&para;</a></h2>
+<p><img alt="WindowsUpdateTypes" src="../assets/WindowsUpdateTypes.png" /></p>
+<p>In Windows Settings kan je Windows-updates downloaden en installeren en de geschiedenis van geïnstalleerde updates bekijken. Microsoft deelt Windows-updates in in vijf verschillende types:
+1. <strong>Feature update</strong>: een grote release met nieuwe functies, verbeteringen en af en toe aanpassingen aan de gebruikersinterface. De versie van Windows verandert, bijvoorbeeld van 23H2 naar 24H2. Deze updates verschijnen doorgaans één keer per jaar. <em>Deze update wijzigt het eerste deel van het build number.</em>
+2. <strong>Quality update</strong>: een kleinere release die gericht is op het oplossen van bugs, het patchen van beveiligingslekken en het verbeteren van de systeemstabiliteit, zonder nieuwe functies toe te voegen. <em>Elke quality update krijgt een uniek Knowledge Base-nummer (KB) en verhoogt het tweede deel van het Windows build number.</em>
+3. <strong>Driver updates</strong>: de meeste updates van hardwarestuurprogramma's worden via Windows Update geleverd en geïnstalleerd.
+4. <strong>Definition updates</strong>: definitie-updates voor malware van Microsoft Defender Antivirus worden via Windows Update geleverd.
+5. <strong>Other updates</strong>: omvatten optionele software, patches en niet-kritieke verbeteringen voor bijkomende Microsoft- of externe producten.</p>
+<h2 id="5-event-viewer">5. Event Viewer<a class="headerlink" href="#5-event-viewer" title="Permanent link">&para;</a></h2>
+<p>De <strong>Windows Event Viewer</strong> is een ingebouwde tool om systeemlogboeken te monitoren en te beheren. Hiermee kunnen gebruikers systeemactiviteiten opvolgen, fouten opsporen en problemen oplossen. Gebeurtenissen worden ingedeeld in verschillende logboeken, waarvan de belangrijkste Windows-logboeken <strong>Application</strong>, <strong>Security</strong> en <strong>System</strong> zijn.
+Daarnaast bevat de sectie <strong>Applications and Services Logs</strong> gedetailleerde logboeken voor afzonderlijke Windows-componenten en geïnstalleerde toepassingen.</p>
+<p>Elke gebeurtenis krijgt een uniek Event ID, waarmee je logboeken kan filteren en specifieke problemen sneller kan opsporen.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Gebeurtenis</th>
+<th>Logboekcategorie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4624</td>
+<td>Succesvolle aanmelding van een gebruiker</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>4647</td>
+<td>Afmelding van een gebruiker</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>4625</td>
+<td>Mislukte aanmeldpoging</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Opstarten van het systeem</td>
+<td>System</td>
+</tr>
+<tr>
+<td>6006</td>
+<td>Afsluiten van het systeem</td>
+<td>System</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Onjuist afsluiten van het systeem</td>
+<td>System</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Systeemlogboeken gewist</td>
+<td>System</td>
+</tr>
+<tr>
+<td>1102</td>
+<td>Beveiligingslogboeken gewist</td>
+<td>Security</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>Netwerkverbinding tot stand gebracht</td>
+<td>Applications and Services Logs &gt; Microsoft &gt; Windows &gt; NetworkProfile</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Windows-update gedownload</td>
+<td>Applications and Services Logs &gt; Microsoft &gt; Windows &gt; WindowsUpdateClient</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-bestandssystemen-ntfs">6. Bestandssystemen: NTFS<a class="headerlink" href="#6-bestandssystemen-ntfs" title="Permanent link">&para;</a></h2>
+<p>Voordat je Windows installeert op een ssd of harde schijf, moet het opslagmedium gepartitioneerd worden. Een standaard Windows 11-installatie maakt tijdens de setup vier partities aan.</p>
+<ul>
+<li><strong>System</strong>: bevat de opstartbestanden en de bootloader.</li>
+<li><strong>MSR</strong>: bewaart metadata van het systeem.</li>
+<li><strong>Recovery</strong>: gegevens voor de Windows Recovery Environment (WinRE).</li>
+<li><strong>Primary</strong>: waar Windows 11, toepassingen en gebruikersgegevens worden opgeslagen.</li>
+</ul>
+<p>Voordat een partitie door het besturingssysteem gebruikt kan worden, moet ze geformatteerd worden met een bestandssysteem. Een bestandssysteem is een structuur die bestanden en mappen op een opslagmedium organiseert, beheert en toegankelijk maakt. Er zijn verschillende bestandssystemen beschikbaar:</p>
+<p><strong>FAT32</strong>
+- Oud bestandssysteem
+- Brede compatibiliteit: Windows, macOS, Linux, enz.
+- Beperkingen: maximale bestandsgrootte van 4 GB, maximale partitiegrootte van 8 TB
+- Wordt nog vaak gebruikt voor draagbare opslagmedia omwille van de brede ondersteuning door besturingssystemen</p>
+<p><strong>NTFS</strong>
+- Standaardbestandssysteem van Microsoft
+- Ondersteunt zeer grote bestanden en schijven
+- Functies: bestandsmachtigingen, encryptie, compressie, journaling voor gegevensintegriteit</p>
+<p><strong>EXT4</strong>
+- Standaardbestandssysteem van Linux
+- Verwerkt grote bestanden en opslagvolumes
+- Functies: journaling voor gegevensintegriteit</p>
+<p><strong>APFS</strong>
+- Standaardbestandssysteem van macOS
+- Ondersteunt grote bestanden en schijven
+- Functies: compressie, ingebouwde encryptie, sterke mechanismen voor gegevensintegriteit</p>
+<p>NTFS is het standaardbestandssysteem van Windows, ontworpen om grote bestanden en opslagmedia aan te kunnen. Het biedt geavanceerde functies zoals bestandsmachtigingen, encryptie, compressie en journaling om beveiliging en gegevensintegriteit te garanderen.</p>
+<h3 id="61-wat-zijn-ntfs-machtigingen">6.1. Wat zijn NTFS-machtigingen<a class="headerlink" href="#61-wat-zijn-ntfs-machtigingen" title="Permanent link">&para;</a></h3>
+<p>NTFS-machtigingen bepalen <strong>wie toegang heeft tot bestanden en mappen</strong> op een Windows-systeem en <strong>wat gebruikers ermee mogen doen</strong>.</p>
+<p>Ze maken deel uit van het NTFS-bestandssysteem, het standaardbestandssysteem in Windows.</p>
+<h4 id="waarom-zijn-ntfs-machtigingen-belangrijk">Waarom zijn NTFS-machtigingen belangrijk?<a class="headerlink" href="#waarom-zijn-ntfs-machtigingen-belangrijk" title="Permanent link">&para;</a></h4>
+<p>Met NTFS-machtigingen kan je:</p>
+<ul>
+<li>📁 De toegang tot bestanden en mappen controleren</li>
+<li>👤 Verschillende rechten geven aan verschillende gebruikers</li>
+<li>🔐 Gevoelige gegevens beschermen</li>
+<li>🏫 Werken in een gecontroleerde omgeving (school, bedrijf, enz.)</li>
+</ul>
+<h3 id="62-basis-ntfs-machtigingen">6.2. Basis-NTFS-machtigingen<a class="headerlink" href="#62-basis-ntfs-machtigingen" title="Permanent link">&para;</a></h3>
+<p>In deze cursus behandelen we enkel de <strong>basismachtigingen</strong>.</p>
+<h4 id="overzicht-van-de-belangrijkste-machtigingen">Overzicht van de belangrijkste machtigingen<a class="headerlink" href="#overzicht-van-de-belangrijkste-machtigingen" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Machtiging</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Read</strong></td>
+<td>De inhoud van een bestand of map bekijken, samen met de kenmerken en machtigingen ervan</td>
+</tr>
+<tr>
+<td><strong>Read &amp; Execute</strong></td>
+<td>Read + programma's en scripts uitvoeren</td>
+</tr>
+<tr>
+<td><strong>List Folder Contents</strong></td>
+<td>Read &amp; Execute, enkel voor mappen: de bestanden en submappen erin bekijken</td>
+</tr>
+<tr>
+<td><strong>Write</strong></td>
+<td>Nieuwe bestanden en mappen aanmaken en de inhoud van bestanden wijzigen, maar <strong>niet</strong> verwijderen of lezen</td>
+</tr>
+<tr>
+<td><strong>Modify</strong></td>
+<td>Read &amp; Execute + Write + <strong>verwijderen</strong></td>
+</tr>
+<tr>
+<td><strong>Full Control</strong></td>
+<td>Modify + <strong>machtigingen wijzigen</strong> en <strong>eigenaarschap overnemen</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-windows-registry">7. Windows Registry<a class="headerlink" href="#7-windows-registry" title="Permanent link">&para;</a></h2>
+<h3 id="71-wat-is-de-registry">7.1. Wat is de Registry<a class="headerlink" href="#71-wat-is-de-registry" title="Permanent link">&para;</a></h3>
+<p>De <strong>Windows Registry</strong> is een centrale databank waarin Windows en toepassingen hun instellingen en configuratie bewaren.</p>
+<p>Vroeger werden instellingen opgeslagen in afzonderlijke bestanden (zoals <code>.ini</code>-bestanden). Dat was moeilijker te beheren. De Registry lost dit op door alles in één gestructureerd systeem op te slaan.</p>
+<h4 id="wat-wordt-er-in-de-registry-opgeslagen">Wat wordt er in de Registry opgeslagen?<a class="headerlink" href="#wat-wordt-er-in-de-registry-opgeslagen" title="Permanent link">&para;</a></h4>
+<p>De Registry bevat:</p>
+<ul>
+<li><strong>Systeeminstellingen</strong></li>
+<li>Hardwareconfiguratie</li>
+<li>Stuurprogramma's en services</li>
+<li><strong>Gebruikersinstellingen</strong></li>
+<li>Bureaubladinstellingen</li>
+<li>Persoonlijke voorkeuren</li>
+<li><strong>Softwareconfiguratie</strong></li>
+<li>Geïnstalleerde programma's</li>
+<li>Toepassingsinstellingen</li>
+<li><strong>Beveiligingsinstellingen</strong></li>
+<li>Policies en toegangsbeheer</li>
+</ul>
+<h4 id="waarom-is-de-registry-belangrijk">Waarom is de Registry belangrijk?<a class="headerlink" href="#waarom-is-de-registry-belangrijk" title="Permanent link">&para;</a></h4>
+<p>Windows gebruikt de Registry voortdurend:
+- Wanneer het systeem opstart
+- Wanneer een gebruiker aanmeldt
+- Wanneer programma's draaien</p>
+<p>⚠️ <strong>Belangrijk:</strong>
+Als je de verkeerde instelling wijzigt, kan dat:
+- Je systeem kapotmaken
+- Fouten veroorzaken
+- Verhinderen dat Windows opstart</p>
+<p>👉 Wees altijd voorzichtig wanneer je met de Registry werkt.</p>
+<h3 id="72-structuur-van-de-registry">7.2. Structuur van de Registry<a class="headerlink" href="#72-structuur-van-de-registry" title="Permanent link">&para;</a></h3>
+<p>De Registry heeft een <strong>boomstructuur</strong>, vergelijkbaar met mappen en bestanden.</p>
+<h4 id="structuuroverzicht">Structuuroverzicht<a class="headerlink" href="#structuuroverzicht" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Root keys</strong> → bovenste niveau, zoals schijven (bv. <code>HKEY_LOCAL_MACHINE</code>, <code>HKEY_CURRENT_USER</code>)</li>
+<li><strong>Keys</strong> → zoals mappen</li>
+<li><strong>Subkeys</strong> → keys binnenin andere keys, zoals submappen</li>
+<li><strong>Values</strong> → de eigenlijke instellingen, zoals bestanden. Elke value heeft een <strong>naam</strong>, een <strong>type</strong> (bv. <code>REG_SZ</code>, <code>REG_DWORD</code>) en <strong>data</strong>.</li>
+<li><strong>Hives</strong> → de bestanden op schijf waarin de registry wordt opgeslagen (bv. <code>SYSTEM</code>, <code>SOFTWARE</code>, <code>NTUSER.DAT</code>). Windows laadt ze bij het opstarten onder de root keys.</li>
+</ul>
+<h4 id="de-belangrijkste-root-keys">De belangrijkste root keys<a class="headerlink" href="#de-belangrijkste-root-keys" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Root key</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HKEY_LOCAL_MACHINE (HKLM)</td>
+<td>Systeembrede instellingen (hardware, stuurprogramma's, services, geïnstalleerde software)</td>
+</tr>
+<tr>
+<td>HKEY_CURRENT_USER (HKCU)</td>
+<td>Instellingen van de aangemelde gebruiker; verwijst naar de key van die gebruiker onder HKU</td>
+</tr>
+<tr>
+<td>HKEY_USERS (HKU)</td>
+<td>Profielen van de momenteel geladen gebruikers (per SID), plus <code>.DEFAULT</code></td>
+</tr>
+<tr>
+<td>HKEY_CLASSES_ROOT (HKCR)</td>
+<td>Bestandsassociaties en COM-objecten; gecombineerde weergave van <code>HKLM\SOFTWARE\Classes</code> en <code>HKCU\Software\Classes</code></td>
+</tr>
+<tr>
+<td>HKEY_CURRENT_CONFIG (HKCC)</td>
+<td>Huidig hardwareprofiel; verwijst naar een subkey van HKLM</td>
+</tr>
+</tbody>
+</table>
+<h4 id="voorbeeldpad">Voorbeeldpad<a class="headerlink" href="#voorbeeldpad" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+</span></code></pre></div>
+<ul>
+<li><code>HKEY_CURRENT_USER</code> → root key</li>
+<li><code>Software\Microsoft\Windows\CurrentVersion\Explorer</code> → keys en subkeys</li>
+<li><code>Advanced</code> → key die de instellingen van File Explorer bevat</li>
+</ul>
+<h4 id="types-values">Types values<a class="headerlink" href="#types-values" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Beschrijving</th>
+<th>Voorbeeld</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REG_SZ</td>
+<td>Tekstwaarde</td>
+<td><code>DisplayName</code> van een service</td>
+</tr>
+<tr>
+<td>REG_EXPAND_SZ</td>
+<td>Tekst met omgevingsvariabelen die bij het lezen worden uitgebreid</td>
+<td><code>%SystemRoot%\System32\spoolsv.exe</code></td>
+</tr>
+<tr>
+<td>REG_MULTI_SZ</td>
+<td>Lijst van tekstwaarden</td>
+<td><code>DependOnService</code> van een service</td>
+</tr>
+<tr>
+<td>REG_DWORD</td>
+<td>32-bitgetal, vaak gebruikt als aan/uit (0/1)</td>
+<td><code>HideFileExt</code>, <code>Start</code></td>
+</tr>
+<tr>
+<td>REG_QWORD</td>
+<td>64-bitgetal</td>
+<td>Tijdstempels, grote tellers</td>
+</tr>
+<tr>
+<td>REG_BINARY</td>
+<td>Binaire gegevens</td>
+<td>Hardware- en beveiligingsinstellingen</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../goals/" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Doelstellingen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              <div class="md-ellipsis">
+                Doelstellingen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../UserManagement/" class="md-footer__link md-footer__link--next" aria-label="Volgende: Lokale gebruikers en groepen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              <div class="md-ellipsis">
+                Lokale gebruikers en groepen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Gekopieerd naar klembord","clipboard.copy":"Kopiëren naar klembord","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 extra overeenkomst op deze pagina","search.result.more.other":"# extra overeenkomsten op deze pagina","search.result.none":"Geen overeenkomende documenten","search.result.one":"1 overeenkomende document","search.result.other":"# overeenkomende documenten","search.result.placeholder":"Typ om te beginnen met zoeken","search.result.term.missing":"Ontbreekt","select.version":"Selecteer versie"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
+      
+      
+    
+  </body>
+</html>

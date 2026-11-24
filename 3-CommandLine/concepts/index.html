@@ -1,0 +1,3056 @@
+
+
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pxl-windowsessentials.github.io/3-CommandLine/concepts/">
+      
+      
+      
+      
+        <link rel="prev" href="../goals/">
+      
+      
+        <link rel="next" href="../NavigationCreation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.3">
+    
+    
+      
+        <title>Theorie: PowerShell-basis - Windows Essentials</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.e2cf241e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Ga naar inhoud
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Windows Essentials" class="md-header__button md-logo" aria-label="Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigatie</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Windows Essentials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Theorie: PowerShell-basis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Systeemvoorkeur gebruiken"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Systeemvoorkeur gebruiken" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Zoeken</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Zoeken">
+  <button type="button" class="md-search__button">
+    Zoeken
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Windows Essentials" class="md-nav__button md-logo" aria-label="Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    Windows Essentials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overzicht
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  0. Setup
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  0. Setup
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overzicht setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VMwareWorkstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  VMware Workstation Pro
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioPro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro aankopen en M365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioProNE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro (variant met persoonlijk Outlook-account)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/newoutlook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Persoonlijk Outlook-account aanmaken
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/m365developerstenantcreate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Microsoft 365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/M365secondfactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tweede verificatiemethode instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1. Introductie Windows
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  1. Introductie Windows
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Windows-introductie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/DownloadWindows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 ISO downloaden
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/Windows11Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 installeren in VMware
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/Support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Support, build numbers en End of Servicing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2. Lokaal beheer
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  2. Lokaal beheer
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: lokaal beheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/UserManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lokale gebruikers en groepen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows Settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/ProcessandServices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Task Manager en Services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/EventViewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/NTFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTFS-machtigingen instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/Registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Registry Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3. Command Line
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  3. Command Line
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: PowerShell-basis
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: PowerShell-basis
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Command Line Interface
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell-starten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PowerShell starten
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standaardgebruiker-vs-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Standaardgebruiker vs administrator
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdlets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cmdlets
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoeken-en-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Zoeken en help
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zoeken en help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Get-Command
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Get-Help
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Alias
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parameters
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters-en-volgorde" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parameters en volgorde
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NavigationCreation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Navigeren en bestandsbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SimpleCommands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Veelgebruikte cmdlets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scripts en execution policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4. Microsoft 365
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  4. Microsoft 365
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Microsoft 365
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/AdminCenters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Admin centers en RBAC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/LicenseModels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Licenties en abonnementen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5. Entra ID
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  5. Entra ID
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Entra ID
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gebruikers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Groepen, licenties en rollen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  6. Intune
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  6. Intune
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Intune
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/General/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algemene instellingen en synchronisatie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/EnrollDevice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Een toestel inschrijven (Autopilot)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/AutoPilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Autopilot en deployment profiles
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/ConfigurationPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration policies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/Apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Apps uitrollen en Company Portal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  7. Collaboration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  7. Collaboration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: samenwerking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/Sharepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SharePoint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/OneDrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OneDrive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/PowerAutomate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Power Automate
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  8. Exchange Online
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  8. Exchange Online
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Exchange Online
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/Mailboxmanagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mailboxbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Labo-omgeving
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Labo-omgeving
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-labs/1-Introduction/importVMLabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Virtuele machine voor de labo's importeren
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Command Line Interface
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell-starten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        PowerShell starten
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standaardgebruiker-vs-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Standaardgebruiker vs administrator
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdlets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cmdlets
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoeken-en-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Zoeken en help
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zoeken en help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Get-Command
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Get-Help
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Alias
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parameters
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters-en-volgorde" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parameters en volgorde
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigatie" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Overzicht
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../goals/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    3. Command Line
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
+<p>Alle moderne besturingssystemen bieden twee methodes om met het besturingssysteem zelf te werken:
+- <strong>GUI</strong>: <strong>G</strong>raphical <strong>U</strong>ser <strong>I</strong>nterface
+- <strong>CLI</strong>: <strong>C</strong>ommand <strong>L</strong>ine <strong>I</strong>nterface</p>
+<p>In dit hoofdstuk richten we ons op de tweede van deze twee belangrijkste interactiemethodes.</p>
+<h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
+<p>Hoewel de GUI een van de meest gebruikte interactiemethodes voor Windows is, geeft de CLI (eens je ze onder de knie hebt) je diepgaandere controle over het besturingssysteem zelf. Met de CLI kan je onder meer uitvoeren:
+- Bestandsbeheer
+- Systeemconfiguratie
+- Gebruikersbeheer
+- Diagnostiek
+- Applicatiebeheer
+- Beveiligingsbeheer
+- ...</p>
+<p>Als systeem- en netwerkengineer is het noodzakelijk dat je de CLI kan gebruiken, zeker voor Windows en alle cloudgerelateerde services.</p>
+<p>De eerste versie van de Microsoft-besturingssystemen, MS-DOS (en alle andere besturingssystemen in het begin van het computertijdperk), was uitsluitend tekstgebaseerd, waardoor de CLI de enige beschikbare interactiemethode was. Vanaf Windows 1.0 ontwikkelde Microsoft de eerste GUI, die je kon uitvoeren nadat je de specifieke GUI-applicatie had gestart. Tot Windows XP steunden de Windows-versies sterk op de kernfuncties van MS-DOS en draaiden ze dus bovenop de CLI van MS-DOS.</p>
+<p>Vanaf Windows XP ontwikkelde Microsoft het besturingssysteem van de grond af opnieuw en werd de GUI de belangrijkste interactiemethode van het besturingssysteem. De GUI draaide niet langer bovenop de CLI, maar was een integraal onderdeel van het besturingssysteem. Omdat de meeste power users echter gewend waren aan de CLI, hield Microsoft de CLI in leven via de applicatie Windows Command Prompt. Zelfs in de moderne versie Windows 11 is Command Prompt nog altijd beschikbaar.</p>
+<p>In het begin van de jaren 2000 raakte Command Prompt echter achterop en werd de nood aan een krachtigere en flexibelere CLI steeds groter. Om aan die behoefte te voldoen, ontwikkelde Microsoft PowerShell. Dit is een objectgeoriënteerde shell met geavanceerdere functionaliteit en de mainstream-shell voor alle services van Microsoft.</p>
+<p>In de rest van deze cursus gebruiken we enkel PowerShell voor CLI-interactie met Windows.</p>
+<h3 id="powershell-starten">PowerShell starten<a class="headerlink" href="#powershell-starten" title="Permanent link">&para;</a></h3>
+<p>Je kan PowerShell op drie manieren starten:
+- Via de PowerShell-terminalapp
+- Via de Terminal-app
+- Via Visual Studio Code</p>
+<p>De meeste gebruikers geven de voorkeur aan de Terminal-app omdat je er meerdere tabbladen kan gebruiken. Zo kan je meerdere cmdlets naast elkaar uitvoeren zonder te wachten tot de vorige cmdlet een resultaat geeft.</p>
+<video controls autoplay loop muted playsinline>
+  <source src=".././assets/Powershell.mp4" type="video/mp4">
+</video>
+
+<video controls autoplay loop muted playsinline>
+  <source src=".././assets/tabs.mp4" type="video/mp4">
+</video>
+
+<h3 id="standaardgebruiker-vs-administrator">Standaardgebruiker vs administrator<a class="headerlink" href="#standaardgebruiker-vs-administrator" title="Permanent link">&para;</a></h3>
+<p>Standaard opent de PowerShell-shell (of je nu de shell opende via de PowerShell-terminalapp of via de Terminal-app) met een standaardgebruikersprofiel. Deze shell draait onder je huidige gebruiker en laat dus alle acties toe volgens je rechten binnen het besturingssysteem. Zodra je echter cmdlets moet uitvoeren waarvoor administratorrechten nodig zijn, moet je PowerShell starten onder het administratorprofiel. Zelfs als je gebruiker lid is van de groep Administrators, moet je PowerShell nog altijd onder het administratorprofiel openen voor administratieve acties.</p>
+<video controls autoplay loop muted playsinline>
+  <source src=".././assets/pwsadm.mp4" type="video/mp4">
+</video>
+
+<h3 id="cmdlets">Cmdlets<a class="headerlink" href="#cmdlets" title="Permanent link">&para;</a></h3>
+<p>Wanneer je in PowerShell een actie uitvoert, gebeurt dat altijd via een cmdlet. Een cmdlet is het commando of de actie die je in PowerShell uitvoert. Alle cmdlets zijn op dezelfde manier opgebouwd: <code>Verb-Noun</code></p>
+<p><img alt="VerbNoun" src="../assets/cmdlet.jpg" /></p>
+<p>Het verb (werkwoord) is altijd de actie die we willen uitvoeren en het noun (zelfstandig naamwoord) geeft aan op welk onderdeel we de actie willen uitvoeren.</p>
+<p>De volgende tabel geeft een overzicht van enkele veelgebruikte verbs in PowerShell.</p>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Doel</th>
+<th>Voorbeeldcmdlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get</td>
+<td>Informatie opvragen</td>
+<td>Get-Process</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Een bewerking of proces starten</td>
+<td>Start-Service</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>Een proces of service beëindigen of stoppen</td>
+<td>Stop-Process</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>Gebruikersinvoer opvragen of lezen</td>
+<td>Read-Host</td>
+</tr>
+<tr>
+<td>Write</td>
+<td>Tekst of gegevens uitvoeren</td>
+<td>Write-Output</td>
+</tr>
+<tr>
+<td>New</td>
+<td>Nieuwe items of objecten aanmaken</td>
+<td>New-Item</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.4">Approved Verbs for PowerShell Commands - Microsoft Learn</a></p>
+<h3 id="zoeken-en-help">Zoeken en help<a class="headerlink" href="#zoeken-en-help" title="Permanent link">&para;</a></h3>
+<p>Wanneer je PowerShell voor het eerst gebruikt, kan het ontmoedigend zijn. Met meer dan 800 standaardcmdlets in PowerShell is het een titanenwerk om ze allemaal van buiten te kennen. Zelfs ervaren PowerShell-gebruikers kennen niet alle commando's van buiten. Gelukkig heeft Microsoft twee speciaal ontworpen cmdlets om je te helpen de juiste cmdlet voor je taak te vinden.</p>
+<h4 id="get-command">Get-Command<a class="headerlink" href="#get-command" title="Permanent link">&para;</a></h4>
+<p>De eerste cmdlet is <strong>Get-Command</strong>.
+Met deze cmdlet kan je zoeken in de databank van alle ingeschakelde cmdlets.</p>
+<p>Bijvoorbeeld:
+- <code>Get-Command *process*</code> geeft een lijst van alle PowerShell-cmdlets waarin het woord process voorkomt.
+- <code>Get-Command *user</code> geeft een lijst van alle PowerShell-cmdlets die eindigen op user.
+- <code>Get-Command get-File*</code> geeft een lijst van alle PowerShell-cmdlets die beginnen met get-file.</p>
+<p>De oplettende studenten hebben gemerkt dat de plaatsing van de <code>*</code> belangrijk is, want het resultaat verandert naargelang de plaats van de <code>*</code>:
+- <code>search*</code>: alle cmdlets die beginnen met de zoekterm.
+- <code>*search</code>: alle cmdlets die eindigen op de zoekterm.
+- <code>*search*</code>: alle cmdlets waarin de zoekterm voorkomt.</p>
+<h4 id="get-help">Get-Help<a class="headerlink" href="#get-help" title="Permanent link">&para;</a></h4>
+<p>Nu we het commando hebben gevonden dat we zochten, moeten we nog onthouden wat het commando doet en hoe we het moeten gebruiken. Daarvoor kunnen we de cmdlet <code>Get-Help</code> gebruiken. Deze cmdlet geeft een gedetailleerde uitleg over wat de cmdlet doet en hoe we hem moeten gebruiken. Als we de juiste extra parameters meegeven, krijgen we zelfs nog meer details.</p>
+<ul>
+<li><code>Get-Help Get-Service</code> opent een samengevatte helppagina van de cmdlet Get-Service</li>
+<li><code>Get-Help Get-Service -Full</code> opent de volledige helppagina van de cmdlet Get-Service</li>
+<li><code>Get-Help Get-Service -Online</code> opent de volledige online helppagina van de cmdlet Get-Service</li>
+<li><code>Get-Help Get-Service -Examples</code> opent een helppagina met enkele veelvoorkomende voorbeelden</li>
+<li><code>Get-Help Get-Service -Parameter *</code> opent een helppagina met een overzicht van alle beschikbare parameters voor de cmdlet Get-Service (meer details over parameters volgen later in deze cursus)</li>
+</ul>
+<h3 id="alias">Alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h3>
+<p>Door de <code>Verb-Noun</code>-syntax kunnen PowerShell-cmdlets lang worden. Bijvoorbeeld: <code>Enable-MicrosoftUpdateServiceManagerClient</code>. Dergelijke cmdlets onthouden en intypen in de terminal kan heel omslachtig zijn. Daarom introduceerde Microsoft het concept van aliassen. Dit zijn afkortingen van de cmdlet of kortere cmdlets. De aliassen zijn korter en dus makkelijker te onthouden. Om de juiste alias van een bepaalde cmdlet te vinden, gebruik je de cmdlet <code>Get-Alias</code>.</p>
+<p>Bijvoorbeeld:
+- <code>Get-Alias *cd*</code>: geeft een overzicht van alle bekende aliassen waarin 'cd' voorkomt
+- <code>Get-Alias -Definition Stop-Process</code>: geeft een overzicht van alle bekende aliassen voor de cmdlet <code>Stop-Process</code>.</p>
+<p>De oplettende student heeft gemerkt dat we hetzelfde zoekprincipe met de <code>*</code> gebruiken als bij de cmdlet <code>Get-Command</code>.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<p>Elke cmdlet bestaat uit de cmdlet zelf en extra opties die beschikbaar zijn voor die specifieke cmdlet. Deze opties noemen we <strong>parameters</strong>. Alle parameters roep je aan met het teken <strong>-</strong>, gevolgd door de eigenlijke parameter en, indien nodig, een waarde voor de parameter.</p>
+<p>Bijvoorbeeld:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Get-Process –Name *chrome*
+</span></code></pre></div>
+In dit voorbeeld vragen we PowerShell om een overzicht van alle huidige processen waarvan de naam <code>chrome</code> bevat.</p>
+<p>Elke cmdlet heeft meerdere parameters die je in dezelfde cmdlet naast elkaar kan gebruiken.</p>
+<p>Bijvoorbeeld:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Get-ChildItem -File -Recurse -Name *test*
+</span></code></pre></div></p>
+<p>Zoals eerder vermeld is het een titanenwerk om alle cmdlets van buiten te leren, laat staan alle parameters van elke cmdlet. <code>Get-Help cmdlet -Parameter *</code> geeft je een overzicht van alle parameters en hoe je ze correct gebruikt.</p>
+<h4 id="parameters-en-volgorde">Parameters en volgorde<a class="headerlink" href="#parameters-en-volgorde" title="Permanent link">&para;</a></h4>
+<p>Wanneer we leren werken met parameters, is het best om altijd de volledige parameternamen te schrijven. Zo blijven je commando's leesbaar en voorkom je fouten.</p>
+<p>Cmdlets ondersteunen echter ook positioneel en standaardgedrag.</p>
+<p>Deze twee commando's zijn bijvoorbeeld gelijkwaardig:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="n">Spooler</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Get-Service</span> <span class="n">Spooler</span>
+</span></code></pre></div>
+<p>Een ander voorbeeld:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span>
+</span></code></pre></div>
+<p>In beide voorbeelden zie je dat het niet nodig is om altijd de volledige parameternaam te schrijven. We moeten echter voorzichtig zijn, want niet alle parameternamen mogen weggelaten worden: elke parameter heeft metadata die bepaalt hoe deze parameter gebruikt kan worden.
+Deze gegevens staan in de helppagina's:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Get-Help</span> <span class="nb">Get-ChildItem</span> <span class="n">-Parameter</span> <span class="n">Path</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Get-Help</span> <span class="nb">Get-ChildItem</span> <span class="n">-Parameter</span> <span class="p">*</span>
+</span></code></pre></div>
+<p>De uitvoer bevat metadata zoals:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Required?                    false|true
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Position?                    named|number
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Default value                true|false
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Accept pipeline input?       true|false
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Accept wildcard characters?  true|false
+</span></code></pre></div>
+<p>Betekenis van deze velden:</p>
+<ul>
+<li><code>Required?</code>: moet deze parameter opgegeven worden?</li>
+<li><code>Position?</code>: kan hij op volgorde doorgegeven worden (<code>0</code>, <code>1</code>, ...) of moet hij bij naam genoemd worden?</li>
+<li><code>Default value</code>: is er een terugvalwaarde wanneer de parameter weggelaten wordt?</li>
+<li><code>Accept pipeline input?</code>: kunnen waarden uit de pipeline komen?</li>
+<li><code>Accept wildcard characters?</code>: ondersteunt hij patronen zoals <code>*</code> en <code>?</code></li>
+</ul>
+<p>Voorlopig zijn we enkel geïnteresseerd in de eerste drie metadata.</p>
+<p><strong>Required?</strong></p>
+<p>Elke parameter die required is, heeft een waarde nodig wanneer je de cmdlet uitvoert. Geef je de parameter of de waarde niet op, dan vraagt PowerShell ernaar tijdens het uitvoeren van de cmdlet.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">copy-item</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">cmdlet</span> <span class="nb">Copy-Item</span> <span class="n">at</span> <span class="n">command</span> <span class="n">pipeline</span> <span class="k">position</span> <span class="n">1</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">Supply</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="n">parameters</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">Path</span><span class="p">[</span><span class="n">0</span><span class="p">]:</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><strong>Position?</strong></p>
+<p><code>Position</code> vertelt PowerShell waar een parameterwaarde in het commando mag staan.</p>
+<ul>
+<li><code>named</code> betekent dat je de parameternaam moet schrijven (bijvoorbeeld <code>-Path</code>).</li>
+<li>een getal (<code>0</code>, <code>1</code>, ...) betekent dat je de parameternaam mag weglaten en waarden op volgorde mag doorgeven.</li>
+</ul>
+<p>Je kan dit voor <code>Copy-Item</code> nagaan met:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-Help</span> <span class="nb">Copy-Item</span> <span class="n">-Parameter</span> <span class="n">Path</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Get-Help</span> <span class="nb">Copy-Item</span> <span class="n">-Parameter</span> <span class="n">Destination</span>
+</span></code></pre></div>
+<p>Bij <code>Copy-Item</code> is <code>Path</code> positioneel <code>0</code> en <code>Destination</code> positioneel <code>1</code>.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">get-help</span> <span class="nb">copy-item</span> <span class="n">-Parameter</span> <span class="n">Path</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">-Path</span> <span class="p">&lt;</span><span class="n">System</span><span class="p">.</span><span class="n">String</span><span class="p">[]&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">Specifies</span><span class="p">,</span> <span class="n">as</span> <span class="n">a</span> <span class="n">string</span> <span class="n">array</span><span class="p">,</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">items</span> <span class="n">to</span> <span class="n">copy</span><span class="p">.</span> <span class="n">Wildcard</span> <span class="n">characters</span> <span class="n">are</span> <span class="n">permitted</span><span class="p">.</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">Required</span><span class="p">?</span>                    <span class="n">true</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="k">Position</span><span class="p">?</span>                    <span class="n">0</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">Default</span> <span class="n">value</span>                <span class="n">None</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">Accept</span> <span class="n">pipeline</span> <span class="n">input</span><span class="p">?</span>       <span class="n">True</span> <span class="p">(</span><span class="n">ByPropertyName</span><span class="p">,</span> <span class="n">ByValue</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">Accept</span> <span class="n">wildcard</span> <span class="n">characters</span><span class="p">?</span>  <span class="n">true</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">get-help</span> <span class="nb">copy-item</span> <span class="n">-Parameter</span> <span class="n">Destination</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">-Destination</span> <span class="p">&lt;</span><span class="n">System</span><span class="p">.</span><span class="n">String</span><span class="p">&gt;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="n">Specifies</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">new</span> <span class="n">location</span><span class="p">.</span> <span class="n">The</span> <span class="k">default</span> <span class="n">is</span> <span class="n">the</span> <span class="n">current</span> <span class="n">directory</span><span class="p">.</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    <span class="n">To</span> <span class="n">rename</span> <span class="n">the</span> <span class="n">item</span> <span class="n">being</span> <span class="n">copied</span><span class="p">,</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">new</span> <span class="n">name</span> <span class="k">in</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Destination</span> <span class="k">parameter</span><span class="p">.</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    <span class="n">Required</span><span class="p">?</span>                    <span class="n">false</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    <span class="k">Position</span><span class="p">?</span>                    <span class="n">1</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    <span class="k">Default</span> <span class="n">value</span>                <span class="n">Current</span> <span class="n">directory</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>    <span class="n">Accept</span> <span class="n">pipeline</span> <span class="n">input</span><span class="p">?</span>       <span class="n">True</span> <span class="p">(</span><span class="n">ByPropertyName</span><span class="p">)</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>    <span class="n">Accept</span> <span class="n">wildcard</span> <span class="n">characters</span><span class="p">?</span>  <span class="n">false</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Deze twee commando's zijn gelijkwaardig:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="p">.\</span><span class="n">notes</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Destination</span> <span class="p">.\</span><span class="n">backup</span><span class="p">\</span><span class="n">notes</span><span class="p">.</span><span class="n">txt</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">Copy-Item</span> <span class="p">.\</span><span class="n">notes</span><span class="p">.</span><span class="n">txt</span> <span class="p">.\</span><span class="n">backup</span><span class="p">\</span><span class="n">notes</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div>
+<p>Omdat PowerShell op positie koppelt:</p>
+<ul>
+<li>eerste waarde -&gt; <code>Path</code> (positie 0)</li>
+<li>tweede waarde -&gt; <code>Destination</code> (positie 1)</li>
+</ul>
+<p>Als je de volgorde omkeert, verwijst je kopieerbewerking naar de verkeerde bron/bestemming.</p>
+<p><strong>Default</strong></p>
+<p>Als je sommige parameters weglaat, kan PowerShell standaardwaarden gebruiken. Voorbeeld:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Get-ChildItem</span>
+</span></code></pre></div>
+<p>Zonder <code>-Path</code> gebruikt het de huidige locatie.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">get-help</span> <span class="nb">Get-ChildItem</span> <span class="n">-Parameter</span> <span class="n">path</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">-Path</span> <span class="p">&lt;</span><span class="n">System</span><span class="p">.</span><span class="n">String</span><span class="p">[]&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">Specifies</span> <span class="n">a</span> <span class="n">path</span> <span class="n">to</span> <span class="n">one</span> <span class="n">or</span> <span class="n">more</span> <span class="n">locations</span><span class="p">.</span> <span class="n">Wildcards</span> <span class="n">are</span> <span class="n">accepted</span><span class="p">.</span> <span class="n">The</span> <span class="k">default</span> <span class="n">location</span> <span class="n">is</span> <span class="n">the</span> <span class="n">current</span> <span class="n">directory</span> <span class="p">(`</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="p">.`).</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">Required</span><span class="p">?</span>                    <span class="n">false</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="k">Position</span><span class="p">?</span>                    <span class="n">0</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">Default</span> <span class="n">value</span>                <span class="n">Current</span> <span class="n">directory</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="n">Accept</span> <span class="n">pipeline</span> <span class="n">input</span><span class="p">?</span>       <span class="n">True</span> <span class="p">(</span><span class="n">ByPropertyName</span><span class="p">,</span> <span class="n">ByValue</span><span class="p">)</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="n">Accept</span> <span class="n">wildcard</span> <span class="n">characters</span><span class="p">?</span>  <span class="n">true</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><strong>Switch</strong></p>
+<p>Switch-parameters zijn parameters zonder waarde, bijvoorbeeld:</p>
+<p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
+</span></code></pre></div>
+Zowel <code>-Recurse</code> als <code>-Force</code> zijn ofwel aanwezig (<code>$true</code>) ofwel niet aanwezig (<code>$false</code>).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../goals/" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Doelstellingen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              <div class="md-ellipsis">
+                Doelstellingen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../NavigationCreation/" class="md-footer__link md-footer__link--next" aria-label="Volgende: Navigeren en bestandsbeheer">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              <div class="md-ellipsis">
+                Navigeren en bestandsbeheer
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Gekopieerd naar klembord","clipboard.copy":"Kopiëren naar klembord","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 extra overeenkomst op deze pagina","search.result.more.other":"# extra overeenkomsten op deze pagina","search.result.none":"Geen overeenkomende documenten","search.result.one":"1 overeenkomende document","search.result.other":"# overeenkomende documenten","search.result.placeholder":"Typ om te beginnen met zoeken","search.result.term.missing":"Ontbreekt","select.version":"Selecteer versie"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
+      
+      
+    
+  </body>
+</html>
