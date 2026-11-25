@@ -2523,10 +2523,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h1 id="ntfs">NTFS<a class="headerlink" href="#ntfs" title="Permanent link">&para;</a></h1>
 <p>NTFS is het standaardbestandssysteem van Windows. Hiermee stel je in wie welke bestanden en mappen mag lezen, wijzigen of verwijderen.</p>
 <h2 id="ntfs-machtigingen">NTFS-machtigingen<a class="headerlink" href="#ntfs-machtigingen" title="Permanent link">&para;</a></h2>
-<p>Standaard erft een bestand of map zijn machtigingen van de bovenliggende map. Wil je afwijkende machtigingen instellen, dan moet je eerst die overerving uitschakelen. Anders blijven de machtigingen van de bovenliggende map gelden. Je doet dit in twee stappen:</p>
+<p>Elk bestand en elke map heeft een lijst met machtigingen: wie er wat mee mag doen (lezen, wijzigen, verwijderen, ...). Standaard <strong>erft</strong> een bestand of map die machtigingen van de map waarin het staat (de bovenliggende map). Zo hoef je niet voor elk bestand apart rechten in te stellen: geef je een groep toegang tot een map, dan geldt dat ook voor alles daarin.</p>
+<p>Soms moet een map strengere of andere rechten hebben dan de map erboven. Dan heb je twee mogelijkheden:</p>
+<ul>
+<li><strong>Machtigingen toevoegen</strong> bovenop de geërfde machtigingen. Dat kan zonder iets uit te schakelen, maar je kan geërfde machtigingen zo niet intrekken.</li>
+<li><strong>Geërfde machtigingen verwijderen of aanpassen.</strong> Daarvoor schakel je eerst de overerving uit op die map. Zolang overerving aan staat, blijven de machtigingen van de bovenliggende map gelden.</li>
+</ul>
+<p>Dat tweede doe je in twee stappen:</p>
 <ol>
-<li><strong>Overerving van machtigingen uitschakelen</strong> vanaf de bovenliggende map.</li>
-<li><strong>Je eigen machtigingen toewijzen</strong> aan het bestand of de map.</li>
+<li><strong>Overerving uitschakelen</strong> op de map waarvoor je afwijkende machtigingen wil.</li>
+<li><strong>Je eigen machtigingen toewijzen</strong> aan die map.</li>
 </ol>
 <h3 id="1-overerving-uitschakelen">1. Overerving uitschakelen<a class="headerlink" href="#1-overerving-uitschakelen" title="Permanent link">&para;</a></h3>
 <ul>
