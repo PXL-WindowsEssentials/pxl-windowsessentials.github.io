@@ -1039,6 +1039,17 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#waarvoor-gebruik-je-de-registry-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Waarvoor gebruik je de Registry Editor?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registry-editor-openen" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2521,6 +2532,17 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#waarvoor-gebruik-je-de-registry-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Waarvoor gebruik je de Registry Editor?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#registry-editor-openen" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2775,10 +2797,22 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="registry-editor">Registry Editor<a class="headerlink" href="#registry-editor" title="Permanent link">&para;</a></h1>
-<p>Je beheert de Registry met de Registry Editor. Die start je met het commando:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>regedit
-</span></code></pre></div>
+<p>De <strong>Registry Editor</strong> (<code>regedit</code>) is het programma waarmee je de Windows Registry bekijkt en wijzigt. De Registry is de centrale databank waarin Windows en programma's hun instellingen bewaren (zie de theorie over de Registry in dit hoofdstuk).</p>
+<h2 id="waarvoor-gebruik-je-de-registry-editor">Waarvoor gebruik je de Registry Editor?<a class="headerlink" href="#waarvoor-gebruik-je-de-registry-editor" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Instellingen aanpassen</strong> die je niet via Settings of het Control Panel kan wijzigen, bijvoorbeeld bestandsextensies tonen of een verborgen functie in- of uitschakelen.</li>
+<li><strong>Problemen oplossen</strong>: een instelling nakijken of een foute waarde herstellen die een programma of service verstoort.</li>
+<li><strong>Onderzoeken wat er automatisch start</strong>: veel programma's (en malware) zetten zichzelf in de Registry om bij het aanmelden te starten.</li>
+<li><strong>Instellingen controleren</strong> die Group Policy of Intune op een toestel toepast, want die schrijven hun beleid in de Registry.</li>
+<li><strong>Back-ups maken en delen</strong> van instellingen via <code>.reg</code>-bestanden.</li>
+</ul>
+<p>Je vindt in de Registry Editor drie soorten items: <strong>keys</strong> (de mappen), <strong>values</strong> (de eigenlijke instellingen met een naam, type en data) en de vijf <strong>root keys</strong> bovenaan (<code>HKLM</code> voor systeembrede instellingen, <code>HKCU</code> voor de aangemelde gebruiker, enzovoort).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Wijzig je de verkeerde waarde, dan kan Windows of een programma niet meer correct werken. Maak daarom eerst een back-up (export) van de key die je wijzigt.</p>
+</div>
 <h2 id="registry-editor-openen">Registry Editor openen<a class="headerlink" href="#registry-editor-openen" title="Permanent link">&para;</a></h2>
+<p>Je start de Registry Editor met het commando <code>regedit</code>:</p>
 <ol>
 <li>Druk op <strong>Win + R</strong>.</li>
 <li>Typ <code>regedit</code>.</li>
@@ -2825,7 +2859,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <hr />
 <h3 id="stap-2-ga-naar-de-juiste-locatie">Stap 2: Ga naar de juiste locatie<a class="headerlink" href="#stap-2-ga-naar-de-juiste-locatie" title="Permanent link">&para;</a></h3>
 <p>Navigeer naar het volgende pad:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 </span></code></pre></div>
 <p>📌 De programma's in deze key starten automatisch wanneer de huidige gebruiker aanmeldt. Elke value is één programma.</p>
 <hr />
@@ -2835,7 +2869,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Kies <strong>New → String Value</strong>.</li>
 <li>
 <p>Geef de value de naam:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Notepad
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Notepad
 </span></code></pre></div>
 </li>
 </ol>
@@ -2845,7 +2879,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Dubbelklik op de nieuwe value</li>
 <li>Geef het volgende pad in:</li>
 </ol>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>C:\Windows\System32\notepad.exe
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>C:\Windows\System32\notepad.exe
 </span></code></pre></div>
 <ol>
 <li>Klik op <strong>OK</strong></li>
