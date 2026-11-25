@@ -2688,38 +2688,67 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>In deze handleiding leer je een Intune configuration policy aanmaken en toepassen. Als voorbeeld configureren we een bureaubladachtergrond en een afbeelding voor het vergrendelscherm voor alle door Intune beheerde toestellen. We gebruiken de volgende afbeelding: <a href="https://images2.alphacoders.com/124/1245878.jpg">https://images2.alphacoders.com/124/1245878.jpg</a></p>
 <p><a href="https://learn.microsoft.com/en-us/windows/configuration/background/?tabs=intune&amp;pivots=windows-11">Microsoft Learn: Configure the desktop and lock screen backgrounds</a></p>
 <h2 id="1-een-nieuwe-policy-aanmaken">1. Een nieuwe policy aanmaken<a class="headerlink" href="#1-een-nieuwe-policy-aanmaken" title="Permanent link">&para;</a></h2>
-<p>Zo maak je een nieuwe configuration policy aan:</p>
-<ul>
-<li>Ga in het menu naar <strong>Devices</strong>.</li>
+<ol>
+<li>Ga in het linkermenu naar <strong>Devices</strong>.</li>
 <li>Klik onder <strong>Manage devices</strong> op <strong>Configuration</strong>.</li>
 <li>Klik op de knop <strong>Create</strong>.</li>
 <li>Selecteer <strong>New Policy</strong>.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/IntuneConfigurationPolicy.mp4" aria-label="IntuneConfigurationPolicy"></video>
 
 <p>Wanneer je een configuration policy aanmaakt, moet je het type policy selecteren. Microsoft migreert geleidelijk van op sjablonen gebaseerde instellingen naar de Settings Catalog.</p>
-<ul>
+<ol>
 <li>Selecteer onder <strong>Platform</strong> <strong>Windows 10 and later</strong>.</li>
 <li>Kies bij <strong>Profile type</strong> <strong>Settings catalog</strong>.</li>
-<li>Klik op <strong>Create</strong></li>
-</ul>
+<li>Klik op <strong>Create</strong>.</li>
+</ol>
 <p><img alt="IntuneCreatePolicy" src="../assets/IntuneCreatePolicy.png" /></p>
 <h2 id="2-profielinstellingen">2. Profielinstellingen<a class="headerlink" href="#2-profielinstellingen" title="Permanent link">&para;</a></h2>
 <h3 id="21-basics">2.1. Basics<a class="headerlink" href="#21-basics" title="Permanent link">&para;</a></h3>
-<p>Geef een naam voor het configuratieprofiel in en geef eventueel extra details in het veld description.</p>
+<ol>
+<li>Geef een naam in.</li>
+<li>(Optioneel) Voeg een beschrijving toe.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
 <p><img alt="ConfigurationPolicy-Basics" src="../assets/ConfigurationPolicy-Basics.png" /></p>
 <h3 id="22-configuration-settings">2.2. Configuration settings<a class="headerlink" href="#22-configuration-settings" title="Permanent link">&para;</a></h3>
-<p>Selecteer in de settings picker één of meerdere instellingen die je in het configuratieprofiel wil configureren.</p>
+<ol>
+<li>Klik op <strong>Add settings</strong>.</li>
+<li>Selecteer in de settings picker één of meerdere instellingen die je in het configuratieprofiel wil configureren.</li>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/ConfigrationPolicySettingsPicker.mp4" aria-label="ConfigrationPolicySettingsPicker"></video>
 
-<p>Geef daarna de gewenste waarden voor deze instellingen in.</p>
+<ol>
+<li>Geef daarna de gewenste waarden voor deze instellingen in.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
 <p><img alt="ConfigurationPolicy-SettingsValue" src="../assets/ConfigurationPolicy-SettingsValue.png" /></p>
 <h3 id="23-scope-tags">2.3. Scope tags<a class="headerlink" href="#23-scope-tags" title="Permanent link">&para;</a></h3>
-<p>Laat de standaardwaarde staan.</p>
+<ol>
+<li>Laat de standaardwaarde staan.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
 <p><img alt="ConfigurationPolicy-Scope" src="../assets/ConfigurationPolicy-Scope.png" /></p>
 <h3 id="24-assignments-groepen">2.4. Assignments (groepen)<a class="headerlink" href="#24-assignments-groepen" title="Permanent link">&para;</a></h3>
-<p>Selecteer de Security Group waarop je het configuratieprofiel wil toepassen. Configuratieprofielen kunnen worden toegewezen aan gebruikersgroepen of toestelgroepen, afhankelijk van of je wil dat het profiel de gebruiker volgt of enkel op toestellen wordt toegepast.</p>
-<p>In dit voorbeeld wijzen we de configuratie toe aan alle Windows-toestellen.</p>
+<ol>
+<li>Klik onder <strong>Included groups</strong> op <strong>Add groups</strong>.</li>
+<li>Zoek de Security Group waarop je het configuratieprofiel wil toepassen, vink ze aan en klik op <strong>Select</strong>.</li>
+<li>Klik op <strong>Next</strong>.</li>
+</ol>
+<p>Configuratieprofielen kunnen worden toegewezen aan gebruikersgroepen of toestelgroepen, afhankelijk van of je wil dat het profiel de gebruiker volgt of enkel op toestellen wordt toegepast.</p>
+<p>In dit voorbeeld willen we de configuratie toepassen op alle Windows-toestellen. Daarvoor gebruiken we een <strong>dynamische toestelgroep</strong> met de naam <code>Windows-devices</code>. Die groep bestaat niet vanzelf: je maakt ze zelf aan in Microsoft Entra, zoals beschreven bij <a href="../../5-EntraID/groups/#2-dynamische-groepen">Groepen</a>:</p>
+<ol>
+<li>Ga naar het <strong>Microsoft Entra admin center</strong> → <strong>Groups</strong> → <strong>New group</strong>.</li>
+<li>Stel <strong>Group type</strong> in op <strong>Security</strong>, geef de groep de naam <code>Windows-devices</code> en stel <strong>Membership type</strong> in op <strong>Dynamic Device</strong>.</li>
+<li>
+<p>Klik op <strong>Add dynamic query</strong> en gebruik de regel:</p>
+<p><code>(device.deviceOSType -eq "Windows")</code></p>
+</li>
+<li>
+<p>Klik op <strong>Save</strong> en daarna op <strong>Create</strong>.</p>
+</li>
+</ol>
+<p>In de GIF hieronder zie je hoe je de groep selecteert in de Intune-wizard.</p>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/ConfigurationPolicy-Groupselection.mp4" aria-label="ConfigurationPolicy-GroupSelection"></video>
 
 <div class="admonition info">
@@ -2730,12 +2759,14 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 </div>
 <h3 id="25-review-create">2.5. Review + create<a class="headerlink" href="#25-review-create" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Controleer de samenvatting van de instellingen en de groep(en) waarop de policy wordt toegepast.</li>
+<li>Klik op de blauwe knop <strong>Create</strong> om de policy te finaliseren en uit te rollen.</li>
+</ol>
 <p><img alt="ConfigurationPolicy-Review" src="../assets/ConfigurationPolicy-Review.png" /></p>
-<p>In de laatste stap zie je een samenvatting van de instellingen die in deze policy geconfigureerd zijn en de groep(en) waarop ze worden toegepast.</p>
-<p>Klik op de blauwe knop Create om de policy te finaliseren en uit te rollen.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Je kan de installatie van een app die via Intune is uitgerold versnellen door:</p>
+<p>Je kan het toepassen van een configuratieprofiel versnellen door:</p>
 <ul>
 <li>De service Microsoft Intune Management Extension op je Windows-toestel te herstarten</li>
 </ul>
