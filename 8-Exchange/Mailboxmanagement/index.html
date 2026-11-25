@@ -1,0 +1,3953 @@
+
+
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pxl-windowsessentials.github.io/8-Exchange/Mailboxmanagement/">
+      
+      
+      
+      
+        <link rel="prev" href="../concepts/">
+      
+      
+        <link rel="next" href="../../99-labs/1-Introduction/importVMLabs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.3">
+    
+    
+      
+        <title>Mailboxbeheer - 41SNE1020 Windows Essentials</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.e2cf241e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra-v5.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Ga naar inhoud
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="41SNE1020 Windows Essentials" class="md-header__button md-logo" aria-label="41SNE1020 Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigatie</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            41SNE1020 Windows Essentials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mailboxbeheer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Systeemvoorkeur gebruiken"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Systeemvoorkeur gebruiken" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Zoeken</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Zoeken">
+  <button type="button" class="md-search__button">
+    Zoeken
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="41SNE1020 Windows Essentials" class="md-nav__button md-logo" aria-label="41SNE1020 Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    41SNE1020 Windows Essentials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  0. Setup
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  0. Setup
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overzicht setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VMwareWorkstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  VMware Workstation Pro
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioPro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro aankopen en M365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioProNE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro (variant met persoonlijk Outlook-account)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/newoutlook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Persoonlijk Outlook-account aanmaken
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/m365developerstenantcreate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Microsoft 365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/M365secondfactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tweede verificatiemethode instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1. Introductie Windows
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  1. Introductie Windows
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Windows-introductie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/DownloadWindows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 ISO downloaden
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/Windows11Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 installeren in VMware
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduction/Support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Support, build numbers en End of Servicing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2. Lokaal beheer
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  2. Lokaal beheer
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: lokaal beheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/UserManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lokale gebruikers en groepen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows Settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/ProcessandServices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Task Manager en Services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/EventViewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/NTFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTFS-machtigingen instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/Registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Registry Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3. Command Line
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  3. Command Line
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: PowerShell-basis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/NavigationCreation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Navigeren en bestandsbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/SimpleCommands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Veelgebruikte cmdlets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scripts en execution policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4. Microsoft 365
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  4. Microsoft 365
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Microsoft 365
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/AdminCenters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Admin centers en RBAC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/LicenseModels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Licenties en abonnementen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5. Entra ID
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  5. Entra ID
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Entra ID
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gebruikers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Groepen, licenties en rollen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  6. Intune
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  6. Intune
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Intune
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/General/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algemene instellingen en synchronisatie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/EnrollDevice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Een toestel inschrijven (Autopilot)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/AutoPilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Autopilot en deployment profiles
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/ConfigurationPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration policies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/Apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Apps uitrollen en Company Portal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  7. Collaboration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  7. Collaboration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: samenwerking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/Sharepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SharePoint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/OneDrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OneDrive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/PowerAutomate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Power Automate
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  8. Exchange Online
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  8. Exchange Online
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Exchange Online
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mailboxbeheer
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mailboxbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gebruikers-e-mail" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Gebruikers - e-mail
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mail-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Mail contacts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mail contacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#het-adresboek-controleren" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Het adresboek controleren
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-distribution-list-distribution-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Distribution list (Distribution group)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Distribution list (Distribution group)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#het-adresboek-controleren_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Het adresboek controleren
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#een-testmail-verzenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Een testmail verzenden
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-shared-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Shared mailbox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Shared mailbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-veelvoorkomende-gebruiksscenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.1. Veelvoorkomende gebruiksscenario's
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-voordelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.2. Voordelen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-een-shared-mailbox-aanmaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.3. Een shared mailbox aanmaken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.4. Machtigingen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-zo-test-je-een-shared-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.5. Zo test je een shared mailbox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5. Zo test je een shared mailbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stap-1-toegang-controleren-in-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 1: Toegang controleren in Outlook
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-2-een-testmail-ontvangen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 2: Een testmail ontvangen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 3: Een e-mail VANUIT de shared mailbox verzenden
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-4-testen-met-meerdere-gebruikers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 4: Testen met meerdere gebruikers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-5-machtigingen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 5: Machtigingen testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-resource-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Resource mailbox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Resource mailbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-types-resource-mailboxen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.1. Types resource mailboxen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-voordelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.2. Voordelen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-een-resource-mailbox-aanmaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.3. Een resource mailbox aanmaken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-voorbeeldscenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.4. Voorbeeldscenario's
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-zo-test-je-een-resource-mailbox-room-of-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.5. Zo test je een resource mailbox (Room of Equipment)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5. Zo test je een resource mailbox (Room of Equipment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stap-1-de-outlook-agenda-openen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 1: De Outlook-agenda openen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-2-een-nieuwe-vergadering-aanmaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 2: Een nieuwe vergadering aanmaken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-3-de-resource-mailbox-toevoegen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 3: De resource mailbox toevoegen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-4-het-vergaderverzoek-verzenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 4: Het vergaderverzoek verzenden
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-5-de-reservering-controleren" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 5: De reservering controleren
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-6-dubbele-boeking-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 6: Dubbele boeking testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-opties-voor-mailboxbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Opties voor mailboxbeheer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Opties voor mailboxbeheer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-e-mailadressen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1. E-mailadressen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-delegatie-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2. Delegatie (machtigingen)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-instellingen-voor-mailflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.3. Instellingen voor mailflow
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-zo-test-je-de-opties-voor-mailboxbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.4. Zo test je de opties voor mailboxbeheer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. Zo test je de opties voor mailboxbeheer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stap-1-e-mailadressen-aliassen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 1: E-mailadressen (aliassen) testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-2-verzenden-vanuit-verschillende-adressen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 2: Verzenden vanuit verschillende adressen testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-3-delegatie-machtigingen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 3: Delegatie (machtigingen) testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-4-e-mail-doorsturen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 4: E-mail doorsturen testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-5-beperkingen-voor-berichtlevering-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 5: Beperkingen voor berichtlevering testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-6-limieten-voor-berichtgrootte-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 6: Limieten voor berichtgrootte testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Outlook
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Outlook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-het-veld-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1. Het veld From
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-shared-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2. Shared mailbox
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Labo-omgeving
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Labo-omgeving
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-labs/1-Introduction/importVMLabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Virtuele machine voor de labo's importeren
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gebruikers-e-mail" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Gebruikers - e-mail
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mail-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Mail contacts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mail contacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#het-adresboek-controleren" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Het adresboek controleren
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-distribution-list-distribution-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Distribution list (Distribution group)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Distribution list (Distribution group)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#het-adresboek-controleren_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Het adresboek controleren
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#een-testmail-verzenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Een testmail verzenden
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-shared-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Shared mailbox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Shared mailbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-veelvoorkomende-gebruiksscenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.1. Veelvoorkomende gebruiksscenario's
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-voordelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.2. Voordelen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-een-shared-mailbox-aanmaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.3. Een shared mailbox aanmaken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.4. Machtigingen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-zo-test-je-een-shared-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.5. Zo test je een shared mailbox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5. Zo test je een shared mailbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stap-1-toegang-controleren-in-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 1: Toegang controleren in Outlook
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-2-een-testmail-ontvangen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 2: Een testmail ontvangen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 3: Een e-mail VANUIT de shared mailbox verzenden
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-4-testen-met-meerdere-gebruikers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 4: Testen met meerdere gebruikers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-5-machtigingen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 5: Machtigingen testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-resource-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Resource mailbox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Resource mailbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-types-resource-mailboxen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.1. Types resource mailboxen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-voordelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.2. Voordelen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-een-resource-mailbox-aanmaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.3. Een resource mailbox aanmaken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-voorbeeldscenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.4. Voorbeeldscenario's
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-zo-test-je-een-resource-mailbox-room-of-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.5. Zo test je een resource mailbox (Room of Equipment)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5. Zo test je een resource mailbox (Room of Equipment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stap-1-de-outlook-agenda-openen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 1: De Outlook-agenda openen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-2-een-nieuwe-vergadering-aanmaken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 2: Een nieuwe vergadering aanmaken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-3-de-resource-mailbox-toevoegen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 3: De resource mailbox toevoegen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-4-het-vergaderverzoek-verzenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 4: Het vergaderverzoek verzenden
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-5-de-reservering-controleren" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 5: De reservering controleren
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-6-dubbele-boeking-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 6: Dubbele boeking testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-opties-voor-mailboxbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Opties voor mailboxbeheer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Opties voor mailboxbeheer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-e-mailadressen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1. E-mailadressen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-delegatie-machtigingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2. Delegatie (machtigingen)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-instellingen-voor-mailflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.3. Instellingen voor mailflow
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-zo-test-je-de-opties-voor-mailboxbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.4. Zo test je de opties voor mailboxbeheer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. Zo test je de opties voor mailboxbeheer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stap-1-e-mailadressen-aliassen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 1: E-mailadressen (aliassen) testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-2-verzenden-vanuit-verschillende-adressen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 2: Verzenden vanuit verschillende adressen testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-3-delegatie-machtigingen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 3: Delegatie (machtigingen) testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-4-e-mail-doorsturen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 4: E-mail doorsturen testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-5-beperkingen-voor-berichtlevering-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 5: Beperkingen voor berichtlevering testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stap-6-limieten-voor-berichtgrootte-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stap 6: Limieten voor berichtgrootte testen
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Outlook
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Outlook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-het-veld-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1. Het veld From
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-shared-mailbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2. Shared mailbox
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigatie" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Start
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../goals/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    8. Exchange Online
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="mailboxbeheer-in-exchange-online">Mailboxbeheer in Exchange Online<a class="headerlink" href="#mailboxbeheer-in-exchange-online" title="Permanent link">&para;</a></h1>
+<h2 id="1-gebruikers-e-mail">1. Gebruikers - e-mail<a class="headerlink" href="#1-gebruikers-e-mail" title="Permanent link">&para;</a></h2>
+<p>Wanneer je via Entra ID of via het Microsoft admin center een nieuwe gebruiker aanmaakt, wordt automatisch een mailbox aangemaakt. Alle e-mails worden opgeslagen op de Exchange Online-server. Gebruikers kunnen hun mail openen door via Outlook in Microsoft 365 Copilot of via eender welke mailclient met de Exchange Online-server te verbinden.
+Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange Admin Center: <a href="https://admin.exchange.microsoft.com">https://admin.exchange.microsoft.com</a></p>
+<h2 id="2-mail-contacts">2. Mail contacts<a class="headerlink" href="#2-mail-contacts" title="Permanent link">&para;</a></h2>
+<p>Mail contacts hebben geen Entra-account. Ze worden enkel gebruikt om informatie op te slaan die in het adresboek verschijnt.</p>
+<p><strong>Zo maak je een mail contact aan:</strong></p>
+<ol>
+<li>Ga naar <strong>EAC &gt; Recipients &gt; Contacts &gt; Add a mail contact</strong>.</li>
+<li>Vul in:<ul>
+<li>First name, Last name, Initials</li>
+<li>Display name (wordt weergegeven in het adresboek)</li>
+<li>Alias en External email address</li>
+</ul>
+</li>
+<li>Voeg eventueel meer details toe.</li>
+<li>Klik op <strong>Next &gt; Create</strong>.</li>
+</ol>
+<p><strong>Zo test je een mail contact</strong></p>
+<p>Nadat je een mail contact hebt aangemaakt, moet je controleren of het correct werkt.</p>
+<h4 id="het-adresboek-controleren">Het adresboek controleren<a class="headerlink" href="#het-adresboek-controleren" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>Outlook (web of desktop)</strong></li>
+<li>Ga naar <strong>People</strong> of open een nieuwe e-mail</li>
+<li>Klik op <strong>To</strong></li>
+<li>Zoek naar de naam van het mail contact</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Het contact verschijnt in de adreslijst</li>
+<li>De display name is correct</li>
+<li>Het externe e-mailadres is correct</li>
+</ul>
+<h2 id="3-distribution-list-distribution-group">3. Distribution list (Distribution group)<a class="headerlink" href="#3-distribution-list-distribution-group" title="Permanent link">&para;</a></h2>
+<p>Een distribution list wordt gebruikt om e-mails tegelijk naar meerdere gebruikers te sturen. Ze heeft geen eigen mailbox. E-mails die naar de groep worden gestuurd, worden automatisch doorgestuurd naar alle leden.</p>
+<p><strong>Zo maak je een distribution list aan:</strong></p>
+<ol>
+<li>Ga naar <strong>EAC &gt; Recipients &gt; Groups &gt; Add a group</strong>.</li>
+<li>Kies <strong>Distribution</strong>.</li>
+<li>Vul in:<ul>
+<li>Name</li>
+<li>Display name (wordt weergegeven in het adresboek)</li>
+<li>Alias / e-mailadres</li>
+</ul>
+</li>
+<li>Voeg leden toe (gebruikers die de e-mails zullen ontvangen).</li>
+<li>Klik op <strong>Next &gt; Create</strong>.</li>
+</ol>
+<p><strong>Zo test je een distribution list</strong></p>
+<p>Nadat je een distribution list hebt aangemaakt, moet je controleren of ze correct werkt.</p>
+<h4 id="het-adresboek-controleren_1">Het adresboek controleren<a class="headerlink" href="#het-adresboek-controleren_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>Outlook (web of desktop)</strong></li>
+<li>Open een nieuwe e-mail</li>
+<li>Klik op <strong>To</strong></li>
+<li>Zoek naar de distribution list</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De groep verschijnt in de adreslijst</li>
+<li>De display name is correct</li>
+<li>Je kan ze als ontvanger selecteren</li>
+</ul>
+<h4 id="een-testmail-verzenden">Een testmail verzenden<a class="headerlink" href="#een-testmail-verzenden" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>Outlook (web of desktop)</strong></li>
+<li>Maak een nieuwe e-mail</li>
+<li>Geef de distribution list in het veld <strong>To</strong> in</li>
+<li>Verzend de e-mail</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt zonder fouten verzonden</li>
+<li>Alle leden ontvangen de e-mail</li>
+<li>Elk lid ontvangt het bericht in zijn eigen mailbox</li>
+</ul>
+<h2 id="4-shared-mailbox">4. Shared mailbox<a class="headerlink" href="#4-shared-mailbox" title="Permanent link">&para;</a></h2>
+<p>Een <strong>shared mailbox</strong> is een mailbox waartoe meerdere gebruikers toegang hebben om e-mailberichten te lezen en te verzenden. Ze wordt doorgaans gebruikt voor generieke e-mailadressen zoals <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong> of <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong>, zodat een team berichten gezamenlijk kan beheren.</p>
+<p>Shared mailboxes hebben geen eigen aanmeldgegevens: bevoegde gebruikers openen ze vanuit hun eigen Outlook-account. Berichten die vanuit de shared mailbox worden verzonden, lijken afkomstig te zijn van het gedeelde adres en niet van de individuele gebruiker.</p>
+<h3 id="41-veelvoorkomende-gebruiksscenarios">4.1. Veelvoorkomende gebruiksscenario's<a class="headerlink" href="#41-veelvoorkomende-gebruiksscenarios" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Afdelingen zoals HR, Finance of IT-support</li>
+<li>Generieke contactadressen (bv. info@, sales@)</li>
+<li>Teams die een gedeelde werklast of klantencommunicatie beheren</li>
+</ul>
+<h3 id="42-voordelen">4.2. Voordelen<a class="headerlink" href="#42-voordelen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Geen aparte licentie vereist (tot 50 GB)</li>
+<li>Gedeelde agenda voor teamplanning</li>
+<li>Gecentraliseerd berichtenbeheer</li>
+</ul>
+<h3 id="43-een-shared-mailbox-aanmaken">4.3. Een shared mailbox aanmaken<a class="headerlink" href="#43-een-shared-mailbox-aanmaken" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open het <strong>Exchange Admin Center (EAC)</strong>.</li>
+<li>Ga naar <strong>Recipients → Mailboxes → Shared</strong>.</li>
+<li>Klik op <strong>Add a shared mailbox</strong>.</li>
+<li>Geef de display name en het e-mailadres in.</li>
+<li>Wijs de gebruikers toe die toegang nodig hebben.</li>
+</ol>
+<h3 id="44-machtigingen">4.4. Machtigingen<a class="headerlink" href="#44-machtigingen" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Full Access</strong>: gebruikers kunnen alle items in de mailbox openen en lezen, en berichten verplaatsen of verwijderen.</li>
+<li><strong>Send As</strong>: gebruikers kunnen e-mails verzenden als de shared mailbox.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Wanneer je een Microsoft 365-groep aanmaakt, wordt automatisch een shared mailbox aangemaakt, samen met een gedeelde agenda en een SharePoint-site.</p>
+</div>
+<h3 id="45-zo-test-je-een-shared-mailbox">4.5. Zo test je een shared mailbox<a class="headerlink" href="#45-zo-test-je-een-shared-mailbox" title="Permanent link">&para;</a></h3>
+<p>Nadat je een shared mailbox hebt aangemaakt, moet je controleren of gebruikers er toegang toe hebben en ze correct kunnen gebruiken.</p>
+<h4 id="stap-1-toegang-controleren-in-outlook">Stap 1: Toegang controleren in Outlook<a class="headerlink" href="#stap-1-toegang-controleren-in-outlook" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>Outlook (desktop of web)</strong></li>
+<li>Voeg de shared mailbox toe:<ul>
+<li>Klik op je account</li>
+<li>Kies <strong>Add shared folder or mailbox</strong></li>
+<li>Geef het adres van de shared mailbox in</li>
+</ul>
+</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De shared mailbox verschijnt in Outlook</li>
+<li>Je kan mappen openen (Inbox, Sent Items, enz.)</li>
+<li>Je kan e-mails lezen</li>
+</ul>
+<h4 id="stap-2-een-testmail-ontvangen">Stap 2: Een testmail ontvangen<a class="headerlink" href="#stap-2-een-testmail-ontvangen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Stuur een e-mail <strong>naar het adres van de shared mailbox</strong> (vanuit een ander account)</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail komt aan in de shared mailbox</li>
+<li>Alle gebruikers met toegang kunnen het bericht zien</li>
+</ul>
+<h4 id="stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden">Stap 3: Een e-mail VANUIT de shared mailbox verzenden<a class="headerlink" href="#stap-3-een-e-mail-vanuit-de-shared-mailbox-verzenden" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open een nieuwe e-mail</li>
+<li>Schakel indien nodig het veld <strong>From</strong> in</li>
+<li>Selecteer het adres van de shared mailbox in het veld From</li>
+<li>Verzend een e-mail</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt succesvol verzonden</li>
+<li>De ontvanger ziet het <strong>adres van de shared mailbox</strong> als afzender (niet je persoonlijke account)</li>
+</ul>
+<h4 id="stap-4-testen-met-meerdere-gebruikers">Stap 4: Testen met meerdere gebruikers<a class="headerlink" href="#stap-4-testen-met-meerdere-gebruikers" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Meld aan met een andere gebruiker die toegang heeft</li>
+<li>Open de shared mailbox</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Beide gebruikers zien dezelfde e-mails</li>
+<li>Beide gebruikers kunnen berichten lezen en beheren</li>
+</ul>
+<h4 id="stap-5-machtigingen-testen">Stap 5: Machtigingen testen<a class="headerlink" href="#stap-5-machtigingen-testen" title="Permanent link">&para;</a></h4>
+<p>Als er machtigingen zijn geconfigureerd:</p>
+<p>✅ Controleer:</p>
+<ul>
+<li>Full Access → de gebruiker kan de mailbox openen en beheren</li>
+<li>Send As → de gebruiker kan verzenden als de shared mailbox</li>
+</ul>
+<h2 id="5-resource-mailbox">5. Resource mailbox<a class="headerlink" href="#5-resource-mailbox" title="Permanent link">&para;</a></h2>
+<p>Een <strong>resource mailbox</strong> vertegenwoordigt een vergaderruimte of een stuk apparatuur dat voor evenementen en vergaderingen kan worden gereserveerd. Deze mailboxen helpen organisaties om gedeelde resources efficiënt te beheren.</p>
+<h3 id="51-types-resource-mailboxen">5.1. Types resource mailboxen<a class="headerlink" href="#51-types-resource-mailboxen" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Room mailbox</strong>: vertegenwoordigt een fysieke locatie (bv. Vergaderzaal 1, Auditorium, Lab 2.10)</li>
+<li><strong>Equipment mailbox</strong>: vertegenwoordigt gedeeld gereedschap of toestellen (bv. projector, laptop, voertuig)</li>
+</ul>
+<h3 id="52-voordelen">5.2. Voordelen<a class="headerlink" href="#52-voordelen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Aanvaardt of weigert vergaderverzoeken automatisch op basis van beschikbaarheid</li>
+<li>Toont de reserveringsstatus in de scheduling assistant</li>
+<li>Helpt dubbele boekingen te vermijden</li>
+</ul>
+<h3 id="53-een-resource-mailbox-aanmaken">5.3. Een resource mailbox aanmaken<a class="headerlink" href="#53-een-resource-mailbox-aanmaken" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navigeer in het <strong>Exchange Admin Center</strong> naar <strong>Recipients → Resources</strong>.</li>
+<li>Klik op <strong>Add resource mailbox</strong>.</li>
+<li>Kies tussen een <strong>Room</strong>- of <strong>Equipment</strong>-mailbox.</li>
+<li>Configureer de boekingsopties (automatisch aanvaarden, delegates, maximale duur, enz.).</li>
+</ol>
+<h3 id="54-voorbeeldscenarios">5.4. Voorbeeldscenario's<a class="headerlink" href="#54-voorbeeldscenarios" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Room mailbox: <em>PXL-Digital Meeting Room 2.10</em> voor personeelsvergaderingen</li>
+<li>Equipment mailbox: <em>Beamer-LokaalA</em> voor gedeelde klasapparatuur</li>
+</ul>
+<h3 id="55-zo-test-je-een-resource-mailbox-room-of-equipment">5.5. Zo test je een resource mailbox (Room of Equipment)<a class="headerlink" href="#55-zo-test-je-een-resource-mailbox-room-of-equipment" title="Permanent link">&para;</a></h3>
+<p>Nadat je een resource mailbox hebt aangemaakt, moet je controleren of ze gebruikt kan worden om vergaderingen correct te reserveren.</p>
+<h4 id="stap-1-de-outlook-agenda-openen">Stap 1: De Outlook-agenda openen<a class="headerlink" href="#stap-1-de-outlook-agenda-openen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>Outlook (desktop of web)</strong></li>
+<li>Ga naar de <strong>Calendar</strong></li>
+</ol>
+<p>📌 Resource mailboxen test je niet via e-mail, maar via de agenda.</p>
+<h4 id="stap-2-een-nieuwe-vergadering-aanmaken">Stap 2: Een nieuwe vergadering aanmaken<a class="headerlink" href="#stap-2-een-nieuwe-vergadering-aanmaken" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Klik op <strong>New Event / New Meeting</strong></li>
+<li>Voeg een titel toe (bv. "Test Meeting")</li>
+<li>Stel een datum en uur in</li>
+</ol>
+<h4 id="stap-3-de-resource-mailbox-toevoegen">Stap 3: De resource mailbox toevoegen<a class="headerlink" href="#stap-3-de-resource-mailbox-toevoegen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Klik op <strong>Location</strong> of <strong>Add room</strong></li>
+<li>Zoek de room- of equipment-mailbox</li>
+<li>Selecteer ze en voeg ze toe aan de vergadering</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De resource verschijnt in de vergadering</li>
+<li>Ze is zichtbaar in de scheduling assistant</li>
+</ul>
+<h4 id="stap-4-het-vergaderverzoek-verzenden">Stap 4: Het vergaderverzoek verzenden<a class="headerlink" href="#stap-4-het-vergaderverzoek-verzenden" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Klik op <strong>Send</strong></li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Het vergaderverzoek wordt verzonden</li>
+<li>De resource mailbox <strong>aanvaardt of weigert</strong> het verzoek automatisch</li>
+</ul>
+<h4 id="stap-5-de-reservering-controleren">Stap 5: De reservering controleren<a class="headerlink" href="#stap-5-de-reservering-controleren" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open je agenda</li>
+<li>Open de agenda van de resource (indien beschikbaar)</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De vergadering verschijnt in je agenda</li>
+<li>De vergadering verschijnt ook in de agenda van de resource</li>
+<li>Het tijdslot is gemarkeerd als <strong>busy</strong></li>
+</ul>
+<h4 id="stap-6-dubbele-boeking-testen">Stap 6: Dubbele boeking testen<a class="headerlink" href="#stap-6-dubbele-boeking-testen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Maak een tweede vergadering op hetzelfde tijdstip</li>
+<li>Voeg dezelfde resource toe</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De resource mailbox <strong>weigert</strong> de tweede boeking</li>
+<li>Outlook toont dat de ruimte al bezet is</li>
+</ul>
+<h2 id="6-opties-voor-mailboxbeheer">6. Opties voor mailboxbeheer<a class="headerlink" href="#6-opties-voor-mailboxbeheer" title="Permanent link">&para;</a></h2>
+<p>Wanneer je de eigenschappen van een mailbox opent, kan je veel opties configureren.</p>
+<h3 id="61-e-mailadressen">6.1. E-mailadressen<a class="headerlink" href="#61-e-mailadressen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Beheer de e-mailadressen die aan een mailbox gekoppeld zijn door te klikken op <strong>Manage email address types</strong></li>
+</ul>
+<p><img alt="LookupVersionandEdition" src="../assets/Mailboxbeheer1.png" /></p>
+<ul>
+<li>Het vetgedrukte adres is het <strong>primaire SMTP-adres</strong> en is het standaardantwoordadres.</li>
+</ul>
+<p><img alt="LookupVersionandEdition" src="../assets/Mailboxbeheer2.png" /></p>
+<ul>
+<li>Je kan meer adressen toevoegen:<ul>
+<li>Klik op <strong>+ Add email address</strong> → kies <strong>SMTP</strong> → geef het adres in.</li>
+</ul>
+</li>
+</ul>
+<h3 id="62-delegatie-machtigingen">6.2. Delegatie (machtigingen)<a class="headerlink" href="#62-delegatie-machtigingen" title="Permanent link">&para;</a></h3>
+<p>Je kan andere gebruikers machtigingen (delegates) geven om deze mailbox te openen of ervan te verzenden:</p>
+<ul>
+<li><strong>Send As</strong> → laat toe om e-mails te verzenden als de eigenaar van de mailbox.</li>
+<li><strong>Send on Behalf Of</strong> → verzendt als delegate, maar de ontvanger ziet "verzonden door delegate namens eigenaar".</li>
+<li><strong>Read and Manage (Full Access)</strong> → de delegate kan de mailbox openen en lezen, maar niet verzenden (combineer met Send As voor volledige rechten).</li>
+</ul>
+<h3 id="63-instellingen-voor-mailflow">6.3. Instellingen voor mailflow<a class="headerlink" href="#63-instellingen-voor-mailflow" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Message Size Restrictions</strong>: stel de maximale grootte in voor verzonden/ontvangen berichten (0–153600 KB). Grotere berichten worden met een foutmelding geweigerd.</li>
+<li><strong>Message Delivery Restrictions</strong>: bepaal wie berichten naar deze gebruiker mag sturen.<ul>
+<li><em>Accept messages from</em>: toegelaten afzenders</li>
+<li><em>Block messages from</em>: geblokkeerde afzenders</li>
+</ul>
+</li>
+<li><strong>Email Forwarding</strong>: stuur berichten door naar een andere mailbox. Opties:<ul>
+<li>Alle e-mails doorsturen naar een andere ontvanger.</li>
+<li>Doorsturen naar een extern e-mailadres.</li>
+<li>Berichten leveren aan zowel de oorspronkelijke mailbox als het doorstuuradres.</li>
+</ul>
+</li>
+</ul>
+<h3 id="64-zo-test-je-de-opties-voor-mailboxbeheer">6.4. Zo test je de opties voor mailboxbeheer<a class="headerlink" href="#64-zo-test-je-de-opties-voor-mailboxbeheer" title="Permanent link">&para;</a></h3>
+<p>Nadat je mailboxinstellingen hebt gewijzigd, moet je controleren of de configuratie correct werkt.</p>
+<h4 id="stap-1-e-mailadressen-aliassen-testen">Stap 1: E-mailadressen (aliassen) testen<a class="headerlink" href="#stap-1-e-mailadressen-aliassen-testen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Voeg een nieuw e-mailadres (alias) toe aan een mailbox</li>
+<li>Stuur een testmail naar de alias</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt in de mailbox afgeleverd</li>
+<li>De gebruiker kan het bericht lezen</li>
+</ul>
+<h4 id="stap-2-verzenden-vanuit-verschillende-adressen-testen">Stap 2: Verzenden vanuit verschillende adressen testen<a class="headerlink" href="#stap-2-verzenden-vanuit-verschillende-adressen-testen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open een nieuwe e-mail in Outlook</li>
+<li>Schakel het veld <strong>From</strong> in</li>
+<li>Selecteer de mailbox of alias</li>
+<li>Verzend een e-mail</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt succesvol verzonden</li>
+<li>De ontvanger ziet het juiste afzenderadres</li>
+</ul>
+<h4 id="stap-3-delegatie-machtigingen-testen">Stap 3: Delegatie (machtigingen) testen<a class="headerlink" href="#stap-3-delegatie-machtigingen-testen" title="Permanent link">&para;</a></h4>
+<p>Als je machtigingen hebt geconfigureerd (bv. Full Access of Send As):</p>
+<ol>
+<li>Meld aan als de gemachtigde gebruiker</li>
+<li>Open de mailbox</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Full Access → de gebruiker kan de mailbox openen en lezen</li>
+<li>Send As → de gebruiker kan e-mails verzenden als die mailbox</li>
+</ul>
+<h4 id="stap-4-e-mail-doorsturen-testen">Stap 4: E-mail doorsturen testen<a class="headerlink" href="#stap-4-e-mail-doorsturen-testen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Stuur een e-mail naar de mailbox</li>
+<li>Controleer de bestemming van het doorsturen</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>De e-mail wordt doorgestuurd naar het juiste adres</li>
+<li>(Optioneel) De oorspronkelijke mailbox ontvangt het bericht ook</li>
+</ul>
+<h4 id="stap-5-beperkingen-voor-berichtlevering-testen">Stap 5: Beperkingen voor berichtlevering testen<a class="headerlink" href="#stap-5-beperkingen-voor-berichtlevering-testen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Configureer toegelaten of geblokkeerde afzenders</li>
+<li>Verzend testmails vanuit verschillende accounts</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Toegelaten gebruikers kunnen berichten verzenden</li>
+<li>Geblokkeerde gebruikers ontvangen een foutmelding</li>
+</ul>
+<h4 id="stap-6-limieten-voor-berichtgrootte-testen">Stap 6: Limieten voor berichtgrootte testen<a class="headerlink" href="#stap-6-limieten-voor-berichtgrootte-testen" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Verzend een e-mail met een grote bijlage</li>
+</ol>
+<p>✅ Controleer:</p>
+<ul>
+<li>Als de grootte de limiet overschrijdt → wordt het bericht geweigerd</li>
+<li>Als de grootte binnen de limiet valt → wordt het bericht geleverd</li>
+</ul>
+<h2 id="7-outlook">7. Outlook<a class="headerlink" href="#7-outlook" title="Permanent link">&para;</a></h2>
+<h3 id="71-het-veld-from">7.1. Het veld From<a class="headerlink" href="#71-het-veld-from" title="Permanent link">&para;</a></h3>
+<p>Wanneer een gebruiker mailboxdelegatie krijgt, kan hij e-mails verzenden vanaf het e-mailadres van een andere gebruiker.
+Daarvoor moet je ervoor zorgen dat het veld From zichtbaar is. Zo kan je bij het verzenden van een e-mail het adres van de andere persoon kiezen.</p>
+<p>Volg de onderstaande stappen om het veld From in te schakelen:</p>
+<ol>
+<li>Open de Outlook-app</li>
+<li>Klik in het bovenste menu op <strong>Options</strong>.</li>
+<li>Vink de optie <strong>Show From</strong> aan.</li>
+<li>Het veld <strong>From</strong> is nu zichtbaar.</li>
+<li>Geef in het veld <strong>From</strong> het e-mailadres in van waaruit je het bericht wil verzenden.</li>
+</ol>
+<video controls autoplay loop muted playsinline preload="metadata" src="../assets/OutlookFromAddress.mp4" aria-label="OutlookFromAddress"></video>
+
+<h3 id="72-shared-mailbox">7.2. Shared mailbox<a class="headerlink" href="#72-shared-mailbox" title="Permanent link">&para;</a></h3>
+<p>Zo voeg je een shared mailbox, of eender welke mailbox waarvoor je <strong>Read and Manage (Full Access)</strong>-machtigingen hebt gekregen, toe aan je Outlook-app.</p>
+<ol>
+<li>Klik op de drie puntjes naast je e-mailadres.</li>
+<li>Selecteer <strong>Add shared folder or mailbox</strong>.</li>
+<li>Geef het e-mailadres van de shared mailbox in.</li>
+<li>Klik op <strong>Continue</strong>.</li>
+<li>Klik op <strong>Close</strong>.</li>
+<li>Sluit het instellingenvenster.</li>
+<li>De shared mailbox en al haar mappen verschijnen nu onder je eigen mailbox.</li>
+</ol>
+<video controls autoplay loop muted playsinline preload="metadata" src="../assets/OutlookAddSharedMailbox.mp4" aria-label="OutlookAddSharedMailbox"></video>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Exchange</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">Mailbox</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.top","navigation.tracking","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Gekopieerd naar klembord","clipboard.copy":"Kopiëren naar klembord","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 extra overeenkomst op deze pagina","search.result.more.other":"# extra overeenkomsten op deze pagina","search.result.none":"Geen overeenkomende documenten","search.result.one":"1 overeenkomende document","search.result.other":"# overeenkomende documenten","search.result.placeholder":"Typ om te beginnen met zoeken","search.result.term.missing":"Ontbreekt","select.version":"Selecteer versie"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
+      
+      
+        <script src="../../javascripts/navtoggle-v5.js"></script>
+      
+        <script src="../../javascripts/videobar-v5.js"></script>
+      
+    
+  </body>
+</html>

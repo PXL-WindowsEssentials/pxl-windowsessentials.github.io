@@ -1,0 +1,3516 @@
+
+
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<style id="we-gate-css">html.we-locked body>*{visibility:hidden}#we-gate{position:fixed;inset:0;z-index:99999;background:rgba(30,38,44,.55);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;visibility:visible!important}#we-gate form{background:#fff;color:#222;padding:28px 30px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35);width:min(92vw,360px)}#we-gate h2{margin:0 0 6px;font-size:18px}#we-gate p{margin:0 0 14px;font-size:14px;color:#555}#we-gate input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;border:1px solid #b0bec5;border-radius:8px}#we-gate button{margin-top:12px;width:100%;padding:10px;font-size:15px;border:0;border-radius:8px;background:#37474f;color:#fff;cursor:pointer}#we-gate .err{color:#b71c1c;font-size:13px;min-height:18px;margin-top:8px}</style>
+<script id="we-gate-js">(function(){var H="e0ce8ed237ddab609d5262ef2c52c42a51fce9c3b506c32f2e57b38f17023288",K="we-auth";var ok=false;try{ok=sessionStorage.getItem(K)===H;}catch(e){}
+if(ok)return;document.documentElement.classList.add("we-locked");
+function sha(s){var b=new TextEncoder().encode(s);return crypto.subtle.digest("SHA-256",b).then(function(d){return Array.prototype.map.call(new Uint8Array(d),function(x){return("0"+x.toString(16)).slice(-2);}).join("");});}
+function show(){var g=document.createElement("div");g.id="we-gate";g.innerHTML='<form autocomplete="off"><h2>41SNE1020 Windows Essentials</h2><p>Geef het wachtwoord in om de cursus te openen.</p><input type="password" id="we-pw" placeholder="Wachtwoord"><button type="submit">Openen</button><div class="err" id="we-err"></div></form>';document.body.appendChild(g);var f=g.querySelector("form"),i=g.querySelector("#we-pw");i.focus();
+f.addEventListener("submit",function(e){e.preventDefault();sha("pxlwe:"+i.value).then(function(h){if(h===H){try{sessionStorage.setItem(K,H);}catch(x){}document.documentElement.classList.remove("we-locked");g.remove();}else{g.querySelector("#we-err").textContent="Onjuist wachtwoord.";i.select();}});});}
+if(document.body)show();else document.addEventListener("DOMContentLoaded",show);})();</script>
+<noscript><style>html.we-locked body>*{visibility:visible}</style></noscript>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pxl-windowsessentials.github.io/1-Introduction/concepts/">
+      
+      
+      
+      
+        <link rel="prev" href="../goals/">
+      
+      
+        <link rel="next" href="../DownloadWindows/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.3">
+    
+    
+      
+        <title>Theorie: Windows-introductie - 41SNE1020 Windows Essentials</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.e2cf241e.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra-v5.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Ga naar inhoud
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="41SNE1020 Windows Essentials" class="md-header__button md-logo" aria-label="41SNE1020 Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigatie</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            41SNE1020 Windows Essentials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Theorie: Windows-introductie
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Systeemvoorkeur gebruiken"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Systeemvoorkeur gebruiken" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Zoeken</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Zoeken">
+  <button type="button" class="md-search__button">
+    Zoeken
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="41SNE1020 Windows Essentials" class="md-nav__button md-logo" aria-label="41SNE1020 Windows Essentials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    41SNE1020 Windows Essentials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  0. Setup
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  0. Setup
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overzicht setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VMwareWorkstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  VMware Workstation Pro
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioPro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro aankopen en M365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/VisualStudioProNE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Visual Studio Pro (variant met persoonlijk Outlook-account)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/newoutlook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Persoonlijk Outlook-account aanmaken
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/m365developerstenantcreate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Microsoft 365-tenant aanvragen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-Setup/M365secondfactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tweede verificatiemethode instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1. Introductie Windows
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  1. Introductie Windows
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Windows-introductie
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Windows-introductie
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-besturingssystemen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Besturingssystemen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-edities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Edities
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Edities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#andere-edities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Andere edities
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-editie" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        N-editie
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-functies" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Windows-functies
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gebruikerstypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Gebruikerstypes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gebruikerstypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lokaal-gebruikersbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1. Lokaal gebruikersbeheer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-persoonlijke-microsoft-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.2. Persoonlijke Microsoft-account
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.3. Active Directory
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-microsoft-365-werk-of-schoolaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.4. Microsoft 365 werk- of schoolaccount
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-edities-gebruikerstypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Windows-edities: gebruikerstypes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-versies" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Versies
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Versies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Build number
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-architectuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Architectuur
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Architectuur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-cisc-complex-instruction-set-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.1. CISC (Complex Instruction Set Computer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-risc-reduced-instruction-set-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.2. RISC (Reduced Instruction Set Computer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-x86-en-x64" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.3. x86 en x64
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-arm" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.4. ARM
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-installatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Installatie
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Installatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-systeemvereisten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1. Systeemvereisten
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-herinstallatie-en-systeemherstel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2. Herinstallatie en systeemherstel
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-winre-windows-recovery-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.3. WinRE (Windows Recovery Environment)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-besturingssystemen-algemene-concepten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Besturingssystemen – algemene concepten
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Besturingssystemen – algemene concepten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-gui-vs-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1. GUI vs CLI
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2. Kernel
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-stuurprogramma-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.3. Stuurprogramma (driver)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DownloadWindows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 ISO downloaden
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Windows11Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows 11 installeren in VMware
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Support, build numbers en End of Servicing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2. Lokaal beheer
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  2. Lokaal beheer
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: lokaal beheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/UserManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lokale gebruikers en groepen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows Settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/ProcessandServices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Task Manager en Services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/EventViewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/NTFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  NTFS-machtigingen instellen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-LocalManagement/Registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Registry Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3. Command Line
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  3. Command Line
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: PowerShell-basis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/NavigationCreation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Navigeren en bestandsbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/SimpleCommands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Veelgebruikte cmdlets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-CommandLine/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scripts en execution policy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4. Microsoft 365
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  4. Microsoft 365
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Microsoft 365
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/AdminCenters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Admin centers en RBAC
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Microsoft365/LicenseModels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Licenties en abonnementen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5. Entra ID
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  5. Entra ID
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Entra ID
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gebruikers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-EntraID/groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Groepen, licenties en rollen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  6. Intune
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  6. Intune
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Intune
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/General/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algemene instellingen en synchronisatie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/EnrollDevice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Een toestel inschrijven (Autopilot)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/AutoPilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Autopilot en deployment profiles
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/ConfigurationPolicies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration policies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-Intune/Apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Apps uitrollen en Company Portal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  7. Collaboration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  7. Collaboration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: samenwerking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/Sharepoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SharePoint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/OneDrive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OneDrive
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Collaboration/PowerAutomate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Power Automate
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  8. Exchange Online
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  8. Exchange Online
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Doelstellingen
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theorie: Exchange Online
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Exchange/Mailboxmanagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mailboxbeheer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Labo-omgeving
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Labo-omgeving
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-labs/1-Introduction/importVMLabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Virtuele machine voor de labo's importeren
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-besturingssystemen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1. Besturingssystemen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-edities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2. Edities
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Edities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#andere-edities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Andere edities
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-editie" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        N-editie
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-functies" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Windows-functies
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gebruikerstypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Gebruikerstypes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gebruikerstypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lokaal-gebruikersbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1. Lokaal gebruikersbeheer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-persoonlijke-microsoft-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.2. Persoonlijke Microsoft-account
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.3. Active Directory
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-microsoft-365-werk-of-schoolaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.4. Microsoft 365 werk- of schoolaccount
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-edities-gebruikerstypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Windows-edities: gebruikerstypes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-versies" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4. Versies
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Versies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Build number
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-architectuur" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5. Architectuur
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Architectuur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-cisc-complex-instruction-set-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.1. CISC (Complex Instruction Set Computer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-risc-reduced-instruction-set-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.2. RISC (Reduced Instruction Set Computer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-x86-en-x64" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.3. x86 en x64
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-arm" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.4. ARM
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-installatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6. Installatie
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Installatie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-systeemvereisten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1. Systeemvereisten
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-herinstallatie-en-systeemherstel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2. Herinstallatie en systeemherstel
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-winre-windows-recovery-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.3. WinRE (Windows Recovery Environment)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-besturingssystemen-algemene-concepten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7. Besturingssystemen – algemene concepten
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Besturingssystemen – algemene concepten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-gui-vs-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1. GUI vs CLI
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2. Kernel
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-stuurprogramma-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.3. Stuurprogramma (driver)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigatie" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Start
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../goals/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    1. Introductie Windows
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="introductie-windows">Introductie Windows<a class="headerlink" href="#introductie-windows" title="Permanent link">&para;</a></h1>
+<h2 id="1-besturingssystemen">1. Besturingssystemen<a class="headerlink" href="#1-besturingssystemen" title="Permanent link">&para;</a></h2>
+<p>Besturingssystemen vallen over het algemeen in vier grote categorieën:</p>
+<ol>
+<li><strong>Desktop</strong>: een desktopbesturingssysteem is ontworpen voor algemeen gebruik door eindgebruikers op pc's en laptops, zoals Windows, macOS, ChromeOS en Ubuntu.</li>
+<li><strong>Server</strong>: een serverbesturingssysteem biedt één of meer diensten aan andere computers of toestellen binnen een netwerk. Voorbeelden zijn Windows Server, Ubuntu Server en Red Hat Enterprise Linux.</li>
+<li><strong>Mobile</strong>: een mobiel besturingssysteem is specifiek ontwikkeld voor mobiele toestellen zoals smartphones en tablets, zoals Android en iOS.</li>
+<li><strong>Embedded</strong>: een embedded besturingssysteem is ontworpen om te draaien op specifieke, vaak beperkte hardware, zoals netwerkapparatuur, betaalterminals, kassa's, medische apparatuur, enz.</li>
+</ol>
+<p>Tijdens Windows Essentials richten we ons op Windows als desktopbesturingssysteem.</p>
+<table>
+<thead>
+<tr>
+<th>Besturingssysteem</th>
+<th style="text-align: right;">Marktaandeel desktop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td style="text-align: right;">71,18%</td>
+</tr>
+<tr>
+<td>OSX</td>
+<td style="text-align: right;">19,82%</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td style="text-align: right;">7,53%</td>
+</tr>
+<tr>
+<td>ChromeOS</td>
+<td style="text-align: right;">1,47%</td>
+</tr>
+<tr>
+<td><em>Bron: Statcounter (juli 2026)</em></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://gs.statcounter.com/os-market-share/desktop/worldwide">Statcounter: Desktop Market Share Worldwide</a></p>
+<p>Voordat je Windows installeert, moet je het volgende bepalen:</p>
+<ol>
+<li>Welk type gebruiker zal zich aanmelden op het toestel?</li>
+<li>Welke Windows-editie ga je installeren?</li>
+<li>Op welke architectuur ga je Windows installeren?</li>
+</ol>
+<h2 id="2-edities">2. Edities<a class="headerlink" href="#2-edities" title="Permanent link">&para;</a></h2>
+<p>Tijdens de installatiewizard van Windows moet je een editie kiezen, die bepaalt welke functionaliteiten beschikbaar zijn. Je moet ook een licentie aankopen om de gekozen editie te mogen gebruiken. De meest voorkomende Windows-edities zijn:</p>
+<p><strong>Home</strong></p>
+<p>Home is de Windows-editie die meestal vooraf geïnstalleerd is op consumententoestellen. Deze editie biedt alle nodige functionaliteiten voor thuisgebruikers.</p>
+<p><strong>Pro</strong></p>
+<p>De Pro-editie is bedoeld voor prosumers en kleine bedrijven. Ze biedt de functionaliteit om Windows-toestellen centraal te beheren. De belangrijkste verschillen met de Home-editie zijn:</p>
+<ul>
+<li>Remote Desktop: een tool om een toestel op afstand te beheren</li>
+<li>Hyper-V: virtualisatie</li>
+<li>BitLocker</li>
+<li>Group Policy Management</li>
+</ul>
+<p><strong>Enterprise</strong></p>
+<p>Deze Windows-editie is bedoeld voor middelgrote en grote bedrijven en biedt extra beveiligingsfuncties ten opzichte van de Pro-editie. Deze editie is vereist om alle instellingen en functies in Microsoft 365 te kunnen gebruiken.</p>
+<p><strong>Education</strong></p>
+<p>Deze Windows-editie is uitsluitend bedoeld voor gebruik binnen onderwijsinstellingen. Ze biedt dezelfde functionaliteit als de Enterprise-editie, maar de licentieprijs is verlaagd voor onderwijsdoeleinden.</p>
+<p><strong>Microsoft: Windows-edities</strong></p>
+<p>Een uitgebreid overzicht van de verschillen in functionaliteit tussen de Windows-edities:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/training/modules/explore-windows-editions/2-examine-client-editions-capabilities">Microsoft: Windows Editions</a></li>
+<li><a href="https://liliputing.com/differences-between-windows-11-home-pro-enterprise-and-education/">Overzicht van Windows-edities en -functies</a></li>
+</ul>
+<h3 id="andere-edities">Andere edities<a class="headerlink" href="#andere-edities" title="Permanent link">&para;</a></h3>
+<p>De bovenstaande Windows-edities zijn de meest voorkomende; er bestaan ook nog enkele andere edities:</p>
+<ul>
+<li><strong>Pro for Workstations</strong>: identiek aan de Pro-editie, aangevuld met het bestandssysteem ReFS.</li>
+<li><strong>IoT Enterprise</strong>: een editie die ontworpen is voor gebruik op embedded systemen.</li>
+<li><strong>Enterprise Multi-Session</strong>: deze editie is ontworpen om een Windows-toestel aan te bieden in de dienst Azure Virtual Desktop. Daarmee kunnen meerdere gebruikers verbinden met hetzelfde virtuele toestel. Identiek aan de Enterprise-editie, maar met de toevoeging dat meerdere externe sessies toegelaten zijn.</li>
+</ul>
+<h3 id="n-editie">N-editie<a class="headerlink" href="#n-editie" title="Permanent link">&para;</a></h3>
+<p>Voor elke Windows-editie bestaat er ook een N-editie, specifiek ontworpen om te voldoen aan de Europese regelgeving. Die regelgeving geeft gebruikers de vrijheid om hun eigen multimediatoepassingen te kiezen. De N-edities van Windows 11 bieden dezelfde functionaliteit als de andere edities, maar bevatten geen mediagerelateerde technologieën zoals Windows Media Player, Skype of bepaalde vooraf geïnstalleerde media-apps zoals Music, Video en Voice Recorder.</p>
+<h3 id="windows-functies">Windows-functies<a class="headerlink" href="#windows-functies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Functie</th>
+<th style="text-align: center;">Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group Policy</td>
+<td style="text-align: center;">Centraal beheersysteem om instellingen af te dwingen op gebruikers en computers.</td>
+</tr>
+<tr>
+<td>Secure Boot</td>
+<td style="text-align: center;">Beveiligingsfunctie die voorkomt dat ongeautoriseerde of schadelijke software wordt geladen tijdens het opstartproces van de computer.</td>
+</tr>
+<tr>
+<td>Windows Hello</td>
+<td style="text-align: center;">Een alternatieve manier om aan te melden op toestellen en toepassingen met een vingerafdruk, irisscan, gezichtsherkenning of pincode in plaats van een gebruikerswachtwoord.</td>
+</tr>
+<tr>
+<td>File Explorer</td>
+<td style="text-align: center;">Visuele interface om door mappen en bestanden te navigeren en ze te beheren.</td>
+</tr>
+<tr>
+<td>Microsoft Store</td>
+<td style="text-align: center;">Centrale plaats om software te downloaden en te installeren.</td>
+</tr>
+<tr>
+<td>Hyper-V</td>
+<td style="text-align: center;">Het virtualisatieplatform van Microsoft om virtuele machines aan te maken en te beheren.</td>
+</tr>
+<tr>
+<td>S Mode</td>
+<td style="text-align: center;">Beperking van het besturingssysteem voor prestaties en veiligheid, waarbij enkel software uit de Microsoft Store geïnstalleerd mag worden.</td>
+</tr>
+<tr>
+<td>Windows Sandbox</td>
+<td style="text-align: center;">Geïsoleerde, tijdelijke desktopomgeving om applicaties veilig uit te voeren en te testen; alles wordt gewist wanneer je de sandbox sluit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-gebruikerstypes">3. Gebruikerstypes<a class="headerlink" href="#3-gebruikerstypes" title="Permanent link">&para;</a></h2>
+<p>Wanneer je een Windows-toestel installeert, moet je bepalen hoe gebruikers zullen aanmelden en hoe gebruikersaccounts worden aangemaakt en beheerd. Je hebt vier opties:</p>
+<ol>
+<li>Lokaal gebruikersbeheer</li>
+<li>Persoonlijke Microsoft-account</li>
+<li>Active Directory</li>
+<li>Microsoft 365 werk- of schoolaccount</li>
+</ol>
+<h3 id="31-lokaal-gebruikersbeheer">3.1. Lokaal gebruikersbeheer<a class="headerlink" href="#31-lokaal-gebruikersbeheer" title="Permanent link">&para;</a></h3>
+<p>Op elk Windows-toestel dat je installeert, maak je de gebruikers aan die het toestel zullen gebruiken. Als gebruikersinstellingen moeten worden gewijzigd, moet je dat voor elk toestel afzonderlijk doen. Microsoft raadt het gebruik van lokale gebruikers af. In de Home-editie is het niet langer mogelijk om lokale gebruikers aan te maken; je bent verplicht een Microsoft-account te gebruiken.</p>
+<h3 id="32-persoonlijke-microsoft-account">3.2. Persoonlijke Microsoft-account<a class="headerlink" href="#32-persoonlijke-microsoft-account" title="Permanent link">&para;</a></h3>
+<p>Aanmelden op een Windows-toestel gebeurt met een persoonlijke Microsoft-account. Deze accounts hebben domeinnamen zoals @outlook.com of @hotmail.com. Iedereen kan gratis een account aanmaken op microsoft365.com. Een beperkt deel van de gebruikersinstellingen wordt bewaard in je Microsoft-account.</p>
+<h3 id="33-active-directory">3.3. Active Directory<a class="headerlink" href="#33-active-directory" title="Permanent link">&para;</a></h3>
+<p>Wanneer je een Windows-toestel toevoegt aan een Active Directory, kunnen alle gebruikers die in het Active Directory-domein aanwezig zijn zich aanmelden op het toestel. Active Directory is een dienst die op een Windows-server wordt geïnstalleerd om gebruikers, groepen en toestellen binnen een netwerk centraal te beheren.</p>
+<h3 id="34-microsoft-365-werk-of-schoolaccount">3.4. Microsoft 365 werk- of schoolaccount<a class="headerlink" href="#34-microsoft-365-werk-of-schoolaccount" title="Permanent link">&para;</a></h3>
+<p>Aanmelden op een Windows-toestel gebeurt met een Microsoft 365-account voor bedrijven, dat meestal dezelfde domeinnaam gebruikt als de organisatie. Enkel de beheerder van de Microsoft 365-omgeving van de organisatie kan gebruikers toevoegen, wijzigen of verwijderen.</p>
+<h3 id="windows-edities-gebruikerstypes">Windows-edities: gebruikerstypes<a class="headerlink" href="#windows-edities-gebruikerstypes" title="Permanent link">&para;</a></h3>
+<p>Het type gebruiker dat je kan toevoegen, hangt af van de editie die je installeert. Hieronder vind je een overzicht van de verschillende Windows-edities en de types gebruikers die je kan toevoegen.</p>
+<p><strong>Windows Home</strong></p>
+<ul>
+<li>Persoonlijke Microsoft-account: je kan enkel gebruikers toevoegen met een persoonlijke Microsoft-account (outlook.com / hotmail.com)</li>
+</ul>
+<p><strong>Windows Pro</strong></p>
+<ul>
+<li>Persoonlijke Microsoft-account</li>
+<li>Microsoft 365 werk- of schoolaccount</li>
+<li>Lokale account</li>
+<li>Active Directory</li>
+</ul>
+<p><strong>Windows Enterprise en Education</strong></p>
+<ul>
+<li>Microsoft 365 werk- of schoolaccount</li>
+<li>Lokale account</li>
+<li>Active Directory</li>
+</ul>
+<h2 id="4-versies">4. Versies<a class="headerlink" href="#4-versies" title="Permanent link">&para;</a></h2>
+<p>Om de zoveel jaar brengt Microsoft een nieuwe grote Windows-release uit met nieuwe functionaliteiten en een vernieuwde gebruikersinterface.</p>
+<table>
+<thead>
+<tr>
+<th>Versie</th>
+<th style="text-align: center;">Gebruik</th>
+<th style="text-align: center;">Release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows XP</td>
+<td style="text-align: center;">0,09%</td>
+<td style="text-align: center;">2001</td>
+</tr>
+<tr>
+<td>Windows 7</td>
+<td style="text-align: center;">1,01%</td>
+<td style="text-align: center;">2009</td>
+</tr>
+<tr>
+<td>Windows 8</td>
+<td style="text-align: center;">0,02%</td>
+<td style="text-align: center;">2012</td>
+</tr>
+<tr>
+<td>Windows 8.1</td>
+<td style="text-align: center;">0,09%</td>
+<td style="text-align: center;">2013</td>
+</tr>
+<tr>
+<td>Windows 10</td>
+<td style="text-align: center;">29,83%</td>
+<td style="text-align: center;">2015</td>
+</tr>
+<tr>
+<td>Windows 11</td>
+<td style="text-align: center;">68,93%</td>
+<td style="text-align: center;">2021</td>
+</tr>
+</tbody>
+</table>
+<p><em>Bron: Statcounter (juli 2026)</em></p>
+<p><a href="https://gs.statcounter.com/windows-version-market-share/desktop/worldwide/">Statcounter: Desktop Windows Version Market Share Worldwide</a></p>
+<p>Sinds Windows 10 worden nieuwe functies niet altijd uitgesteld tot de volgende grote release; ze worden vaak geïntegreerd via de release van nieuwe versies. In het begin verscheen er om de zes maanden een nieuwe versie, maar sinds 2022 is dat teruggebracht tot één keer per jaar.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/nl-nl/lifecycle/products/windows-10-home-and-pro">Windows 10 Lifecycle</a></li>
+<li><a href="https://learn.microsoft.com/nl-nl/lifecycle/products/windows-11-home-and-pro">Windows 11 Lifecycle</a></li>
+</ul>
+<h3 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h3>
+<p><strong>End of Servicing</strong> verwijst naar het moment waarop een softwareproduct geen ondersteuning en updates meer ontvangt van de leverancier. Dat betekent dat er voor die versie van de software geen nieuwe beveiligingsupdates, bugfixes of technische ondersteuning meer beschikbaar zijn.
+De duur van de ondersteuning hangt af van de volgende aspecten:</p>
+<ul>
+<li>Versie</li>
+<li>Editie</li>
+<li>Release channel</li>
+</ul>
+<p><strong>Release channel</strong></p>
+<ul>
+<li><strong>LTSC</strong> - Long Term Servicing Channel: ontworpen voor embedded toestellen, IoT-toestellen, geldautomaten, enz. Het laat toe om feature-updates uit te stellen. Deze release biedt langere ondersteuning voor toestellen in dit kanaal. Het LTSC-releasekanaal is enkel beschikbaar voor de Enterprise-editie.</li>
+<li><strong>GAC</strong> - General Availability Channel: dit is het standaard releasekanaal waarin je feature-updates ontvangt zodra ze beschikbaar zijn.</li>
+<li><strong>Windows Insider Program</strong>: een releasekanaal om de nieuwste functies te testen en feedback te geven.</li>
+</ul>
+<p>Het is niet mogelijk om het release channel te wijzigen van LTSC naar GAC of omgekeerd. Het release channel wordt bepaald door de ISO van je installatie.
+Je kan opzoeken hoelang een specifieke Windows-versie ondersteund wordt via de Windows release information.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information">Windows 10 release information</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information">Windows 11 release information</a></li>
+</ul>
+<h3 id="build-number">Build number<a class="headerlink" href="#build-number" title="Permanent link">&para;</a></h3>
+<p>Een Windows build number is een unieke identificatie die aan elke versie van het Windows-besturingssysteem wordt toegekend.
+Elke Windows-versie heeft zijn eigen unieke build number. Het Windows build number bestaat uit twee delen:</p>
+<ol>
+<li><strong>Eerste deel</strong>: het versienummer, dat de hoofdversie van het besturingssysteem aangeeft. Bijvoorbeeld 1903, 23H2 of 24H2.</li>
+<li><strong>Tweede deel</strong>: wordt bepaald door de laatste specifieke update die werd toegepast. Elke Windows-update krijgt een KB-nummer. Een KB-nummer (Knowledge Base) verwijst naar de unieke identificatiecode van een specifieke Windows-update.</li>
+</ol>
+<h2 id="5-architectuur">5. Architectuur<a class="headerlink" href="#5-architectuur" title="Permanent link">&para;</a></h2>
+<p>RISC (Reduced Instruction Set Computer) en CISC (Complex Instruction Set Computer) verwijzen naar twee populaire processorarchitecturen die verschillende instructiesets gebruiken om logische en input/outputbewerkingen uit te voeren. Het fundamentele verschil is dat RISC minder instructies heeft, waarbij elke instructie één enkele bewerking uitvoert, terwijl CISC een groot aantal complexe instructies heeft die meerdere interne bewerkingen kunnen uitvoeren. Elke architectuur heeft zijn eigen voor- en nadelen.</p>
+<h3 id="51-cisc-complex-instruction-set-computer">5.1. CISC (Complex Instruction Set Computer)<a class="headerlink" href="#51-cisc-complex-instruction-set-computer" title="Permanent link">&para;</a></h3>
+<p><strong>Voordelen</strong></p>
+<ul>
+<li><strong>Prestaties</strong>: voor complexe taken zijn minder instructies nodig.</li>
+<li><strong>Geheugengebruik</strong>: er zijn minder instructies nodig om complexe taken uit te voeren, wat kan leiden tot efficiënter geheugengebruik.</li>
+<li><strong>Toepassing</strong>: CISC-processors worden al langer gebruikt dan RISC-processors, wat leidt tot bredere ondersteuning in toestellen en software.</li>
+</ul>
+<p><strong>Nadelen</strong></p>
+<ul>
+<li><strong>Complex ontwerp</strong>: door het gebruik van complexe instructiesets zijn CISC-processors moeilijker te ontwerpen.</li>
+<li><strong>Hoger energieverbruik</strong>: hoger energieverbruik door de complexere instructieset.</li>
+</ul>
+<p>De meest voorkomende CPU-architectuur in deze categorie is x64.</p>
+<h3 id="52-risc-reduced-instruction-set-computer">5.2. RISC (Reduced Instruction Set Computer)<a class="headerlink" href="#52-risc-reduced-instruction-set-computer" title="Permanent link">&para;</a></h3>
+<p><strong>Voordelen</strong></p>
+<ul>
+<li><strong>Eenvoudigere instructies</strong>: gebruikt een kleinere en eenvoudigere instructieset. Individuele instructies kunnen daardoor sneller worden uitgevoerd.</li>
+<li><strong>Energie-efficiëntie</strong>: lager energieverbruik dan CISC-processors.</li>
+</ul>
+<p><strong>Nadelen</strong></p>
+<ul>
+<li><strong>Prestaties</strong>: in vergelijking met CISC-processors zijn meer instructies nodig om een complexe taak uit te voeren.</li>
+<li><strong>Hoger geheugengebruik</strong>: hoger geheugengebruik doordat deze extra instructies voor dezelfde taak moeten worden opgeslagen.</li>
+</ul>
+<h3 id="53-x86-en-x64">5.3. x86 en x64<a class="headerlink" href="#53-x86-en-x64" title="Permanent link">&para;</a></h3>
+<p>x86 en x64 zijn de meest voorkomende CPU-architecturen binnen het CISC-ontwerp. x86 werd oorspronkelijk ontwikkeld door Intel en later door AMD doorontwikkeld tot x64. Het belangrijkste verschil is dat x86-processors 32-bit-instructies gebruiken, terwijl x64-processors 64-bit-instructies gebruiken. Daardoor kan x64 meer dan 4 GB geheugen aanspreken, wat een beperking was van 32-bitprocessors. Sinds Windows 11 is enkel nog een 64-bitversie beschikbaar, na een periode waarin zowel 32-bit- als 64-bitversies werden aangeboden. Deze CPU-architectuur wordt het meest gebruikt in desktopcomputers, laptops en servers.</p>
+<h3 id="54-arm">5.4. ARM<a class="headerlink" href="#54-arm" title="Permanent link">&para;</a></h3>
+<p>ARM is de meest voorkomende CPU-architectuur van het RISC-ontwerp. Deze CPU-architectuur wordt vooral gebruikt in toestellen waar een laag energieverbruik noodzakelijk is, waaronder smartphones, tablets, IoT-toestellen en embedded toestellen. De Apple M-chips hebben deze architectuur ook populair gemaakt voor laptops. Ook Microsoft richt zich de laatste jaren op deze architectuur en heeft een versie van Windows voor ARM. De ttragere adoptie door Microsoft is te wijten aan het feit dat alle softwareontwikkelaars hun software voor deze architectuur moesten herschrijven.</p>
+<h2 id="6-installatie">6. Installatie<a class="headerlink" href="#6-installatie" title="Permanent link">&para;</a></h2>
+<p>In de labo's op Blackboard leer je Windows te installeren. De types gebruikers die je aan de Windows-installatie kan toevoegen, hangen af van de editie die je kiest.</p>
+<h3 id="61-systeemvereisten">6.1. Systeemvereisten<a class="headerlink" href="#61-systeemvereisten" title="Permanent link">&para;</a></h3>
+<p>Je kan Windows 11 enkel installeren op een toestel dat aan de systeemvereisten voldoet. De belangrijkste vereisten zijn:</p>
+<ul>
+<li><strong>Processor</strong>: 1 GHz met twee of meer kernen (compatibele 64-bitprocessor)</li>
+<li><strong>Geheugen</strong>: minimaal 4 GB</li>
+<li><strong>Opslag</strong>: minimaal 64 GB</li>
+<li><strong>UEFI</strong></li>
+<li><strong>TPM 2.0</strong></li>
+<li><strong>Internetverbinding</strong></li>
+</ul>
+<p><a href="https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements">Microsoft: Windows 11 System Requirements</a></p>
+<h3 id="62-herinstallatie-en-systeemherstel">6.2. Herinstallatie en systeemherstel<a class="headerlink" href="#62-herinstallatie-en-systeemherstel" title="Permanent link">&para;</a></h3>
+<p>Als een Windows-installatie beschadigd of corrupt raakt, zijn er verschillende manieren om een systeemherstel te starten. In de labo's op Blackboard leer je deze herstelmethodes toepassen.</p>
+<ul>
+<li><strong>Via Windows Settings</strong>: Start &gt; Settings &gt; System &gt; Recovery &gt; "Reset this PC".</li>
+<li><strong>Via de Windows Recovery Environment (WinRE)</strong>, ook bekend als 'Advanced Startup Options'.</li>
+</ul>
+<h3 id="63-winre-windows-recovery-environment">6.3. WinRE (Windows Recovery Environment)<a class="headerlink" href="#63-winre-windows-recovery-environment" title="Permanent link">&para;</a></h3>
+<p><img alt="Win11 Windows Recovery Environment" src="../assets/WinRE.png" /> </p>
+<ul>
+<li><strong>Vanaf het aanmeldscherm</strong>: kies op het aanmeldscherm Shutdown en houd vervolgens de Shift-toets ingedrukt terwijl je Restart selecteert.</li>
+<li><strong>Via Windows Settings</strong>: Start &gt; Settings &gt; System &gt; Recovery &gt; "Advanced startup".</li>
+<li><strong>Tijdens het opstartproces</strong>: houd, wanneer je het blauwe Windows-logo ziet, de aan/uit-knop ingedrukt om het toestel uit te schakelen. Herhaal dit twee keer. Bij de derde herstart gaat het toestel automatisch naar de Windows Recovery Environment.</li>
+<li><strong>Vanaf installatiemedia</strong>: start je toestel op vanaf Windows-installatiemedia (USB, dvd of ISO).</li>
+<li><strong>Via een command prompt</strong>: <code>shutdown /r /o /f /t 00</code>.</li>
+</ul>
+<p>De Windows Recovery Environment is een herstelomgeving die veelvoorkomende oorzaken van een niet-opstartend Windows-systeem kan herstellen. Via de Windows Recovery Environment kan je:</p>
+<ol>
+<li><strong>Opstarten vanaf een ander medium</strong>: USB-stick, netwerkverbinding, dvd, enz.</li>
+<li><strong>Problemen oplossen (Troubleshoot)</strong>:<ul>
+<li><strong>Reset this PC:</strong> het toestel wordt opnieuw geïnstalleerd en je kan ervoor kiezen om gebruikersbestanden te behouden.</li>
+</ul>
+</li>
+</ol>
+<p>Advanced Options:</p>
+<ul>
+<li><strong>Startup Repair</strong>: overloopt verschillende opties om veelvoorkomende opstartproblemen automatisch op te lossen.</li>
+<li><strong>Startup Settings</strong>: past het opstartgedrag van Windows aan (bijvoorbeeld starten met lagere resolutie of Safe Mode inschakelen) om het toestel toch te laten opstarten.</li>
+<li><strong>Command Prompt</strong>: toegang tot de opdrachtregel om taken handmatig uit te voeren wanneer Windows niet normaal opstart.</li>
+<li><strong>Uninstall Updates</strong>: draait recente systeemupdates terug, wat problemen die door deze updates veroorzaakt zijn mogelijk oplost.</li>
+<li><strong>UEFI Firmware Settings</strong>: herstart het toestel en opent rechtstreeks de UEFI-instellingen van het toestel.</li>
+<li><strong>System Restore</strong>: zet Windows terug naar een eerder herstelpunt.</li>
+<li><strong>System Image Recovery</strong>: laat je toe om je computer te herstellen met behulp van een back-up van een systeemimage.</li>
+</ul>
+<h2 id="7-besturingssystemen-algemene-concepten">7. Besturingssystemen – algemene concepten<a class="headerlink" href="#7-besturingssystemen-algemene-concepten" title="Permanent link">&para;</a></h2>
+<h3 id="71-gui-vs-cli">7.1. GUI vs CLI<a class="headerlink" href="#71-gui-vs-cli" title="Permanent link">&para;</a></h3>
+<p>De gebruikersinterface van een besturingssysteem kan verschillende vormen aannemen:</p>
+<p><strong>Graphical User Interface (GUI)</strong>:</p>
+<p>Desktopbesturingssystemen gebruiken meestal een GUI omdat die gebruiksvriendelijk en intuïtief is. Het weergeven van een grafische omgeving vraagt echter meer systeemresources, wat soms de stabiliteit kan beïnvloeden.</p>
+<p><strong>Command Line Interface (CLI)</strong>:</p>
+<p>Serverbesturingssystemen daarentegen werken vaak uitsluitend met een CLI. Omdat deze interface minder resources verbruikt, is ze over het algemeen stabieler. Ze kan ook meer functionaliteit bieden, aangezien sommige geavanceerde opties niet beschikbaar zijn in een grafische interface. Het nadeel is dat CLI's vaak complexer zijn en een steilere leercurve hebben.</p>
+<p>Wanneer je een Windows-server installeert, kan je kiezen tussen een versie met een GUI (genaamd "Desktop Experience") of een minimalere installatie met enkel de CLI, wat de standaardoptie is.</p>
+<h3 id="72-kernel">7.2. Kernel<a class="headerlink" href="#72-kernel" title="Permanent link">&para;</a></h3>
+<p>De kernel is het kernonderdeel van het besturingssysteem. Hij is verantwoordelijk voor:</p>
+<ul>
+<li>Het beheren van hardwareresources</li>
+<li>Communicatie tussen hardware en software mogelijk maken</li>
+<li>Geheugenbeheer</li>
+<li>Procesbeheer aansturen</li>
+</ul>
+<h3 id="73-stuurprogramma-driver">7.3. Stuurprogramma (driver)<a class="headerlink" href="#73-stuurprogramma-driver" title="Permanent link">&para;</a></h3>
+<p>Windows ondersteunt niet standaard alle hardware. In sommige gevallen is extra software nodig om een goede communicatie tussen de hardware en het besturingssysteem mogelijk te maken. Dit soort software noemt men een stuurprogramma (driver).</p>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Windows</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Terug naar boven
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.top","navigation.tracking","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Gekopieerd naar klembord","clipboard.copy":"Kopiëren naar klembord","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 extra overeenkomst op deze pagina","search.result.more.other":"# extra overeenkomsten op deze pagina","search.result.none":"Geen overeenkomende documenten","search.result.one":"1 overeenkomende document","search.result.other":"# overeenkomende documenten","search.result.placeholder":"Typ om te beginnen met zoeken","search.result.term.missing":"Ontbreekt","select.version":"Selecteer versie"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9e76c64c.min.js"></script>
+      
+      
+        <script src="../../javascripts/navtoggle-v5.js"></script>
+      
+        <script src="../../javascripts/videobar-v5.js"></script>
+      
+    
+  </body>
+</html>
