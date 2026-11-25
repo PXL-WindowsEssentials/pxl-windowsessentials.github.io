@@ -70,7 +70,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-v5.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v6.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2734,7 +2734,7 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 <h2 id="1-mdm-user-scope">1. MDM user scope<a class="headerlink" href="#1-mdm-user-scope" title="Permanent link">&para;</a></h2>
 <p>In een nieuwe Microsoft 365-tenant is automatische MDM-inschrijving voor gebruikers meestal niet ingeschakeld. Volg deze stappen om MDM-inschrijving voor alle gebruikers in te schakelen:</p>
 <ol>
-<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en meld je aan met een Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
+<li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en meld je aan met een Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
 <li>Klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
 <li>Klik in de sectie <strong>Enrollment options</strong> op <strong>Automatic enrollment</strong>.</li>
@@ -2746,7 +2746,7 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 </video>
 
 <h2 id="2-get-windowsautopilotinfo">2. Get-WindowsAutopilotInfo<a class="headerlink" href="#2-get-windowsautopilotinfo" title="Permanent link">&para;</a></h2>
-<p>Voer de volgende stappen uit op je <strong>virtuele Windows 11-machine</strong>, wanneer de installatie voltooid is en je aangemeld bent:</p>
+<p>Voer de volgende stappen uit op je <span class="we-app we-windows">virtuele Windows 11-machine</span>, wanneer de installatie voltooid is en je aangemeld bent:</p>
 <ol>
 <li>Open een <strong>elevated</strong> Terminal (uitvoeren als administrator).</li>
 <li>Voer de volgende commando's uit:</li>
@@ -2763,7 +2763,7 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 <p>Het PowerShell-script Get-WindowsAutopilotInfo maakt in <code>C:\</code> een bestand AutopilotHWID.csv aan met de hardware hash van je virtuele machine. Kopieer dit CSV-bestand naar je hostmachine. (Zorg dat VMware Tools geïnstalleerd is, zodat kopiëren en plakken werkt.)</p>
 <h2 id="3-intune-hash-uploaden">3. Intune - Hash uploaden<a class="headerlink" href="#3-intune-hash-uploaden" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
 <li>Klik onder <strong>Windows Autopilot</strong> op <strong>Devices</strong>.</li>
 <li>Klik in het bovenste menu op <strong>Import</strong> en upload je bestand <strong>AutopilotHWID.csv</strong>.</li>
@@ -2793,7 +2793,7 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 <h2 id="6-intune-inschrijving-controleren">6. Intune-inschrijving controleren<a class="headerlink" href="#6-intune-inschrijving-controleren" title="Permanent link">&para;</a></h2>
 <p>Zodra de Windows-installatie voltooid is:</p>
 <ol>
-<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en meld je aan met je Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
+<li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en meld je aan met je Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
 <li>Klik in het linkermenu op <strong>Devices</strong> en daarna op <strong>All devices</strong>.</li>
 </ol>
 <p>Je ziet nu een overzicht van alle toestellen die in je Microsoft 365-tenant zijn ingeschreven.</p>
@@ -2805,7 +2805,7 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 <h3 id="72-slaapstand-uitschakelen">7.2. Slaapstand uitschakelen<a class="headerlink" href="#72-slaapstand-uitschakelen" title="Permanent link">&para;</a></h3>
 <p>Je virtuele Windows 11-machine synchroniseert gegevens zoals toestelinformatie, policies en applicaties. Wanneer de VM in slaapstand gaat (wat standaard al na enkele minuten gebeurt), wordt deze synchronisatie onderbroken. Pas de volgende Windows-instelling op je virtuele machine aan om de slaapstand uit te schakelen:</p>
 <ol>
-<li>Open op je virtuele machine de <strong>Windows Settings</strong>.</li>
+<li>Open op je <span class="we-app we-windows">virtuele machine</span> de <strong>Windows Settings</strong>.</li>
 <li>Klik in het linkermenu op <strong>System</strong> en daarna op <strong>Power</strong>.</li>
 <li>Configureer de <strong>Screen and sleep timeouts</strong> als volgt<ul>
 <li><strong>Turn my screen off after</strong>: Never</li>

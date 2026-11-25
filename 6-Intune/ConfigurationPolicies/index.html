@@ -70,7 +70,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-v5.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-v6.css">
     
     <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -2689,7 +2689,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><a href="https://learn.microsoft.com/en-us/windows/configuration/background/?tabs=intune&amp;pivots=windows-11">Microsoft Learn: Configure the desktop and lock screen backgrounds</a></p>
 <h2 id="1-een-nieuwe-policy-aanmaken">1. Een nieuwe policy aanmaken<a class="headerlink" href="#1-een-nieuwe-policy-aanmaken" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik onder <strong>Manage devices</strong> op <strong>Configuration</strong>.</li>
 <li>Klik op de knop <strong>Create</strong>.</li>
 <li>Selecteer <strong>New Policy</strong>.</li>
@@ -2704,7 +2704,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ol>
 <p><img alt="IntuneCreatePolicy" src="../assets/IntuneCreatePolicy.png" /></p>
 <h2 id="2-profielinstellingen">2. Profielinstellingen<a class="headerlink" href="#2-profielinstellingen" title="Permanent link">&para;</a></h2>
-<p>De volgende tabbladen doorloop je in de wizard in het Intune admin center.</p>
+<p>De volgende tabbladen doorloop je in de wizard in het <span class="we-app we-intune">Intune admin center</span>.</p>
 <h3 id="21-basics">2.1. Basics<a class="headerlink" href="#21-basics" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Geef een naam in.</li>
@@ -2741,7 +2741,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Configuratieprofielen kunnen worden toegewezen aan gebruikersgroepen of toestelgroepen, afhankelijk van of je wil dat het profiel de gebruiker volgt of enkel op toestellen wordt toegepast.</p>
 <p>In dit voorbeeld willen we de configuratie toepassen op alle Windows-toestellen. Daarvoor gebruiken we een <strong>dynamische toestelgroep</strong> met de naam <code>Windows-devices</code>. Die groep bestaat niet vanzelf: je maakt ze zelf aan in Microsoft Entra, zoals beschreven bij <a href="../../5-EntraID/groups/#2-dynamische-groepen">Groepen</a>:</p>
 <ol>
-<li>Ga naar het <strong>Microsoft Entra admin center</strong> (<a href="https://entra.microsoft.com">entra.microsoft.com</a>) en klik op <strong>Groups</strong> → <strong>New group</strong>.</li>
+<li>Ga naar <span class="we-app we-entra">Microsoft Entra admin center</span> (<a href="https://entra.microsoft.com">entra.microsoft.com</a>) en klik op <strong>Groups</strong> → <strong>New group</strong>.</li>
 <li>Stel <strong>Group type</strong> in op <strong>Security</strong>, geef de groep de naam <code>Windows-devices</code> en stel <strong>Membership type</strong> in op <strong>Dynamic Device</strong>.</li>
 <li>
 <p>Klik op <strong>Add dynamic query</strong> en gebruik de regel:</p>
@@ -2779,7 +2779,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h3 id="31-vanuit-het-configuratieprofiel">3.1. Vanuit het configuratieprofiel<a class="headerlink" href="#31-vanuit-het-configuratieprofiel" title="Permanent link">&para;</a></h3>
 <p>Volg onderstaande stappen om een rapport te bekijken met de toestellen waarop het configuratieprofiel is toegepast:</p>
 <ol>
-<li>Ga in het Intune admin center naar <strong>Devices</strong> → <strong>Configuration</strong> en open het configuratieprofiel dat je wil controleren.</li>
+<li>Ga in het <span class="we-app we-intune">Intune admin center</span> naar <strong>Devices</strong> → <strong>Configuration</strong> en open het configuratieprofiel dat je wil controleren.</li>
 <li>Klik op de blauwe knop <strong>“View Report”</strong>.</li>
 <li>Er verschijnt een lijst met alle toestellen waarop het configuratieprofiel is toegepast.</li>
 </ol>
@@ -2787,7 +2787,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h3 id="32-vanuit-het-toestel">3.2. Vanuit het toestel<a class="headerlink" href="#32-vanuit-het-toestel" title="Permanent link">&para;</a></h3>
 <p>Volg onderstaande stappen om te zien welke configuratieprofielen op een specifiek toestel zijn toegepast:</p>
 <ol>
-<li>Ga in het Intune admin center naar <strong>Devices</strong> → <strong>All devices</strong> en open het toestel dat je wil controleren.</li>
+<li>Ga in het <span class="we-app we-intune">Intune admin center</span> naar <strong>Devices</strong> → <strong>All devices</strong> en open het toestel dat je wil controleren.</li>
 <li>Klik in het middelste menu op <strong>“Device Configuration”</strong>.</li>
 <li>Je ziet een overzicht van alle configuratieprofielen die op dat toestel zijn toegepast.</li>
 </ol>
