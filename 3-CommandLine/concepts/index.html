@@ -2723,16 +2723,35 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Via Visual Studio Code</li>
 </ul>
 <p>De meeste gebruikers geven de voorkeur aan de Terminal-app omdat je er meerdere tabbladen kan gebruiken. Zo kan je meerdere cmdlets naast elkaar uitvoeren zonder te wachten tot de vorige cmdlet een resultaat geeft.</p>
+<p>Zo start je PowerShell vanuit het Startmenu:</p>
+<ol>
+<li>Klik op het <strong>Startmenu</strong> of op de <strong>zoekbalk</strong> in de taakbalk.</li>
+<li>Typ <code>powershell</code>.</li>
+<li>Klik op <strong>Windows PowerShell</strong>. Er opent een venster met een prompt in je gebruikersmap, bijvoorbeeld <code>PS C:\Users\&lt;gebruikersnaam&gt;&gt;</code>.</li>
+</ol>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/Powershell.mp4" type="video/mp4">
 </video>
 
+<p>Zo werk je met meerdere tabbladen in Windows Terminal:</p>
+<ol>
+<li>Klik op het <strong>+</strong>-teken naast het tabblad om een nieuw tabblad te openen. Herhaal dit voor elk extra tabblad.</li>
+<li>Klik op een tabblad om ertussen te wisselen.</li>
+<li>Klik op het <strong>x</strong>-teken van een tabblad om het te sluiten.</li>
+</ol>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/tabs.mp4" type="video/mp4">
 </video>
 
 <h3 id="standaardgebruiker-vs-administrator">Standaardgebruiker vs administrator<a class="headerlink" href="#standaardgebruiker-vs-administrator" title="Permanent link">&para;</a></h3>
 <p>Standaard opent de PowerShell-shell (of je nu de shell opende via de PowerShell-terminalapp of via de Terminal-app) met een standaardgebruikersprofiel. Deze shell draait onder je huidige gebruiker en laat dus alle acties toe volgens je rechten binnen het besturingssysteem. Zodra je echter cmdlets moet uitvoeren waarvoor administratorrechten nodig zijn, moet je PowerShell starten onder het administratorprofiel. Zelfs als je gebruiker lid is van de groep Administrators, moet je PowerShell nog altijd onder het administratorprofiel openen voor administratieve acties.</p>
+<p>Zo start je PowerShell als administrator:</p>
+<ol>
+<li>Typ <code>powershell</code> in het Startmenu.</li>
+<li>Klik in het rechterpaneel op <strong>Run as administrator</strong> (of klik met de rechtermuisknop op <strong>Windows PowerShell</strong> en kies <strong>Run as administrator</strong>).</li>
+<li>Bevestig de melding van gebruikersaccountbeheer (UAC) met <strong>Yes</strong>.</li>
+<li>In de titelbalk staat nu <strong>Administrator: Windows PowerShell</strong> en de prompt staat in <code>C:\WINDOWS\system32</code>.</li>
+</ol>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/pwsadm.mp4" type="video/mp4">
 </video>
