@@ -2616,12 +2616,12 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h1>
 <p>Als Windows-systeembeheerder moet je weten of de Windows-systemen in je organisatie nog ondersteund en dus nog veilig zijn. Daarom moet je kunnen:</p>
-<ol>
+<ul>
 <li>De einddatum van de ondersteuning van een Windows-systeem bepalen.</li>
 <li>Windows-release en -versie afleiden uit het build number.</li>
 <li>Aan de hand van het build number bepalen welke updates zijn toegepast.</li>
 <li>Opzoeken wanneer een Windows-versie is uitgebracht.</li>
-</ol>
+</ul>
 <h2 id="1-end-of-servicing-datum">1. End of Servicing-datum<a class="headerlink" href="#1-end-of-servicing-datum" title="Permanent link">&para;</a></h2>
 <p>De End of Servicing-datum is de dag waarna Microsoft geen beveiligingsupdates meer uitbrengt voor een Windows-versie. Die datum hangt af van:</p>
 <ul>
@@ -2632,10 +2632,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h3 id="11-versie-en-editie-opzoeken">1.1. Versie en editie opzoeken<a class="headerlink" href="#11-versie-en-editie-opzoeken" title="Permanent link">&para;</a></h3>
 <p><strong>Methode 1: Windows Settings</strong></p>
 <p>Je vindt de versie en editie van een Windows-systeem in de Windows Settings.</p>
-<ul>
+<ol>
 <li>Ga in de Windows Settings naar <strong>System</strong> &gt; <strong>About</strong>.</li>
 <li>Scroll naar de sectie <strong>Windows specifications</strong>.</li>
-</ul>
+</ol>
 <p><img alt="LookupVersionandEdition" src="../assets/LookupWindowsVersionandEdition.png" /></p>
 <p><strong>Methode 2: Windows Terminal</strong></p>
 <p>Je vindt de Windows-versie ook door het volgende commando uit te voeren in een Windows Terminal. Er opent een venster met versie en build:</p>
@@ -2669,10 +2669,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Je vindt het build number in de Windows Settings of met het commando <code>winver</code>.</p>
 <p><strong>Methode 1: Windows Settings</strong></p>
 <p>Je vindt het build number in de Windows Settings.</p>
-<ul>
+<ol>
 <li>Ga in de Windows Settings naar <strong>System</strong> &gt; <strong>About</strong>.</li>
 <li>Scroll naar de sectie <strong>Windows specifications</strong>.</li>
-</ul>
+</ol>
 <p><img alt="LookupBuildNumber" src="../assets/LookupBuildNumber.png" /></p>
 <p><strong>Methode 2: Windows Terminal</strong></p>
 <p>Of voer het volgende commando uit in een Windows Terminal:</p>
@@ -2681,10 +2681,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><img alt="winverBuildNumber" src="../assets/winverBuildNumber.png" /></p>
 <h3 id="22-informatie-afleiden-uit-het-windows-build-number">2.2. Informatie afleiden uit het Windows build number<a class="headerlink" href="#22-informatie-afleiden-uit-het-windows-build-number" title="Permanent link">&para;</a></h3>
 <p>Een Windows build number identificeert exact welke build van Windows op een toestel staat. Het bestaat uit twee delen, gescheiden door een punt:</p>
-<ol>
+<ul>
 <li><strong>Eerste deel</strong> (bijvoorbeeld 26100): het buildnummer van de Windows-versie. Hieruit leid je de release en versie af (bijvoorbeeld Windows 11 24H2).</li>
 <li><strong>Tweede deel</strong> (bijvoorbeeld 4351): de revisie, die bepaald wordt door de laatste update die werd geïnstalleerd. Elke Windows-update heeft een KB-nummer. KB staat voor Knowledge Base en is de unieke code van een specifieke update.</li>
-</ol>
+</ul>
 <p>Neem bijvoorbeeld het volgende build number.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>

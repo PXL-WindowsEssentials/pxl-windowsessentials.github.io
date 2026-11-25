@@ -2922,10 +2922,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <h2 id="1-toegang">1. Toegang<a class="headerlink" href="#1-toegang" title="Permanent link">&para;</a></h2>
 <p>Je opent Power Automate op twee manieren:</p>
-<ol>
+<ul>
 <li>rechtstreeks via <a href="https://make.powerautomate.com">https://make.powerautomate.com</a></li>
 <li>via het Microsoft 365-portaal</li>
-</ol>
+</ul>
 <p><img alt="portalPowerAutomate" src="../assets/portalPowerAutomate.png" /></p>
 <h2 id="2-taal">2. Taal<a class="headerlink" href="#2-taal" title="Permanent link">&para;</a></h2>
 <p>Net als bij de andere Microsoft 365-diensten stel je Power Automate eerst in op het Engels. Documentatie, ondersteuning en communityforums zijn in het Engels, dus je vindt oplossingen sneller en hoeft termen niet te vertalen.</p>
@@ -2941,11 +2941,11 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="3-een-microsoft-dataverse-databank-aanmaken">3. Een Microsoft Dataverse-databank aanmaken<a class="headerlink" href="#3-een-microsoft-dataverse-databank-aanmaken" title="Permanent link">&para;</a></h2>
 <p>Power Automate approvals (goedkeuringen) hebben een Microsoft Dataverse-databank nodig. In een nieuwe tenant bestaat die nog niet. Om ze aan te maken, moet je eerst Managed Environments inschakelen. Doe dit nu, want je hebt het nodig voor het goedkeuringsvoorbeeld verderop:</p>
 <h3 id="31-het-power-platform-admin-center-openen">3.1. Het Power Platform Admin Center openen<a class="headerlink" href="#31-het-power-platform-admin-center-openen" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>Ga naar <a href="https://admin.powerplatform.microsoft.com">https://admin.powerplatform.microsoft.com</a>.</li>
 <li>Klik op de drie puntjes naast MSFT (je default environment).</li>
 <li>Selecteer <strong>Enable Managed Environments</strong>.</li>
-</ul>
+</ol>
 <p><img alt="PowerAutomatePlatform1" src="../assets/PowerAutomatePlatform1.png" /></p>
 <h3 id="32-dataverse-toevoegen">3.2. Dataverse toevoegen<a class="headerlink" href="#32-dataverse-toevoegen" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2953,21 +2953,21 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <p><img alt="PowerAutomatePlatform2" src="../assets/PowerAutomatePlatform2.png" /></p>
 <h3 id="33-dataverse-instellingen">3.3. Dataverse-instellingen<a class="headerlink" href="#33-dataverse-instellingen" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>Laat de instellingen op de standaardwaarden ("Defaults") staan.</li>
 <li>Klik op de knop <strong>Add</strong></li>
-</ul>
+</ol>
 <p><img alt="PowerAutomatePlatform3" src="../assets/PowerAutomatePlatform3.png" /></p>
 <h2 id="4-eenvoudig-workflowvoorbeeld">4. Eenvoudig workflowvoorbeeld<a class="headerlink" href="#4-eenvoudig-workflowvoorbeeld" title="Permanent link">&para;</a></h2>
 <p>In dit voorbeeld maak je een eenvoudige flow met twee onderdelen:</p>
-<ol>
+<ul>
 <li>
 <p><strong>Trigger</strong>: de flow start telkens wanneer een nieuw document naar de SharePoint document library wordt geüpload.</p>
 </li>
 <li>
 <p><strong>E-mailmelding</strong>: er wordt een e-mail naar een gebruiker gestuurd om te melden dat er een nieuw document is.</p>
 </li>
-</ol>
+</ul>
 <h3 id="41-workflow-aanmaken">4.1. Workflow aanmaken<a class="headerlink" href="#41-workflow-aanmaken" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Klik in het linkermenu op <strong>Create</strong>.</li>
@@ -3037,7 +3037,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ol>
 <h2 id="5-voorbeeld-van-een-goedkeuringsworkflow-approval">5. Voorbeeld van een goedkeuringsworkflow (Approval)<a class="headerlink" href="#5-voorbeeld-van-een-goedkeuringsworkflow-approval" title="Permanent link">&para;</a></h2>
 <p>Een goedkeuringsflow laat een document door een verantwoordelijke nakijken voor het definitief wordt. In dit voorbeeld bouw je een flow die:</p>
-<ol>
+<ul>
 <li>
 <p><strong>Trigger</strong>: start telkens wanneer een nieuw document naar de map <em>Reports</em> in de SharePoint document library wordt geüpload.</p>
 </li>
@@ -3054,7 +3054,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Als het document wordt afgewezen, wordt de kolom <strong>Approval Status</strong> bijgewerkt naar <strong>Rejected</strong>.</li>
 </ul>
 </li>
-</ol>
+</ul>
 <h3 id="51-nieuwe-workflow">5.1. Nieuwe workflow<a class="headerlink" href="#51-nieuwe-workflow" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Klik in het linkermenu op <strong>Create</strong>.</li>

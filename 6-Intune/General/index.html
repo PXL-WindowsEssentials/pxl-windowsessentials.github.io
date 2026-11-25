@@ -2829,10 +2829,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <h3 id="22-mdm-persoonlijk-vs-bedrijfseigendom">2.2. MDM: persoonlijk vs bedrijfseigendom<a class="headerlink" href="#22-mdm-persoonlijk-vs-bedrijfseigendom" title="Permanent link">&para;</a></h3>
 <p>In Intune kan je twee soorten toestellen inschrijven:</p>
-<ol>
+<ul>
 <li><strong>Personal devices</strong>: eigendom van de medewerker.</li>
 <li><strong>Company-owned devices</strong>: eigendom van en beheerd door de organisatie.</li>
-</ol>
+</ul>
 <p>De meeste tenants laten enkel company-owned devices toe.</p>
 <p><strong>Waarom?</strong></p>
 <p>Een persoonlijk toestel gebruikt een medewerker voor privé én voor werk. Het bedrijf bezit het toestel niet, dus bedrijfsbeleid afdwingen of het toestel kunnen wissen is niet gepast. Daarom schrijft men persoonlijke toestellen zelden in via MDM.</p>
@@ -2852,11 +2852,11 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Toestellen halen niet onmiddellijk nieuwe policies of apps op, dus je weet niet precies wanneer een wijziging aankomt. Volgens het synchronisatieschema van Microsoft voor Windows synchroniseert een toestel de eerste 15 minuten om de 3 minuten, daarna om de 15 minuten gedurende 2 uur en daarna ongeveer om de 8 uur.</p>
 <p><a href="https://learn.microsoft.com/en-us/intune/intune-service/configuration/device-profile-troubleshoot">Microsoft Learn: Device Profile Troubleshoot</a></p>
 <p>Wil je niet wachten, dan kan je op drie manieren handmatig synchroniseren:</p>
-<ol>
+<ul>
 <li>vanaf het Windows-toestel</li>
 <li>vanuit Intune</li>
 <li>door de Microsoft Intune Management Extension te herstarten</li>
-</ol>
+</ul>
 <h3 id="31-synchroniseren-vanuit-windows">3.1. Synchroniseren vanuit Windows<a class="headerlink" href="#31-synchroniseren-vanuit-windows" title="Permanent link">&para;</a></h3>
 <p>Zo synchroniseer je het toestel zelf:</p>
 <ol>

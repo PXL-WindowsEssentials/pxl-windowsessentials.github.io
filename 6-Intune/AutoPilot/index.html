@@ -2659,10 +2659,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Zonder deployment profile moet de gebruiker de <strong>Out-of-Box Experience (OOBE)</strong> zelf doorlopen en alle vragen beantwoorden. Met een deployment profile gebeurt dat automatisch, op dezelfde manier voor elk toestel.</p>
 <h2 id="hoe-de-onderdelen-samenwerken">Hoe de onderdelen samenwerken<a class="headerlink" href="#hoe-de-onderdelen-samenwerken" title="Permanent link">&para;</a></h2>
 <p>Om de OOBE te automatiseren heb je minstens twee dingen nodig:</p>
-<ol>
+<ul>
 <li>Een <strong>device group</strong> in Microsoft Entra met de Autopilot-toestellen. <strong>Verplicht.</strong></li>
 <li>Een <strong>deployment profile</strong> dat aan die groep is toegewezen. Het bepaalt hoe de OOBE verloopt. <strong>Verplicht.</strong></li>
-</ol>
+</ul>
 <p>Een deployment profile wordt altijd aan een groep toegewezen. Hoe die groep zijn leden krijgt, kies je zelf:</p>
 <ul>
 <li><strong>Een group tag met een dynamic device group</strong> (de aanpak in deze cursus). Dit is <strong>niet verplicht</strong>, maar wel de handigste manier: je geeft het toestel een label (group tag) en een dynamic group verzamelt automatisch alle toestellen met dat label. Zo komen nieuwe toestellen vanzelf in de juiste groep en kan je verschillende groepen toestellen (bijvoorbeeld <code>EmployeeDevice</code> en <code>SharedDevice</code>) een ander profiel geven.</li>

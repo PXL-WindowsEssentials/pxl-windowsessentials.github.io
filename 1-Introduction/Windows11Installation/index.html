@@ -2950,24 +2950,24 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>In deze handleiding maak je een nieuwe virtuele Windows 11-machine aan in VMware Workstation Pro en installeer je Windows 11 erop. Je hebt hiervoor de Windows 11 ISO nodig die je eerder downloadde. Deze virtuele machine gebruik je in de volgende labo's.</p>
 <h2 id="1-een-nieuwe-virtuele-machine-aanmaken-in-vmware">1. Een nieuwe virtuele machine aanmaken in VMware<a class="headerlink" href="#1-een-nieuwe-virtuele-machine-aanmaken-in-vmware" title="Permanent link">&para;</a></h2>
 <h3 id="11-new-virtual-machine">1.1. New Virtual Machine<a class="headerlink" href="#11-new-virtual-machine" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>Open VMware Workstation.</li>
 <li>Klik linksboven op het menu <strong>"File"</strong>.</li>
 <li>Selecteer <strong>"New Virtual Machine"</strong>.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/VMwareWorkstationNewVirtualMachine.mp4" aria-label="VMwareWorkstationNewVirtualMachine"></video>
 
 <h3 id="12-wizard-voor-virtuele-machines-deel-1">1.2. Wizard voor virtuele machines, deel 1:<a class="headerlink" href="#12-wizard-voor-virtuele-machines-deel-1" title="Permanent link">&para;</a></h3>
 <p>In de New Virtual Machine Wizard:</p>
-<ul>
+<ol>
 <li>Selecteer <strong>"Custom: advanced"</strong> en klik op <strong>Next</strong>. Zo kan je alle instellingen zelf kiezen.</li>
 <li>Selecteer <strong>"Hardware: VMware Workstation 17.5 or later"</strong> (afhankelijk van je versie van VMware Workstation) en klik op <strong>Next</strong>.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/VMwareWorkstationWizardpart1.mp4" aria-label="VMwarewizardpart1"></video>
 
 <h3 id="13-wizard-voor-virtuele-machines-deel-2">1.3. Wizard voor virtuele machines, deel 2:<a class="headerlink" href="#13-wizard-voor-virtuele-machines-deel-2" title="Permanent link">&para;</a></h3>
 <p>In de New Virtual Machine Wizard:</p>
-<ul>
+<ol>
 <li>Kies <strong>"Installer disc image file (iso)"</strong>, klik op <strong>Browse</strong> en selecteer de Windows 11 ISO die je eerder downloadde (meestal in je map Downloads). Onder de bestandsnaam verschijnt "Windows 11 x64 detected". Klik op <strong>Next</strong>.</li>
 <li>
 <p>Geef de virtuele machine een duidelijke naam. De locatie is de map <code>C:\Virtual Machines\...</code> die je bij de voorkeuren hebt ingesteld. Klik op <strong>Next</strong>.</p>
@@ -2976,7 +2976,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Kies bij <strong>Encryption Information</strong> de optie <strong>"Only the files needed to support a TPM are encrypted"</strong>.</p>
 </li>
 <li>Klik op <strong>"Generate"</strong> om een encryptiewachtwoord aan te maken. Windows 11 vereist een TPM, en VMware simuleert die met een versleuteld bestand. Je kan ook zelf een wachtwoord ingeven. Bewaar het goed: je hebt het nodig als je de virtuele machine verplaatst naar een ander toestel of een andere locatie. Laat <strong>"Remember the password on this machine in Credential Manager"</strong> aangevinkt en klik op <strong>Next</strong>.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/VMwareWorkstationWizardpart2.mp4" aria-label="VMwarewizardpart2"></video>
 
 <h3 id="14-wizard-voor-virtuele-machines-deel-3">1.4. Wizard voor virtuele machines, deel 3:<a class="headerlink" href="#14-wizard-voor-virtuele-machines-deel-3" title="Permanent link">&para;</a></h3>
@@ -3042,23 +3042,23 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Zodra Windows 11 is geïnstalleerd, start de Out of Box Experience (OOBE). Dat is het eerste configuratieproces van Windows, waarin je basisinstellingen zoals regio, gebruikersaccount en privacyvoorkeuren instelt.</p>
 <h3 id="31-oobe-deel-1">3.1. OOBE, deel 1<a class="headerlink" href="#31-oobe-deel-1" title="Permanent link">&para;</a></h3>
 <p>Selecteer de volgende opties in de Windows OOBE:</p>
-<ul>
+<ol>
 <li>Kies het land <strong>Belgium</strong> (<em>België</em>) en klik op <strong>Ja</strong>.</li>
 <li>Kies je toetsenbordindeling (<strong>Belgian Period</strong> voor AZERTY, <strong>US</strong> voor QWERTY) en klik op <strong>Ja</strong>.</li>
 <li>Klik bij de tweede toetsenbordindeling op <strong>Skip</strong> (<em>Overslaan</em>).</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/WindowsOOBEpart1.mp4" aria-label="WindowsInstallationOOBEpart1"></video>
 
 <p>Windows zoekt nu naar updates. Dit kan enkele seconden tot enkele minuten duren.</p>
 <h3 id="32-oobe-deel-2">3.2. OOBE, deel 2<a class="headerlink" href="#32-oobe-deel-2" title="Permanent link">&para;</a></h3>
 <p>In de volgende stappen maak je een <strong>lokale account</strong> aan in plaats van je aan te melden met een Microsoft-account. Zo heb je een eenvoudig lokaal beheerdersaccount om mee te starten. Later in de cursus voeg je de machine toe aan Entra ID en Intune.</p>
-<ul>
+<ol>
 <li>Selecteer <strong>"Sign-in options"</strong> (<em>Aanmeldingsopties</em>).</li>
 <li>Kies <strong>"Domain join instead"</strong> (<em>In plaats daarvan deelnemen aan domein</em>). Dit is de weg naar een lokale account zonder Microsoft-account.</li>
 <li>Geef een <strong>gebruikersnaam</strong> in (gebruik je eigen voornaam) en klik op <strong>Volgende</strong>.</li>
 <li>Geef een <strong>wachtwoord</strong> in en klik op <strong>Volgende</strong>. Herhaal het wachtwoord op de volgende pagina. Bewaar het veilig, bijvoorbeeld in een wachtwoordmanager.</li>
 <li>Kies <strong>drie beveiligingsvragen</strong> en beantwoord ze met iets willekeurigs. Je gebruikt ze in deze cursus niet om je wachtwoord te herstellen.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/WindowsOOBEpart2.mp4" aria-label="WindowsInstallationOOBEpart2"></video>
 
 <h3 id="33-oobe-deel-3">3.3. OOBE, deel 3<a class="headerlink" href="#33-oobe-deel-3" title="Permanent link">&para;</a></h3>
@@ -3076,13 +3076,13 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="5-vmware-tools-installeren">5. VMware Tools installeren<a class="headerlink" href="#5-vmware-tools-installeren" title="Permanent link">&para;</a></h2>
 <p>VMware Tools is software in de virtuele machine die zorgt voor een correcte schermresolutie, een vlotte muis en kopiëren en plakken tussen je laptop en de virtuele machine. Installeer ze daarom altijd.</p>
 <h3 id="51-de-installatiewizard-van-vmware-tools-starten">5.1. De installatiewizard van VMware Tools starten<a class="headerlink" href="#51-de-installatiewizard-van-vmware-tools-starten" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>Klik op <strong>"Install Tools"</strong> in de gele balk onder het venster van de virtuele machine. Je kan ook in het menu <strong>"VM"</strong> de optie <strong>"Install VMware Tools"</strong> kiezen.</li>
 <li>Open File Explorer in de virtuele machine en ga naar <strong>This PC</strong>.</li>
 <li>Dubbelklik op de VMware Tools-dvd (<strong>DVD-station (D:) VMware Tools</strong>).</li>
 <li>Bevestig de melding van gebruikersaccountbeheer met <strong>Ja</strong> (<em>Yes</em>).</li>
 <li>De installer start automatisch.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/WindowsVMwareToolsInstall.mp4" aria-label="WindowsVMwareToolsInstall"></video>
 
 <h3 id="52-wizard-van-vmware-tools">5.2. Wizard van VMware Tools<a class="headerlink" href="#52-wizard-van-vmware-tools" title="Permanent link">&para;</a></h3>
@@ -3092,12 +3092,12 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="6-een-snapshot-nemen">6. Een snapshot nemen<a class="headerlink" href="#6-een-snapshot-nemen" title="Permanent link">&para;</a></h2>
 <p>Een snapshot is een momentopname van je virtuele machine. Gaat er later iets mis, dan kan je naar deze toestand terugkeren zonder opnieuw te installeren.</p>
 <p>Meld je na de herstart opnieuw aan. Zodra je het Windows-bureaublad ziet, neem je een snapshot:</p>
-<ul>
+<ol>
 <li>Klik in het VMware-menu op <strong>"VM"</strong>.</li>
 <li>Kies <strong>"Snapshot"</strong> en dan <strong>"Take Snapshot"</strong>.</li>
 <li>Geef de snapshot een duidelijke naam, zoals "Windows 11 Clean Install".</li>
 <li>Klik op <strong>Take Snapshot</strong> en wacht tot de voortgangsbalk klaar is.</li>
-</ul>
+</ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/VMWareSnapshotCleanInstall.mp4" aria-label="VMware clean install"></video>
 
 

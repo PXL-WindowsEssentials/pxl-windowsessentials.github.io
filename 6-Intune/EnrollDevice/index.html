@@ -2698,20 +2698,20 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="autopilot">Autopilot<a class="headerlink" href="#autopilot" title="Permanent link">&para;</a></h2>
 <p>Om een toestel in Intune te beheren, moet het ingeschreven (enrolled) zijn. Voor bedrijfstoestellen gebeurt dat met Windows Autopilot. Autopilot koppelt een toestel aan de Microsoft 365-tenant van je organisatie. Wordt het toestel opnieuw geïnstalleerd of gereset, dan verbindt het zich automatisch opnieuw met de tenant en blijft het beheerd via Intune.</p>
 <p>Met Autopilot kan je:</p>
-<ol>
+<ul>
 <li><strong>toestellen koppelen</strong> aan een Microsoft 365-tenant;</li>
 <li>de installatie en configuratie tijdens de <strong>Out-of-Box Experience (OOBE)</strong> <strong>automatiseren</strong>.</li>
-</ol>
+</ul>
 <p>De <strong>Windows OOBE (Out of Box Experience)</strong> is het eerste installatieproces dat een gebruiker begeleidt bij het instellen van een nieuwe Windows-installatie (regio, account, netwerk, privacyvoorkeuren).</p>
 <p>Een toestel registreren in Windows Autopilot kan op twee manieren:</p>
-<ol>
+<ul>
 <li>
 <p><strong>Via de toestelfabrikant</strong>: koop je toestellen bij fabrikanten zoals HP, Dell of Lenovo, dan bezorgen zij vóór de levering een lijst met hardware hashes, die je in Intune Autopilot importeert. Een hardware hash is een unieke identificator van de hardware van een toestel.</p>
 </li>
 <li>
 <p><strong>Handmatig</strong>: je haalt de hardware hash van een toestel zelf op met een PowerShell-script en importeert die in Intune Autopilot.</p>
 </li>
-</ol>
+</ul>
 <p>In deze handleiding schrijf je een virtuele Windows 11-machine als bedrijfseigendom (company-owned device) in via de handmatige methode.</p>
 <h2 id="0-voor-je-begint">0. Voor je begint<a class="headerlink" href="#0-voor-je-begint" title="Permanent link">&para;</a></h2>
 <p>Je registreert je virtuele machine "Windows 11 - lokaal account" in Windows Autopilot door de hardware hash te verzamelen en te uploaden. Daarna reset je de machine en rond je de installatie af door aan te melden met een Microsoft Entra-gebruiker uit je tenant. Daardoor wordt het toestel in Intune ingeschreven.</p>
