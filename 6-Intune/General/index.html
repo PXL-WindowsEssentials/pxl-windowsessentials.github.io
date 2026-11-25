@@ -2745,7 +2745,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Standaard is de Intune-omgeving ingesteld op het Nederlands. We gebruiken Intune echter in het Engels, omdat de meeste ondersteuningsmiddelen, documentatie en communityforums in het Engels beschikbaar zijn. Zo kan je instructies makkelijker volgen, problemen oplossen en instellingen doorvoeren zonder technische termen naar het Nederlands te moeten vertalen.</p>
 <p>De Intune-taal wijzigen naar het Engels</p>
 <ol>
-<li>Ga naar intune.microsoft.com</li>
+<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>).</li>
 <li>Klik rechtsboven op het <strong>tandwielicoon</strong>.</li>
 <li>Selecteer in het middelste menu <strong>Taal en regio</strong> (in de Nederlandstalige interface).</li>
 <li>Kies English in de <strong>vervolgkeuzelijst voor taal</strong>.</li>
@@ -2758,7 +2758,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>De eerste algemene instelling die we in Intune configureren en die het hele platform beïnvloedt, zijn de MDM-instellingen.
 In de MDM-instellingen bepalen we of toestellen mogen worden ingeschreven in Intune en welke gebruikersaccounts toestellen mogen registreren in Intune.</p>
 <ol>
-<li>Klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
 <li>Klik in de sectie <strong>Enrollment options</strong> op <strong>Automatic enrollment</strong>.</li>
 <li>Stel de <strong>MDM user scope</strong> in op <strong>All</strong>.</li>
@@ -2784,7 +2784,7 @@ In de MDM-instellingen bepalen we of toestellen mogen worden ingeschreven in Int
 Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p>
 <p>Je kan het beheer van persoonlijke toestellen toestaan of blokkeren via Device platform restrictions:</p>
 <ol>
-<li>Klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
 <li>Klik in de sectie <strong>Enrollment options</strong> op <strong>Device platform restrictions</strong>.</li>
 <li>Klik onder <strong>Default restriction</strong> op <strong>All Users</strong>.</li>
@@ -2806,8 +2806,8 @@ Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p
 <h3 id="31-synchroniseren-vanuit-windows">3.1. Synchroniseren vanuit Windows<a class="headerlink" href="#31-synchroniseren-vanuit-windows" title="Permanent link">&para;</a></h3>
 <p>Volg deze stappen om je Windows-toestel handmatig met Intune te synchroniseren:</p>
 <ol>
-<li>Open <strong>Windows Settings</strong>.</li>
-<li>Selecteer <strong>Accounts</strong> in het menu.</li>
+<li>Open op je <strong>Windows-toestel</strong> de <strong>Windows Settings</strong>.</li>
+<li>Klik in het menu op <strong>Accounts</strong>.</li>
 <li>Klik op <strong>Access work or school</strong> (in een Nederlandstalige Windows: "Toegang tot werk of school").</li>
 <li>Vouw de verbinding open door op de pijl naast <strong>Connected to ...</strong> te klikken (in een Nederlandstalige Windows: "Verbonden met ...").</li>
 <li>Klik op de knop <strong>Info</strong>.</li>
@@ -2817,7 +2817,12 @@ Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p
 
 <p>Onderaan de pagina zie je ook wanneer het toestel voor het laatst met de Intune-omgeving heeft gesynchroniseerd.</p>
 <h3 id="32-synchroniseren-vanuit-intune">3.2. Synchroniseren vanuit Intune<a class="headerlink" href="#32-synchroniseren-vanuit-intune" title="Permanent link">&para;</a></h3>
-<p>Je kan een specifiek Windows-toestel ook synchroniseren vanuit het Intune admin center zelf. Navigeer naar het Windows-toestel dat je wil synchroniseren en klik op de knop "Sync".</p>
+<p>Je kan een specifiek Windows-toestel ook synchroniseren vanuit het Intune admin center zelf:</p>
+<ol>
+<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Klik op <strong>All devices</strong> en klik op het Windows-toestel dat je wil synchroniseren.</li>
+<li>Klik op de knop <strong>Sync</strong>.</li>
+</ol>
 <p><img alt="ManualIntuneSync-Intune" src="../assets/ManualIntuneSync-Intune.png" /></p>
 <h3 id="33-microsoft-intune-management-extension">3.3. Microsoft Intune Management Extension<a class="headerlink" href="#33-microsoft-intune-management-extension" title="Permanent link">&para;</a></h3>
 <p>Het nadeel van een toestel handmatig synchroniseren vanuit het Intune-menu of vanuit de Windows-instellingen is dat het toestel <strong>in een wachtrij wordt geplaatst</strong> voordat de synchronisatie wordt uitgevoerd.</p>

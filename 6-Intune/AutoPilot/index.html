@@ -2669,7 +2669,9 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="1-autopilot-group-tag">1. Autopilot group tag<a class="headerlink" href="#1-autopilot-group-tag" title="Permanent link">&para;</a></h2>
 <p>Een group tag is een label dat je aan een toestel hangt. Zo kan Entra het toestel automatisch in de juiste groep plaatsen.</p>
 <ol>
-<li>Klik in het linkermenu op <strong>Devices</strong>, daarna onder <strong>Device onboarding</strong> op <strong>Enrollment</strong>, onder <strong>Windows Autopilot</strong> op <strong>Devices</strong>.</li>
+<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
+<li>Klik onder <strong>Windows Autopilot</strong> op <strong>Devices</strong>.</li>
 <li>Klik op het toestel dat je een label wilt geven.</li>
 <li>Geef een <strong>Group tag</strong> in, bijvoorbeeld <code>EmployeeDevice</code>.</li>
 <li>Klik op <strong>Save</strong>.</li>
@@ -2678,7 +2680,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="2-microsoft-entra-dynamic-device-group">2. Microsoft Entra dynamic device group<a class="headerlink" href="#2-microsoft-entra-dynamic-device-group" title="Permanent link">&para;</a></h2>
 <p>Een deployment profile wordt toegewezen aan een <strong>toestelgroep</strong> (<em>device group</em>). Maak een dynamic group die automatisch elk Autopilot-toestel met jouw group tag bevat.</p>
 <ol>
-<li>Ga naar het <strong>Microsoft Entra admin center</strong> → <strong>Groups</strong> → <strong>New group</strong>.</li>
+<li>Ga naar het <strong>Microsoft Entra admin center</strong> (<a href="https://entra.microsoft.com">entra.microsoft.com</a>) en klik op <strong>Groups</strong> → <strong>New group</strong>.</li>
 <li>Stel <strong>Group type</strong> in op <strong>Security</strong>, geef de groep een naam en stel <strong>Membership type</strong> in op <strong>Dynamic Device</strong>.</li>
 <li>
 <p>Klik op <strong>Add dynamic query</strong> en configureer de regel als volgt:</p>
@@ -2701,7 +2703,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="3-de-oobe-automatiseren-met-een-deployment-profile">3. De OOBE automatiseren met een deployment profile<a class="headerlink" href="#3-de-oobe-automatiseren-met-een-deployment-profile" title="Permanent link">&para;</a></h2>
 <p>Je automatiseert de Windows OOBE via Intune met een <strong>deployment profile</strong>. Een profiel maak je zo aan:</p>
 <ol>
-<li>Klik in het linkermenu op <strong>Devices</strong>.</li>
+<li>Ga naar het <strong>Intune admin center</strong> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
 <li>Klik onder <strong>Windows Autopilot</strong> op <strong>Deployment profiles</strong>.</li>
 <li>Klik op <strong>Create profile</strong> en kies <strong>Windows PC</strong>.</li>
