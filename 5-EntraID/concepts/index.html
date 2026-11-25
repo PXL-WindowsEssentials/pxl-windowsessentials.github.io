@@ -1549,7 +1549,18 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Authenticatie">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-toegangsbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Toegangsbeheer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Toegangsbeheer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2413,7 +2424,18 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Authenticatie">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-toegangsbeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3. Toegangsbeheer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Toegangsbeheer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2525,11 +2547,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Gebruikers verifiëren met een wachtwoord en multi-factor authentication (MFA).</li>
 <li>Single sign-on (SSO) aanbieden.</li>
 </ul>
+<h2 id="3-toegangsbeheer">3. Toegangsbeheer<a class="headerlink" href="#3-toegangsbeheer" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Met <strong>Conditional Access</strong> bepaal je onder welke voorwaarden iemand toegang krijgt: wie meldt zich aan, op welk toestel, vanaf welke locatie en met welk risico. Afhankelijk daarvan laat je de toegang toe, vraag je extra verificatie (MFA) of blokkeer je hem.</li>
+<li>Toestellen kunnen in Entra ID geregistreerd of lid gemaakt (joined) worden, zodat je er beleid op kan toepassen. Intune beheert die toestellen.</li>
+</ul>
 <h3 id="begrippen">Begrippen<a class="headerlink" href="#begrippen" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Single Sign-On (SSO)</strong> laat gebruikers één keer aanmelden en geeft hen daarna toegang tot meerdere applicaties, zonder telkens opnieuw hun gebruikersnaam en wachtwoord in te geven. Dat geldt niet enkel voor Microsoft 365, maar ook voor veel andere applicaties die Entra ID ondersteunen. Zo beheer je maar één account per gebruiker.</li>
 <li><strong>User Principal Name (UPN)</strong> is de unieke aanmeldnaam van een gebruiker, in de vorm van een e-mailadres (bijvoorbeeld <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#97;&#110;&#46;&#106;&#97;&#110;&#115;&#115;&#101;&#110;&#115;&#64;&#99;&#111;&#110;&#116;&#111;&#115;&#111;&#46;&#99;&#111;&#109;">&#106;&#97;&#110;&#46;&#106;&#97;&#110;&#115;&#115;&#101;&#110;&#115;&#64;&#99;&#111;&#110;&#116;&#111;&#115;&#111;&#46;&#99;&#111;&#109;</a>). Gebruikers melden zich hiermee aan bij Microsoft 365 en Entra ID. Elke UPN is uniek: twee gebruikers kunnen nooit dezelfde UPN hebben.</li>
-<li><strong>Tenant</strong>: de eigen, afgeschermde ruimte van je organisatie binnen de clouddiensten van Microsoft. Je kan het zien als een privécontainer voor de gebruikers, gegevens en resources van je organisatie.</li>
+<li><strong>Tenant</strong>: de eigen, afgeschermde ruimte van je organisatie binnen de clouddiensten van Microsoft. Je kan het zien als een privécontainer voor de gebruikers, gegevens en resources van je organisatie. Elke Microsoft 365-, Azure- of Dynamics-abonnement is automatisch een Entra-tenant. Een nieuwe tenant heeft een eerste domein zoals <code>contoso.onmicrosoft.com</code>, waaraan je later je eigen domein kan toevoegen.</li>
 <li>Een <strong>Tenant ID</strong> is de unieke identificator van de Entra ID-instantie van je organisatie. Het is een wereldwijd unieke GUID (36 tekens, zoals xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) waarmee Microsoft je organisatie van alle andere onderscheidt. Je hebt de Tenant ID soms nodig bij het koppelen van applicaties en bij ondersteuning.</li>
 </ul>
 

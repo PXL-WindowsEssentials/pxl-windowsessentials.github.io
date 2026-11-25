@@ -2463,9 +2463,11 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="intune">Intune<a class="headerlink" href="#intune" title="Permanent link">&para;</a></h1>
-<p>Microsoft Intune is de dienst waarmee je toestellen en apps van een organisatie centraal beheert, zonder dat je de toestellen fysiek in handen hoeft te hebben. Dat is de basis van modern device management.</p>
+<p>Microsoft Intune is de dienst waarmee je toestellen en apps van een organisatie centraal beheert, zonder dat je de toestellen fysiek in handen hoeft te hebben. Dat is de basis van modern device management. Intune draait volledig in de cloud, heeft geen eigen servers nodig en ondersteunt Windows, macOS, iOS/iPadOS, Android en Linux. Je beheert het in het Microsoft Intune admin center.</p>
 <ul>
 <li><strong>Mobile Device Management (MDM)</strong>: het beheren van toestellen (smartphones, tablets, laptops, desktops) vanuit Intune. Een toestel moet daarvoor ingeschreven (enrolled) zijn. Daarna kan Intune er instellingen, apps en beveiliging op toepassen en het toestel zo nodig op afstand vergrendelen of wissen.</li>
+<li><strong>Mobile Application Management (MAM)</strong>: het beheren van enkel de werk-apps en hun gegevens, zonder het hele toestel te beheren. Dat is handig op persoonlijke toestellen (BYOD): je kan bedrijfsgegevens wissen zonder de privégegevens van de gebruiker aan te raken. MDM en MAM kan je combineren.</li>
+<li><strong>Compliance policies</strong>: regels waaraan een toestel moet voldoen, bijvoorbeeld versleuteling aan en een minimale Windows-versie. Intune geeft de compliance-status van elk toestel door aan Entra ID. Met <strong>Conditional Access</strong> kan je daarna de toegang tot bedrijfsgegevens blokkeren voor toestellen die niet voldoen.</li>
 <li><strong>Configuration policies</strong>: de instellingen die je via MDM op toestellen toepast, zoals beperkingen, wifi, VPN en beveiligingsinstellingen. Je stelt ze één keer in en past ze toe op een groep, zodat alle toestellen dezelfde configuratie krijgen.</li>
 </ul>
 <h2 id="profieltypes-voor-configuration-policies">Profieltypes voor configuration policies<a class="headerlink" href="#profieltypes-voor-configuration-policies" title="Permanent link">&para;</a></h2>
@@ -2488,7 +2490,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </tr>
 <tr>
 <td><strong>Properties Catalog</strong></td>
-<td>De Properties Catalog configureert niets, maar verzamelt extra informatie over het toestel, zoals CPU, geheugen, opslagcapaciteit en software-inventaris.</td>
+<td>De Properties Catalog configureert niets, maar verzamelt extra inventarisgegevens van Windows-toestellen, zoals CPU, geheugen, opslag, TPM-status en geïnstalleerde software. Je bekijkt ze per toestel onder <strong>Devices</strong> &gt; <strong>Windows</strong> &gt; het toestel &gt; <strong>Device inventory</strong>.</td>
 </tr>
 </tbody>
 </table>
