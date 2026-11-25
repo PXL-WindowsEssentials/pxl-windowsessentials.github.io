@@ -2487,11 +2487,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="event-viewer">Event Viewer<a class="headerlink" href="#event-viewer" title="Permanent link">&para;</a></h1>
-<p>Veel activiteiten op een Windows-systeem worden gelogd. Je kan deze logboeken gebruiken om problemen op te lossen of om informatie te verzamelen over het gebruik en de activiteit van het systeem.
-De Windows Event Viewer is opgedeeld in twee hoofdcategorieën:</p>
+<p>Windows registreert veel activiteit in logboeken. Die gebruik je om problemen op te lossen, om te achterhalen wie wanneer heeft aangemeld of om beveiligingsincidenten te onderzoeken. Je bekijkt ze met de Windows Event Viewer, die is opgedeeld in twee hoofdcategorieën:</p>
 <ol>
 <li>
-<p><strong>Windows Logs</strong>: bevatten algemene logboeken over het Windows-systeem en zijn verder opgedeeld in vijf subcategorieën:</p>
+<p><strong>Windows Logs</strong>: bevatten algemene logboeken over het Windows-systeem. Ze zijn opgedeeld in vijf subcategorieën:</p>
 <ul>
 <li><strong>Application</strong></li>
 <li><strong>Security</strong></li>
@@ -2501,11 +2500,11 @@ De Windows Event Viewer is opgedeeld in twee hoofdcategorieën:</p>
 </ul>
 </li>
 <li>
-<p><strong>Applications and Services Logs</strong>: bevatten gedetailleerde registraties van gebeurtenissen en activiteiten met betrekking tot specifieke Windows-componenten en systeemfuncties.</p>
+<p><strong>Applications and Services Logs</strong>: bevatten gedetailleerde registraties van specifieke Windows-componenten en systeemfuncties.</p>
 </li>
 </ol>
 <h2 id="event-id">Event ID<a class="headerlink" href="#event-id" title="Permanent link">&para;</a></h2>
-<p>Om efficiënt informatie in de logboeken op te zoeken, moet je eerst weten welk logboek je moet raadplegen. Daarnaast wordt elk type gebeurtenis geïdentificeerd door een uniek ID. Hier zijn enkele voorbeelden:</p>
+<p>Een logboek bevat duizenden gebeurtenissen. Om snel te vinden wat je zoekt, moet je weten in welk logboek je moet zoeken en welk Event ID bij de gebeurtenis hoort. Elk type gebeurtenis heeft een vast ID. Hier zijn enkele voorbeelden:</p>
 <table>
 <thead>
 <tr>
@@ -2561,19 +2560,19 @@ De Windows Event Viewer is opgedeeld in twee hoofdcategorieën:</p>
 <td>Applications and Services Logs &gt; Microsoft &gt; Windows &gt; NetworkProfile</td>
 </tr>
 <tr>
-<td>41</td>
+<td>44</td>
 <td>Windows-update gedownload</td>
 <td>Applications and Services Logs &gt; Microsoft &gt; Windows &gt; WindowsUpdateClient</td>
 </tr>
 </tbody>
 </table>
 <h2 id="voorbeeld-mislukte-aanmeldpoging">Voorbeeld: mislukte aanmeldpoging<a class="headerlink" href="#voorbeeld-mislukte-aanmeldpoging" title="Permanent link">&para;</a></h2>
-<p>Zo filter je in de Windows Event Viewer op mislukte aanmeldpogingen:</p>
+<p>Zo filter je op mislukte aanmeldpogingen, bijvoorbeeld om te controleren of iemand je wachtwoord probeert te raden:</p>
 <ul>
-<li>Open de Windows Event Viewer en ga naar <strong>Windows Logs</strong>.</li>
+<li>Open de Event Viewer en ga naar <strong>Windows Logs</strong>.</li>
 <li>Selecteer het logboek <strong>Security</strong>.</li>
-<li>Klik in het menu rechts op <strong>Filter Current Log.</strong></li>
-<li><strong>Geef Event ID</strong> 4625 in het filterveld in en klik op OK.</li>
+<li>Klik in het menu rechts op <strong>Filter Current Log</strong>.</li>
+<li>Geef <strong>Event ID</strong> 4625 in het filterveld in en klik op <strong>OK</strong>.</li>
 <li>Kies een gebeurtenis uit de gefilterde resultaten om de details te bekijken.</li>
 </ul>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/EventViewerFilter.mp4" aria-label="EventViewerFilter"></video>

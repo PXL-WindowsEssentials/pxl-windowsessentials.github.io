@@ -2775,15 +2775,15 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="registry-editor">Registry Editor<a class="headerlink" href="#registry-editor" title="Permanent link">&para;</a></h1>
-<p>De tool waarmee je de Registry beheert, heet:</p>
+<p>Je beheert de Registry met de Registry Editor. Die start je met het commando:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>regedit
 </span></code></pre></div>
 <h2 id="registry-editor-openen">Registry Editor openen<a class="headerlink" href="#registry-editor-openen" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Druk op <strong>Win + R</strong></li>
-<li>Typ: <code>regedit</code></li>
-<li>Druk op Enter</li>
-<li>Bevestig indien nodig de toegang als administrator</li>
+<li>Druk op <strong>Win + R</strong>.</li>
+<li>Typ <code>regedit</code>.</li>
+<li>Druk op Enter.</li>
+<li>Bevestig indien nodig met <strong>Yes</strong> (administratormachtiging).</li>
 </ol>
 <h2 id="overzicht-van-de-interface">Overzicht van de interface<a class="headerlink" href="#overzicht-van-de-interface" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2805,13 +2805,13 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <h3 id="exporteren-en-importeren">Exporteren en importeren<a class="headerlink" href="#exporteren-en-importeren" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Exporteren: rechtsklik op een key → Export</li>
-<li>Importeren: dubbelklik op het <code>.reg</code>-bestand of File → Import</li>
+<li>Exporteren: rechtsklik op een key → Export. Je krijgt een <code>.reg</code>-bestand, handig als back-up voordat je iets wijzigt.</li>
+<li>Importeren: dubbelklik op het <code>.reg</code>-bestand of kies File → Import.</li>
 </ul>
 <hr />
 <h2 id="praktisch-voorbeeld-een-programma-automatisch-starten-bij-het-aanmelden">Praktisch voorbeeld: een programma automatisch starten bij het aanmelden<a class="headerlink" href="#praktisch-voorbeeld-een-programma-automatisch-starten-bij-het-aanmelden" title="Permanent link">&para;</a></h2>
 <h3 id="doel">Doel<a class="headerlink" href="#doel" title="Permanent link">&para;</a></h3>
-<p>In dit voorbeeld leer je hoe je ervoor zorgt dat een programma automatisch start wanneer een gebruiker zich aanmeldt bij Windows.</p>
+<p>In dit voorbeeld zorg je ervoor dat een programma automatisch start wanneer een gebruiker zich aanmeldt bij Windows. Dit is dezelfde techniek die ook legitieme programma's (en malware) gebruiken om automatisch te starten.</p>
 <p>👉 We gebruiken <strong>Notepad</strong> als voorbeeld.</p>
 <hr />
 <h3 id="stap-1-open-de-registry-editor">Stap 1: Open de Registry Editor<a class="headerlink" href="#stap-1-open-de-registry-editor" title="Permanent link">&para;</a></h3>
@@ -2827,14 +2827,14 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Navigeer naar het volgende pad:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 </span></code></pre></div>
-<p>📌 Op deze locatie staan programma's die automatisch starten wanneer de gebruiker aanmeldt.</p>
+<p>📌 De programma's in deze key starten automatisch wanneer de huidige gebruiker aanmeldt. Elke value is één programma.</p>
 <hr />
 <h3 id="stap-3-een-nieuwe-value-aanmaken">Stap 3: Een nieuwe value aanmaken<a class="headerlink" href="#stap-3-een-nieuwe-value-aanmaken" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Klik met de rechtermuisknop in het rechterpaneel</li>
-<li>Kies <strong>New → String Value</strong></li>
+<li>Kies <strong>New → String Value</strong>.</li>
 <li>
-<p>Geef ze de naam:</p>
+<p>Geef de value de naam:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Notepad
 </span></code></pre></div>
 </li>
@@ -2850,18 +2850,18 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <ol>
 <li>Klik op <strong>OK</strong></li>
 </ol>
-<p>📌 Hiermee vertel je Windows welk programma gestart moet worden.</p>
+<p>📌 De naam is vrij te kiezen; de data bevat het volledige pad van het programma dat Windows moet starten.</p>
 <hr />
 <h3 id="resultaat">Resultaat<a class="headerlink" href="#resultaat" title="Permanent link">&para;</a></h3>
 <p>✅ Telkens wanneer de gebruiker zich aanmeldt, <strong>start Notepad automatisch</strong>.</p>
 <hr />
 <h3 id="extra-uitleg">Extra uitleg<a class="headerlink" href="#extra-uitleg" title="Permanent link">&para;</a></h3>
 <ul>
-<li>De <strong>Run key</strong> wordt gebruikt om programma's te starten bij het aanmelden</li>
-<li>Door <strong>HKEY_CURRENT_USER</strong> te gebruiken, werkt het enkel voor de huidige gebruiker</li>
-<li>Je kan op dezelfde manier meerdere programma's toevoegen</li>
+<li>De <strong>Run-key</strong> start programma's bij het aanmelden.</li>
+<li>Omdat je <strong>HKEY_CURRENT_USER</strong> gebruikt, geldt dit enkel voor de huidige gebruiker. Voor alle gebruikers gebruik je dezelfde key onder <strong>HKEY_LOCAL_MACHINE</strong>.</li>
+<li>Je kan op dezelfde manier meerdere programma's toevoegen.</li>
 </ul>
-<p>⚠️ Let op: te veel opstartprogramma's kunnen het systeem vertragen.</p>
+<p>⚠️ Let op: te veel opstartprogramma's vertragen het systeem.</p>
 <hr />
 
 

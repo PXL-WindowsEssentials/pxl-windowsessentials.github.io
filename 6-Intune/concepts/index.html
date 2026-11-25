@@ -2463,12 +2463,13 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="intune">Intune<a class="headerlink" href="#intune" title="Permanent link">&para;</a></h1>
+<p>Microsoft Intune is de dienst waarmee je toestellen en apps van een organisatie centraal beheert, zonder dat je de toestellen fysiek in handen hoeft te hebben. Dat is de basis van modern device management.</p>
 <ul>
-<li><strong>Mobile Device Management</strong>: een van de onderdelen van Intune is MDM (Mobile Device Management). Met een MDM kan je instellingen afdwingen en applicaties installeren op mobiele toestellen, laptops en desktops, zolang ze ingeschreven (enrolled) zijn in de MDM-oplossing van Intune.</li>
-<li><strong>Configuration policies</strong>: configuration policies in Intune zijn sjablonen die instellingen voor toestellen specificeren en toepassen, waaronder beveiligingsbeleid, beperkingen, wifi, VPN en meer. Ze helpen om de installatie en configuratie van toestellen te automatiseren, zodat consistentie en compliance in de hele organisatie gegarandeerd zijn.</li>
+<li><strong>Mobile Device Management (MDM)</strong>: een van de onderdelen van Intune. Met MDM kan je instellingen afdwingen en applicaties installeren op smartphones, laptops en desktops, zolang ze ingeschreven (enrolled) zijn in Intune.</li>
+<li><strong>Configuration policies</strong>: sjablonen met instellingen die je op toestellen toepast, zoals beveiligingsbeleid, beperkingen, wifi en VPN. Ze automatiseren de configuratie van toestellen, zodat alle toestellen van de organisatie dezelfde instellingen hebben.</li>
 </ul>
 <h2 id="profieltypes-voor-configuration-policies">Profieltypes voor configuration policies<a class="headerlink" href="#profieltypes-voor-configuration-policies" title="Permanent link">&para;</a></h2>
-<p>Er zijn drie profieltypes die je kan selecteren wanneer je een configuration policy uitrolt.</p>
+<p>Wanneer je een configuration policy maakt, kies je uit drie profieltypes.</p>
 <table>
 <thead>
 <tr>
@@ -2479,15 +2480,15 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <tbody>
 <tr>
 <td><strong>Templates</strong></td>
-<td>Het profieltype Template wordt gebruikt om instellingen op een toestel toe te passen door ze te organiseren en te groeperen voor eenvoudiger beheer. Je moet echter voor elke groep instellingen een afzonderlijke configuration policy aanmaken. Deze methode wordt in de toekomst vervangen door de Settings Catalog, die Microsoft aanbeveelt.</td>
+<td>Templates groeperen instellingen in vaste sjablonen. Voor elke groep instellingen moet je wel een afzonderlijke policy aanmaken. Microsoft vervangt templates stilaan door de Settings Catalog en raadt die aan.</td>
 </tr>
 <tr>
 <td><strong>Settings Catalog</strong></td>
-<td>Je kan instellingen van nul af selecteren en toepassen, waardoor je één configuration policy kan aanmaken met verschillende types instellingen. Zo kan je meerdere instellingen eenvoudiger in één policy beheren.</td>
+<td>Je kiest zelf uit alle beschikbare instellingen, zodat je één policy kan maken met verschillende soorten instellingen. Dit is het flexibelste en meest gebruikte profieltype.</td>
 </tr>
 <tr>
 <td><strong>Properties Catalog</strong></td>
-<td>De Properties Catalog wordt niet gebruikt om instellingen op een toestel te configureren, maar om extra informatie over het toestel te verzamelen, zoals CPU-details, geheugen en opslagcapaciteit. Hij kan bijvoorbeeld hardwarespecificaties of software-inventarisgegevens verzamelen.</td>
+<td>De Properties Catalog configureert niets, maar verzamelt extra informatie over het toestel, zoals CPU, geheugen, opslagcapaciteit en software-inventaris.</td>
 </tr>
 </tbody>
 </table>

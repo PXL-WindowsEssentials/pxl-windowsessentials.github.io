@@ -2615,15 +2615,15 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h1>
-<p>Als Windows-systeembeheerder is het cruciaal dat je kan:</p>
+<p>Als Windows-systeembeheerder moet je weten of de Windows-systemen in je organisatie nog ondersteund en dus nog veilig zijn. Daarom moet je kunnen:</p>
 <ol>
 <li>De einddatum van de ondersteuning van een Windows-systeem bepalen.</li>
-<li>Windows-release, -versie en -updates afleiden uit het build number.</li>
-<li>Aan de hand van het build number bepalen welke updates op Windows zijn toegepast.</li>
+<li>Windows-release en -versie afleiden uit het build number.</li>
+<li>Aan de hand van het build number bepalen welke updates zijn toegepast.</li>
 <li>Opzoeken wanneer een Windows-versie is uitgebracht.</li>
 </ol>
 <h2 id="1-end-of-servicing-datum">1. End of Servicing-datum<a class="headerlink" href="#1-end-of-servicing-datum" title="Permanent link">&para;</a></h2>
-<p>De End of Servicing-datum van een Windows-systeem hangt af van:</p>
+<p>De End of Servicing-datum is de dag waarna Microsoft geen beveiligingsupdates meer uitbrengt voor een Windows-versie. Die datum hangt af van:</p>
 <ul>
 <li>De Windows-versie</li>
 <li>De Windows-editie</li>
@@ -2633,75 +2633,75 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><strong>Methode 1: Windows Settings</strong></p>
 <p>Je vindt de versie en editie van een Windows-systeem in de Windows Settings.</p>
 <ul>
-<li>Navigeer in de Windows Settings naar "System" &gt; "About".</li>
-<li>Scroll naar beneden naar de sectie "Windows specifications".</li>
+<li>Ga in de Windows Settings naar <strong>System</strong> &gt; <strong>About</strong>.</li>
+<li>Scroll naar de sectie <strong>Windows specifications</strong>.</li>
 </ul>
 <p><img alt="LookupVersionandEdition" src="../assets/LookupWindowsVersionandEdition.png" /></p>
 <p><strong>Methode 2: Windows Terminal</strong></p>
-<p>Je vindt de Windows-versie van een systeem door het volgende commando uit te voeren in een Windows Terminal:</p>
+<p>Je vindt de Windows-versie ook door het volgende commando uit te voeren in een Windows Terminal. Er opent een venster met versie en build:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>winver
 </span></code></pre></div>
 <p><img alt="winver" src="../assets/winver.png" /></p>
 <h3 id="12-release-channel">1.2. Release channel<a class="headerlink" href="#12-release-channel" title="Permanent link">&para;</a></h3>
-<p>Op het moment van schrijven zijn er drie release channels.</p>
+<p>Een release channel bepaalt hoe vaak een systeem updates krijgt en hoelang het ondersteund wordt. Op het moment van schrijven zijn er drie release channels.</p>
 <ul>
 <li><strong>GAC</strong> - General Availability Channel: dit is het standaard releasekanaal.</li>
-<li><strong>LTSC</strong> - Long Term Servicing Channel: ontworpen voor embedded toestellen, IoT-toestellen, geldautomaten, enz. Het laat toe om feature-updates uit te stellen. Deze release biedt langere ondersteuning voor toestellen in dit kanaal. Het LTSC-releasekanaal is enkel beschikbaar voor de Enterprise-editie.</li>
+<li><strong>LTSC</strong> - Long Term Servicing Channel: ontworpen voor embedded toestellen, IoT-toestellen, geldautomaten, enz. Dit kanaal krijgt geen nieuwe functies, maar wel een veel langere ondersteuning. Het LTSC-kanaal is enkel beschikbaar voor de Enterprise-editie.</li>
 <li><strong>Windows Insider Program</strong>: een releasekanaal om de nieuwste functies te testen en feedback te geven.</li>
 </ul>
-<p>Het is niet mogelijk om het release channel te wijzigen van LTSC naar GAC of omgekeerd. Het release channel wordt bepaald door de ISO van je installatie.</p>
+<p>Je kan het release channel niet wijzigen van LTSC naar GAC of omgekeerd. Het release channel wordt bepaald door de ISO waarmee je installeert.</p>
 <h3 id="13-end-of-life-opzoeken">1.3. End of Life opzoeken<a class="headerlink" href="#13-end-of-life-opzoeken" title="Permanent link">&para;</a></h3>
-<p>Nadat je de Windows-versie en -editie hebt bepaald, gebruik je de volgende website om de End of Servicing-datum op te zoeken.</p>
+<p>Nadat je versie, editie en release channel kent, zoek je de End of Servicing-datum op via de onderstaande websites.</p>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information">Windows 10 release information</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/release-health/release-information">Windows 10 release information</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information">Windows 11 release information</a></li>
 </ul>
-<p>Voor Windows 11 24H2 - Education - GAC release channel is de "End of servicing date": <strong>12/10/2027</strong></p>
+<p>Voorbeeld: voor Windows 11 24H2, editie Education, GAC release channel is de "End of servicing date" <strong>12/10/2027</strong> (12 oktober 2027).</p>
 <p><img alt="LookupReleaseInformation" src="../assets/ReleaseInformationLookup.png" /></p>
 <h2 id="2-build-number">2. Build number<a class="headerlink" href="#2-build-number" title="Permanent link">&para;</a></h2>
-<p>Wanneer je Windows-systeem centraal beheerd wordt via Microsoft Intune, kan je bepaalde gegevens niet rechtstreeks van het systeem aflezen. Windows build numbers volgen echter een standaardformaat waaruit je verschillende gegevens kan afleiden:</p>
+<p>Wordt een Windows-systeem centraal beheerd via Microsoft Intune, dan heb je het toestel zelf vaak niet voor je en zie je enkel het build number. Dat build number volgt een vast formaat waaruit je veel kan afleiden:</p>
 <ul>
-<li>Bepalen welke <strong>Windows-release</strong> is geïnstalleerd (zoals Windows 10 of Windows 11).</li>
-<li>De specifieke geïnstalleerde <strong>Windows-versie</strong> achterhalen (bijv. 23H2, 24H2).</li>
-<li>Bepalen welke <strong>Windows-updates</strong> zijn toegepast.</li>
+<li>Welke <strong>Windows-release</strong> is geïnstalleerd (Windows 10 of Windows 11).</li>
+<li>Welke <strong>Windows-versie</strong> is geïnstalleerd (bijvoorbeeld 23H2 of 24H2).</li>
+<li>Welke <strong>Windows-updates</strong> zijn toegepast.</li>
 </ul>
 <h3 id="21-build-number-opzoeken">2.1. Build number opzoeken<a class="headerlink" href="#21-build-number-opzoeken" title="Permanent link">&para;</a></h3>
-<p>Het build number kan je opzoeken via de Windows Settings of door het commando winver uit te voeren.</p>
+<p>Je vindt het build number in de Windows Settings of met het commando <code>winver</code>.</p>
 <p><strong>Methode 1: Windows Settings</strong></p>
-<p>Je vindt het build number van een Windows-systeem in de Windows Settings.</p>
+<p>Je vindt het build number in de Windows Settings.</p>
 <ul>
-<li>Navigeer in de Windows Settings naar "System" &gt; "About".</li>
-<li>Scroll naar beneden naar de sectie "Windows specifications".</li>
+<li>Ga in de Windows Settings naar <strong>System</strong> &gt; <strong>About</strong>.</li>
+<li>Scroll naar de sectie <strong>Windows specifications</strong>.</li>
 </ul>
 <p><img alt="LookupBuildNumber" src="../assets/LookupBuildNumber.png" /></p>
 <p><strong>Methode 2: Windows Terminal</strong></p>
-<p>Je vindt het Windows build number van een systeem door het volgende commando uit te voeren in een Windows Terminal:</p>
+<p>Of voer het volgende commando uit in een Windows Terminal:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>winver
 </span></code></pre></div>
 <p><img alt="winverBuildNumber" src="../assets/winverBuildNumber.png" /></p>
 <h3 id="22-informatie-afleiden-uit-het-windows-build-number">2.2. Informatie afleiden uit het Windows build number<a class="headerlink" href="#22-informatie-afleiden-uit-het-windows-build-number" title="Permanent link">&para;</a></h3>
-<p>Een Windows build number is een unieke identificatie die aan elke versie van het Windows-besturingssysteem wordt toegekend. Het Windows build number bestaat uit twee delen:</p>
+<p>Een Windows build number identificeert exact welke build van Windows op een toestel staat. Het bestaat uit twee delen, gescheiden door een punt:</p>
 <ol>
-<li><strong>Eerste deel</strong>: het versienummer, dat de hoofdversie van het besturingssysteem aangeeft. Bijvoorbeeld 1903, 23H2 of 24H2.</li>
-<li><strong>Tweede deel</strong>: wordt bepaald door de laatste specifieke update die werd toegepast. Elke Windows-update krijgt een KB-nummer. Een KB-nummer (Knowledge Base) verwijst naar de unieke identificatiecode van een specifieke Windows-update.</li>
+<li><strong>Eerste deel</strong> (bijvoorbeeld 26100): het buildnummer van de Windows-versie. Hieruit leid je de release en versie af (bijvoorbeeld Windows 11 24H2).</li>
+<li><strong>Tweede deel</strong> (bijvoorbeeld 4351): de revisie, die bepaald wordt door de laatste update die werd geïnstalleerd. Elke Windows-update heeft een KB-nummer. KB staat voor Knowledge Base en is de unieke code van een specifieke update.</li>
 </ol>
 <p>Neem bijvoorbeeld het volgende build number.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>26100.4351</p>
 </div>
-<p>Open de website <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information">Windows 11 release information</a> en scroll naar beneden naar de kop "Windows 11 Release Information".</p>
+<p>Open de website <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information">Windows 11 release information</a> en scroll naar de kop "Windows 11 Release Information".</p>
 <p><img alt="BuildNumberInfo" src="../assets/BuildNumberInfo.png" /></p>
 <p><strong>1. Windows-release en -versie</strong></p>
-<p>Als we het eerste deel van het build number, <strong>26100</strong>, opzoeken op de website Windows 11 Release Information, kunnen we besluiten dat:</p>
+<p>Zoek het eerste deel van het build number, <strong>26100</strong>, op in die tabel. Daaruit volgt:</p>
 <ul>
 <li>De <strong>Windows-release</strong> is: Windows 11</li>
 <li>De <strong>Windows-versie</strong> is: 24H2</li>
 </ul>
 <p><strong>2. Windows-update</strong></p>
-<p>Als we het tweede deel van het build number, <strong>4351</strong>, opzoeken op de website Windows 11 Release Information, kunnen we besluiten dat:</p>
+<p>Zoek daarna het tweede deel, <strong>4351</strong>, op. Daaruit volgt:</p>
 <ul>
-<li>De laatste Windows-update <strong>KB5063060</strong> is</li>
+<li>De laatste geïnstalleerde Windows-update is <strong>KB5063060</strong>.</li>
 </ul>
 <p>Gedetailleerde informatie over de Windows-updates vind je op deze website:
 <a href="https://support.microsoft.com/en-us/topic/windows-11-version-24h2-update-history-0929c747-1815-4543-8461-0160d16f15e5">Windows 11, version 24H2 update history</a></p>

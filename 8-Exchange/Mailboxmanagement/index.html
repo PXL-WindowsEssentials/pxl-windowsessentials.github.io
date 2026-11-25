@@ -3488,10 +3488,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="mailboxbeheer-in-exchange-online">Mailboxbeheer in Exchange Online<a class="headerlink" href="#mailboxbeheer-in-exchange-online" title="Permanent link">&para;</a></h1>
 <h2 id="1-gebruikers-e-mail">1. Gebruikers - e-mail<a class="headerlink" href="#1-gebruikers-e-mail" title="Permanent link">&para;</a></h2>
-<p>Wanneer je via Entra ID of via het Microsoft admin center een nieuwe gebruiker aanmaakt, wordt automatisch een mailbox aangemaakt. Alle e-mails worden opgeslagen op de Exchange Online-server. Gebruikers kunnen hun mail openen door via Outlook in Microsoft 365 Copilot of via eender welke mailclient met de Exchange Online-server te verbinden.
-Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange Admin Center: <a href="https://admin.exchange.microsoft.com">https://admin.exchange.microsoft.com</a></p>
+<p>Maak je in Entra ID of het Microsoft 365 Admin Center een gebruiker aan en wijs je een licentie toe, dan wordt automatisch een mailbox aangemaakt. Alle e-mails staan op de Exchange Online-server. Gebruikers openen ze via Outlook, of via een andere mailclient die met Exchange Online verbindt.</p>
+<p>Alle mailinstellingen van een gebruiker beheer je in het Exchange Admin Center (EAC): <a href="https://admin.exchange.microsoft.com">https://admin.exchange.microsoft.com</a></p>
 <h2 id="2-mail-contacts">2. Mail contacts<a class="headerlink" href="#2-mail-contacts" title="Permanent link">&para;</a></h2>
-<p>Mail contacts hebben geen Entra-account. Ze worden enkel gebruikt om informatie op te slaan die in het adresboek verschijnt.</p>
+<p>Een mail contact is een externe persoon (bijvoorbeeld een klant of leverancier) die je in het adresboek van de organisatie toont. Een mail contact heeft geen Entra-account en geen mailbox: e-mails naar het contact gaan naar het externe e-mailadres.</p>
 <p><strong>Zo maak je een mail contact aan:</strong></p>
 <ol>
 <li>Ga naar <strong>EAC &gt; Recipients &gt; Contacts &gt; Add a mail contact</strong>.</li>
@@ -3505,7 +3505,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Klik op <strong>Next &gt; Create</strong>.</li>
 </ol>
 <p><strong>Zo test je een mail contact</strong></p>
-<p>Nadat je een mail contact hebt aangemaakt, moet je controleren of het correct werkt.</p>
+<p>Controleer na het aanmaken of het mail contact correct werkt.</p>
 <h4 id="het-adresboek-controleren">Het adresboek controleren<a class="headerlink" href="#het-adresboek-controleren" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open <strong>Outlook (web of desktop)</strong></li>
@@ -3520,7 +3520,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Het externe e-mailadres is correct</li>
 </ul>
 <h2 id="3-distribution-list-distribution-group">3. Distribution list (Distribution group)<a class="headerlink" href="#3-distribution-list-distribution-group" title="Permanent link">&para;</a></h2>
-<p>Een distribution list wordt gebruikt om e-mails tegelijk naar meerdere gebruikers te sturen. Ze heeft geen eigen mailbox. E-mails die naar de groep worden gestuurd, worden automatisch doorgestuurd naar alle leden.</p>
+<p>Met een distribution list stuur je een e-mail tegelijk naar meerdere gebruikers. De lijst heeft geen eigen mailbox: e-mails naar de lijst worden doorgestuurd naar de mailbox van elk lid.</p>
 <p><strong>Zo maak je een distribution list aan:</strong></p>
 <ol>
 <li>Ga naar <strong>EAC &gt; Recipients &gt; Groups &gt; Add a group</strong>.</li>
@@ -3535,7 +3535,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Klik op <strong>Next &gt; Create</strong>.</li>
 </ol>
 <p><strong>Zo test je een distribution list</strong></p>
-<p>Nadat je een distribution list hebt aangemaakt, moet je controleren of ze correct werkt.</p>
+<p>Controleer na het aanmaken of de distribution list correct werkt.</p>
 <h4 id="het-adresboek-controleren_1">Het adresboek controleren<a class="headerlink" href="#het-adresboek-controleren_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open <strong>Outlook (web of desktop)</strong></li>
@@ -3563,8 +3563,8 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Elk lid ontvangt het bericht in zijn eigen mailbox</li>
 </ul>
 <h2 id="4-shared-mailbox">4. Shared mailbox<a class="headerlink" href="#4-shared-mailbox" title="Permanent link">&para;</a></h2>
-<p>Een <strong>shared mailbox</strong> is een mailbox waartoe meerdere gebruikers toegang hebben om e-mailberichten te lezen en te verzenden. Ze wordt doorgaans gebruikt voor generieke e-mailadressen zoals <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong> of <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong>, zodat een team berichten gezamenlijk kan beheren.</p>
-<p>Shared mailboxes hebben geen eigen aanmeldgegevens: bevoegde gebruikers openen ze vanuit hun eigen Outlook-account. Berichten die vanuit de shared mailbox worden verzonden, lijken afkomstig te zijn van het gedeelde adres en niet van de individuele gebruiker.</p>
+<p>Een <strong>shared mailbox</strong> is een mailbox waartoe meerdere gebruikers toegang hebben om berichten te lezen en te verzenden. Je gebruikt ze voor generieke adressen zoals <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong> of <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></strong>, zodat een team de berichten samen beheert.</p>
+<p>Een shared mailbox heeft geen eigen aanmeldgegevens. Gemachtigde gebruikers openen ze vanuit hun eigen Outlook. Berichten die ze vanuit de shared mailbox verzenden, komen van het gedeelde adres en niet van de persoon zelf.</p>
 <h3 id="41-veelvoorkomende-gebruiksscenarios">4.1. Veelvoorkomende gebruiksscenario's<a class="headerlink" href="#41-veelvoorkomende-gebruiksscenarios" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Afdelingen zoals HR, Finance of IT-support</li>
@@ -3573,7 +3573,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 </ul>
 <h3 id="42-voordelen">4.2. Voordelen<a class="headerlink" href="#42-voordelen" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Geen aparte licentie vereist (tot 50 GB)</li>
+<li>Geen aparte licentie nodig (tot 50 GB)</li>
 <li>Gedeelde agenda voor teamplanning</li>
 <li>Gecentraliseerd berichtenbeheer</li>
 </ul>
@@ -3583,19 +3583,19 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Ga naar <strong>Recipients → Mailboxes → Shared</strong>.</li>
 <li>Klik op <strong>Add a shared mailbox</strong>.</li>
 <li>Geef de display name en het e-mailadres in.</li>
-<li>Wijs de gebruikers toe die toegang nodig hebben.</li>
+<li>Voeg de gebruikers toe die toegang nodig hebben.</li>
 </ol>
 <h3 id="44-machtigingen">4.4. Machtigingen<a class="headerlink" href="#44-machtigingen" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Full Access</strong>: gebruikers kunnen alle items in de mailbox openen en lezen, en berichten verplaatsen of verwijderen.</li>
-<li><strong>Send As</strong>: gebruikers kunnen e-mails verzenden als de shared mailbox.</li>
+<li><strong>Full Access</strong>: gebruikers kunnen de mailbox openen, berichten lezen, verplaatsen en verwijderen.</li>
+<li><strong>Send As</strong>: gebruikers kunnen e-mails verzenden alsof ze de shared mailbox zijn.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Wanneer je een Microsoft 365-groep aanmaakt, wordt automatisch een shared mailbox aangemaakt, samen met een gedeelde agenda en een SharePoint-site.</p>
+<p>Een Microsoft 365-groep krijgt automatisch een gedeelde mailbox, een gedeelde agenda en een SharePoint-site.</p>
 </div>
 <h3 id="45-zo-test-je-een-shared-mailbox">4.5. Zo test je een shared mailbox<a class="headerlink" href="#45-zo-test-je-een-shared-mailbox" title="Permanent link">&para;</a></h3>
-<p>Nadat je een shared mailbox hebt aangemaakt, moet je controleren of gebruikers er toegang toe hebben en ze correct kunnen gebruiken.</p>
+<p>Controleer na het aanmaken of de gebruikers toegang hebben en de shared mailbox correct kunnen gebruiken.</p>
 <h4 id="stap-1-toegang-controleren-in-outlook">Stap 1: Toegang controleren in Outlook<a class="headerlink" href="#stap-1-toegang-controleren-in-outlook" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open <strong>Outlook (desktop of web)</strong></li>
@@ -3635,7 +3635,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 </ul>
 <h4 id="stap-4-testen-met-meerdere-gebruikers">Stap 4: Testen met meerdere gebruikers<a class="headerlink" href="#stap-4-testen-met-meerdere-gebruikers" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Meld aan met een andere gebruiker die toegang heeft</li>
+<li>Meld je aan met een andere gebruiker die toegang heeft</li>
 <li>Open de shared mailbox</li>
 </ol>
 <p>✅ Controleer:</p>
@@ -3644,14 +3644,14 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Beide gebruikers kunnen berichten lezen en beheren</li>
 </ul>
 <h4 id="stap-5-machtigingen-testen">Stap 5: Machtigingen testen<a class="headerlink" href="#stap-5-machtigingen-testen" title="Permanent link">&para;</a></h4>
-<p>Als er machtigingen zijn geconfigureerd:</p>
+<p>Als je machtigingen hebt ingesteld:</p>
 <p>✅ Controleer:</p>
 <ul>
 <li>Full Access → de gebruiker kan de mailbox openen en beheren</li>
 <li>Send As → de gebruiker kan verzenden als de shared mailbox</li>
 </ul>
 <h2 id="5-resource-mailbox">5. Resource mailbox<a class="headerlink" href="#5-resource-mailbox" title="Permanent link">&para;</a></h2>
-<p>Een <strong>resource mailbox</strong> vertegenwoordigt een vergaderruimte of een stuk apparatuur dat voor evenementen en vergaderingen kan worden gereserveerd. Deze mailboxen helpen organisaties om gedeelde resources efficiënt te beheren.</p>
+<p>Een <strong>resource mailbox</strong> vertegenwoordigt een vergaderruimte of een stuk apparatuur dat je kan reserveren door het als deelnemer aan een vergadering toe te voegen. Zo beheren organisaties gedeelde resources efficiënt.</p>
 <h3 id="51-types-resource-mailboxen">5.1. Types resource mailboxen<a class="headerlink" href="#51-types-resource-mailboxen" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Room mailbox</strong>: vertegenwoordigt een fysieke locatie (bv. Vergaderzaal 1, Auditorium, Lab 2.10)</li>
@@ -3665,10 +3665,10 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 </ul>
 <h3 id="53-een-resource-mailbox-aanmaken">5.3. Een resource mailbox aanmaken<a class="headerlink" href="#53-een-resource-mailbox-aanmaken" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Navigeer in het <span class="we-app we-exchange">Exchange admin center</span> naar <strong>Recipients → Resources</strong>.</li>
+<li>Ga in het <span class="we-app we-exchange">Exchange admin center</span> naar <strong>Recipients → Resources</strong>.</li>
 <li>Klik op <strong>Add resource mailbox</strong>.</li>
 <li>Kies tussen een <strong>Room</strong>- of <strong>Equipment</strong>-mailbox.</li>
-<li>Configureer de boekingsopties (automatisch aanvaarden, delegates, maximale duur, enz.).</li>
+<li>Stel de boekingsopties in (automatisch aanvaarden, delegates, maximale duur, enz.).</li>
 </ol>
 <h3 id="54-voorbeeldscenarios">5.4. Voorbeeldscenario's<a class="headerlink" href="#54-voorbeeldscenarios" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3676,7 +3676,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Equipment mailbox: <em>Beamer-LokaalA</em> voor gedeelde klasapparatuur</li>
 </ul>
 <h3 id="55-zo-test-je-een-resource-mailbox-room-of-equipment">5.5. Zo test je een resource mailbox (Room of Equipment)<a class="headerlink" href="#55-zo-test-je-een-resource-mailbox-room-of-equipment" title="Permanent link">&para;</a></h3>
-<p>Nadat je een resource mailbox hebt aangemaakt, moet je controleren of ze gebruikt kan worden om vergaderingen correct te reserveren.</p>
+<p>Controleer na het aanmaken of je de resource kan reserveren.</p>
 <h4 id="stap-1-de-outlook-agenda-openen">Stap 1: De Outlook-agenda openen<a class="headerlink" href="#stap-1-de-outlook-agenda-openen" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open <strong>Outlook (desktop of web)</strong></li>
@@ -3731,14 +3731,14 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <li>Outlook toont dat de ruimte al bezet is</li>
 </ul>
 <h2 id="6-opties-voor-mailboxbeheer">6. Opties voor mailboxbeheer<a class="headerlink" href="#6-opties-voor-mailboxbeheer" title="Permanent link">&para;</a></h2>
-<p>Wanneer je de eigenschappen van een mailbox opent, kan je veel opties configureren.</p>
+<p>In de eigenschappen van een mailbox kan je veel opties instellen. Open ze in het EAC via <strong>Recipients → Mailboxes</strong>, klik op de mailbox en kies het tabblad van de instelling.</p>
 <h3 id="61-e-mailadressen">6.1. E-mailadressen<a class="headerlink" href="#61-e-mailadressen" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Beheer de e-mailadressen die aan een mailbox gekoppeld zijn door te klikken op <strong>Manage email address types</strong></li>
+<li>Klik op <strong>Manage email address types</strong> om de e-mailadressen van de mailbox te beheren.</li>
 </ul>
 <p><img alt="LookupVersionandEdition" src="../assets/Mailboxbeheer1.png" /></p>
 <ul>
-<li>Het vetgedrukte adres is het <strong>primaire SMTP-adres</strong> en is het standaardantwoordadres.</li>
+<li>Het vetgedrukte adres is het <strong>primaire SMTP-adres</strong>. Dat is het adres waarmee de mailbox verzendt en waarop mensen standaard antwoorden.</li>
 </ul>
 <p><img alt="LookupVersionandEdition" src="../assets/Mailboxbeheer2.png" /></p>
 <ul>
@@ -3748,16 +3748,16 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 </li>
 </ul>
 <h3 id="62-delegatie-machtigingen">6.2. Delegatie (machtigingen)<a class="headerlink" href="#62-delegatie-machtigingen" title="Permanent link">&para;</a></h3>
-<p>Je kan andere gebruikers machtigingen (delegates) geven om deze mailbox te openen of ervan te verzenden:</p>
+<p>Je kan andere gebruikers (delegates) toelaten om de mailbox te openen of ervan te verzenden:</p>
 <ul>
-<li><strong>Send As</strong> → laat toe om e-mails te verzenden als de eigenaar van de mailbox.</li>
-<li><strong>Send on Behalf Of</strong> → verzendt als delegate, maar de ontvanger ziet "verzonden door delegate namens eigenaar".</li>
-<li><strong>Read and Manage (Full Access)</strong> → de delegate kan de mailbox openen en lezen, maar niet verzenden (combineer met Send As voor volledige rechten).</li>
+<li><strong>Send As</strong> → de delegate verzendt e-mails alsof hij de eigenaar van de mailbox is.</li>
+<li><strong>Send on Behalf Of</strong> → de delegate verzendt namens de eigenaar. De ontvanger ziet de delegate én de eigenaar.</li>
+<li><strong>Read and Manage (Full Access)</strong> → de delegate kan de mailbox openen en beheren, maar niet verzenden. Combineer met Send As voor volledige rechten.</li>
 </ul>
 <h3 id="63-instellingen-voor-mailflow">6.3. Instellingen voor mailflow<a class="headerlink" href="#63-instellingen-voor-mailflow" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Message Size Restrictions</strong>: stel de maximale grootte in voor verzonden/ontvangen berichten (0–153600 KB). Grotere berichten worden met een foutmelding geweigerd.</li>
-<li><strong>Message Delivery Restrictions</strong>: bepaal wie berichten naar deze gebruiker mag sturen.<ul>
+<li><strong>Message Size Restrictions</strong>: stel de maximale grootte in van verzonden en ontvangen berichten (0–153600 KB). Grotere berichten worden geweigerd met een foutmelding.</li>
+<li><strong>Message Delivery Restrictions</strong>: bepaal wie berichten naar deze mailbox mag sturen.<ul>
 <li><em>Accept messages from</em>: toegelaten afzenders</li>
 <li><em>Block messages from</em>: geblokkeerde afzenders</li>
 </ul>
@@ -3770,11 +3770,11 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 </li>
 </ul>
 <h3 id="64-zo-test-je-de-opties-voor-mailboxbeheer">6.4. Zo test je de opties voor mailboxbeheer<a class="headerlink" href="#64-zo-test-je-de-opties-voor-mailboxbeheer" title="Permanent link">&para;</a></h3>
-<p>Nadat je mailboxinstellingen hebt gewijzigd, moet je controleren of de configuratie correct werkt.</p>
+<p>Controleer na het wijzigen van mailboxinstellingen of de configuratie werkt.</p>
 <h4 id="stap-1-e-mailadressen-aliassen-testen">Stap 1: E-mailadressen (aliassen) testen<a class="headerlink" href="#stap-1-e-mailadressen-aliassen-testen" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Voeg een nieuw e-mailadres (alias) toe aan een mailbox</li>
-<li>Stuur een testmail naar de alias</li>
+<li>Voeg een nieuw e-mailadres (alias) toe aan een mailbox.</li>
+<li>Stuur een testmail naar de alias.</li>
 </ol>
 <p>✅ Controleer:</p>
 <ul>
@@ -3796,7 +3796,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 <h4 id="stap-3-delegatie-machtigingen-testen">Stap 3: Delegatie (machtigingen) testen<a class="headerlink" href="#stap-3-delegatie-machtigingen-testen" title="Permanent link">&para;</a></h4>
 <p>Als je machtigingen hebt geconfigureerd (bv. Full Access of Send As):</p>
 <ol>
-<li>Meld aan als de gemachtigde gebruiker</li>
+<li>Meld je aan als de gemachtigde gebruiker</li>
 <li>Open de mailbox</li>
 </ol>
 <p>✅ Controleer:</p>
@@ -3835,9 +3835,7 @@ Alle mailinstellingen van een gebruiker kunnen beheerd worden via het Exchange A
 </ul>
 <h2 id="7-outlook">7. Outlook<a class="headerlink" href="#7-outlook" title="Permanent link">&para;</a></h2>
 <h3 id="71-het-veld-from">7.1. Het veld From<a class="headerlink" href="#71-het-veld-from" title="Permanent link">&para;</a></h3>
-<p>Wanneer een gebruiker mailboxdelegatie krijgt, kan hij e-mails verzenden vanaf het e-mailadres van een andere gebruiker.
-Daarvoor moet je ervoor zorgen dat het veld From zichtbaar is. Zo kan je bij het verzenden van een e-mail het adres van de andere persoon kiezen.</p>
-<p>Volg de onderstaande stappen om het veld From in te schakelen:</p>
+<p>Krijgt een gebruiker mailboxdelegatie (Send As of Send on Behalf), dan kan hij e-mails verzenden vanaf het adres van een andere mailbox. Daarvoor moet het veld From zichtbaar zijn, want daarin kies je het afzenderadres. Zo schakel je het in:</p>
 <ol>
 <li>Open de Outlook-app en klik op <strong>New email</strong>.</li>
 <li>Klik in het bovenste menu op <strong>Options</strong>.</li>
@@ -3849,7 +3847,7 @@ Daarvoor moet je ervoor zorgen dat het veld From zichtbaar is. Zo kan je bij het
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/OutlookFromAddress.mp4" aria-label="OutlookFromAddress"></video>
 
 <h3 id="72-shared-mailbox">7.2. Shared mailbox<a class="headerlink" href="#72-shared-mailbox" title="Permanent link">&para;</a></h3>
-<p>Zo voeg je een shared mailbox, of eender welke mailbox waarvoor je <strong>Read and Manage (Full Access)</strong>-machtigingen hebt gekregen, toe aan je Outlook-app.</p>
+<p>Zo voeg je een shared mailbox, of eender welke mailbox waarvoor je <strong>Read and Manage (Full Access)</strong>-machtigingen hebt, toe aan Outlook.</p>
 <ol>
 <li>Klik op de drie puntjes naast je e-mailadres.</li>
 <li>Selecteer <strong>Add shared folder or mailbox</strong>.</li>

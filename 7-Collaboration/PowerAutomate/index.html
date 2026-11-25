@@ -2913,17 +2913,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="power-automate">Power Automate<a class="headerlink" href="#power-automate" title="Permanent link">&para;</a></h1>
-<p>Eerdere versies van SharePoint bevatten workflows die in SharePoint zelf ingebouwd waren. Sinds 2023 schakelt Microsoft over van klassieke workflows naar workflows in Power Automate. Met Power Automate kunnen gebruikers geautomatiseerde workflows maken tussen verschillende Microsoft 365-diensten en andere apps en diensten om bestanden te synchroniseren, meldingen te ontvangen, gegevens te verzamelen en meer, waardoor productiviteit en efficiëntie toenemen. Power Automate is een automatiseringstool zoals Zapier, maar dan gebouwd in het Microsoft 365-ecosysteem.</p>
+<p>Een workflow (in Power Automate een <strong>flow</strong>) is een reeks stappen die automatisch start wanneer iets gebeurt, bijvoorbeeld wanneer een bestand wordt toegevoegd. Oudere versies van SharePoint hadden ingebouwde workflows, maar Microsoft vervangt die sinds 2023 door flows in Power Automate. Met Power Automate maken gebruikers geautomatiseerde flows tussen Microsoft 365-diensten en andere apps, bijvoorbeeld om meldingen te sturen of gegevens te verzamelen. Het is vergelijkbaar met Zapier, maar zit in het Microsoft 365-ecosysteem.</p>
 <h2 id="1-toegang">1. Toegang<a class="headerlink" href="#1-toegang" title="Permanent link">&para;</a></h2>
-<p>Je kan Power Automate openen in de Microsoft 365-demo:</p>
+<p>Je opent Power Automate op twee manieren:</p>
 <ol>
 <li>rechtstreeks via <a href="https://make.powerautomate.com">https://make.powerautomate.com</a></li>
 <li>via het Microsoft 365-portaal</li>
 </ol>
 <p><img alt="portalPowerAutomate" src="../assets/portalPowerAutomate.png" /></p>
 <h2 id="2-taal">2. Taal<a class="headerlink" href="#2-taal" title="Permanent link">&para;</a></h2>
-<p>Net zoals bij de andere Microsoft 365-modules stel je de omgeving best eerst in op het Engels.</p>
-<p>De reden waarom we alle Microsoft 365-modules in het Engels gebruiken, is dat de meeste ondersteuningsmiddelen, documentatie en communityforums in het Engels beschikbaar zijn. Zo kan je instructies makkelijker volgen, problemen oplossen en instellingen configureren zonder technische termen te moeten vertalen.</p>
+<p>Net als bij de andere Microsoft 365-diensten stel je Power Automate eerst in op het Engels. Documentatie, ondersteuning en communityforums zijn in het Engels, dus je vindt oplossingen sneller en hoeft termen niet te vertalen.</p>
 <ol>
 <li>Klik rechtsboven op het tandwielicoon.</li>
 <li>Selecteer <strong>All Settings for Power Automate</strong>.</li>
@@ -2934,11 +2933,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateLanguage.mp4" aria-label="LanguagePowerAutomate"></video>
 
 <h2 id="3-een-microsoft-dataverse-databank-aanmaken">3. Een Microsoft Dataverse-databank aanmaken<a class="headerlink" href="#3-een-microsoft-dataverse-databank-aanmaken" title="Permanent link">&para;</a></h2>
-<p>In nieuw aangemaakte Microsoft 365-tenants moet je Managed Environments inschakelen om een Microsoft Dataverse-databank aan te maken, die vereist is om Power Automate approvals te gebruiken.
-Volg de onderstaande stappen om de Microsoft Dataverse-omgeving aan te maken:</p>
+<p>Power Automate approvals (goedkeuringen) hebben een Microsoft Dataverse-databank nodig. In een nieuwe tenant bestaat die nog niet. Om ze aan te maken, moet je eerst Managed Environments inschakelen. Doe dit nu, want je hebt het nodig voor het goedkeuringsvoorbeeld verderop:</p>
 <h3 id="31-het-power-platform-admin-center-openen">3.1. Het Power Platform Admin Center openen<a class="headerlink" href="#31-het-power-platform-admin-center-openen" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Ga naar het <span class="we-app we-power">Power Platform admin center</span>: <a href="https://admin.powerplatform.microsoft.com">https://admin.powerplatform.microsoft.com</a></li>
+<li>Ga naar <a href="https://admin.powerplatform.microsoft.com">https://admin.powerplatform.microsoft.com</a>.</li>
 <li>Klik op de drie puntjes naast MSFT (je default environment).</li>
 <li>Selecteer <strong>Enable Managed Environments</strong>.</li>
 </ul>
@@ -2950,32 +2948,30 @@ Volg de onderstaande stappen om de Microsoft Dataverse-omgeving aan te maken:</p
 <p><img alt="PowerAutomatePlatform2" src="../assets/PowerAutomatePlatform2.png" /></p>
 <h3 id="33-dataverse-instellingen">3.3. Dataverse-instellingen<a class="headerlink" href="#33-dataverse-instellingen" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Laat de instellingen op "Defaults" staan.</li>
+<li>Laat de instellingen op de standaardwaarden ("Defaults") staan.</li>
 <li>Klik op de knop <strong>Add</strong></li>
 </ul>
 <p><img alt="PowerAutomatePlatform3" src="../assets/PowerAutomatePlatform3.png" /></p>
 <h2 id="4-eenvoudig-workflowvoorbeeld">4. Eenvoudig workflowvoorbeeld<a class="headerlink" href="#4-eenvoudig-workflowvoorbeeld" title="Permanent link">&para;</a></h2>
-<p>Het onderstaande voorbeeld toont een eenvoudige Power Automate-workflow die:</p>
+<p>In dit voorbeeld maak je een eenvoudige flow met twee onderdelen:</p>
 <ol>
 <li>
-<p><strong>Trigger</strong>
-De workflow start telkens wanneer een nieuw document wordt geüpload naar de SharePoint document library.</p>
+<p><strong>Trigger</strong>: de flow start telkens wanneer een nieuw document naar de SharePoint document library wordt geüpload.</p>
 </li>
 <li>
-<p><strong>E-mailmelding</strong>
-Er wordt een e-mail verstuurd naar een gebruiker om te melden dat een nieuw document naar de SharePoint document library is geüpload.</p>
+<p><strong>E-mailmelding</strong>: er wordt een e-mail naar een gebruiker gestuurd om te melden dat er een nieuw document is.</p>
 </li>
 </ol>
 <h3 id="41-workflow-aanmaken">4.1. Workflow aanmaken<a class="headerlink" href="#41-workflow-aanmaken" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Klik in het linkermenu op <strong>Create</strong></li>
-<li>Klik op <strong>Automated cloud flow</strong></li>
+<li>Klik in het linkermenu op <strong>Create</strong>.</li>
+<li>Klik op <strong>Automated cloud flow</strong>.</li>
 </ol>
 <p><img alt="PowerAutomate-CreateSimple" src="../assets/PowerAutomate-CreateSimple.png" /></p>
 <h3 id="42-naam-en-trigger">4.2. Naam en trigger<a class="headerlink" href="#42-naam-en-trigger" title="Permanent link">&para;</a></h3>
-<p>In de volgende stap geef je de workflow een naam en selecteer je een trigger. Een trigger is de gebeurtenis die de Power Automate-workflow start.</p>
+<p>Geef de flow een naam en kies een trigger. Een trigger is de gebeurtenis die de flow start.</p>
 <ol>
-<li>Geef een naam voor de flow in het veld <strong>"Flow name"</strong>.</li>
+<li>Geef de flow een naam in het veld <strong>Flow name</strong>.</li>
 <li>Typ <strong>SharePoint file</strong> in de zoekbalk.</li>
 <li>Selecteer de trigger <strong>When a file is created (properties only)</strong>.</li>
 <li>Klik op <strong>Create</strong>.</li>
@@ -2984,14 +2980,14 @@ Er wordt een e-mail verstuurd naar een gebruiker om te melden dat een nieuw docu
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <ul>
-<li>Gebruik <strong>"(properties only)"-triggers</strong> wanneer je in Power Automate enkel de metadata van een bestand nodig hebt.</li>
-<li>Gebruik triggers <strong>zonder "(properties only)"</strong> wanneer je het eigenlijke bestand in Power Automate moet verwerken.</li>
+<li>Gebruik triggers <strong>met "(properties only)"</strong> als je enkel de metadata van een bestand nodig hebt (zoals naam of status).</li>
+<li>Gebruik triggers <strong>zonder "(properties only)"</strong> als je de inhoud van het bestand moet verwerken.</li>
 <li>Gebruik <strong>"file"-triggers</strong> voor SharePoint document libraries.</li>
 <li>Gebruik <strong>"item"-triggers</strong> voor SharePoint-lijsten.</li>
 </ul>
 </div>
 <h3 id="43-de-trigger-bewerken">4.3. De trigger bewerken<a class="headerlink" href="#43-de-trigger-bewerken" title="Permanent link">&para;</a></h3>
-<p>Bewerk de actie "When a file is created (properties only)"</p>
+<p>Stel de trigger in:</p>
 <ol>
 <li>Selecteer de <strong>SharePoint-site</strong> (Site Address).</li>
 <li>Selecteer de <strong>Document library</strong> (Library Name).</li>
@@ -3000,7 +2996,7 @@ Er wordt een e-mail verstuurd naar een gebruiker om te melden dat een nieuw docu
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateSimple-EditBlock.mp4" aria-label="PowerAutomateSimple-EditBlock"></video>
 
 <h3 id="44-een-actie-toevoegen">4.4. Een actie toevoegen<a class="headerlink" href="#44-een-actie-toevoegen" title="Permanent link">&para;</a></h3>
-<p>Voeg een nieuwe Power Automate-actie toe</p>
+<p>Een actie is een stap die de flow uitvoert nadat de trigger is afgegaan. Voeg een actie toe:</p>
 <ol>
 <li>Klik op de knop <strong>+</strong> onder de actie <strong>When a file is created (properties only)</strong>.</li>
 <li>Typ <strong>"Send an email"</strong> in de zoekbalk.</li>
@@ -3009,47 +3005,44 @@ Er wordt een e-mail verstuurd naar een gebruiker om te melden dat een nieuw docu
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateSimple-AddAction.mp4" aria-label="PowerAutomateSimple-AddAction"></video>
 
 <h3 id="45-de-actie-configureren">4.5. De actie configureren<a class="headerlink" href="#45-de-actie-configureren" title="Permanent link">&para;</a></h3>
-<p>Bewerk de actie "Send an email (V2)"</p>
+<p>Stel de actie in:</p>
 <ol>
-<li>Geef het <strong>e-mailadres</strong> in van de persoon of groep die je wil verwittigen (To).</li>
-<li>Schrijf een <strong>onderwerp</strong> voor de e-mail (Subject).</li>
-<li>Stel de <strong>inhoud</strong> van de e-mail op (Body).</li>
+<li>Geef bij <strong>To</strong> het e-mailadres in van de persoon of groep die je wil verwittigen.</li>
+<li>Schrijf een <strong>onderwerp</strong> (Subject).</li>
+<li>Schrijf de <strong>inhoud</strong> van de e-mail (Body).</li>
 <li>Gebruik <strong>"/"</strong> en selecteer daarna <strong>Insert dynamic content</strong> om eigenschappen van het document in te voegen, zoals de <strong>documentnaam</strong>.</li>
 <li>Klik op de <strong>pijl</strong> om de actie-instellingen samen te vouwen.</li>
 </ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateSimple-ActionDetails.mp4" aria-label="PowerAutomateSimple-ActionDetails"></video>
 
 <h3 id="46-de-workflow-opslaan">4.6. De workflow opslaan<a class="headerlink" href="#46-de-workflow-opslaan" title="Permanent link">&para;</a></h3>
-<p>Sla de workflow op en publiceer ze</p>
+<p>Sla de flow op en activeer ze:</p>
 <ol>
 <li>Klik op <strong>Save draft</strong> om je workflow op te slaan.</li>
 <li>Klik op <strong>Publish</strong> om de workflow te activeren.</li>
 </ol>
-<p>Zorg dat je de melding ziet: "Your workflow is ready to go. We recommend you test it".</p>
+<p>Je ziet dan de melding "Your workflow is ready to go. We recommend you test it".</p>
 <p><img alt="PowerAutomate-Save.png" src="../assets/PowerAutomate-Save.png" /></p>
 <h3 id="47-de-workflow-testen">4.7. De workflow testen<a class="headerlink" href="#47-de-workflow-testen" title="Permanent link">&para;</a></h3>
-<p>Test de workflow door:</p>
+<p>Test de flow:</p>
 <ol>
-<li>Een nieuw bestand te uploaden naar de SharePoint document library.</li>
-<li>De Outlook-account te openen van de gebruiker die is ingesteld om de e-mailmelding te ontvangen.</li>
+<li>Upload een nieuw bestand naar de SharePoint document library.</li>
+<li>Open de Outlook-mailbox van de gebruiker die de melding moet ontvangen. Daar staat de e-mail.</li>
 </ol>
 <h2 id="5-voorbeeld-van-een-goedkeuringsworkflow-approval">5. Voorbeeld van een goedkeuringsworkflow (Approval)<a class="headerlink" href="#5-voorbeeld-van-een-goedkeuringsworkflow-approval" title="Permanent link">&para;</a></h2>
-<p>Het onderstaande voorbeeld toont een Power Automate-goedkeuringsworkflow die:</p>
+<p>Een goedkeuringsflow laat een document door een verantwoordelijke nakijken voor het definitief wordt. In dit voorbeeld bouw je een flow die:</p>
 <ol>
 <li>
-<p><strong>Trigger</strong>
-De workflow start telkens wanneer een nieuw document wordt geüpload naar de map <em>Reports</em> in de SharePoint document library.</p>
+<p><strong>Trigger</strong>: start telkens wanneer een nieuw document naar de map <em>Reports</em> in de SharePoint document library wordt geüpload.</p>
 </li>
 <li>
-<p><strong>Status bijwerken</strong>
-De documentstatus wordt ingesteld op <strong>Pending</strong>.</p>
+<p><strong>Status bijwerken</strong>: zet de documentstatus op <strong>Pending</strong>.</p>
 </li>
 <li>
-<p><strong>Goedkeuringsmail</strong>
-Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder met het verzoek om het document na te kijken en goed te keuren.</p>
+<p><strong>Goedkeuringsmail</strong>: stuurt automatisch een e-mail naar de goedkeurder met het verzoek om het document na te kijken.</p>
 </li>
 <li>
-<p><strong>Status bijwerken</strong></p>
+<p><strong>Status bijwerken</strong>:</p>
 <ul>
 <li>Als het document wordt goedgekeurd, wordt de kolom <strong>Approval Status</strong> bijgewerkt naar <strong>Approved</strong>.</li>
 <li>Als het document wordt afgewezen, wordt de kolom <strong>Approval Status</strong> bijgewerkt naar <strong>Rejected</strong>.</li>
@@ -3061,7 +3054,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 <li>Klik in het linkermenu op <strong>Create</strong>.</li>
 <li>Klik onder <strong>Start from template</strong> op <strong>Approval</strong>.</li>
 <li>Selecteer <strong>Request approval when a new file is added to SharePoint</strong>.</li>
-<li>Klik op <strong>Continue</strong></li>
+<li>Klik op <strong>Continue</strong>.</li>
 </ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateNewFlow.mp4" aria-label="PowerAutomateNewFlow"></video>
 
@@ -3075,8 +3068,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 </ol>
 <p><img alt="PowerAutomateCreate2" src="../assets/PowerAutomateCreate2.png" /></p>
 <h3 id="52-de-workflow-bewerken-pending">5.2. De workflow bewerken: Pending<a class="headerlink" href="#52-de-workflow-bewerken-pending" title="Permanent link">&para;</a></h3>
-<p>De standaard Power Automate-workflow bevat niet alle nodige stappen. In deze stap voegen we de vereiste stappen toe aan het sjabloon.</p>
-<p>We voegen een stap toe zodat, wanneer een bestand aan de SharePoint document library wordt toegevoegd, de kolom <strong>Approval Status</strong> automatisch op <strong>Pending</strong> wordt gezet:</p>
+<p>Het sjabloon bevat nog niet alle nodige stappen. Je voegt een stap toe die de kolom <strong>Approval Status</strong> op <strong>Pending</strong> zet zodra een bestand aan de document library wordt toegevoegd. Maak de kolom <strong>Approval Status</strong> (type Choice, met de opties Pending, Approved en Rejected) eerst aan in de library, zoals in het hoofdstuk SharePoint beschreven:</p>
 <ol>
 <li>Bewerk de workflow door op de knop <strong>Edit</strong> te klikken.</li>
 <li>Klik op het icoon <strong>+</strong> onder <strong>When a file is created (properties only)</strong>.</li>
@@ -3088,7 +3080,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 
 <ol>
 <li>Selecteer opnieuw de SharePoint-site.</li>
-<li>Klik op de libraryenaam: <strong>Documents</strong>.</li>
+<li>Kies bij de libraryenaam <strong>Documents</strong>.</li>
 <li>Typ <code>/</code>, selecteer daarna <strong>Insert dynamic content</strong> en kies <strong>ID</strong>.</li>
 <li>Selecteer in de vervolgkeuzelijst <strong>Advanced parameters</strong> de optie <strong>Approval Status Value</strong>.</li>
 <li>Stel de <strong>Approval Status Value</strong> in op <strong>Pending</strong>.</li>
@@ -3096,7 +3088,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomate-UpdateFileProperties2.mp4" aria-label="PowerAutomate-UpdateFileProperties"></video>
 
 <h3 id="53-de-workflow-bewerken-approved-en-rejected">5.3. De workflow bewerken: Approved en Rejected<a class="headerlink" href="#53-de-workflow-bewerken-approved-en-rejected" title="Permanent link">&para;</a></h3>
-<p>Herhaal de stappen voor het geval dat het document goedgekeurd wordt en voor het geval dat het afgewezen wordt. Deze beslissing vind je in het blok Condition.</p>
+<p>Voeg dezelfde stap toe voor de twee mogelijke uitkomsten van de goedkeuring: goedgekeurd en afgewezen. De beslissing wordt genomen in het blok Condition.</p>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomate-UpdateFilePropertiesApproved.mp4" aria-label="PowerAutomate-UpdateFilePropertiesApproved.gif"></video>
 
 <p>Configureer in de True-tak (If yes) de actie Update file properties als volgt:</p>
@@ -3118,7 +3110,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 <p>Het resultaat ziet er als volgt uit:</p>
 <p><img alt="OverviewCondition" src="../assets/OverviewCondition.png" /></p>
 <h3 id="54-de-condition-aanpassen">5.4. De Condition aanpassen<a class="headerlink" href="#54-de-condition-aanpassen" title="Permanent link">&para;</a></h3>
-<p>Het blok Condition is niet correct geconfigureerd. Pas het als volgt aan:</p>
+<p>Het sjabloon stelt het blok Condition niet correct in. Pas het aan zodat het de beslissing van de goedkeurder controleert:</p>
 <ol>
 <li>Klik op het blok <strong>Condition</strong>.</li>
 <li>Verwijder de variabele <strong>actions</strong> uit het veld value.</li>
@@ -3129,7 +3121,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateEditCondition.mp4" aria-label="PowerAutomateEditCondition"></video>
 
 <h2 id="6-overzicht">6. Overzicht<a class="headerlink" href="#6-overzicht" title="Permanent link">&para;</a></h2>
-<p>Krijg een overzicht van wanneer en hoe de workflow is uitgevoerd:</p>
+<p>Zo zie je wanneer en hoe de flow is uitgevoerd:</p>
 <ol>
 <li>Klik in het linkermenu op <strong>My flows</strong>.</li>
 <li>Klik op de flow die je wil opvolgen.</li>
@@ -3137,7 +3129,7 @@ Er wordt een geautomatiseerde e-mail verstuurd naar de aangeduide goedkeurder me
 </ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/PowerAutomateOverview.mp4" aria-label="PowerAutomateOverview"></video>
 
-<p>Hier zie je een overzicht van wanneer de flow is uitgevoerd. Door op een tijdstempel te klikken, krijg je een gedetailleerd beeld van hoe de flow is verlopen.</p>
+<p>Je ziet nu wanneer de flow is uitgevoerd en of dat gelukt is. Klik op een tijdstempel voor de details van elke stap, bijvoorbeeld om een fout op te sporen.</p>
 
 
   <nav class="md-tags" >

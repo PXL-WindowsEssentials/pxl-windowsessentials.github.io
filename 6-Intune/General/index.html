@@ -2742,8 +2742,8 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="algemeen">Algemeen<a class="headerlink" href="#algemeen" title="Permanent link">&para;</a></h1>
 <h2 id="1-intune-taal">1. Intune-taal<a class="headerlink" href="#1-intune-taal" title="Permanent link">&para;</a></h2>
-<p>Standaard is de Intune-omgeving ingesteld op het Nederlands. We gebruiken Intune echter in het Engels, omdat de meeste ondersteuningsmiddelen, documentatie en communityforums in het Engels beschikbaar zijn. Zo kan je instructies makkelijker volgen, problemen oplossen en instellingen doorvoeren zonder technische termen naar het Nederlands te moeten vertalen.</p>
-<p>De Intune-taal wijzigen naar het Engels</p>
+<p>Intune staat standaard in het Nederlands. Wij gebruiken Intune in het Engels, omdat documentatie, ondersteuning en communityforums in het Engels zijn. Zo vind je oplossingen sneller en hoef je technische termen niet te vertalen.</p>
+<p>Zo wijzig je de taal naar het Engels:</p>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>).</li>
 <li>Klik rechtsboven op het <strong>tandwielicoon</strong>.</li>
@@ -2752,12 +2752,11 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Kies bij <strong>Regionale indeling</strong> de gewenste notatie, bijvoorbeeld <strong>English (United States)</strong>.</li>
 <li>Klik op <strong>Toepassen</strong> en bevestig met <strong>OK</strong>. De portal wordt opnieuw geladen.</li>
 </ol>
-<p>Vanaf nu wordt de volledige Intune-omgeving in het Engels weergegeven.</p>
+<p>Intune wordt nu volledig in het Engels weergegeven.</p>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/IntuneLanguage.mp4" aria-label="IntuneLanguage"></video>
 
 <h2 id="2-mdm-instellingen">2. MDM-instellingen<a class="headerlink" href="#2-mdm-instellingen" title="Permanent link">&para;</a></h2>
-<p>De eerste algemene instelling die we in Intune configureren en die het hele platform beïnvloedt, zijn de MDM-instellingen.
-In de MDM-instellingen bepalen we of toestellen mogen worden ingeschreven in Intune en welke gebruikersaccounts toestellen mogen registreren in Intune.</p>
+<p>De eerste algemene instelling die je in Intune configureert, zijn de MDM-instellingen. Ze gelden voor het hele platform en bepalen welke gebruikers toestellen mogen inschrijven in Intune. Staat dit niet goed, dan kan je geen toestellen inschrijven.</p>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
@@ -2769,21 +2768,20 @@ In de MDM-instellingen bepalen we of toestellen mogen worden ingeschreven in Int
 
 <h3 id="21-mdm-user-scope">2.1. MDM user scope<a class="headerlink" href="#21-mdm-user-scope" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>None</strong>: er kunnen geen toestellen aan Intune worden toegevoegd</li>
-<li><strong>Some</strong>: selecteer de Entra-groepen die toestellen mogen registreren in Intune.</li>
-<li><strong>All</strong>: alle Entra-gebruikers mogen toestellen registreren in Intune</li>
+<li><strong>None</strong>: er kunnen geen toestellen in Intune worden ingeschreven.</li>
+<li><strong>Some</strong>: enkel de gebruikers van de Entra-groepen die je selecteert, mogen toestellen inschrijven.</li>
+<li><strong>All</strong>: alle Entra-gebruikers mogen toestellen inschrijven.</li>
 </ul>
 <h3 id="22-mdm-persoonlijk-vs-bedrijfseigendom">2.2. MDM: persoonlijk vs bedrijfseigendom<a class="headerlink" href="#22-mdm-persoonlijk-vs-bedrijfseigendom" title="Permanent link">&para;</a></h3>
-<p>In Mobile Device Management (MDM) van Intune kan je twee types toestellen inschrijven:</p>
+<p>In Intune kan je twee soorten toestellen inschrijven:</p>
 <ol>
-<li><strong>Personal devices</strong> – eigendom van en aangekocht door medewerkers</li>
-<li><strong>Company-owned devices</strong> – aangekocht en beheerd door de organisatie</li>
+<li><strong>Personal devices</strong>: eigendom van de medewerker.</li>
+<li><strong>Company-owned devices</strong>: eigendom van en beheerd door de organisatie.</li>
 </ol>
-<p>De meeste Microsoft 365-tenants zijn geconfigureerd om Intune-beheer enkel toe te laten voor "company-owned devices".</p>
+<p>De meeste tenants laten enkel company-owned devices toe.</p>
 <p><strong>Waarom?</strong></p>
-<p>Persoonlijke toestellen zijn eigendom van de medewerker en kunnen zowel voor persoonlijke als voor werkgerelateerde taken gebruikt worden (zoals toegang tot bedrijfse-mail, bestanden en apps). Omdat het bedrijf deze toestellen niet bezit, is het niet aan te raden ze te beheren door bedrijfsbeleid of -configuraties toe te passen.
-Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p>
-<p>Je kan het beheer van persoonlijke toestellen toestaan of blokkeren via Device platform restrictions:</p>
+<p>Een persoonlijk toestel gebruikt een medewerker voor privé én voor werk. Het bedrijf bezit het toestel niet, dus bedrijfsbeleid afdwingen of het toestel kunnen wissen is niet gepast. Daarom schrijft men persoonlijke toestellen zelden in via MDM.</p>
+<p>Met Device platform restrictions laat je persoonlijke toestellen toe of blokkeer je ze:</p>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik in het middelste menu, onder <strong>Device onboarding</strong>, op <strong>Enrollment</strong>.</li>
@@ -2796,16 +2794,16 @@ Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/IntunePlatformRestrictions.mp4" aria-label="IntunePlatformRestrictions"></video>
 
 <h2 id="3-synchroniseren">3. Synchroniseren<a class="headerlink" href="#3-synchroniseren" title="Permanent link">&para;</a></h2>
-<p>Wanneer precies een configuration policy wordt toegepast of een app wordt uitgerold, is niet voorspelbaar. Microsoft publiceert het volgende synchronisatieschema voor Windows: om de 3 minuten gedurende de eerste 15 minuten, daarna om de 15 minuten gedurende de volgende 2 uur en daarna ongeveer om de 8 uur.</p>
+<p>Toestellen halen niet onmiddellijk nieuwe policies of apps op, dus je weet niet precies wanneer een wijziging aankomt. Volgens het synchronisatieschema van Microsoft voor Windows synchroniseert een toestel de eerste 15 minuten om de 3 minuten, daarna om de 15 minuten gedurende 2 uur en daarna ongeveer om de 8 uur.</p>
 <p><a href="https://learn.microsoft.com/en-us/intune/intune-service/configuration/device-profile-troubleshoot">Microsoft Learn: Device Profile Troubleshoot</a></p>
-<p>Je kan een synchronisatie ook handmatig starten op drie manieren:</p>
+<p>Wil je niet wachten, dan kan je op drie manieren handmatig synchroniseren:</p>
 <ol>
-<li>Vanaf het Windows-toestel</li>
-<li>Vanuit Intune</li>
-<li>De Microsoft Intune Management Extension herstarten</li>
+<li>vanaf het Windows-toestel</li>
+<li>vanuit Intune</li>
+<li>door de Microsoft Intune Management Extension te herstarten</li>
 </ol>
 <h3 id="31-synchroniseren-vanuit-windows">3.1. Synchroniseren vanuit Windows<a class="headerlink" href="#31-synchroniseren-vanuit-windows" title="Permanent link">&para;</a></h3>
-<p>Volg deze stappen om je Windows-toestel handmatig met Intune te synchroniseren:</p>
+<p>Zo synchroniseer je het toestel zelf:</p>
 <ol>
 <li>Open op je <span class="we-app we-windows">Windows-toestel</span> de <strong>Windows Settings</strong>.</li>
 <li>Klik in het menu op <strong>Accounts</strong>.</li>
@@ -2816,9 +2814,9 @@ Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p
 </ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/ManualIntuneSync-Windows.mp4" aria-label="ManualIntuneSync-Windows"></video>
 
-<p>Onderaan de pagina zie je ook wanneer het toestel voor het laatst met de Intune-omgeving heeft gesynchroniseerd.</p>
+<p>Onderaan de pagina zie je wanneer het toestel voor het laatst gesynchroniseerd heeft.</p>
 <h3 id="32-synchroniseren-vanuit-intune">3.2. Synchroniseren vanuit Intune<a class="headerlink" href="#32-synchroniseren-vanuit-intune" title="Permanent link">&para;</a></h3>
-<p>Je kan een specifiek Windows-toestel ook synchroniseren vanuit het Intune admin center zelf:</p>
+<p>Je kan een toestel ook vanuit het Intune admin center synchroniseren:</p>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
 <li>Klik op <strong>All devices</strong> en klik op het Windows-toestel dat je wil synchroniseren.</li>
@@ -2826,35 +2824,35 @@ Daardoor worden persoonlijke toestellen zelden via MDM aan Intune toegevoegd.</p
 </ol>
 <p><img alt="ManualIntuneSync-Intune" src="../assets/ManualIntuneSync-Intune.png" /></p>
 <h3 id="33-microsoft-intune-management-extension">3.3. Microsoft Intune Management Extension<a class="headerlink" href="#33-microsoft-intune-management-extension" title="Permanent link">&para;</a></h3>
-<p>Het nadeel van een toestel handmatig synchroniseren vanuit het Intune-menu of vanuit de Windows-instellingen is dat het toestel <strong>in een wachtrij wordt geplaatst</strong> voordat de synchronisatie wordt uitgevoerd.</p>
-<p><strong>Om onmiddellijk met de Intune-omgeving te synchroniseren</strong>, <strong>herstart je handmatig de service Microsoft Intune Management Extension</strong>. Deze service wordt automatisch geïnstalleerd op Windows-toestellen wanneer ze in Intune worden ingeschreven.</p>
+<p>Bij handmatig synchroniseren via Intune of de Windows Settings komt het toestel eerst <strong>in een wachtrij</strong> terecht, waardoor het even kan duren.</p>
+<p><strong>Wil je onmiddellijk synchroniseren</strong>, <strong>herstart dan de service Microsoft Intune Management Extension</strong> op het toestel. Deze service zet Intune op Windows-toestellen in om apps en scripts uit te voeren.</p>
 <p><img alt="ManualIntuneSync-Service" src="../assets/ManualIntuneSync-Service.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>De Microsoft Intune Management Extension wordt pas geïnstalleerd nadat je een applicatie op je virtuele Windows-machine hebt uitgerold.
+<p>De Microsoft Intune Management Extension wordt pas geïnstalleerd nadat je een applicatie of script naar je virtuele Windows-machine hebt uitgerold. Heb je nog niets uitgerold, dan bestaat de service dus nog niet.
 Meer info op <a href="https://learn.microsoft.com/en-us/intune/intune-service/apps/intune-management-extension">https://learn.microsoft.com/en-us/intune/intune-service/apps/intune-management-extension</a></p>
 </div>
 <h2 id="4-opties-om-een-toestel-te-resetten">4. Opties om een toestel te resetten<a class="headerlink" href="#4-opties-om-een-toestel-te-resetten" title="Permanent link">&para;</a></h2>
-<p>Je kan toestellen op verschillende manieren resetten via Intune.</p>
+<p>Via Intune kan je een toestel op drie manieren verwijderen of resetten. Welke je kiest, hangt af van wat er met het toestel en de gegevens moet gebeuren.</p>
 <p><img alt="IntuneDeviceReset" src="../assets/DeviceReset.png" /></p>
 <p><img alt="Een toestel resetten: Retire, Wipe of Delete" src="../assets/diagram-retire-wipe-delete.png" /></p>
 <h3 id="41-retire">4.1. Retire<a class="headerlink" href="#41-retire" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Verwijdert:</strong> instellingen, apps en bedrijfsgegevens. Het toestel wordt uit Intune verwijderd.</li>
 <li><strong>Behoudt:</strong> persoonlijke gegevens en gebruikersbestanden.</li>
-<li><strong>Scenario:</strong> een medewerker verlaat het bedrijf, maar mag het toestel houden. Het toestel wordt buiten gebruik gesteld, maar de medewerker behoudt het.</li>
+<li><strong>Scenario:</strong> een medewerker verlaat het bedrijf, maar mag het toestel houden.</li>
 </ul>
 <h3 id="42-wipe">4.2. Wipe<a class="headerlink" href="#42-wipe" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Verwijdert:</strong> alle gegevens en instellingen, inclusief persoonlijke en bedrijfsgegevens. Het toestel wordt teruggezet naar de fabrieksinstellingen.</li>
+<li><strong>Verwijdert:</strong> alle gegevens en instellingen, ook persoonlijke gegevens. Het toestel wordt teruggezet naar de fabrieksinstellingen.</li>
 <li><strong>Behoudt:</strong> het toestel blijft ingeschreven in Intune.</li>
-<li><strong>Scenario:</strong> het toestel wordt opnieuw toegewezen aan een andere medewerker binnen de organisatie, of het is verloren of gestolen.</li>
+<li><strong>Scenario:</strong> het toestel gaat naar een andere medewerker, of het is verloren of gestolen.</li>
 </ul>
 <h3 id="43-delete">4.3. Delete<a class="headerlink" href="#43-delete" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Verwijdert:</strong> het toestel wordt uitgeschreven uit Intune.</li>
-<li><strong>Behoudt:</strong> alle instellingen, gegevens en applicaties blijven op het toestel.</li>
-<li><strong>Scenario:</strong> het toestel wordt niet langer door de organisatie beheerd, maar alle bestaande gegevens mogen op het toestel blijven. "Delete" stopt enkel het Intune-beheer; het wist het toestel niet.</li>
+<li><strong>Verwijdert:</strong> enkel de registratie van het toestel in Intune.</li>
+<li><strong>Behoudt:</strong> alle instellingen, gegevens en apps blijven op het toestel.</li>
+<li><strong>Scenario:</strong> het toestel wordt niet langer door de organisatie beheerd, of het staat nog in Intune terwijl het niet meer in gebruik is. "Delete" stopt enkel het Intune-beheer en wist het toestel niet.</li>
 </ul>
 
 

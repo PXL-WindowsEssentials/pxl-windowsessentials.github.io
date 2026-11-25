@@ -2737,33 +2737,26 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="navigeren-en-bestandsbeheer">Navigeren en bestandsbeheer<a class="headerlink" href="#navigeren-en-bestandsbeheer" title="Permanent link">&para;</a></h1>
-<p>Navigatie en bestandsbeheer zijn twee basisfuncties van alle besturingssystemen. Ze laten het besturingssysteem toe om:</p>
-<ul>
-<li>correct te functioneren,</li>
-<li>nieuwe apps te installeren,</li>
-<li>systeembestanden aan te maken en te beheren,</li>
-<li>...</li>
-</ul>
-<p>Daarnaast kan de eindgebruiker de schijven gebruiken om persoonlijke documenten op te slaan.</p>
-<p>In Windows gebruiken de meeste gebruikers de GUI voor alle taken rond bestandsbeheer. Ervaren systeembeheerders grijpen voor bestandsbeheer in Windows echter vaak naar PowerShell. In dit hoofdstuk bekijken we de meest voorkomende cmdlets voor bestandsbeheer en hoe je ze correct gebruikt.</p>
+<p>Navigeren en bestandsbeheer zijn basisfuncties van elk besturingssysteem. Het besturingssysteem gebruikt ze om correct te functioneren, nieuwe apps te installeren en systeembestanden te beheren. Gebruikers gebruiken ze om persoonlijke documenten op te slaan.</p>
+<p>De meeste gebruikers doen bestandsbeheer in de GUI (File Explorer). Systeembeheerders gebruiken vaak PowerShell, omdat je daarmee veel bestanden tegelijk kan beheren en taken kan automatiseren. In dit hoofdstuk bekijk je de meest voorkomende cmdlets voor bestandsbeheer en hoe je ze correct gebruikt.</p>
 <h2 id="navigeren-in-de-cli">Navigeren in de CLI<a class="headerlink" href="#navigeren-in-de-cli" title="Permanent link">&para;</a></h2>
 <h3 id="van-directory-veranderen">Van directory veranderen<a class="headerlink" href="#van-directory-veranderen" title="Permanent link">&para;</a></h3>
-<p>Een van de meest uitgevoerde acties in de CLI is naar een andere directory gaan. Daarvoor gebruiken we de cmdlet <code>Set-Location</code>.</p>
+<p>Een van de meest uitgevoerde acties in de CLI is naar een andere directory gaan. Daarvoor gebruik je de cmdlet <code>Set-Location</code> (alias <code>cd</code>). De prompt toont steeds de directory waarin je je bevindt.</p>
 <p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PS C:\Windows&gt; Set-Location System32
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>PS C:\Windows\System32&gt;
 </span></code></pre></div>
 <h4 id="absoluut-vs-relatief-pad">Absoluut vs relatief pad<a class="headerlink" href="#absoluut-vs-relatief-pad" title="Permanent link">&para;</a></h4>
-<p>Wanneer we van de ene directory naar de andere gaan, kunnen we twee methodes gebruiken om naar de juiste directory te verwijzen:</p>
+<p>Je kan op twee manieren naar een directory verwijzen:</p>
 <ul>
-<li><strong>Absoluut</strong>: bij deze methode geef je het volledige pad van de directory op, beginnend vanaf het begin van het huidige volume.\
-    Bijvoorbeeld: we bevinden ons in <code>C:\WinEss</code> en willen naar de map Office16 van Microsoft Office gaan. Dat kan met de cmdlet <code>Set-Location 'C:\Program Files\Microsoft Office\Office16\'</code> of met de alias <code>cd</code>: <code>cd 'C:\Program Files\Microsoft Office\Office16\'</code>.</li>
+<li><strong>Absoluut</strong>: je geeft het volledige pad op, beginnend bij de volumeletter. Het resultaat is altijd hetzelfde, ongeacht waar je je bevindt.\
+    Voorbeeld: je bevindt je in <code>C:\WinEss</code> en wil naar de map Office16 van Microsoft Office. Dat kan met <code>Set-Location 'C:\Program Files\Microsoft Office\Office16\'</code> of met de alias: <code>cd 'C:\Program Files\Microsoft Office\Office16\'</code>. Staan er spaties in het pad, zet het dan tussen aanhalingstekens.</li>
 <li>
-<p><strong>Relatief</strong>: bij deze methode gebruiken we <code>.</code>, <code>..</code> of <code>/</code> om het pad naar de directory op te geven, maar nu wordt het pad opgebouwd vanuit de directory waarin we ons op dat moment bevinden.</p>
+<p><strong>Relatief</strong>: het pad vertrekt vanuit de directory waarin je je op dat moment bevindt. Je gebruikt hiervoor:</p>
 <ul>
-<li><code>.</code> verwijst naar de huidige directory</li>
-<li><code>..</code> verwijst naar de bovenliggende directory in de mappenboom</li>
-<li><code>/</code> of <code>\</code> verwijst naar het begin van de volgende directory in de boom</li>
+<li><code>.</code> voor de huidige directory</li>
+<li><code>..</code> voor de bovenliggende directory</li>
+<li><code>\</code> (of <code>/</code>) als scheidingsteken tussen de mappen in het pad</li>
 </ul>
 <p>Stel dat we de volgende mappenstructuur hebben:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PS C:\PXL&gt; tree
@@ -2779,18 +2772,18 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    ├───2de
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    └───3de
 </span></code></pre></div>
-<p>We bevinden ons in de directory <code>C:\PXL\Bach\3de</code> en willen naar de directory <code>C:\PXL\Grad\1ste</code>. Dan kunnen we het volgende relatieve pad gebruiken: <code>../../Grad/1ste</code></p>
+<p>Je bevindt je in <code>C:\PXL\Bach\3de</code> en wil naar <code>C:\PXL\Grad\1ste</code>. Je gaat twee niveaus omhoog (<code>..\..</code>) en dan naar beneden via <code>Grad\1ste</code>: <code>..\..\Grad\1ste</code></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PS C:\PXL\Bach\3de&gt; Set-Location ..\..\Grad\1ste\
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>PS C:\PXL\Grad\1ste&gt;
 </span></code></pre></div>
-<p>Geef je geen enkel van de relatieve symbolen op, dan interpreteert PowerShell dit ook als een relatief pad en veronderstelt het dat je naar een object dieper in de boom wil verwijzen, vertrekkend vanuit de huidige directory.</p>
+<p>Begint het pad niet met een volumeletter of met <code>.</code> of <code>..</code>, dan is het ook een relatief pad. PowerShell zoekt dan een map in de huidige directory.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PS C:\PXL\Grad&gt; Set-Location 2de
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>PS C:\PXL\Grad\2de&gt;
 </span></code></pre></div>
 </li>
 </ul>
 <h3 id="inhoud-van-een-directory">Inhoud van een directory<a class="headerlink" href="#inhoud-van-een-directory" title="Permanent link">&para;</a></h3>
-<p>Een van de voordelen van File Explorer voor bestandsbeheer is dat we onmiddellijk de inhoud van een directory zien wanneer we erop klikken. Via de CLI moeten we echter een specifieke cmdlet uitvoeren om de inhoud van de huidige directory te zien. Daarvoor kunnen we de cmdlet <code>Get-ChildItem</code> gebruiken.</p>
+<p>In File Explorer zie je de inhoud van een map zodra je erop klikt. In de CLI moet je daarvoor een cmdlet uitvoeren: <code>Get-ChildItem</code> (alias <code>dir</code> of <code>ls</code>).</p>
 <p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PS C:\PXL&gt; Get-ChildItem
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
@@ -2803,7 +2796,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>d-----        13/08/2025     11:35                Bach
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>d-----        13/08/2025     11:36                Grad
 </span></code></pre></div>
-<p>Standaard toont deze cmdlet de volledige inhoud van de huidige directory. Door de hierboven beschreven padmethodes te gebruiken, kunnen we echter ook de inhoud van eender welke directory bekijken.</p>
+<p>Standaard toont deze cmdlet de inhoud van de huidige directory. Met een absoluut of relatief pad bekijk je de inhoud van eender welke directory.</p>
 <p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PS C:\PXL&gt; Get-ChildItem C:\PXL\Bach\
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -2834,9 +2827,9 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>-a----        13/08/2025     11:57              6 studenten.txt
 </span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>-a----        13/08/2025     11:57              6 vakken.txt
 </span></code></pre></div>
-<p>In de laatste uitvoer zien we de volledige inhoud van de directory. Als we enkel de bestanden of enkel de directories willen zien, kunnen we gebruikmaken van de beschikbare parameters van deze cmdlet:</p>
+<p>In de kolom <code>Mode</code> zie je het type item: <code>d</code> staat voor directory en <code>a</code> voor een bestand. Wil je enkel de bestanden of enkel de directories zien, gebruik dan een parameter:</p>
 <ul>
-<li><code>-File</code> toont enkel de bestanden</li>
+<li><code>-File</code> toont enkel de bestanden.</li>
 <li><code>-Directory</code> toont enkel de directories.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PS C:\PXL&gt; Get-ChildItem -File .\Bach\
@@ -2864,7 +2857,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>d-----        13/08/2025     11:35                3de
 </span></code></pre></div>
 <h3 id="environment-variabelen">Environment-variabelen<a class="headerlink" href="#environment-variabelen" title="Permanent link">&para;</a></h3>
-<p>Veel waarden in Windows hangen af van de context waarin een proces draait, zoals de aangemelde gebruiker, de computer of de sessie. Environment-variabelen geven deze waarden een vaste naam, bijvoorbeeld <code>USERPROFILE</code> of <code>TEMP</code>. In PowerShell verwijs je ernaar als <code>$env:NAME</code>. De volgende tabel geeft een overzicht van enkele van de meest voorkomende environment-variabelen.</p>
+<p>Veel waarden in Windows hangen af van de context, zoals de aangemelde gebruiker, de computer of de sessie. Environment-variabelen geven die waarden een vaste naam, bijvoorbeeld <code>USERPROFILE</code> of <code>TEMP</code>. In PowerShell verwijs je ernaar met <code>$env:NAAM</code>. Zo werken je commando's op elke computer en voor elke gebruiker, zonder dat je vaste paden moet typen. Enkele veelvoorkomende variabelen:</p>
 <table>
 <thead>
 <tr>
@@ -2919,7 +2912,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span></code></pre></div>
 <h2 id="bestandsbeheer">Bestandsbeheer<a class="headerlink" href="#bestandsbeheer" title="Permanent link">&para;</a></h2>
 <h3 id="een-directory-aanmaken">Een directory aanmaken<a class="headerlink" href="#een-directory-aanmaken" title="Permanent link">&para;</a></h3>
-<p>Een directory aanmaken is een eenvoudige taak die je kan uitvoeren met de cmdlet <code>New-Item -ItemType Directory &lt;dirname&gt;</code></p>
+<p>Je maakt een directory aan met <code>New-Item -ItemType Directory &lt;dirname&gt;</code>.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PS C:\PXL&gt; New-Item -ItemType Directory Old
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -2930,9 +2923,9 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>----                 -------------         ------ ----
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>d-----        13/08/2025     14:07                Old
 </span></code></pre></div>
-<p>Om een directory aan te maken kan je ook nog altijd het oude MS-DOS-commando <code>md</code> gebruiken. Dit is geen alias, maar het echte oude MS-DOS-commando dat nog altijd in PowerShell is opgenomen.</p>
+<p>Je kan ook het oude MS-DOS-commando <code>md</code> (of <code>mkdir</code>) gebruiken. Dat is korter, maar de cmdlet is duidelijker.</p>
 <h3 id="een-bestand-aanmaken">Een bestand aanmaken<a class="headerlink" href="#een-bestand-aanmaken" title="Permanent link">&para;</a></h3>
-<p>Een leeg bestand aanmaken is een eenvoudige taak die je kan uitvoeren met de cmdlet <code>New-Item -ItemType File &lt;filename&gt;</code></p>
+<p>Je maakt een leeg bestand aan met <code>New-Item -ItemType File &lt;filename&gt;</code>.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>PS C:\PXL&gt; New-Item -ItemType File Old.txt
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -2971,7 +2964,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>d-----        13/08/2025     11:36                Grad
 </span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>d-----        13/08/2025     14:07                New
 </span></code></pre></div>
-<p>Dezelfde cmdlet kan je gebruiken om de naam van een bestand te wijzigen.</p>
+<p>Met dezelfde cmdlet hernoem je een bestand.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>PS C:\PXL&gt; Get-ChildItem -File
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
@@ -3037,24 +3030,25 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>d-----        13/08/2025     11:57                Bach
 </span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>d-----        13/08/2025     11:36                Grad
 </span></code></pre></div>
-<p>Als de directory die je wil verwijderen niet leeg is, moet je de volgende parameters toevoegen: <code>-Recurse -Force</code>. Deze parameters voorkomen fouten bij het uitvoeren van de cmdlet.</p>
+<p>⚠️ <code>Remove-Item</code> verplaatst niets naar de Prullenbak: verwijderde items zijn definitief weg.</p>
+<p>Is de directory die je wil verwijderen niet leeg, voeg dan <code>-Recurse -Force</code> toe. Anders vraagt PowerShell voor elk onderliggend item om bevestiging.</p>
 <ul>
-<li><code>-Recurse</code> geeft de cmdlet aan dat alle bestanden en directories in de directory die je verwijdert, ook verwijderd moeten worden</li>
-<li><code>-Force</code> geeft de cmdlet aan dat ze geen toestemming moet vragen om de bestanden en directories in de te verwijderen directory te verwijderen.</li>
+<li><code>-Recurse</code> verwijdert ook alle bestanden en directories in de directory.</li>
+<li><code>-Force</code> vraagt geen bevestiging.</li>
 </ul>
 <h3 id="bestandendirectory-kopieren">Bestand(en)/directory kopiëren<a class="headerlink" href="#bestandendirectory-kopieren" title="Permanent link">&para;</a></h3>
-<p>Als we een bestand, bestanden, directory of directories naar een andere locatie willen kopiëren, kunnen we de cmdlet <code>Copy-Item</code> gebruiken. Om de specifieke taak uit te voeren, moeten we parameters toevoegen of wildcards gebruiken:</p>
+<p>Met <code>Copy-Item</code> kopieer je bestanden of directories naar een andere locatie. Afhankelijk van wat je wil, gebruik je parameters of wildcards. In de voorbeelden hieronder staat de gebruiker in een submap van <code>Bach</code>:</p>
 <ul>
-<li><code>Copy-Item Bach.txt ..\Bach\</code>: kopieert het bestand Bach.txt naar de directory Bach met een relatief pad</li>
-<li><code>Copy-Item * ..\Bach</code>: kopieert alle bestanden en directories naar de directory Bach met een relatief pad</li>
-<li><code>Copy-Item -Recurse -Force 1ste\ ..\Bach\</code>: kopieert de volledige directory en alle subdirectories/bestanden naar de directory Bach met een relatief pad</li>
+<li><code>Copy-Item Bach.txt ..\Bach\</code>: kopieert het bestand Bach.txt naar de directory Bach</li>
+<li><code>Copy-Item * ..\Bach</code>: kopieert alle bestanden en directories naar de directory Bach</li>
+<li><code>Copy-Item -Recurse -Force 1ste\ ..\Bach\</code>: kopieert de volledige directory met alle subdirectories en bestanden naar de directory Bach</li>
 </ul>
 <h3 id="bestandendirectory-verplaatsen">Bestand(en)/directory verplaatsen<a class="headerlink" href="#bestandendirectory-verplaatsen" title="Permanent link">&para;</a></h3>
-<p>Als we een bestand, bestanden, directory of directories naar een andere locatie willen verplaatsen, kunnen we de cmdlet <code>Move-Item</code> gebruiken. Om de specifieke taak uit te voeren, moeten we parameters toevoegen of wildcards gebruiken:</p>
+<p>Met <code>Move-Item</code> verplaats je bestanden of directories naar een andere locatie. Het item staat daarna niet meer op de oorspronkelijke plaats.</p>
 <ul>
-<li><code>Move-Item Bach.txt ..\Bach\</code>: verplaatst het bestand Bach.txt naar de directory Bach met een relatief pad</li>
-<li><code>Move-Item * ..\Bach</code>: verplaatst alle bestanden en directories naar de directory Bach met een relatief pad</li>
-<li><code>Move-Item -Recurse -Force 1ste\ ..\Bach\</code>: verplaatst de volledige directory en alle subdirectories/bestanden naar de directory Bach met een relatief pad</li>
+<li><code>Move-Item Bach.txt ..\Bach\</code>: verplaatst het bestand Bach.txt naar de directory Bach</li>
+<li><code>Move-Item * ..\Bach</code>: verplaatst alle bestanden en directories naar de directory Bach</li>
+<li><code>Move-Item 1ste\ ..\Bach\</code>: verplaatst de volledige directory met alle subdirectories en bestanden naar de directory Bach</li>
 </ul>
 
 

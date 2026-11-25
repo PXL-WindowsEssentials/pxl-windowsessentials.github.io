@@ -2680,13 +2680,13 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="entra-gebruikers">Entra-gebruikers<a class="headerlink" href="#entra-gebruikers" title="Permanent link">&para;</a></h1>
 <h2 id="1-taal-wijzigen">1. Taal wijzigen<a class="headerlink" href="#1-taal-wijzigen" title="Permanent link">&para;</a></h2>
-<p>Standaard is Entra ID in het Nederlands geconfigureerd. Omdat de meeste technische documentatie in het Engels is, volg je deze stappen om over te schakelen naar het Engels:</p>
+<p>Entra ID is standaard in het Nederlands ingesteld. De meeste technische documentatie en de menunamen in deze cursus zijn Engels. Schakel daarom over naar het Engels:</p>
 <ul>
-<li>Ga naar het <span class="we-app we-entra">Microsoft Entra admin center</span> (<a href="https://entra.microsoft.com">https://entra.microsoft.com</a>) en zorg dat je aangemeld bent met je Visual Studio Pro-aanmeldgegevens (niet met je PXL-e-mailgegevens).</li>
+<li>Ga naar het <span class="we-app we-entra">Microsoft Entra admin center</span> (<a href="https://entra.microsoft.com">https://entra.microsoft.com</a>) en meld je aan met het account van je demo-tenant (niet met je PXL-account).</li>
 <li>Klik rechtsboven in het scherm op het <strong>tandwielicoon</strong>.</li>
 <li>Selecteer <strong>Taal en regio</strong> in het menu en kies dan <strong>English</strong> als voorkeurstaal.</li>
 <li>Kies <strong>Nederlands (België)</strong> als regionale notatie.</li>
-<li>Klik op <strong>Toepassen</strong> en daarna op <strong>OK</strong> om te bevestigen. De interface wordt nu in het Engels weergegeven.</li>
+<li>Klik op <strong>Toepassen</strong> en daarna op <strong>OK</strong>. De interface is nu Engels.</li>
 </ul>
 <!-- <video controls autoplay loop muted playsinline preload="metadata" src="assets/EntraLanguage.mp4" aria-label="EntraLanguage"></video> -->
 <video controls autoplay loop muted playsinline>
@@ -2695,14 +2695,14 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Het is noodzakelijk dat we de regionale notatie correct instellen op de regio waarin we leven, zodat alle tijdstempels, bijvoorbeeld in logboeken, overeenkomstig je regio worden weergegeven.</p>
+<p>Stel de regionale notatie in op je eigen regio. Zo staan datums, tijden en tijdstempels (bijvoorbeeld in logboeken) in het formaat dat je gewend bent.</p>
 </div>
 <h2 id="2-nieuwe-gebruiker">2. Nieuwe gebruiker<a class="headerlink" href="#2-nieuwe-gebruiker" title="Permanent link">&para;</a></h2>
 <h2 id="21-gebruikerstypes">2.1. Gebruikerstypes<a class="headerlink" href="#21-gebruikerstypes" title="Permanent link">&para;</a></h2>
-<p>Wanneer je een Entra ID-gebruiker aanmaakt, kies je het gebruikerstype op basis van de relatie van de gebruiker met je organisatie:</p>
+<p>Bij het aanmaken van een gebruiker kies je het gebruikerstype, afhankelijk van de relatie van de gebruiker met je organisatie:</p>
 <ul>
-<li><strong>Standard (Member) user</strong>: een interne gebruiker die tot je organisatie behoort. Hun account wordt beheerd door je tenant en er kunnen licenties, groepen en rollen aan toegewezen worden.</li>
-<li><strong>Guest user</strong>: een externe gebruiker, zoals een partner of contractor, die uitgenodigd wordt om samen te werken in je organisatie. Gasten hebben standaard beperkte toegang en melden zich normaal aan met hun bestaande identiteit.</li>
+<li><strong>Standard (Member) user</strong>: een interne gebruiker. Het account wordt beheerd in je tenant en je kan er licenties, groepen en rollen aan toewijzen.</li>
+<li><strong>Guest user</strong>: een externe gebruiker, zoals een partner of freelancer, die wordt uitgenodigd om samen te werken. Gasten hebben standaard beperkte toegang en melden zich aan met hun eigen bestaande account.</li>
 </ul>
 <h3 id="22-gebruiker-toevoegen">2.2. Gebruiker toevoegen<a class="headerlink" href="#22-gebruiker-toevoegen" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2710,47 +2710,42 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <p><img alt="AddUser" src="../assets/AddUser.png" /></p>
 <ul>
-<li>
-<p>Kies het type gebruiker (Standard of Guest)</p>
-</li>
-<li>
-<p>Vul de basisgegevens van de gebruiker in</p>
-</li>
-<li>Klik op <strong>Next: Properties &gt;</strong></li>
+<li>Kies het type gebruiker (Standard of Guest).</li>
+<li>Vul de basisgegevens van de gebruiker in.</li>
+<li>Klik op <strong>Next: Properties &gt;</strong>.</li>
 </ul>
 <p><img alt="UserBasic" src="../assets/UserBasic.png" /></p>
 <ul>
-<li>Vul op het tabblad <strong>Properties</strong> de gedetailleerde gegevens van de gebruiker in: First name, Last name, Job Title, ...</li>
-<li>Het veld <strong>Usage Location</strong> is belangrijk, omdat het de geconfigureerde tijdzone voor die gebruiker bepaalt. Stel dit in op Belgium.</li>
-<li>Klik op <strong>Next: Assignments</strong> om verder te gaan.</li>
+<li>Vul op het tabblad <strong>Properties</strong> de gegevens van de gebruiker in: First name, Last name, Job Title, ...</li>
+<li>Stel <strong>Usage Location</strong> in op Belgium. Dit veld bepaalt in welk land de gebruiker de diensten gebruikt, en zonder locatie kan je later geen licentie toewijzen.</li>
+<li>Klik op <strong>Next: Assignments</strong>.</li>
 </ul>
 <p><img alt="userProperties" src="../assets/UserProperties.png" /></p>
 <ul>
-<li>In deze stap kan je de gebruiker aan een groep of rol toewijzen. Dat slaan we voorlopig over.</li>
-<li>Klik op <strong>Next: Review + create</strong></li>
+<li>Hier kan je de gebruiker aan een groep of rol toewijzen. Dat sla je voorlopig over.</li>
+<li>Klik op <strong>Next: Review + create</strong>.</li>
 </ul>
 <p><img alt="userAssignments" src="../assets/UserAssignments.png" /></p>
 <ul>
-<li>Je krijgt een overzicht van de aanmeldgegevens van de gebruiker. Je kan deze gegevens doorgeven aan de nieuwe medewerker.</li>
-<li>Klik op <strong>Create</strong> om de gebruiker aan te maken</li>
+<li>Je ziet een overzicht met de aanmeldgegevens van de gebruiker. Die geef je door aan de nieuwe medewerker.</li>
+<li>Klik op <strong>Create</strong> om de gebruiker aan te maken.</li>
 </ul>
 <p><img alt="userCreate" src="../assets/UserCreate.png" /></p>
 <h3 id="23-licentie-toewijzen">2.3. Licentie toewijzen<a class="headerlink" href="#23-licentie-toewijzen" title="Permanent link">&para;</a></h3>
-<p>Als de gebruiker Jan Janssens met deze aanmeldgegevens zou aanmelden op <a href="https://m365.cloud.microsoft">https://m365.cloud.microsoft</a>, zou hij nergens toegang toe hebben. Voordat de gebruiker e-mail kan controleren of andere diensten kan gebruiken, moet er een licentie worden toegewezen.</p>
+<p>Een nieuwe gebruiker heeft nog geen licentie. Meldt Jan Janssens zich aan op <a href="https://m365.cloud.microsoft">https://m365.cloud.microsoft</a>, dan heeft hij nergens toegang toe. Pas na het toewijzen van een licentie kan hij e-mail lezen en andere diensten gebruiken.</p>
 <p>Er zijn twee manieren om een licentie toe te wijzen:</p>
 <ol>
 <li>Wijs de licentie rechtstreeks toe aan de gebruiker.</li>
 <li>Wijs de licentie toe aan een groep en voeg de gebruiker toe aan die groep. De gebruiker krijgt de licentie dan automatisch toegewezen op basis van die groep.</li>
 </ol>
-<p>Het is niet mogelijk om in Entra zelf een licentie aan een gebruiker toe te wijzen; hiervoor moet je het Microsoft admin center gebruiken:</p>
+<p>In deze cursus wijs je licenties toe in het Microsoft 365 Admin Center (niet in Entra):</p>
 <ul>
-<li>Ga naar het <span class="we-app we-m365">Microsoft 365 admin center</span>: <a href="https://admin.cloud.microsoft">https://admin.cloud.microsoft</a></li>
-<li>Ga naar <strong>"Users" - "Active users"</strong></li>
-<li>Zoek de gebruiker op</li>
-<li>Selecteer de gebruiker</li>
-<li>Ga naar "Licenses and apps"</li>
-<li>Controleer bij <strong>Select location</strong> of een land (bijvoorbeeld <strong>Belgium</strong>) is ingesteld. Zonder locatie kan geen licentie worden toegewezen.</li>
-<li>Vink de gepaste licentie aan en klik op <strong>Save changes</strong></li>
+<li>Ga naar het Microsoft 365 Admin Center: <a href="https://admin.cloud.microsoft">https://admin.cloud.microsoft</a>.</li>
+<li>Ga naar <strong>Users</strong> &gt; <strong>Active users</strong>.</li>
+<li>Selecteer de gebruiker.</li>
+<li>Ga naar <strong>Licenses and apps</strong>.</li>
+<li>Controleer bij <strong>Select location</strong> of een land (bijvoorbeeld <strong>Belgium</strong>) is ingesteld. Zonder locatie kan je geen licentie toewijzen.</li>
+<li>Vink de juiste licentie aan en klik op <strong>Save changes</strong>.</li>
 </ul>
 <!-- <video controls autoplay loop muted playsinline preload="metadata" src="assets/UserAssignLicense.mp4" aria-label="userAssignLicense"></video> -->
 <video controls autoplay loop muted playsinline>
@@ -2758,26 +2753,26 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </video>
 
 <h3 id="24-gebruiker-aanmelden">2.4. Gebruiker aanmelden<a class="headerlink" href="#24-gebruiker-aanmelden" title="Permanent link">&para;</a></h3>
-<p>Normaal gezien kan je niet met meerdere Microsoft 365-accounts aanmelden in hetzelfde browservenster. Door een privévenster te gebruiken, kan je echter in elke privésessie met een ander Microsoft 365-account aanmelden.</p>
+<p>Je kan in één browservenster maar met één Microsoft 365-account tegelijk aangemeld zijn. In een privévenster heb je een aparte sessie, zodat je er met een ander account kan aanmelden (bijvoorbeeld om te testen als de nieuwe gebruiker).</p>
 <ul>
-<li>Open een nieuw privé-/incognitovenster in je browser.</li>
+<li>Open een nieuw privé- of incognitovenster in je browser.</li>
 <li>Ga naar <a href="https://m365.cloud.microsoft">https://m365.cloud.microsoft</a>.</li>
-<li>Als er al een andere gebruiker is aangemeld, meld die dan eerst af en kies daarna <strong>Switch to another account</strong>.</li>
-<li>Meld aan met de aanmeldgegevens die je eerder hebt aangemaakt.</li>
-<li>De eerste keer dat een gebruiker aanmeldt, wordt gevraagd om een nieuw wachtwoord in te stellen en multi-factor authentication (MFA) te configureren.</li>
+<li>Is er al een andere gebruiker aangemeld, meld die dan af en kies <strong>Switch to another account</strong>.</li>
+<li>Meld je aan met de aanmeldgegevens die je zonet hebt aangemaakt.</li>
+<li>Bij de eerste aanmelding moet de gebruiker een nieuw wachtwoord instellen en multi-factor authentication (MFA) configureren.</li>
 </ul>
 <h2 id="3-veelgebruikte-gebruikersacties">3. Veelgebruikte gebruikersacties<a class="headerlink" href="#3-veelgebruikte-gebruikersacties" title="Permanent link">&para;</a></h2>
 <h3 id="31-wachtwoord-resetten">3.1. Wachtwoord resetten<a class="headerlink" href="#31-wachtwoord-resetten" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Reset Password</strong>: in Entra ID kan je het wachtwoord van een gebruiker resetten. De volgende keer dat de gebruiker aanmeldt, wordt gevraagd om een nieuw wachtwoord aan te maken.</li>
-<li><strong>Revoke Sessions</strong>: je kan het resetten van het wachtwoord combineren met het intrekken van sessies. Daardoor wordt de gebruiker afgemeld in alle browsers en applicaties en moet hij zich opnieuw authenticeren.</li>
+<li><strong>Reset Password</strong>: je reset het wachtwoord van de gebruiker in Entra ID. Bij de volgende aanmelding moet de gebruiker een nieuw wachtwoord instellen.</li>
+<li><strong>Revoke Sessions</strong>: combineer de reset met het intrekken van sessies. De gebruiker wordt dan afgemeld in alle browsers en applicaties en moet zich opnieuw aanmelden. Dat is belangrijk als het account misbruikt kan zijn, want een bestaande sessie blijft anders geldig.</li>
 </ol>
 <p><img alt="userAssignLicense" src="../assets/ResetPassword.png" /></p>
 <h3 id="32-mfa-opnieuw-configureren">3.2. MFA opnieuw configureren<a class="headerlink" href="#32-mfa-opnieuw-configureren" title="Permanent link">&para;</a></h3>
-<p>De meeste gebruikers gebruiken hun smartphone voor Multi-Factor Authentication (MFA). Als een gebruiker zijn smartphone verliest, die gestolen wordt of per ongeluk gereset wordt, kan hij de MFA bij het aanmelden niet voltooien.</p>
+<p>De meeste gebruikers gebruiken hun smartphone voor Multi-Factor Authentication (MFA). Verliest een gebruiker zijn smartphone, wordt die gestolen of gereset, dan kan hij zich niet meer aanmelden. Als beheerder verwijder je dan de oude MFA-methode, zodat de gebruiker bij de volgende aanmelding een nieuwe kan instellen.</p>
 <p>Zo verwijder je de MFA-methode van een gebruiker:</p>
 <ul>
-<li>Navigeer naar de gebruiker van wie je de MFA wil verwijderen.</li>
+<li>Ga naar de gebruiker van wie je de MFA wil verwijderen.</li>
 <li>Klik in het linkermenu op <strong>Authentication methods</strong>.</li>
 <li>Klik op de <strong>drie puntjes</strong> naast de MFA-methode en selecteer <strong>Delete</strong>.</li>
 <li>Klik op <strong>Yes</strong> om te bevestigen.</li>
@@ -2788,16 +2783,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </video>
 
 <h3 id="33-gebruiker-uitschakelen">3.3. Gebruiker uitschakelen<a class="headerlink" href="#33-gebruiker-uitschakelen" title="Permanent link">&para;</a></h3>
-<p>Je kan voorkomen dat een gebruiker kan aanmelden bij Microsoft 365 en de bijbehorende applicaties zonder zijn account te verwijderen, door de gebruiker uit te schakelen.</p>
+<p>Door een gebruiker uit te schakelen, kan hij niet meer aanmelden bij Microsoft 365 en de bijbehorende applicaties, terwijl zijn account en gegevens bewaard blijven. Dit is nuttig als een medewerker vertrekt of een account verdacht is.</p>
 <p>Zo schakel je een gebruiker uit:</p>
 <ul>
-<li>Navigeer naar de gebruiker die je wil uitschakelen.</li>
+<li>Ga naar de gebruiker die je wil uitschakelen.</li>
 <li>Ga naar <strong>Edit Properties</strong>.</li>
 <li>Klik in het bovenste menu op <strong>All</strong>.</li>
 <li>Schakel <strong>Account Enabled</strong> uit.</li>
 <li>Klik op <strong>Save</strong>.</li>
 </ul>
-<p>De account van de gebruiker is nu uitgeschakeld. Gebruik Revoke Sessions om de gebruiker onmiddellijk af te melden in alle browsers en applicaties.</p>
+<p>De account is nu uitgeschakeld. Een bestaande sessie blijft echter even actief. Gebruik <strong>Revoke Sessions</strong> om de gebruiker onmiddellijk af te melden in alle browsers en applicaties.</p>
 <!-- <video controls autoplay loop muted playsinline preload="metadata" src="assets/DisableUser.mp4" aria-label="DisableUser"></video> -->
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/DisableUser.mp4" type="video/mp4">

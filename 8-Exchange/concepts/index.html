@@ -2657,16 +2657,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h1 id="microsoft-365-exchange-online">Microsoft 365 - Exchange Online<a class="headerlink" href="#microsoft-365-exchange-online" title="Permanent link">&para;</a></h1>
 <h2 id="1-inleiding">1. Inleiding<a class="headerlink" href="#1-inleiding" title="Permanent link">&para;</a></h2>
 <h3 id="11-wat-is-exchange-online">1.1. Wat is Exchange Online?<a class="headerlink" href="#11-wat-is-exchange-online" title="Permanent link">&para;</a></h3>
-<p>Exchange Online is de cloudversie van Microsoft Exchange Server en maakt deel uit van Microsoft 365 (voorheen Office 365). Het is een e-mail- en agendaoplossing die in de Microsoft-cloud wordt gehost.</p>
+<p>Exchange Online is de cloudversie van Microsoft Exchange Server en maakt deel uit van Microsoft 365. Het is de dienst voor e-mail en agenda's, gehost in de Microsoft-cloud. Outlook is de app waarmee gebruikers die dienst gebruiken.</p>
 <h3 id="12-belangrijkste-functies-van-exchange-online">1.2. Belangrijkste functies van Exchange Online<a class="headerlink" href="#12-belangrijkste-functies-van-exchange-online" title="Permanent link">&para;</a></h3>
 <ul>
-<li>📧 <strong>E-mail</strong>: professionele e-mail met je eigen domein (bv. <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#117;&#119;&#110;&#97;&#97;&#109;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#106;&#111;&#117;&#119;&#110;&#97;&#97;&#109;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a>).</li>
+<li>📧 <strong>E-mail</strong>: professionele e-mail met je eigen domein (bijvoorbeeld <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#117;&#119;&#110;&#97;&#97;&#109;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#106;&#111;&#117;&#119;&#110;&#97;&#97;&#109;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a>).</li>
 <li>📅 <strong>Agenda</strong>: gedeelde agenda's voor vergaderingen, afspraken en beschikbaarheid.</li>
-<li>👥 <strong>Contacten</strong>: centrale opslag van contacten, gesynchroniseerd over toestellen heen.</li>
-<li>📁 <strong>Mailboxbeheer</strong>: grote mailboxen (50 GB of meer) met automatische back-ups.</li>
-<li>📲 <strong>Overal toegankelijk</strong>: gebruik Outlook (desktop), Outlook Web App (browser) of mobiele apps.</li>
-<li>🔐 <strong>Beveiliging</strong>: antivirus, antispam, gegevensencryptie en multi-factor authentication.</li>
-<li>🧰 <strong>Beheer</strong>: centraal beheer via het Microsoft 365 Admin Center of PowerShell.</li>
+<li>👥 <strong>Contacten</strong>: contacten die over al je toestellen gesynchroniseerd worden.</li>
+<li>📁 <strong>Mailboxbeheer</strong>: grote mailboxen (50 GB of meer) met ingebouwde bescherming tegen gegevensverlies.</li>
+<li>📲 <strong>Overal toegankelijk</strong>: Outlook (desktop), Outlook op het web (browser) of mobiele apps.</li>
+<li>🔐 <strong>Beveiliging</strong>: antivirus, antispam, versleuteling en multi-factor authentication.</li>
+<li>🧰 <strong>Beheer</strong>: beheer via het Exchange Admin Center, het Microsoft 365 Admin Center of PowerShell.</li>
 </ul>
 <h3 id="13-verschillen-met-exchange-on-premises">1.3. Verschillen met Exchange On-Premises<a class="headerlink" href="#13-verschillen-met-exchange-on-premises" title="Permanent link">&para;</a></h3>
 <table>
@@ -2696,8 +2696,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </tbody>
 </table>
 <h2 id="2-microsoft-365-admin-center">2. Microsoft 365 Admin Center<a class="headerlink" href="#2-microsoft-365-admin-center" title="Permanent link">&para;</a></h2>
-<p>Je kan het admin center bereiken via <a href="https://admin.exchange.microsoft.com">https://admin.exchange.microsoft.com</a>.
-In het linkermenu zie je verschillende opties. In deze cursus gebruiken we vooral <strong>Recipients</strong>:</p>
+<p>Je opent het Exchange Admin Center (EAC) via <a href="https://admin.exchange.microsoft.com">https://admin.exchange.microsoft.com</a>. In het linkermenu gebruik je in deze cursus vooral <strong>Recipients</strong>:</p>
 <ul>
 <li><strong>Mailboxes</strong> → gebruikersmailboxen</li>
 <li><strong>Groups</strong> → gedeelde groepsmailboxen</li>
@@ -2717,22 +2716,22 @@ In het linkermenu zie je verschillende opties. In deze cursus gebruiken we voora
 <tbody>
 <tr>
 <td>User mailbox</td>
-<td>Persoonlijke mailbox gekoppeld aan één gebruiker. Vereist een licentie.</td>
+<td>Persoonlijke mailbox van één gebruiker. Vereist een licentie.</td>
 <td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#97;&#110;&#46;&#112;&#101;&#101;&#116;&#101;&#114;&#115;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#106;&#97;&#110;&#46;&#112;&#101;&#101;&#116;&#101;&#114;&#115;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></td>
 </tr>
 <tr>
 <td>Shared mailbox of Group</td>
-<td>Gedeeld door meerdere gebruikers. Geen directe aanmelding.</td>
+<td>Gedeeld door meerdere gebruikers. Je kan er niet rechtstreeks mee aanmelden.</td>
 <td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a>, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#114;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#104;&#114;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></td>
 </tr>
 <tr>
 <td>Resource mailbox</td>
-<td>Om resources zoals ruimtes of apparatuur te reserveren.</td>
+<td>Om ruimtes of apparatuur te reserveren.</td>
 <td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#111;&#111;&#109;&#49;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#114;&#111;&#111;&#109;&#49;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a>, <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#114;&#111;&#106;&#101;&#99;&#116;&#111;&#114;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;">&#112;&#114;&#111;&#106;&#101;&#99;&#116;&#111;&#114;&#64;&#98;&#101;&#100;&#114;&#105;&#106;&#102;&#46;&#99;&#111;&#109;</a></td>
 </tr>
 <tr>
 <td>Mail contact</td>
-<td>Bewaart externe contacten. Geen mailbox.</td>
+<td>Bewaart een extern contact in het adresboek. Geen mailbox.</td>
 <td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#110;&#97;&#97;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#110;&#97;&#97;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>
 </tr>
 </tbody>
@@ -2740,50 +2739,46 @@ In het linkermenu zie je verschillende opties. In deze cursus gebruiken we voora
 <h3 id="32-mailboxen-aanmaken-en-toewijzen">3.2. Mailboxen aanmaken en toewijzen<a class="headerlink" href="#32-mailboxen-aanmaken-en-toewijzen" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>User mailbox</strong><ul>
-<li>Wordt automatisch aangemaakt wanneer je een gebruiker met licentie toevoegt.</li>
-<li>Kan aangemaakt worden in: Microsoft 365 Admin Center (GUI) of PowerShell (<code>New-Mailbox</code>).</li>
+<li>Wordt automatisch aangemaakt zodra een gebruiker een Exchange-licentie krijgt.</li>
+<li>Beheer via het Microsoft 365 Admin Center (GUI) of PowerShell (<code>New-Mailbox</code>).</li>
 </ul>
 </li>
 <li><strong>Shared mailbox</strong><ul>
-<li>Aanmaken in: Microsoft 365 Admin Center → Shared mailboxes, of PowerShell (<code>New-Mailbox -Shared</code>).</li>
-<li>Machtigingen toewijzen: "Full Access" en/of "Send As".</li>
+<li>Aanmaken in het Exchange Admin Center of Microsoft 365 Admin Center (Shared mailboxes), of met PowerShell (<code>New-Mailbox -Shared</code>).</li>
+<li>Daarna wijs je machtigingen toe: "Full Access" en/of "Send As".</li>
 </ul>
 </li>
 <li><strong>Resource mailbox</strong><ul>
-<li>Aanmaken in het Exchange Admin Center (EAC) of PowerShell.</li>
+<li>Aanmaken in het EAC of met PowerShell.</li>
 <li>Types: Room mailbox (vergaderruimte) of Equipment mailbox.</li>
 </ul>
 </li>
 <li><strong>Group email</strong><ul>
-<li>Aanmaken in EAC of PowerShell.</li>
-<li>Geen mailbox, stuurt e-mails enkel door naar de leden.</li>
+<li>Aanmaken in het EAC of met PowerShell.</li>
+<li>Heeft geen mailbox en stuurt e-mails enkel door naar de leden.</li>
 </ul>
 </li>
 <li><strong>Mail Contact</strong><ul>
-<li>Aanmaken in EAC of PowerShell.</li>
-<li>Wordt enkel gebruikt om externe contactgegevens in het adresboek op te slaan.</li>
+<li>Aanmaken in het EAC of met PowerShell.</li>
+<li>Wordt enkel gebruikt om externe contactgegevens in het adresboek te tonen.</li>
 </ul>
 </li>
 </ul>
 <h3 id="33-mailboxeigenschappen-en-machtigingen">3.3. Mailboxeigenschappen en -machtigingen<a class="headerlink" href="#33-mailboxeigenschappen-en-machtigingen" title="Permanent link">&para;</a></h3>
-<p>Voorbeelden van mailboxeigenschappen:</p>
+<p>Enkele mailboxeigenschappen:</p>
 <ul>
 <li>Display name</li>
 <li>E-mailadres / aliassen</li>
 <li>Opslagquota</li>
 <li>Archivering aan/uit</li>
 </ul>
-<p>Mailboxmachtigingen:</p>
+<p>Mailboxmachtigingen (delegatie), die bepalen wat andere gebruikers met de mailbox mogen doen:</p>
 <ul>
-<li><strong>Full Access</strong> → de gebruiker kan de mailbox openen en beheren.</li>
+<li><strong>Full Access</strong> → de gebruiker kan de mailbox openen en beheren (maar niet verzenden als de mailbox).</li>
 <li><strong>Send As</strong> → de gebruiker kan verzenden alsof hij de mailbox is.</li>
-<li><strong>Send on Behalf</strong> → de gebruiker verzendt namens de mailbox.</li>
+<li><strong>Send on Behalf</strong> → de gebruiker verzendt namens de mailbox. De ontvanger ziet beide namen.</li>
 </ul>
-<p>Je kan deze instellen in:</p>
-<ul>
-<li>Microsoft 365 Admin Center</li>
-<li>Exchange Admin Center (EAC)</li>
-</ul>
+<p>Je stelt deze in via het Microsoft 365 Admin Center of het Exchange Admin Center (EAC).</p>
 
 
   <nav class="md-tags" >

@@ -2696,43 +2696,41 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="een-toestel-inschrijven-in-intune">Een toestel inschrijven in Intune<a class="headerlink" href="#een-toestel-inschrijven-in-intune" title="Permanent link">&para;</a></h1>
 <h2 id="autopilot">Autopilot<a class="headerlink" href="#autopilot" title="Permanent link">&para;</a></h2>
-<p>Toestellen registreren in Intune houdt in dat je ze toevoegt aan Windows Autopilot. Autopilot koppelt elk toestel aan de Microsoft 365-tenant van je organisatie. Wanneer het toestel opnieuw geïnstalleerd of gereset wordt, verbindt het automatisch opnieuw en blijft het via Intune door de tenant beheerd.</p>
-<p>Autopilot wordt gebruikt om:</p>
+<p>Om een toestel in Intune te beheren, moet het ingeschreven (enrolled) zijn. Voor bedrijfstoestellen gebeurt dat met Windows Autopilot. Autopilot koppelt een toestel aan de Microsoft 365-tenant van je organisatie. Wordt het toestel opnieuw geïnstalleerd of gereset, dan verbindt het zich automatisch opnieuw met de tenant en blijft het beheerd via Intune.</p>
+<p>Met Autopilot kan je:</p>
 <ol>
-<li><strong>Toestellen te koppelen</strong> aan een Microsoft 365-tenant.</li>
-<li>De installatie en configuratie van toestellen tijdens de <strong>Out-of-Box Experience (OOBE)</strong> te <strong>automatiseren</strong>.</li>
+<li><strong>toestellen koppelen</strong> aan een Microsoft 365-tenant;</li>
+<li>de installatie en configuratie tijdens de <strong>Out-of-Box Experience (OOBE)</strong> <strong>automatiseren</strong>.</li>
 </ol>
-<p><strong>Windows OOBE (Out of Box Experience)</strong> is het initiële installatieproces dat gebruikers begeleidt bij het configureren van een nieuwe Windows-installatie, met instellingen zoals regio, account, netwerk en privacyvoorkeuren.</p>
-<p>Een toestel toevoegen aan Windows Autopilot kan op twee manieren:</p>
+<p>De <strong>Windows OOBE (Out of Box Experience)</strong> is het eerste installatieproces dat een gebruiker begeleidt bij het instellen van een nieuwe Windows-installatie (regio, account, netwerk, privacyvoorkeuren).</p>
+<p>Een toestel registreren in Windows Autopilot kan op twee manieren:</p>
 <ol>
 <li>
-<p><strong>Via de toestelfabrikant</strong>: wanneer je Windows-toestellen aankoopt bij fabrikanten zoals HP, Dell of Lenovo, kan je de hardware hashes van die toestellen opvragen. Een hardware hash is een unieke identificator die de hardwareconfiguratie van een toestel voorstelt. Vóór de levering bezorgt de fabrikant een lijst met hardware hashes, die vervolgens in Intune Autopilot geïmporteerd kunnen worden.</p>
+<p><strong>Via de toestelfabrikant</strong>: koop je toestellen bij fabrikanten zoals HP, Dell of Lenovo, dan bezorgen zij vóór de levering een lijst met hardware hashes, die je in Intune Autopilot importeert. Een hardware hash is een unieke identificator van de hardware van een toestel.</p>
 </li>
 <li>
-<p><strong>Handmatig</strong>: je kan de hardware hash van een toestel ook zelf extraheren met een PowerShell-script en die vervolgens handmatig importeren in Intune Autopilot.</p>
+<p><strong>Handmatig</strong>: je haalt de hardware hash van een toestel zelf op met een PowerShell-script en importeert die in Intune Autopilot.</p>
 </li>
 </ol>
-<p>Deze handleiding beschrijft hoe je een virtuele Windows 11-machine als bedrijfseigendom (company-owned device) aan Intune toevoegt.</p>
+<p>In deze handleiding schrijf je een virtuele Windows 11-machine als bedrijfseigendom (company-owned device) in via de handmatige methode.</p>
 <h2 id="0-voor-je-begint">0. Voor je begint<a class="headerlink" href="#0-voor-je-begint" title="Permanent link">&para;</a></h2>
-<p>Deze handleiding legt uit hoe je je virtuele machine "Windows 11 - lokaal account" registreert in Windows Autopilot door de hardware hash te verzamelen en te uploaden.
-Nadat de virtuele machine als Autopilot-toestel is geregistreerd, reset je ze en rond je de installatie af door aan te melden met een Microsoft Entra-gebruiker uit je Microsoft 365-tenant, waardoor het toestel in Intune wordt ingeschreven.</p>
-<p>Je doorloopt de volgende stappen:</p>
+<p>Je registreert je virtuele machine "Windows 11 - lokaal account" in Windows Autopilot door de hardware hash te verzamelen en te uploaden. Daarna reset je de machine en rond je de installatie af door aan te melden met een Microsoft Entra-gebruiker uit je tenant. Daardoor wordt het toestel in Intune ingeschreven.</p>
+<p>Je doorloopt deze stappen:</p>
 <ol>
-<li>De MDM user scope in Intune inschakelen</li>
-<li>Het PowerShell-script <strong>Get-WindowsAutopilotInfo</strong> installeren en de hardware hash extraheren.</li>
+<li>De MDM user scope in Intune instellen.</li>
+<li>Het script <strong>Get-WindowsAutopilotInfo</strong> installeren en de hardware hash ophalen.</li>
 <li>De <strong>hardware hash uploaden</strong> naar Intune.</li>
 <li>Het toestel resetten.</li>
-<li>Microsoft 365-aanmeldgegevens ingeven tijdens de OOBE</li>
-<li>De inschrijving van het toestel in Intune controleren</li>
-<li>Overige</li>
+<li>Microsoft 365-aanmeldgegevens ingeven tijdens de OOBE.</li>
+<li>De inschrijving van het toestel in Intune controleren.</li>
+<li>Overige instellingen.</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Het uploaden van de hardware hash van een toestel schrijft het toestel niet in Intune in; het registreert het enkel in Windows Autopilot. Het toestel wordt later, tijdens de Autopilot OOBE-flow, in Intune ingeschreven nadat een gebruiker aanmeldt met Microsoft Entra-aanmeldgegevens.
-Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Microsoft Windows dat gebruikers begeleidt bij het configureren van een nieuw toestel, zoals het kiezen van de taal, het aanmaken van een account en het instellen van voorkeuren.</p>
+<p>Het uploaden van de hardware hash schrijft het toestel niet in Intune in; het registreert het enkel in Windows Autopilot. Het toestel wordt pas later, tijdens de OOBE, in Intune ingeschreven, wanneer een gebruiker aanmeldt met Microsoft Entra-aanmeldgegevens.</p>
 </div>
 <h2 id="1-mdm-user-scope">1. MDM user scope<a class="headerlink" href="#1-mdm-user-scope" title="Permanent link">&para;</a></h2>
-<p>In een nieuwe Microsoft 365-tenant is automatische MDM-inschrijving voor gebruikers meestal niet ingeschakeld. Volg deze stappen om MDM-inschrijving voor alle gebruikers in te schakelen:</p>
+<p>In een nieuwe tenant is automatische MDM-inschrijving meestal niet ingeschakeld. Zonder deze instelling schrijft Windows zich niet automatisch in bij Intune. Schakel ze in voor alle gebruikers:</p>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en meld je aan met een Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
 <li>Klik in het linkermenu op <strong>Devices</strong>.</li>
@@ -2746,21 +2744,21 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 </video>
 
 <h2 id="2-get-windowsautopilotinfo">2. Get-WindowsAutopilotInfo<a class="headerlink" href="#2-get-windowsautopilotinfo" title="Permanent link">&para;</a></h2>
-<p>Voer de volgende stappen uit op je <span class="we-app we-windows">virtuele Windows 11-machine</span>, wanneer de installatie voltooid is en je aangemeld bent:</p>
+<p>Voer deze stappen uit op je <span class="we-app we-windows">virtuele Windows 11-machine</span>, nadat de installatie voltooid is en je aangemeld bent:</p>
 <ol>
-<li>Open een <strong>elevated</strong> Terminal (uitvoeren als administrator).</li>
-<li>Voer de volgende commando's uit:</li>
+<li>Open een <strong>elevated</strong> Terminal (als administrator).</li>
+<li>Voer de volgende commando's uit. Het script wordt gedownload uit de PowerShell Gallery en haalt de hardware hash van de machine op:</li>
 </ol>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Install-Script</span> <span class="n">-Name</span> <span class="nb">Get-WindowsAutopilotInfo</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">Get-WindowsAutopilotInfo</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-OutputFile</span> <span class="n">C</span><span class="p">:\</span><span class="n">AutopilotHWID</span><span class="p">.</span><span class="n">csv</span>
 </span></code></pre></div>
-<p><em>De onderstaande schermafbeelding toont de uitvoering van bovenstaande commando's</em></p>
+<p><em>De schermafbeelding toont de uitvoering van bovenstaande commando's.</em></p>
 <p><img alt="Windows11GetWindowsAutopilotInfo" src="../assets/Windows11GetWindowsAutopilotInfo.png" /></p>
 <ol>
 <li><strong>Kopieer AutopilotHWID.csv</strong></li>
 </ol>
-<p>Het PowerShell-script Get-WindowsAutopilotInfo maakt in <code>C:\</code> een bestand AutopilotHWID.csv aan met de hardware hash van je virtuele machine. Kopieer dit CSV-bestand naar je hostmachine. (Zorg dat VMware Tools geïnstalleerd is, zodat kopiëren en plakken werkt.)</p>
+<p>Het script maakt in <code>C:\</code> het bestand AutopilotHWID.csv aan met de hardware hash van je virtuele machine. Kopieer dit bestand naar je hostmachine, want je uploadt het vanuit je eigen browser. Kopiëren en plakken werkt enkel als VMware Tools geïnstalleerd is.</p>
 <h2 id="3-intune-hash-uploaden">3. Intune - Hash uploaden<a class="headerlink" href="#3-intune-hash-uploaden" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Devices</strong>.</li>
@@ -2770,44 +2768,44 @@ Windows OOBE (Out-Of-Box Experience) is het initiële installatieproces in Micro
 </ol>
 <p><img alt="IntuneAutopilot.png" src="../assets/IntuneAutopilot.png" /></p>
 <ul>
-<li>De virtuele machine wordt dan geregistreerd als Autopilot-toestel.</li>
-<li>Dit proces kan enkele minuten duren. Je kan de importstatus volgen in het meldingsgebied.</li>
+<li>De virtuele machine wordt geregistreerd als Autopilot-toestel.</li>
+<li>Dit kan enkele minuten duren. Je volgt de importstatus in het meldingsgebied.</li>
 </ul>
 <h2 id="4-toestel-resetten">4. Toestel resetten<a class="headerlink" href="#4-toestel-resetten" title="Permanent link">&para;</a></h2>
-<p>Wanneer de importstatus van je Autopilot-toestel <strong>Ready</strong> is, reset je je virtuele Windows 11-machine naar de fabrieksinstellingen met de volgende stappen:</p>
+<p>Zodra de importstatus van je Autopilot-toestel <strong>Ready</strong> is, zet je de virtuele machine terug naar de beginstaat, zodat de OOBE opnieuw start en Autopilot het toestel kan herkennen:</p>
 <ol>
 <li>Open <strong>File Explorer</strong> op je virtuele Windows 11-machine.</li>
-<li>Navigeer naar de volgende map: <code>C:\Windows\System32\Sysprep</code></li>
+<li>Ga naar de map <code>C:\Windows\System32\Sysprep</code>.</li>
 <li>Voer <strong>sysprep.exe</strong> uit.</li>
 <li>Klik op <strong>OK</strong> in het pop-upvenster dat verschijnt.</li>
 </ol>
-<p>Na enkele seconden/minuten herstart je toestel en komt het in de Windows 11 OOBE terecht.</p>
+<p>Na enkele seconden tot minuten herstart het toestel en start de Windows 11 OOBE.</p>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/Sysprep.mp4" type="video/mp4">
 </video>
 
 <h2 id="5-microsoft-365-aanmeldgegevens-tijdens-de-oobe">5. Microsoft 365-aanmeldgegevens tijdens de OOBE<a class="headerlink" href="#5-microsoft-365-aanmeldgegevens-tijdens-de-oobe" title="Permanent link">&para;</a></h2>
-<p>Geef de Microsoft 365-aanmeldgegevens in van de gebruiker Jan Janssens die je tijdens de Entra-labo's hebt aangemaakt.</p>
+<p>Meld je aan met de Microsoft 365-aanmeldgegevens van de gebruiker Jan Janssens, die je in de Entra-labo's hebt aangemaakt. Dat moet een gebruiker met een licentie zijn.</p>
 <p><img alt="M365WinSignIn.png" src="../assets/OOBEM365Login.png" /></p>
-<p>Beantwoord alle vragen in de Windows OOBE om de Windows-installatie af te ronden.</p>
+<p>Beantwoord de overige vragen van de OOBE om de installatie af te ronden.</p>
 <h2 id="6-intune-inschrijving-controleren">6. Intune-inschrijving controleren<a class="headerlink" href="#6-intune-inschrijving-controleren" title="Permanent link">&para;</a></h2>
-<p>Zodra de Windows-installatie voltooid is:</p>
+<p>Controleer na de installatie of het toestel is ingeschreven:</p>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en meld je aan met je Global Administrator-account (<code>voornaam.achternaam@xxxx.onmicrosoft.com</code>).</li>
 <li>Klik in het linkermenu op <strong>Devices</strong> en daarna op <strong>All devices</strong>.</li>
 </ol>
-<p>Je ziet nu een overzicht van alle toestellen die in je Microsoft 365-tenant zijn ingeschreven.</p>
+<p>Je ziet nu alle toestellen die in je tenant zijn ingeschreven. Je virtuele machine staat in de lijst.</p>
 <p><img alt="IntuneDevicesOverview.png" src="../assets/IntuneDevicesOverview.png" /></p>
-<p><em>Het kan enkele minuten duren voordat alle velden (zoals Compliance en OS version) zijn ingevuld. Deze informatie wordt vanaf je virtuele Windows 11-machine met de Microsoft 365-tenant gesynchroniseerd.</em></p>
+<p><em>Het kan enkele minuten duren voordat alle velden (zoals Compliance en OS version) ingevuld zijn. Het toestel moet die informatie eerst naar Intune synchroniseren.</em></p>
 <h2 id="7-overige">7. Overige<a class="headerlink" href="#7-overige" title="Permanent link">&para;</a></h2>
 <h3 id="71-vmware-tools">7.1. VMware Tools<a class="headerlink" href="#71-vmware-tools" title="Permanent link">&para;</a></h3>
-<p>Omdat je je virtuele Windows-machine hebt gereset nadat je het PowerShell-script Get-WindowsAutopilotInfo had uitgevoerd, werd je Windows 11-omgeving volledig gereset en werd ook VMware Tools verwijderd. Wil je functies zoals kopiëren en plakken tussen je host en de virtuele machine opnieuw gebruiken en de schermresolutie verbeteren, dan moet je VMware Tools opnieuw installeren in je virtuele Windows 11-machine.</p>
+<p>De reset verwijderde ook VMware Tools. Wil je opnieuw kopiëren en plakken tussen host en virtuele machine en een goede schermresolutie, installeer VMware Tools dan opnieuw op de virtuele Windows 11-machine.</p>
 <h3 id="72-slaapstand-uitschakelen">7.2. Slaapstand uitschakelen<a class="headerlink" href="#72-slaapstand-uitschakelen" title="Permanent link">&para;</a></h3>
-<p>Je virtuele Windows 11-machine synchroniseert gegevens zoals toestelinformatie, policies en applicaties. Wanneer de VM in slaapstand gaat (wat standaard al na enkele minuten gebeurt), wordt deze synchronisatie onderbroken. Pas de volgende Windows-instelling op je virtuele machine aan om de slaapstand uit te schakelen:</p>
+<p>Je virtuele machine synchroniseert toestelinformatie, policies en apps met Intune. Gaat de machine in slaapstand (standaard na enkele minuten), dan stopt die synchronisatie en komen policies en apps niet aan. Schakel de slaapstand daarom uit:</p>
 <ol>
 <li>Open op je <span class="we-app we-windows">virtuele machine</span> de <strong>Windows Settings</strong>.</li>
 <li>Klik in het linkermenu op <strong>System</strong> en daarna op <strong>Power</strong>.</li>
-<li>Configureer de <strong>Screen and sleep timeouts</strong> als volgt<ul>
+<li>Stel bij <strong>Screen and sleep timeouts</strong> het volgende in:<ul>
 <li><strong>Turn my screen off after</strong>: Never</li>
 <li><strong>Make my device sleep after</strong>: Never</li>
 </ul>

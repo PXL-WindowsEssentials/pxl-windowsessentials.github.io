@@ -2685,7 +2685,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="configuration-policies">Configuration policies<a class="headerlink" href="#configuration-policies" title="Permanent link">&para;</a></h1>
-<p>In deze handleiding leer je een Intune configuration policy aanmaken en toepassen. Als voorbeeld configureren we een bureaubladachtergrond en een afbeelding voor het vergrendelscherm voor alle door Intune beheerde toestellen. We gebruiken de volgende afbeelding: <a href="https://images2.alphacoders.com/124/1245878.jpg">https://images2.alphacoders.com/124/1245878.jpg</a></p>
+<p>Een configuration policy is een verzameling instellingen die Intune op toestellen of gebruikers toepast. In deze handleiding maak je er een aan en pas je ze toe. Als voorbeeld stel je een bureaubladachtergrond en een afbeelding voor het vergrendelscherm in voor alle door Intune beheerde toestellen. Gebruik deze afbeelding: <a href="https://images2.alphacoders.com/124/1245878.jpg">https://images2.alphacoders.com/124/1245878.jpg</a></p>
 <p><a href="https://learn.microsoft.com/en-us/windows/configuration/background/?tabs=intune&amp;pivots=windows-11">Microsoft Learn: Configure the desktop and lock screen backgrounds</a></p>
 <h2 id="1-een-nieuwe-policy-aanmaken">1. Een nieuwe policy aanmaken<a class="headerlink" href="#1-een-nieuwe-policy-aanmaken" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2696,7 +2696,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/IntuneConfigurationPolicy.mp4" aria-label="IntuneConfigurationPolicy"></video>
 
-<p>Wanneer je een configuration policy aanmaakt, moet je het type policy selecteren. Microsoft migreert geleidelijk van op sjablonen gebaseerde instellingen naar de Settings Catalog.</p>
+<p>Kies daarna het platform en het profieltype. Microsoft vervangt de sjablonen stilaan door de Settings Catalog, die meer instellingen bevat en makkelijker te combineren is.</p>
 <ol>
 <li>Selecteer onder <strong>Platform</strong> de optie <strong>Windows 10 and later</strong>.</li>
 <li>Kies bij <strong>Profile type</strong> de optie <strong>Settings catalog</strong>.</li>
@@ -2704,7 +2704,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ol>
 <p><img alt="IntuneCreatePolicy" src="../assets/IntuneCreatePolicy.png" /></p>
 <h2 id="2-profielinstellingen">2. Profielinstellingen<a class="headerlink" href="#2-profielinstellingen" title="Permanent link">&para;</a></h2>
-<p>De volgende tabbladen doorloop je in de wizard in het <span class="we-app we-intune">Intune admin center</span>.</p>
+<p>In de wizard doorloop je de volgende tabbladen.</p>
 <h3 id="21-basics">2.1. Basics<a class="headerlink" href="#21-basics" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Geef een naam in.</li>
@@ -2716,7 +2716,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <ol>
 <li>Klik op <strong>Add settings</strong>.</li>
 <li>Zoek in de <strong>settings picker</strong> op een trefwoord, bijvoorbeeld <code>personalization</code>, en klik op de categorie <strong>Personalization</strong>.</li>
-<li>Vink de instellingen aan die je in het configuratieprofiel wil configureren, bijvoorbeeld <strong>Desktop Image Url</strong> en <strong>Lock Screen Image Url</strong>.</li>
+<li>Vink de instellingen aan die je in het profiel wil configureren, bijvoorbeeld <strong>Desktop Image Url</strong> en <strong>Lock Screen Image Url</strong>.</li>
 <li>Sluit de settings picker.</li>
 </ol>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/ConfigrationPolicySettingsPicker.mp4" aria-label="ConfigrationPolicySettingsPicker"></video>
@@ -2728,7 +2728,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><img alt="ConfigurationPolicy-SettingsValue" src="../assets/ConfigurationPolicy-SettingsValue.png" /></p>
 <h3 id="23-scope-tags">2.3. Scope tags<a class="headerlink" href="#23-scope-tags" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Laat de standaardwaarde staan.</li>
+<li>Laat de standaardwaarde staan. Scope tags gebruik je enkel om beheer tussen beheerders op te delen, dat is hier niet nodig.</li>
 <li>Klik op <strong>Next</strong>.</li>
 </ol>
 <p><img alt="ConfigurationPolicy-Scope" src="../assets/ConfigurationPolicy-Scope.png" /></p>
@@ -2738,8 +2738,8 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Typ (een deel van) de naam van de groep in het zoekveld en zoek de Security Group waarop je het configuratieprofiel wil toepassen (bijvoorbeeld <code>Labs_Users</code> of <code>Windows-devices</code>), vink ze aan en klik op <strong>Select</strong>.</li>
 <li>Klik op <strong>Next</strong>.</li>
 </ol>
-<p>Configuratieprofielen kunnen worden toegewezen aan gebruikersgroepen of toestelgroepen, afhankelijk van of je wil dat het profiel de gebruiker volgt of enkel op toestellen wordt toegepast.</p>
-<p>In dit voorbeeld willen we de configuratie toepassen op alle Windows-toestellen. Daarvoor gebruiken we een <strong>dynamische toestelgroep</strong> met de naam <code>Windows-devices</code>. Die groep bestaat niet vanzelf: je maakt ze zelf aan in Microsoft Entra, zoals beschreven bij <a href="../../5-EntraID/groups/#2-dynamische-groepen">Groepen</a>:</p>
+<p>Je kan een profiel toewijzen aan gebruikersgroepen of toestelgroepen, afhankelijk van of het profiel de gebruiker moet volgen of enkel op het toestel moet gelden.</p>
+<p>In dit voorbeeld pas je de configuratie toe op alle Windows-toestellen. Daarvoor gebruik je een <strong>dynamische toestelgroep</strong> met de naam <code>Windows-devices</code>. Die groep bestaat niet vanzelf: je maakt ze zelf aan in Microsoft Entra, zoals beschreven bij <a href="../../5-EntraID/groups/#2-dynamische-groepen">Groepen</a>:</p>
 <ol>
 <li>Ga naar <span class="we-app we-entra">Microsoft Entra admin center</span> (<a href="https://entra.microsoft.com">entra.microsoft.com</a>) en klik op <strong>Groups</strong> → <strong>New group</strong>.</li>
 <li>Stel <strong>Group type</strong> in op <strong>Security</strong>, geef de groep de naam <code>Windows-devices</code> en stel <strong>Membership type</strong> in op <strong>Dynamic Device</strong>.</li>
@@ -2757,8 +2757,8 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <ul>
-<li>Gebruik toestelgroepen (device groups) wanneer het je niet uitmaakt wie er op het toestel aangemeld is, of wanneer er niemand aanmeldt. Je wil dat je instellingen altijd op het toestel staan.</li>
-<li>Gebruik gebruikersgroepen (user groups) wanneer je wil dat je instellingen en regels altijd met de gebruiker meegaan, ongeacht welk toestel hij gebruikt.</li>
+<li>Gebruik <strong>toestelgroepen</strong> (device groups) als de instellingen altijd op het toestel moeten staan, ongeacht wie er aangemeld is of of er iemand aanmeldt.</li>
+<li>Gebruik <strong>gebruikersgroepen</strong> (user groups) als de instellingen de gebruiker moeten volgen, ongeacht welk toestel hij gebruikt.</li>
 </ul>
 </div>
 <h3 id="25-review-create">2.5. Review + create<a class="headerlink" href="#25-review-create" title="Permanent link">&para;</a></h3>
@@ -2769,27 +2769,24 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><img alt="ConfigurationPolicy-Review" src="../assets/ConfigurationPolicy-Review.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Je kan het toepassen van een configuratieprofiel versnellen door:</p>
-<ul>
-<li>De service Microsoft Intune Management Extension op je Windows-toestel te herstarten</li>
-</ul>
+<p>Je versnelt het toepassen van een profiel door een synchronisatie te starten, zie <a href="../General/#3-synchroniseren">Synchroniseren</a>.</p>
 </div>
 <h2 id="3-controleren">3. Controleren<a class="headerlink" href="#3-controleren" title="Permanent link">&para;</a></h2>
-<p>Als je geen toegang hebt tot de Windows-toestellen waarvoor je een profiel hebt geconfigureerd, kan je altijd Intune gebruiken om te controleren of het configuratieprofiel is toegepast.</p>
+<p>Heb je geen toegang tot de toestellen, dan controleer je in Intune of het profiel is toegepast. Er zijn twee invalshoeken: vanuit het profiel of vanuit het toestel.</p>
 <h3 id="31-vanuit-het-configuratieprofiel">3.1. Vanuit het configuratieprofiel<a class="headerlink" href="#31-vanuit-het-configuratieprofiel" title="Permanent link">&para;</a></h3>
-<p>Volg onderstaande stappen om een rapport te bekijken met de toestellen waarop het configuratieprofiel is toegepast:</p>
+<p>Zo zie je op welke toestellen het profiel is toegepast:</p>
 <ol>
 <li>Ga in het <span class="we-app we-intune">Intune admin center</span> naar <strong>Devices</strong> → <strong>Configuration</strong> en open het configuratieprofiel dat je wil controleren.</li>
 <li>Klik op de blauwe knop <strong>“View Report”</strong>.</li>
-<li>Er verschijnt een lijst met alle toestellen waarop het configuratieprofiel is toegepast.</li>
+<li>Je ziet een lijst met alle toestellen waarop het profiel is toegepast.</li>
 </ol>
 <p><img alt="ConfigurationPolicy-Report" src="../assets/ConfigurationPolicy-Report.png" /></p>
 <h3 id="32-vanuit-het-toestel">3.2. Vanuit het toestel<a class="headerlink" href="#32-vanuit-het-toestel" title="Permanent link">&para;</a></h3>
-<p>Volg onderstaande stappen om te zien welke configuratieprofielen op een specifiek toestel zijn toegepast:</p>
+<p>Zo zie je welke profielen op één toestel zijn toegepast:</p>
 <ol>
 <li>Ga in het <span class="we-app we-intune">Intune admin center</span> naar <strong>Devices</strong> → <strong>All devices</strong> en open het toestel dat je wil controleren.</li>
 <li>Klik in het middelste menu op <strong>“Device Configuration”</strong>.</li>
-<li>Je ziet een overzicht van alle configuratieprofielen die op dat toestel zijn toegepast.</li>
+<li>Je ziet alle profielen die op dat toestel zijn toegepast.</li>
 </ol>
 <p><img alt="ConfigurationPolicy-Device" src="../assets/ConfigurationPolicy-Device.png" /></p>
 

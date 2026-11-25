@@ -2459,19 +2459,18 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h1>
-<p>PowerShell is eigenlijk een scriptingtaal. Een PowerShell-script is een tekstbestand met een reeks PowerShell-commando's die automatisch worden uitgevoerd door de PowerShell-opdrachtregelshell en scriptingtaal.</p>
-<p>PowerShell-scripts hebben doorgaans de bestandsextensie .ps1.</p>
-<p>Het volgende is een voorbeeld van een eenvoudig PowerShell-script dat de huidige datum, het huidige pad en gedetailleerde computerinformatie weergeeft.</p>
+<p>PowerShell is niet alleen een shell, maar ook een scriptingtaal. Een PowerShell-script is een tekstbestand met een reeks commando's die PowerShell na elkaar uitvoert. Zo automatiseer je taken die je vaak herhaalt of op veel toestellen moet uitvoeren. PowerShell-scripts hebben de bestandsextensie <code>.ps1</code>.</p>
+<p>Het volgende script toont de huidige datum, het huidige pad en gedetailleerde computerinformatie.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Write-Host</span> <span class="s2">"=== Systeminformation ==="</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">Get-Date</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">Get-Location</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">Get-ComputerInfo</span>
 </span></code></pre></div>
-<p>Omdat we dit script hebben opgeslagen met de extensie .ps1 (in het voorbeeld <code>cpinfo.ps1</code> in de map <code>C:\pws</code>), kunnen we het rechtstreeks uitvoeren via de terminal:</p>
+<p>Sla het script op als <code>cpinfo.ps1</code> in de map <code>C:\pws</code>. Daarna voer je het uit in de terminal:</p>
 <ol>
 <li>Open PowerShell en ga naar de map met het script: <code>cd C:\pws</code>.</li>
-<li>Typ <code>.\cpinfo.ps1</code> (gebruik <strong>Tab</strong> om de bestandsnaam automatisch aan te vullen).</li>
+<li>Typ <code>.\cpinfo.ps1</code>. Met <strong>Tab</strong> vul je de bestandsnaam automatisch aan. De <code>.\</code> is nodig: PowerShell voert een script in de huidige map niet uit zonder expliciet pad.</li>
 <li>Druk op <strong>Enter</strong>. De titel, de huidige datum, het pad en de computerinformatie worden getoond.</li>
 </ol>
 <video controls autoplay loop muted playsinline>
@@ -2479,12 +2478,12 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </video>
 
 <h2 id="execution-policy">Execution policy<a class="headerlink" href="#execution-policy" title="Permanent link">&para;</a></h2>
-<p>Of we PowerShell-scripts in de terminal mogen uitvoeren, wordt bepaald door de execution policy. Deze policy bepaalt welke scripts uitgevoerd mogen worden en vanuit welke bron.</p>
-<p>Als we de huidige execution policy willen kennen, kunnen we de cmdlet <code>Get-ExecutionPolicy</code> gebruiken.</p>
+<p>Of een script mag draaien, wordt bepaald door de execution policy. Die policy bepaalt welke scripts mogen draaien en van welke bron. Ze is een veiligheidsmaatregel tegen het onbedoeld uitvoeren van schadelijke scripts, maar geen echte beveiliging: een gebruiker kan ze zelf wijzigen.</p>
+<p>Met <code>Get-ExecutionPolicy</code> zie je de huidige policy.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">Get-ExecutionPolicy</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">RemoteSigned</span>
 </span></code></pre></div>
-<p>De onderstaande tabel geeft een overzicht van alle mogelijke policies die geconfigureerd kunnen worden.</p>
+<p>Dit zijn alle mogelijke policies:</p>
 <table>
 <thead>
 <tr>
@@ -2522,16 +2521,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <tr>
 <td><strong>Undefined</strong></td>
 <td>Er is geen execution policy ingesteld op dat bereik (scope). PowerShell gebruikt de volgende toepasselijke policy.</td>
-<td>Geeft de controle terug aan scopes met een hogere prioriteit.</td>
+<td>Geeft de controle terug aan een andere scope.</td>
 </tr>
 </tbody>
 </table>
-<p>Als we de huidige execution policy willen wijzigen, kunnen we de cmdlet <code>Set-ExecutionPolicy -ExecutionPolicy</code> gebruiken, gevolgd door de policy van onze keuze.</p>
+<p>Met <code>Set-ExecutionPolicy -ExecutionPolicy</code>, gevolgd door de gewenste policy, wijzig je de policy. Hiervoor heb je administratorrechten nodig.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">Unrestricted</span>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Ons voornaamste doel als systeembeheerder is ervoor te zorgen dat alle endpoints zo veilig mogelijk zijn. Daarom moeten we voorzichtig zijn met de minder restrictieve policies en altijd terugkeren naar een restrictieve policy, zodat hackers of kwaadwillende personen nooit de kans krijgen om scripts uit te voeren op de systemen die we beheren.</p>
+<p>Als systeembeheerder wil je dat alle endpoints zo veilig mogelijk zijn. Wees daarom voorzichtig met minder strikte policies en zet de policy na je test terug op een strikte waarde, zoals RemoteSigned. Zo krijgen aanvallers minder kans om kwaadaardige scripts uit te voeren op de systemen die je beheert.</p>
 </div>
 
 

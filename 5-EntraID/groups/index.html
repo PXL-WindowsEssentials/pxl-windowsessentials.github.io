@@ -2602,23 +2602,23 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="groepen">Groepen<a class="headerlink" href="#groepen" title="Permanent link">&para;</a></h1>
 <h2 id="groepstypes">Groepstypes<a class="headerlink" href="#groepstypes" title="Permanent link">&para;</a></h2>
-<p>In Entra ID kan je twee verschillende types groepen aanmaken:</p>
-<p><strong>1. Security Group</strong>: een groepstype dat ontworpen is om de toegang van zowel gebruikers als toestellen tot verschillende resources te controleren. Het zorgt voor een consistente toepassing van machtigingen en instellingen voor alle leden.</p>
-<p><strong>2. Microsoft 365 Group</strong>: een groepstype dat ontworpen is voor samenwerking. Wanneer je een Microsoft 365 Group aanmaakt, worden automatisch een <strong>gedeelde agenda</strong>, een <strong>gedeeld e-mailadres</strong> en een <strong>SharePoint-site</strong> ingericht.</p>
+<p>Met groepen beheer je toegang en instellingen voor veel gebruikers tegelijk, in plaats van voor elke gebruiker afzonderlijk. In Entra ID zijn er twee groepstypes:</p>
+<p><strong>1. Security Group</strong>: dient om de toegang van gebruikers én toestellen tot resources te regelen. Alle leden krijgen dezelfde machtigingen en instellingen. Je gebruikt deze groepen ook om licenties en Intune-beleid toe te wijzen.</p>
+<p><strong>2. Microsoft 365 Group</strong>: is bedoeld voor samenwerking. Bij het aanmaken worden automatisch een <strong>gedeelde agenda</strong>, een <strong>gedeeld e-mailadres</strong> en een <strong>SharePoint-site</strong> ingericht.</p>
 <h2 id="lidmaatschapstypes">Lidmaatschapstypes<a class="headerlink" href="#lidmaatschapstypes" title="Permanent link">&para;</a></h2>
-<p>Wanneer je een groep aanmaakt, kan je verschillende lidmaatschapstypes (membership types) kiezen die bepalen hoe gebruikers of toestellen lid worden:</p>
-<p><strong>1. Assigned</strong>: gebruikers of toestellen worden handmatig aan de groep toegevoegd.</p>
-<p><strong>2. Dynamic User</strong>: gebruikers worden automatisch toegevoegd of verwijderd op basis van vooraf gedefinieerde regels.</p>
-<p><strong>3. Dynamic Device</strong>: toestellen worden automatisch toegevoegd of verwijderd op basis van vooraf gedefinieerde regels.</p>
+<p>Het lidmaatschapstype (membership type) bepaalt hoe gebruikers of toestellen lid van de groep worden:</p>
+<p><strong>1. Assigned</strong>: je voegt gebruikers of toestellen handmatig toe.</p>
+<p><strong>2. Dynamic User</strong>: gebruikers worden automatisch toegevoegd of verwijderd op basis van een regel.</p>
+<p><strong>3. Dynamic Device</strong>: toestellen worden automatisch toegevoegd of verwijderd op basis van een regel.</p>
 <h2 id="1-assigned-groepen">1. Assigned-groepen<a class="headerlink" href="#1-assigned-groepen" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Ga in <span class="we-app we-entra">Entra ID</span> naar <strong>Groups</strong> en klik op <strong>New group</strong>.</li>
 <li><strong>Group type</strong>: kies Security.</li>
-<li><strong>Group name</strong>: geef een naam voor de groep in.</li>
-<li>(Optioneel) Voeg een <strong>groepsbeschrijving</strong> toe.</li>
+<li><strong>Group name</strong>: geef de groep een naam.</li>
+<li>(Optioneel) Voeg een <strong>beschrijving</strong> toe.</li>
 <li><strong>Membership type</strong>: selecteer Assigned.</li>
-<li><strong>Owners</strong>: kies de gebruikers die het lidmaatschap van de groep mogen beheren.</li>
-<li><strong>Members</strong>: selecteer de gebruikers die tot deze groep moeten behoren.</li>
+<li><strong>Owners</strong>: kies wie het lidmaatschap van de groep mag beheren.</li>
+<li><strong>Members</strong>: selecteer de gebruikers die lid van de groep worden.</li>
 <li>Klik op <strong>Create</strong>.</li>
 </ul>
 <p><img alt="EntraStaticGroup" src="../assets/EntraStaticGroup.png" /></p>
@@ -2627,17 +2627,17 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><strong>Voorbeeldgroep <code>Labs_Users</code></strong>: in de voorbeelden en labo's van de volgende hoofdstukken (SharePoint, Intune) gebruiken we een groep met de naam <code>Labs_Users</code>. Die bestaat niet vanzelf: maak ze zelf aan met bovenstaande stappen (Security, Assigned) en voeg jezelf en je testgebruikers (bijvoorbeeld Jan Janssens) toe als lid.</p>
 </div>
 <h2 id="2-dynamische-groepen">2. Dynamische groepen<a class="headerlink" href="#2-dynamische-groepen" title="Permanent link">&para;</a></h2>
-<p>In plaats van groepen handmatig te beheren, kan je dynamische groepen aanmaken, waarbij gebruikers of toestellen automatisch worden toegevoegd of verwijderd op basis van hun eigenschappen.</p>
+<p>Een dynamische groep beheert zijn leden zelf: gebruikers of toestellen worden automatisch toegevoegd of verwijderd op basis van hun eigenschappen (bijvoorbeeld land of afdeling). Zo hoef je het lidmaatschap niet handmatig bij te houden.</p>
 <ul>
-<li>Vul net als bij het aanmaken van een statische groep de groepsgegevens in. Selecteer bij <strong>Membership type</strong> Dynamic User.</li>
+<li>Vul de groepsgegevens in zoals bij een assigned groep. Selecteer bij <strong>Membership type</strong> de optie <strong>Dynamic User</strong>.</li>
 <li>Klik op <strong>Add dynamic query</strong>.</li>
 <li>Kies een <strong>property</strong>.</li>
 <li>Selecteer een <strong>operator</strong>.</li>
-<li>Geef een <strong>value</strong> in voor de regel.</li>
-<li>Klik op <strong>Save</strong> om de dynamische regel toe te passen.</li>
-<li>Klik op <strong>Create</strong> om het aanmaken van de groep af te ronden.</li>
+<li>Geef een <strong>value</strong> in.</li>
+<li>Klik op <strong>Save</strong> om de regel op te slaan.</li>
+<li>Klik op <strong>Create</strong> om de groep aan te maken.</li>
 </ul>
-<p>Leden worden niet onmiddellijk aan een dynamische groep toegevoegd. Microsoft geeft aan dat het tot 24 uur kan duren voordat een dynamische groep volledig is opgevuld. In de praktijk gebeurt dat meestal binnen enkele seconden tot enkele minuten, afhankelijk van het aantal gebruikers in je Entra-directory.</p>
+<p>Leden worden niet onmiddellijk toegevoegd. Volgens Microsoft kan het tot 24 uur duren voordat een dynamische groep volledig is opgevuld. In de praktijk gaat het meestal sneller: enkele seconden tot minuten, afhankelijk van het aantal gebruikers in je tenant.</p>
 <!-- <video controls autoplay loop muted playsinline preload="metadata" src="assets/EntraDynamicGroup.mp4" aria-label="EntraStaticGroup"></video> -->
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/EntraDynamicGroup.mp4" type="video/mp4">
@@ -2645,22 +2645,22 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Als je een regel wil maken waarbij meer dan één waarde aanvaard moet worden, kan je de operator <strong>in</strong> gebruiken. Het veld value moet dan als volgt ingevuld worden: <code>["&lt;value 1&gt;", "&lt;value 2&gt;", ... ]</code></p>
+<p>Wil je meerdere waarden toelaten in één regel, gebruik dan de operator <strong>in</strong>. Vul het veld value in als volgt: <code>["&lt;value 1&gt;", "&lt;value 2&gt;", ... ]</code></p>
 <p>Voorbeeld:
 <code>["France", "Belgium", "Netherlands"]</code></p>
 </div>
 <h2 id="licenties-aan-groepen-toewijzen">Licenties aan groepen toewijzen<a class="headerlink" href="#licenties-aan-groepen-toewijzen" title="Permanent link">&para;</a></h2>
-<p>Net zoals je licenties aan individuele gebruikers kan toewijzen, kan je ze ook aan groepen toewijzen. Een typische workflow is:</p>
+<p>Je kan licenties ook aan een groep toewijzen in plaats van aan elke gebruiker afzonderlijk. Dat bespaart veel werk en voorkomt fouten. Een typische werkwijze:</p>
 <ul>
 <li>Maak een dynamische Security Group aan.</li>
-<li>Wijs een licentie toe aan deze dynamische groep.</li>
-<li>Wanneer een nieuwe gebruiker met een specifieke eigenschap wordt aangemaakt, wordt hij automatisch aan de groep toegevoegd en krijgt hij de licentie.</li>
+<li>Wijs een licentie toe aan die groep.</li>
+<li>Maak je een nieuwe gebruiker aan met de juiste eigenschap, dan wordt hij automatisch lid van de groep en krijgt hij de licentie.</li>
 </ul>
 <p><img alt="Licenties via een dynamische groep" src="../assets/diagram-licentie-via-groep.png" /></p>
-<p>Onderstaande stappen tonen hoe je een licentie aan een groep toewijst:</p>
+<p>Zo wijs je een licentie aan een groep toe:</p>
 <ul>
 <li>Ga naar het <span class="we-app we-m365">Microsoft 365 admin center</span>: <strong><a href="https://admin.cloud.microsoft">https://admin.cloud.microsoft</a></strong>.</li>
-<li>Navigeer in het linkermenu naar <strong>Teams &amp; groups</strong> en klik op <strong>Active teams &amp; groups</strong>.</li>
+<li>Ga in het linkermenu naar <strong>Teams &amp; groups</strong> &gt; <strong>Active teams &amp; groups</strong>.</li>
 <li>Selecteer in het bovenste menu <strong>Security groups</strong>.</li>
 <li>Klik op de groep waaraan je een licentie wil toewijzen.</li>
 <li>Selecteer <strong>Licenses and apps</strong>.</li>
@@ -2673,8 +2673,8 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </video>
 
 <h2 id="rollen-toewijzen">Rollen toewijzen<a class="headerlink" href="#rollen-toewijzen" title="Permanent link">&para;</a></h2>
-<p>In het vorige hoofdstuk (4-Microsoft 365) gaven we een overzicht van alle standaardrollen die beschikbaar zijn in M365. Nu we geleerd hebben hoe we groepen aanmaken, komen we hierop terug en gebruiken we de groepen om rollen toe te wijzen.</p>
-<p>Om een standaardrol aan een groep toe te wijzen, gebruik je een <strong>role-assignable Security Group</strong>. Dit type groep wordt gebruikt om dezelfde beheerdersmachtigingen aan meerdere gebruikers te geven. Dynamische groepen kunnen hiervoor niet gebruikt worden.</p>
+<p>In hoofdstuk 4 (Microsoft 365) zag je de standaardrollen van M365. Nu je groepen kan aanmaken, gebruik je ze om rollen toe te wijzen. Dat is overzichtelijker dan rollen aan individuele gebruikers te geven.</p>
+<p>Om een rol aan een groep toe te wijzen, gebruik je een <strong>role-assignable Security Group</strong>. Hiermee geef je dezelfde beheerdersmachtigingen aan meerdere gebruikers. Een dynamische groep kan hiervoor niet gebruikt worden: een eigenschap van een gebruiker zou anders automatisch beheerdersrechten kunnen geven.</p>
 <ol>
 <li>Ga in <span class="we-app we-entra">Entra ID</span> naar <strong>Groups</strong> en klik op <strong>New group</strong>.</li>
 <li>Kies <strong>Security</strong> als groepstype en <strong>Assigned</strong> als lidmaatschapstype.</li>
@@ -2687,16 +2687,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
   <source src=".././assets/RoleGroup.mp4" type="video/mp4">
 </video>
 
-<p>Elk lid van de groep krijgt de machtigingen die bij de rol horen. Wanneer een gebruiker uit de groep wordt verwijderd, verliest hij ook die machtigingen. Wijs enkel de rol toe die nodig is voor de taken van de groep en gebruik een afzonderlijke groep voor elke rol.</p>
-<p>Voorbeelden uit de praktijk:</p>
+<p>Elk lid van de groep krijgt de machtigingen van de rol. Verwijder je een gebruiker uit de groep, dan verliest hij die machtigingen. Wijs enkel de rol toe die de groep nodig heeft (least privilege) en gebruik een afzonderlijke groep per rol.</p>
+<p>Voorbeelden:</p>
 <ul>
-<li><strong>Helpdeskgroep</strong>: leden krijgen de rol <strong>Password administrator</strong>, zodat ze wachtwoorden kunnen resetten zonder volledige beheerdersmachtigingen te krijgen.</li>
+<li><strong>Helpdeskgroep</strong>: leden krijgen de rol <strong>Password administrator</strong>, zodat ze wachtwoorden kunnen resetten zonder volledige beheerdersrechten.</li>
 <li><strong>Groep voor gebruikersbeheer</strong>: het IT-supportteam krijgt de rol <strong>User administrator</strong> om gebruikersaccounts aan te maken, uit te schakelen en bij te werken.</li>
 <li><strong>Groep voor licentiebeheer</strong>: het team voor applicatiebeheer krijgt de rol <strong>License administrator</strong> om Microsoft 365-licenties toe te wijzen en te verwijderen.</li>
-<li><strong>Groep Global administrator</strong>: deze groep moet zo weinig mogelijk leden bevatten en mag enkel gebruikt worden voor taken die volledige toegang vereisen.</li>
+<li><strong>Groep Global administrator</strong>: deze groep heeft zo weinig mogelijk leden en wordt enkel gebruikt voor taken die volledige toegang vereisen.</li>
 </ul>
 <h3 id="microsoft-learn">Microsoft Learn<a class="headerlink" href="#microsoft-learn" title="Permanent link">&para;</a></h3>
-<p>Op de volgende Microsoft Learn-pagina vind je een gedetailleerd overzicht van groepsbeheer:</p>
+<p>Op de volgende Microsoft Learn-pagina vind je uitleg over groepsbeheer:</p>
 <ul>
 <li>Een groep aanmaken</li>
 <li>Leden of eigenaars aan een groep toevoegen</li>

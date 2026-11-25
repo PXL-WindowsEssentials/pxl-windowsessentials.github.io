@@ -2693,28 +2693,28 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
-<p>Alle moderne besturingssystemen bieden twee methodes om met het besturingssysteem zelf te werken:</p>
+<p>Alle moderne besturingssystemen bieden twee manieren om met het besturingssysteem te werken:</p>
 <ul>
 <li><strong>GUI</strong>: <strong>G</strong>raphical <strong>U</strong>ser <strong>I</strong>nterface</li>
 <li><strong>CLI</strong>: <strong>C</strong>ommand <strong>L</strong>ine <strong>I</strong>nterface</li>
 </ul>
-<p>In dit hoofdstuk richten we ons op de tweede van deze twee belangrijkste interactiemethodes.</p>
+<p>In dit hoofdstuk richten we ons op de tweede: de CLI.</p>
 <h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
-<p>Hoewel de GUI een van de meest gebruikte interactiemethodes voor Windows is, geeft de CLI (eens je ze onder de knie hebt) je diepgaandere controle over het besturingssysteem zelf. Met de CLI kan je onder meer uitvoeren:</p>
+<p>De GUI is het meest gebruikt, maar de CLI geeft je (eens je ze onder de knie hebt) meer controle over het besturingssysteem. Ze is ook sneller voor herhalende taken en kan geautomatiseerd worden met scripts. Met de CLI kan je onder meer:</p>
 <ul>
-<li>Bestandsbeheer</li>
-<li>Systeemconfiguratie</li>
-<li>Gebruikersbeheer</li>
-<li>Diagnostiek</li>
-<li>Applicatiebeheer</li>
-<li>Beveiligingsbeheer</li>
+<li>bestanden beheren</li>
+<li>het systeem configureren</li>
+<li>gebruikers beheren</li>
+<li>problemen diagnosticeren</li>
+<li>applicaties beheren</li>
+<li>beveiliging beheren</li>
 <li>...</li>
 </ul>
-<p>Als systeem- en netwerkengineer is het noodzakelijk dat je de CLI kan gebruiken, zeker voor Windows en alle cloudgerelateerde services.</p>
-<p>De eerste versie van de Microsoft-besturingssystemen, MS-DOS (en alle andere besturingssystemen in het begin van het computertijdperk), was uitsluitend tekstgebaseerd, waardoor de CLI de enige beschikbare interactiemethode was. Vanaf Windows 1.0 ontwikkelde Microsoft de eerste GUI, die je kon uitvoeren nadat je de specifieke GUI-applicatie had gestart. Tot Windows XP steunden de Windows-versies sterk op de kernfuncties van MS-DOS en draaiden ze dus bovenop de CLI van MS-DOS.</p>
-<p>Vanaf Windows XP ontwikkelde Microsoft het besturingssysteem van de grond af opnieuw en werd de GUI de belangrijkste interactiemethode van het besturingssysteem. De GUI draaide niet langer bovenop de CLI, maar was een integraal onderdeel van het besturingssysteem. Omdat de meeste power users echter gewend waren aan de CLI, hield Microsoft de CLI in leven via de applicatie Windows Command Prompt. Zelfs in de moderne versie Windows 11 is Command Prompt nog altijd beschikbaar.</p>
-<p>In het begin van de jaren 2000 raakte Command Prompt echter achterop en werd de nood aan een krachtigere en flexibelere CLI steeds groter. Om aan die behoefte te voldoen, ontwikkelde Microsoft PowerShell. Dit is een objectgeoriënteerde shell met geavanceerdere functionaliteit en de mainstream-shell voor alle services van Microsoft.</p>
-<p>In de rest van deze cursus gebruiken we enkel PowerShell voor CLI-interactie met Windows.</p>
+<p>Als systeem- en netwerkengineer moet je met de CLI kunnen werken, zeker voor Windows en cloudgerelateerde services.</p>
+<p>Het eerste Microsoft-besturingssysteem, MS-DOS, was (net als alle besturingssystemen in het begin van het computertijdperk) uitsluitend tekstgebaseerd. De CLI was dus de enige manier om met de computer te werken. Vanaf Windows 1.0 bood Microsoft een eerste GUI aan, die je moest starten vanuit MS-DOS. Tot Windows ME draaiden de Windows-versies dus bovenop MS-DOS.</p>
+<p>Vanaf Windows NT en Windows XP bouwde Microsoft het besturingssysteem van de grond af opnieuw op. De GUI werd de belangrijkste manier om met Windows te werken en was een integraal onderdeel van het besturingssysteem, in plaats van een laag bovenop de CLI. Omdat veel power users gewend waren aan de CLI, hield Microsoft ze in leven via Windows Command Prompt. Zelfs in Windows 11 is Command Prompt nog beschikbaar.</p>
+<p>Command Prompt raakte in de jaren 2000 echter achterop. Daarom ontwikkelde Microsoft PowerShell: een krachtigere en flexibelere shell die met objecten werkt in plaats van met platte tekst. PowerShell is vandaag de standaardshell voor het beheer van alle Microsoft-diensten.</p>
+<p>In de rest van deze cursus gebruiken we enkel PowerShell voor de CLI van Windows.</p>
 <h3 id="powershell-starten">PowerShell starten<a class="headerlink" href="#powershell-starten" title="Permanent link">&para;</a></h3>
 <p>Je kan PowerShell op drie manieren starten:</p>
 <ul>
@@ -2722,12 +2722,12 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Via de Terminal-app</li>
 <li>Via Visual Studio Code</li>
 </ul>
-<p>De meeste gebruikers geven de voorkeur aan de Terminal-app omdat je er meerdere tabbladen kan gebruiken. Zo kan je meerdere cmdlets naast elkaar uitvoeren zonder te wachten tot de vorige cmdlet een resultaat geeft.</p>
+<p>De meeste gebruikers verkiezen de Terminal-app omdat je er meerdere tabbladen kan gebruiken. Zo kan je meerdere cmdlets naast elkaar uitvoeren zonder te wachten tot de vorige klaar is.</p>
 <p>Zo start je PowerShell vanuit het Startmenu:</p>
 <ol>
 <li>Klik op het <strong>Startmenu</strong> of op de <strong>zoekbalk</strong> in de taakbalk.</li>
 <li>Typ <code>powershell</code>.</li>
-<li>Klik op <strong>Windows PowerShell</strong>. Er opent een venster met een prompt in je gebruikersmap, bijvoorbeeld <code>PS C:\Users\&lt;gebruikersnaam&gt;&gt;</code>.</li>
+<li>Klik op <strong>Windows PowerShell</strong>. Er opent een venster met een prompt in je gebruikersmap, bijvoorbeeld <code>PS C:\Users\&lt;gebruikersnaam&gt;</code>.</li>
 </ol>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/Powershell.mp4" type="video/mp4">
@@ -2744,23 +2744,23 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </video>
 
 <h3 id="standaardgebruiker-vs-administrator">Standaardgebruiker vs administrator<a class="headerlink" href="#standaardgebruiker-vs-administrator" title="Permanent link">&para;</a></h3>
-<p>Standaard opent de PowerShell-shell (of je nu de shell opende via de PowerShell-terminalapp of via de Terminal-app) met een standaardgebruikersprofiel. Deze shell draait onder je huidige gebruiker en laat dus alle acties toe volgens je rechten binnen het besturingssysteem. Zodra je echter cmdlets moet uitvoeren waarvoor administratorrechten nodig zijn, moet je PowerShell starten onder het administratorprofiel. Zelfs als je gebruiker lid is van de groep Administrators, moet je PowerShell nog altijd onder het administratorprofiel openen voor administratieve acties.</p>
+<p>PowerShell start standaard met de rechten van een gewone gebruiker, ook als je via de PowerShell-app of de Terminal-app opent. Dat is veiliger: een fout of een kwaadaardig script kan dan minder schade aanrichten. Voor cmdlets die administratorrechten vragen, moet je PowerShell als administrator starten. Dat geldt ook als je gebruiker lid is van de groep Administrators.</p>
 <p>Zo start je PowerShell als administrator:</p>
 <ol>
 <li>Typ <code>powershell</code> in het Startmenu.</li>
 <li>Klik in het rechterpaneel op <strong>Run as administrator</strong> (of klik met de rechtermuisknop op <strong>Windows PowerShell</strong> en kies <strong>Run as administrator</strong>).</li>
 <li>Bevestig de melding van gebruikersaccountbeheer (UAC) met <strong>Yes</strong>.</li>
-<li>In de titelbalk staat nu <strong>Administrator: Windows PowerShell</strong> en de prompt staat in <code>C:\WINDOWS\system32</code>.</li>
+<li>In de titelbalk staat nu <strong>Administrator: Windows PowerShell</strong> en de prompt staat in <code>C:\WINDOWS\system32</code>. Zo herken je een shell met administratorrechten.</li>
 </ol>
 <video controls autoplay loop muted playsinline>
   <source src=".././assets/pwsadm.mp4" type="video/mp4">
 </video>
 
 <h3 id="cmdlets">Cmdlets<a class="headerlink" href="#cmdlets" title="Permanent link">&para;</a></h3>
-<p>Wanneer je in PowerShell een actie uitvoert, gebeurt dat altijd via een cmdlet. Een cmdlet is het commando of de actie die je in PowerShell uitvoert. Alle cmdlets zijn op dezelfde manier opgebouwd: <code>Verb-Noun</code></p>
+<p>Een cmdlet (uitspraak: "command-let") is het commando waarmee je in PowerShell een actie uitvoert. Alle cmdlets zijn op dezelfde manier opgebouwd: <code>Verb-Noun</code>. Daardoor kan je de naam van een cmdlet vaak raden.</p>
 <p><img alt="VerbNoun" src="../assets/cmdlet.jpg" /></p>
-<p>Het verb (werkwoord) is altijd de actie die we willen uitvoeren en het noun (zelfstandig naamwoord) geeft aan op welk onderdeel we de actie willen uitvoeren.</p>
-<p>De volgende tabel geeft een overzicht van enkele veelgebruikte verbs in PowerShell.</p>
+<p>Het verb (werkwoord) is de actie die je wil uitvoeren en het noun (zelfstandig naamwoord) is het onderdeel waarop je die actie uitvoert. <code>Get-Process</code> haalt dus de lijst van processen op.</p>
+<p>Enkele veelgebruikte verbs:</p>
 <table>
 <thead>
 <tr>
@@ -2792,7 +2792,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </tr>
 <tr>
 <td>Write</td>
-<td>Tekst of gegevens uitvoeren</td>
+<td>Tekst of gegevens weergeven</td>
 <td>Write-Output</td>
 </tr>
 <tr>
@@ -2804,53 +2804,51 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </table>
 <p><a href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.4">Approved Verbs for PowerShell Commands - Microsoft Learn</a></p>
 <h3 id="zoeken-en-help">Zoeken en help<a class="headerlink" href="#zoeken-en-help" title="Permanent link">&para;</a></h3>
-<p>Wanneer je PowerShell voor het eerst gebruikt, kan het ontmoedigend zijn. Met meer dan 800 standaardcmdlets in PowerShell is het een titanenwerk om ze allemaal van buiten te kennen. Zelfs ervaren PowerShell-gebruikers kennen niet alle commando's van buiten. Gelukkig heeft Microsoft twee speciaal ontworpen cmdlets om je te helpen de juiste cmdlet voor je taak te vinden.</p>
+<p>PowerShell heeft meer dan 800 standaardcmdlets. Niemand kent ze allemaal van buiten, ook ervaren gebruikers niet. Belangrijker is dat je snel de juiste cmdlet kan vinden en begrijpen. Daarvoor heeft Microsoft twee cmdlets ontworpen: <code>Get-Command</code> en <code>Get-Help</code>.</p>
 <h4 id="get-command">Get-Command<a class="headerlink" href="#get-command" title="Permanent link">&para;</a></h4>
-<p>De eerste cmdlet is <strong>Get-Command</strong>.
-Met deze cmdlet kan je zoeken in de databank van alle ingeschakelde cmdlets.</p>
+<p>Met <strong>Get-Command</strong> zoek je in alle beschikbare cmdlets naar de cmdlet die je nodig hebt.</p>
 <p>Bijvoorbeeld:</p>
 <ul>
-<li><code>Get-Command *process*</code> geeft een lijst van alle PowerShell-cmdlets waarin het woord process voorkomt.</li>
-<li><code>Get-Command *user</code> geeft een lijst van alle PowerShell-cmdlets die eindigen op user.</li>
-<li><code>Get-Command get-File*</code> geeft een lijst van alle PowerShell-cmdlets die beginnen met get-file.</li>
+<li><code>Get-Command *process*</code> geeft alle cmdlets waarin het woord process voorkomt.</li>
+<li><code>Get-Command *user</code> geeft alle cmdlets die eindigen op user.</li>
+<li><code>Get-Command get-File*</code> geeft alle cmdlets die beginnen met get-file.</li>
 </ul>
-<p>De oplettende studenten hebben gemerkt dat de plaatsing van de <code>*</code> belangrijk is, want het resultaat verandert naargelang de plaats van de <code>*</code>:</p>
+<p>De plaats van de <code>*</code> (een wildcard die voor eender welke tekens staat) bepaalt het resultaat:</p>
 <ul>
 <li><code>search*</code>: alle cmdlets die beginnen met de zoekterm.</li>
 <li><code>*search</code>: alle cmdlets die eindigen op de zoekterm.</li>
 <li><code>*search*</code>: alle cmdlets waarin de zoekterm voorkomt.</li>
 </ul>
 <h4 id="get-help">Get-Help<a class="headerlink" href="#get-help" title="Permanent link">&para;</a></h4>
-<p>Nu we het commando hebben gevonden dat we zochten, moeten we nog onthouden wat het commando doet en hoe we het moeten gebruiken. Daarvoor kunnen we de cmdlet <code>Get-Help</code> gebruiken. Deze cmdlet geeft een gedetailleerde uitleg over wat de cmdlet doet en hoe we hem moeten gebruiken. Als we de juiste extra parameters meegeven, krijgen we zelfs nog meer details.</p>
+<p>Heb je de cmdlet gevonden, dan wil je weten wat ze precies doet en hoe je ze gebruikt. Daarvoor gebruik je <code>Get-Help</code>. Met extra parameters krijg je meer of minder details.</p>
 <ul>
-<li><code>Get-Help Get-Service</code> opent een samengevatte helppagina van de cmdlet Get-Service</li>
-<li><code>Get-Help Get-Service -Full</code> opent de volledige helppagina van de cmdlet Get-Service</li>
-<li><code>Get-Help Get-Service -Online</code> opent de volledige online helppagina van de cmdlet Get-Service</li>
-<li><code>Get-Help Get-Service -Examples</code> opent een helppagina met enkele veelvoorkomende voorbeelden</li>
-<li><code>Get-Help Get-Service -Parameter *</code> opent een helppagina met een overzicht van alle beschikbare parameters voor de cmdlet Get-Service (meer details over parameters volgen later in deze cursus)</li>
+<li><code>Get-Help Get-Service</code> toont een samengevatte helppagina van Get-Service.</li>
+<li><code>Get-Help Get-Service -Full</code> toont de volledige helppagina.</li>
+<li><code>Get-Help Get-Service -Online</code> opent de online helppagina in je browser.</li>
+<li><code>Get-Help Get-Service -Examples</code> toont enkele voorbeelden. Dit is meestal het snelst om te begrijpen hoe je een cmdlet gebruikt.</li>
+<li><code>Get-Help Get-Service -Parameter *</code> toont alle parameters van Get-Service (meer over parameters verderop).</li>
 </ul>
 <h3 id="alias">Alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h3>
-<p>Door de <code>Verb-Noun</code>-syntax kunnen PowerShell-cmdlets lang worden. Bijvoorbeeld: <code>Enable-MicrosoftUpdateServiceManagerClient</code>. Dergelijke cmdlets onthouden en intypen in de terminal kan heel omslachtig zijn. Daarom introduceerde Microsoft het concept van aliassen. Dit zijn afkortingen van de cmdlet of kortere cmdlets. De aliassen zijn korter en dus makkelijker te onthouden. Om de juiste alias van een bepaalde cmdlet te vinden, gebruik je de cmdlet <code>Get-Alias</code>.</p>
+<p>Door de <code>Verb-Noun</code>-syntax kunnen cmdlets lang worden, bijvoorbeeld <code>Enable-MicrosoftUpdateServiceManagerClient</code>. Daarom bestaan er aliassen: kortere namen voor een cmdlet (zo is <code>dir</code> een alias voor <code>Get-ChildItem</code>). Met <code>Get-Alias</code> zoek je de alias van een cmdlet.</p>
 <p>Bijvoorbeeld:</p>
 <ul>
-<li><code>Get-Alias *cd*</code>: geeft een overzicht van alle bekende aliassen waarin 'cd' voorkomt</li>
-<li><code>Get-Alias -Definition Stop-Process</code>: geeft een overzicht van alle bekende aliassen voor de cmdlet <code>Stop-Process</code>.</li>
+<li><code>Get-Alias *cd*</code> geeft alle aliassen waarin "cd" voorkomt.</li>
+<li><code>Get-Alias -Definition Stop-Process</code> geeft alle aliassen van de cmdlet <code>Stop-Process</code>.</li>
 </ul>
-<p>De oplettende student heeft gemerkt dat we hetzelfde zoekprincipe met de <code>*</code> gebruiken als bij de cmdlet <code>Get-Command</code>.</p>
+<p>De <code>*</code> werkt hier op dezelfde manier als bij <code>Get-Command</code>.</p>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p>Elke cmdlet bestaat uit de cmdlet zelf en extra opties die beschikbaar zijn voor die specifieke cmdlet. Deze opties noemen we <strong>parameters</strong>. Alle parameters roep je aan met het teken <strong>-</strong>, gevolgd door de eigenlijke parameter en, indien nodig, een waarde voor de parameter.</p>
+<p>Met parameters geef je een cmdlet extra opties mee. Elke cmdlet heeft zijn eigen parameters. Je geeft een parameter op met een <strong>-</strong>, gevolgd door de naam van de parameter en, indien nodig, een waarde.</p>
 <p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Get-Process –Name *chrome*
 </span></code></pre></div>
-<p>In dit voorbeeld vragen we PowerShell om een overzicht van alle huidige processen waarvan de naam <code>chrome</code> bevat.</p>
-<p>Elke cmdlet heeft meerdere parameters die je in dezelfde cmdlet naast elkaar kan gebruiken.</p>
+<p>Dit toont alle huidige processen waarvan de naam <code>chrome</code> bevat.</p>
+<p>Je kan meerdere parameters combineren in dezelfde cmdlet.</p>
 <p>Bijvoorbeeld:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Get-ChildItem -File -Recurse -Name *test*
 </span></code></pre></div>
-<p>Zoals eerder vermeld is het een titanenwerk om alle cmdlets van buiten te leren, laat staan alle parameters van elke cmdlet. <code>Get-Help cmdlet -Parameter *</code> geeft je een overzicht van alle parameters en hoe je ze correct gebruikt.</p>
+<p>Ook alle parameters van buiten leren is onmogelijk. <code>Get-Help &lt;cmdlet&gt; -Parameter *</code> toont alle parameters en hoe je ze gebruikt.</p>
 <h4 id="parameters-en-volgorde">Parameters en volgorde<a class="headerlink" href="#parameters-en-volgorde" title="Permanent link">&para;</a></h4>
-<p>Wanneer we leren werken met parameters, is het best om altijd de volledige parameternamen te schrijven. Zo blijven je commando's leesbaar en voorkom je fouten.</p>
-<p>Cmdlets ondersteunen echter ook positioneel en standaardgedrag.</p>
+<p>Schrijf als beginner altijd de volledige parameternaam. Zo blijven je commando's leesbaar en maak je minder fouten. Je kan de parameternaam soms weglaten, omdat PowerShell parameters ook op positie en met standaardwaarden kan koppelen.</p>
 <p>Deze twee commando's zijn bijvoorbeeld gelijkwaardig:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="n">Spooler</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Get-Service</span> <span class="n">Spooler</span>
@@ -2859,8 +2857,7 @@ Met deze cmdlet kan je zoeken in de databank van alle ingeschakelde cmdlets.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Get-ChildItem</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span>
 </span></code></pre></div>
-<p>In beide voorbeelden zie je dat het niet nodig is om altijd de volledige parameternaam te schrijven. We moeten echter voorzichtig zijn, want niet alle parameternamen mogen weggelaten worden: elke parameter heeft metadata die bepaalt hoe deze parameter gebruikt kan worden.
-Deze gegevens staan in de helppagina's:</p>
+<p>In beide voorbeelden mag de parameternaam dus wegblijven. Dat geldt echter niet voor elke parameter: elke parameter heeft metadata die bepaalt hoe je hem kan gebruiken. Die metadata staat in de helppagina:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Get-Help</span> <span class="nb">Get-ChildItem</span> <span class="n">-Parameter</span> <span class="n">Path</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Get-Help</span> <span class="nb">Get-ChildItem</span> <span class="n">-Parameter</span> <span class="p">*</span>
 </span></code></pre></div>
@@ -2874,14 +2871,14 @@ Deze gegevens staan in de helppagina's:</p>
 <p>Betekenis van deze velden:</p>
 <ul>
 <li><code>Required?</code>: moet deze parameter opgegeven worden?</li>
-<li><code>Position?</code>: kan hij op volgorde doorgegeven worden (<code>0</code>, <code>1</code>, ...) of moet hij bij naam genoemd worden?</li>
-<li><code>Default value</code>: is er een terugvalwaarde wanneer de parameter weggelaten wordt?</li>
-<li><code>Accept pipeline input?</code>: kunnen waarden uit de pipeline komen?</li>
-<li><code>Accept wildcard characters?</code>: ondersteunt hij patronen zoals <code>*</code> en <code>?</code></li>
+<li><code>Position?</code>: kan je hem op volgorde doorgeven (<code>0</code>, <code>1</code>, ...) of moet je de naam schrijven?</li>
+<li><code>Default value</code>: welke waarde gebruikt PowerShell als je de parameter weglaat?</li>
+<li><code>Accept pipeline input?</code>: kan de waarde uit de pipeline komen? (Dit komt later aan bod.)</li>
+<li><code>Accept wildcard characters?</code>: kan je patronen zoals <code>*</code> en <code>?</code> gebruiken?</li>
 </ul>
-<p>Voorlopig zijn we enkel geïnteresseerd in de eerste drie metadata.</p>
+<p>Voorlopig zijn enkel de eerste drie belangrijk.</p>
 <p><strong>Required?</strong></p>
-<p>Elke parameter die required is, heeft een waarde nodig wanneer je de cmdlet uitvoert. Geef je de parameter of de waarde niet op, dan vraagt PowerShell ernaar tijdens het uitvoeren van de cmdlet.</p>
+<p>Een required parameter moet je altijd opgeven. Doe je dat niet, dan vraagt PowerShell er tijdens het uitvoeren naar.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">copy-item</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">cmdlet</span> <span class="nb">Copy-Item</span> <span class="n">at</span> <span class="n">command</span> <span class="n">pipeline</span> <span class="k">position</span> <span class="n">1</span>
@@ -2890,10 +2887,10 @@ Deze gegevens staan in de helppagina's:</p>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p><strong>Position?</strong></p>
-<p><code>Position</code> vertelt PowerShell waar een parameterwaarde in het commando mag staan.</p>
+<p><code>Position</code> bepaalt of je de parameternaam mag weglaten.</p>
 <ul>
-<li><code>named</code> betekent dat je de parameternaam moet schrijven (bijvoorbeeld <code>-Path</code>).</li>
-<li>een getal (<code>0</code>, <code>1</code>, ...) betekent dat je de parameternaam mag weglaten en waarden op volgorde mag doorgeven.</li>
+<li><code>named</code>: je moet de parameternaam schrijven (bijvoorbeeld <code>-Path</code>).</li>
+<li>een getal (<code>0</code>, <code>1</code>, ...): je mag de parameternaam weglaten en de waarden op volgorde doorgeven.</li>
 </ul>
 <p>Je kan dit voor <code>Copy-Item</code> nagaan met:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-Help</span> <span class="nb">Copy-Item</span> <span class="n">-Parameter</span> <span class="n">Path</span>
@@ -2935,12 +2932,12 @@ Deze gegevens staan in de helppagina's:</p>
 <li>eerste waarde -&gt; <code>Path</code> (positie 0)</li>
 <li>tweede waarde -&gt; <code>Destination</code> (positie 1)</li>
 </ul>
-<p>Als je de volgorde omkeert, verwijst je kopieerbewerking naar de verkeerde bron/bestemming.</p>
+<p>Keer je de volgorde om, dan kopieer je in de verkeerde richting.</p>
 <p><strong>Default</strong></p>
-<p>Als je sommige parameters weglaat, kan PowerShell standaardwaarden gebruiken. Voorbeeld:</p>
+<p>Laat je een parameter weg, dan gebruikt PowerShell soms een standaardwaarde. Voorbeeld:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Get-ChildItem</span>
 </span></code></pre></div>
-<p>Zonder <code>-Path</code> gebruikt het de huidige locatie.</p>
+<p>Zonder <code>-Path</code> gebruikt <code>Get-ChildItem</code> de huidige locatie.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span> <span class="nb">get-help</span> <span class="nb">Get-ChildItem</span> <span class="n">-Parameter</span> <span class="n">path</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">-Path</span> <span class="p">&lt;</span><span class="n">System</span><span class="p">.</span><span class="n">String</span><span class="p">[]&gt;</span>
@@ -2956,10 +2953,10 @@ Deze gegevens staan in de helppagina's:</p>
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">pws</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p><strong>Switch</strong></p>
-<p>Switch-parameters zijn parameters zonder waarde, bijvoorbeeld:</p>
+<p>Een switch is een parameter zonder waarde. Hij staat aan als je hem schrijft, en uit als je hem weglaat. Bijvoorbeeld:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
 </span></code></pre></div>
-<p>Zowel <code>-Recurse</code> als <code>-Force</code> zijn ofwel aanwezig (<code>$true</code>) ofwel niet aanwezig (<code>$false</code>).</p>
+<p>Zowel <code>-Recurse</code> (ook submappen) als <code>-Force</code> (ook verborgen items) staan aan (<code>$true</code>) of uit (<code>$false</code>).</p>
 
 
   <nav class="md-tags" >

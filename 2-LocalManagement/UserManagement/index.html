@@ -2393,11 +2393,11 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="1-microsoft-management-console-users-and-groups">1. Microsoft Management Console: Users and groups<a class="headerlink" href="#1-microsoft-management-console-users-and-groups" title="Permanent link">&para;</a></h1>
-<p>Het beheer van lokale gebruikers en groepen gebeurt via de snap-in <strong>"Local Users and Groups"</strong> in de <strong>Microsoft Management Console (MMC)</strong>.</p>
+<p>Je beheert lokale gebruikers en groepen met de snap-in <strong>"Local Users and Groups"</strong> van de <strong>Microsoft Management Console (MMC)</strong>. Je hebt hiervoor beheerdersrechten nodig.</p>
 <ul>
-<li>Open het Windows Start Menu.</li>
-<li>Typ <strong>"lusrmgr.msc"</strong>.</li>
-<li>Druk op Enter of selecteer <strong>"Local Users and Groups"</strong>.</li>
+<li>Open het Start Menu.</li>
+<li>Typ <strong>lusrmgr.msc</strong>.</li>
+<li>Druk op Enter of selecteer <strong>Local Users and Groups</strong>.</li>
 </ul>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/MMCLusrmgr.mp4" aria-label="MMCLusrmgr"></video>
 
@@ -2405,16 +2405,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <h2 id="21-een-lokale-gebruiker-toevoegen">2.1. Een lokale gebruiker toevoegen<a class="headerlink" href="#21-een-lokale-gebruiker-toevoegen" title="Permanent link">&para;</a></h2>
 <p>Je kan als volgt een lokale gebruiker toevoegen:</p>
 <ul>
-<li>Zorg dat je op het tabblad <strong>Users</strong> staat.</li>
-<li>Klik met de rechtermuisknop en selecteer <strong>New User</strong>.</li>
+<li>Selecteer de map <strong>Users</strong>.</li>
+<li>Klik met de rechtermuisknop in het lege gedeelte en selecteer <strong>New User</strong>.</li>
 <li>Vul de <strong>gebruikersgegevens</strong> in: user name, full name, description en password.</li>
-<li>Klik op <strong>Create</strong></li>
-<li>Klik op <strong>Close</strong></li>
+<li>Klik op <strong>Create</strong>.</li>
+<li>Klik op <strong>Close</strong>.</li>
 </ul>
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/MMCCreateUser.mp4" aria-label="MMCAddUser"></video>
 
 <h2 id="22-wachtwoorden-resetten">2.2. Wachtwoorden resetten<a class="headerlink" href="#22-wachtwoorden-resetten" title="Permanent link">&para;</a></h2>
-<p>Je kan als volgt het wachtwoord van een lokale gebruiker resetten:</p>
+<p>Een reset is nuttig als een gebruiker zijn wachtwoord vergeten is. De gebruiker verliest daarbij wel toegang tot versleutelde gegevens (bijvoorbeeld EFS-bestanden en opgeslagen wachtwoorden). Zo reset je het wachtwoord:</p>
 <ul>
 <li><strong>Klik met de rechtermuisknop</strong> op de gebruiker.</li>
 <li>Selecteer <strong>Set Password</strong>.</li>
@@ -2423,14 +2423,14 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Klik op <strong>OK</strong>.</li>
 </ul>
 <h2 id="23-een-gebruiker-uitschakelen">2.3. Een gebruiker uitschakelen<a class="headerlink" href="#23-een-gebruiker-uitschakelen" title="Permanent link">&para;</a></h2>
-<p>Je kan een gebruiker uitschakelen. Daardoor kan die niet meer aanmelden op het systeem, maar de account wordt niet verwijderd.</p>
+<p>Een uitgeschakelde gebruiker kan niet meer aanmelden, maar de account en de gegevens blijven bestaan. Dat is veiliger dan verwijderen, bijvoorbeeld als een medewerker tijdelijk afwezig is.</p>
 <ul>
 <li><strong>Dubbelklik</strong> op de gebruiker die je wil uitschakelen.</li>
 <li>Vink het selectievakje <strong>Account is disabled</strong> aan.</li>
 <li>Klik op <strong>OK</strong>.</li>
 </ul>
 <h2 id="24-een-gebruiker-verwijderen">2.4. Een gebruiker verwijderen<a class="headerlink" href="#24-een-gebruiker-verwijderen" title="Permanent link">&para;</a></h2>
-<p>Je kan een gebruiker van het systeem verwijderen. Als je dat doet, kan je de gebruiker niet meer reactiveren; je moet de account helemaal opnieuw aanmaken.</p>
+<p>Een verwijderde gebruiker kan je niet meer reactiveren. Je moet de account opnieuw aanmaken, en die krijgt een nieuwe SID, waardoor eerdere machtigingen niet meer van toepassing zijn.</p>
 <ul>
 <li><strong>Klik met de rechtermuisknop</strong> op de gebruiker die je wil verwijderen.</li>
 <li>Selecteer <strong>Delete</strong>.</li>
@@ -2438,12 +2438,12 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <h1 id="3-groepen">3. Groepen<a class="headerlink" href="#3-groepen" title="Permanent link">&para;</a></h1>
 <h2 id="31-een-gebruiker-aan-een-groep-toevoegen">3.1. Een gebruiker aan een groep toevoegen<a class="headerlink" href="#31-een-gebruiker-aan-een-groep-toevoegen" title="Permanent link">&para;</a></h2>
-<p>Door een gebruiker toe te voegen aan de groep Administrators, geef je hem lokale beheerdersrechten.</p>
-<p>Je kan als volgt een lokale gebruiker toevoegen aan de groep Administrators:</p>
+<p>Door een gebruiker toe te voegen aan de groep Administrators, geef je hem lokale beheerdersrechten. Doe dit spaarzaam: beheerders kunnen alles op het toestel wijzigen.</p>
+<p>Zo voeg je een lokale gebruiker toe aan de groep Administrators:</p>
 <ul>
-<li>Zorg dat je op het tabblad Groups staat.</li>
-<li><strong>Dubbelklik</strong> op de groep Administrators.</li>
-<li>Klik onderaan op de knop <strong>Add</strong>.</li>
+<li>Selecteer de map <strong>Groups</strong>.</li>
+<li><strong>Dubbelklik</strong> op de groep <strong>Administrators</strong>.</li>
+<li>Klik onderaan op <strong>Add</strong>.</li>
 <li><strong>Geef de volledige gebruikersnaam in</strong> van de gebruiker die je wil toevoegen.</li>
 <li>Klik op <strong>Check Names</strong> om te controleren.</li>
 <li>Klik op <strong>OK</strong>.</li>
@@ -2452,12 +2452,12 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <video controls autoplay loop muted playsinline preload="metadata" src="../assets/MMCAddToAdministrators.mp4" aria-label="MMCLusrmgr"></video>
 
 <h2 id="32-een-gebruiker-uit-een-groep-verwijderen">3.2. Een gebruiker uit een groep verwijderen<a class="headerlink" href="#32-een-gebruiker-uit-een-groep-verwijderen" title="Permanent link">&para;</a></h2>
-<p>Je kan een gebruiker op een gelijkaardige manier uit een groep verwijderen:</p>
+<p>Een gebruiker verwijder je op een gelijkaardige manier uit een groep:</p>
 <ul>
-<li>Zorg dat je op het tabblad <strong>Groups</strong> staat.</li>
-<li><strong>Dubbelklik</strong> op de groep Administrators.</li>
+<li>Selecteer de map <strong>Groups</strong>.</li>
+<li><strong>Dubbelklik</strong> op de groep <strong>Administrators</strong>.</li>
 <li><strong>Selecteer de gebruiker</strong> die je wil verwijderen.</li>
-<li>Klik onderaan op de knop <strong>Remove</strong>.</li>
+<li>Klik onderaan op <strong>Remove</strong>.</li>
 <li>Klik op <strong>OK</strong>.</li>
 </ul>
 <p>De gebruiker is nu verwijderd uit de lokale groep Administrators. De volgende keer dat deze gebruiker zich op dit systeem aanmeldt, heeft hij geen beheerdersrechten meer.</p>

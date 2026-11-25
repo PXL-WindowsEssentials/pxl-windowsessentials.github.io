@@ -2707,8 +2707,8 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 
 <h1 id="apps">Apps<a class="headerlink" href="#apps" title="Permanent link">&para;</a></h1>
-<p>Naast het afdwingen van specifieke configuraties via configuration policies kunnen we met Intune ook applicaties op toestellen uitrollen.</p>
-<p>Bij het installeren van applicaties op Windows-toestellen kunnen we kiezen uit verschillende types applicaties:</p>
+<p>Naast configuration policies kan je met Intune ook applicaties op toestellen uitrollen. Je hoeft dus niet meer bij elk toestel langs te gaan.</p>
+<p>Voor Windows-toestellen kies je uit verschillende apptypes:</p>
 <table>
 <thead>
 <tr>
@@ -2719,7 +2719,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <tbody>
 <tr>
 <td>Microsoft Store (new)</td>
-<td>Apps uit de Microsoft Store die via Intune kunnen worden uitgerold. Dit is de aanbevolen installatiemethode. Applicaties worden automatisch bijgewerkt.</td>
+<td>Apps uit de Microsoft Store. Dit is de aanbevolen methode: de apps worden automatisch bijgewerkt.</td>
 </tr>
 <tr>
 <td>Microsoft 365 Apps</td>
@@ -2727,16 +2727,16 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </tr>
 <tr>
 <td>Line-of-Business (LOB) App</td>
-<td>Applicaties verpakt als MSI-installatiebestanden. Updates moeten handmatig beheerd worden.</td>
+<td>Applicaties verpakt als MSI-installatiebestand. Je beheert updates zelf.</td>
 </tr>
 <tr>
 <td>Windows app (Win32)</td>
-<td>Applicaties verpakt als EXE-installatiebestanden. Updates moeten handmatig beheerd worden.</td>
+<td>Applicaties verpakt als EXE-installatiebestand (verpakt in een .intunewin-bestand). Je beheert updates zelf.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="1-applicaties-installeren">1. Applicaties installeren<a class="headerlink" href="#1-applicaties-installeren" title="Permanent link">&para;</a></h2>
-<p>Deze handleiding toont hoe je een <strong>Microsoft Store (new)</strong>-app installeert via Intune.</p>
+<p>In deze handleiding installeer je een <strong>Microsoft Store (new)</strong>-app via Intune.</p>
 <h3 id="11-een-nieuwe-applicatie-toevoegen">1.1. Een nieuwe applicatie toevoegen<a class="headerlink" href="#11-een-nieuwe-applicatie-toevoegen" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Ga naar <span class="we-app we-intune">Intune admin center</span> (<a href="https://intune.microsoft.com">intune.microsoft.com</a>) en klik in het linkermenu op <strong>Apps</strong>.</li>
@@ -2757,7 +2757,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h3 id="13-app-details">1.3. App-details<a class="headerlink" href="#13-app-details" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Vul de app-eigenschappen in of wijzig ze.</li>
+<li>Controleer de app-eigenschappen en wijzig ze indien nodig.</li>
 <li>Klik op <strong>Next</strong>.</li>
 </ol>
 <p><img alt="AppProperties" src="../assets/AppProperties.png" /></p>
@@ -2769,9 +2769,9 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ol>
 <p><img alt="AppAssignment.png" src="../assets/AppAssignment.png" /></p>
 <ul>
-<li><strong>Required:</strong> de app wordt automatisch geïnstalleerd op alle toestellen die aan de groep zijn toegewezen.</li>
-<li><strong>Available for enrolled devices:</strong> de app is beschikbaar op het toestel, maar de gebruiker moet ze zelf installeren vanuit de Company Portal.</li>
-<li><strong>Uninstall:</strong> de app wordt verwijderd van alle toestellen die aan de groep zijn toegewezen.</li>
+<li><strong>Required:</strong> de app wordt automatisch geïnstalleerd op alle toestellen of gebruikers van de groep.</li>
+<li><strong>Available for enrolled devices:</strong> de gebruiker kiest zelf of hij de app installeert, via de Company Portal.</li>
+<li><strong>Uninstall:</strong> de app wordt verwijderd bij alle toestellen of gebruikers van de groep.</li>
 </ul>
 <p><img alt="Apps toewijzen: Required, Available en Uninstall" src="../assets/diagram-app-toewijzingen.png" /></p>
 <h3 id="15-review-create">1.5. Review + create<a class="headerlink" href="#15-review-create" title="Permanent link">&para;</a></h3>
@@ -2782,26 +2782,23 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><img alt="AppReview" src="../assets/AppReview.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Je kan de installatie van een app die via Intune is uitgerold versnellen door:</p>
-<ul>
-<li>De service Microsoft Intune Management Extension op je Windows-toestel te herstarten</li>
-</ul>
+<p>Je versnelt de installatie door een synchronisatie te starten, zie <a href="../General/#3-synchroniseren">Synchroniseren</a>.</p>
 </div>
 <h2 id="2-controleren">2. Controleren<a class="headerlink" href="#2-controleren" title="Permanent link">&para;</a></h2>
-<p>Je kan Intune gebruiken om te controleren of de applicatie op het toestel is uitgerold.</p>
+<p>Controleer in Intune of de app op de toestellen is geïnstalleerd.</p>
 <ol>
 <li>Ga in het <span class="we-app we-intune">Intune admin center</span> naar <strong>Apps</strong> → <strong>Windows</strong> en open de app die je hebt uitgerold.</li>
 <li>Klik op <strong>Device install status</strong></li>
 </ol>
 <p><img alt="AppStatus" src="../assets/AppInstallStatus.png" /></p>
 <h2 id="3-company-portal">3. Company Portal<a class="headerlink" href="#3-company-portal" title="Permanent link">&para;</a></h2>
-<p>Wanneer je applicaties uitrolt als Required, kunnen gebruikers de app niet van hun toestel verwijderen. Alle apps op die manier uitrollen kan toestellen overladen. Om dat te vermijden, kan je gebruikers toestaan om applicaties zelf te installeren via de Company Portal. De Company Portal is een interne Microsoft Store waarin IT-beheerders bepalen welke applicaties aan eindgebruikers ter beschikking worden gesteld. Elke eindgebruiker kan kiezen welke applicaties hij installeert. Applicaties die niet beschikbaar zijn gesteld in de Company Portal, kunnen niet geïnstalleerd worden.</p>
+<p>Een app die je als Required uitrolt, staat op elk toestel en gebruikers kunnen ze niet verwijderen. Als je alle apps zo uitrolt, worden toestellen overladen. Beter laat je gebruikers de apps die ze nodig hebben zelf installeren via de Company Portal. Dat is een interne Microsoft Store: IT bepaalt welke apps beschikbaar zijn en de gebruiker kiest zelf. Apps die niet in de Company Portal staan, kan de gebruiker niet installeren.</p>
 <h3 id="31-de-company-portal-uitrollen">3.1. De Company Portal uitrollen<a class="headerlink" href="#31-de-company-portal-uitrollen" title="Permanent link">&para;</a></h3>
 <p>Rol de Company Portal-app uit als Microsoft Store (new)-app, als required app op de Windows-toestellen.</p>
 <h3 id="32-een-app-beschikbaar-stellen-in-de-company-portal">3.2. Een app beschikbaar stellen in de Company Portal<a class="headerlink" href="#32-een-app-beschikbaar-stellen-in-de-company-portal" title="Permanent link">&para;</a></h3>
-<p>Een app beschikbaar stellen in de Company Portal verloopt volgens hetzelfde proces als het installeren van een app. Bij het toewijzen van de app <strong>selecteer je echter "Available for enrolled devices" in plaats van "Required".</strong></p>
+<p>Dit werkt zoals het installeren van een app. Bij het toewijzen kies je echter <strong>"Available for enrolled devices" in plaats van "Required".</strong></p>
 <h3 id="33-een-gebruiker-installeert-een-app-vanuit-de-company-portal">3.3. Een gebruiker installeert een app vanuit de Company Portal<a class="headerlink" href="#33-een-gebruiker-installeert-een-app-vanuit-de-company-portal" title="Permanent link">&para;</a></h3>
-<p>De <strong>Company Portal</strong> (in het Nederlands: <em>Bedrijfsportal</em>) toont alle applicaties die <strong>beschikbaar zijn gesteld</strong> aan gebruikers. Om een applicatie te installeren, kan de gebruiker deze stappen volgen:</p>
+<p>De <strong>Company Portal</strong> (in het Nederlands: <em>Bedrijfsportal</em>) toont alle applicaties die voor de gebruiker <strong>beschikbaar zijn gesteld</strong>. Zo installeert de gebruiker een app:</p>
 <ol>
 <li>Open op het <span class="we-app we-windows">Windows-toestel</span> de <strong>Company Portal</strong>.</li>
 <li>Zoek de gewenste applicatie.</li>
