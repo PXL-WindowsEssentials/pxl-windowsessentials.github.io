@@ -2672,6 +2672,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>In deze cursus gebruiken we een group tag en een dynamic device group, in deze volgorde: eerst de group tag op het toestel, daarna de groep, daarna het profiel.</p>
 <p>Wanneer een geregistreerd toestel opstart en verbinding maakt met internet, vraagt Windows aan Autopilot bij welke tenant het hoort en past het deployment profile toe dat eraan is toegewezen.</p>
 <p><img alt="Autopilot: van registratie tot ingeschreven toestel" src="../assets/diagram-autopilot-flow.png" /></p>
+<p>Verplicht zijn het uploaden van de hardware hash, een device group en een deployment profile. De group tag en de configuration profiles zijn optioneel. Zonder group tag vul je de groep op een andere manier, bijvoorbeeld met alle Autopilot-toestellen of handmatig.</p>
 <h2 id="1-autopilot-group-tag">1. Autopilot group tag<a class="headerlink" href="#1-autopilot-group-tag" title="Permanent link">&para;</a></h2>
 <p>Een group tag is een label dat je aan een toestel hangt. Zo kan Entra het toestel automatisch in de juiste groep plaatsen. Deze stap is optioneel, maar we gebruiken ze hier zodat de groep in stap 2 zichzelf vult.</p>
 <ol>
