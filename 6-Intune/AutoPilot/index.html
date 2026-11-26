@@ -1800,6 +1800,17 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </li>
       
         <li class="md-nav__item">
+  <a href="#0-een-tweede-vm-klaarzetten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        0. Een tweede VM klaarzetten
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-autopilot-group-tag" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2471,6 +2482,17 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </li>
       
         <li class="md-nav__item">
+  <a href="#0-een-tweede-vm-klaarzetten" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        0. Een tweede VM klaarzetten
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-autopilot-group-tag" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2652,10 +2674,9 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 
 <h1 id="autopilot">Autopilot<a class="headerlink" href="#autopilot" title="Permanent link">&para;</a></h1>
 <p><strong>Vooraf:</strong> de MDM user scope moet aan staan, anders schrijft het toestel zich niet automatisch in bij Intune. Dat stel je eenmalig in (stap 1 in <a href="../EnrollDevice/">Een toestel inschrijven</a>).</p>
-<p><strong>Gebruik een nieuwe VM.</strong> Test het deployment profile met een nieuwe kloon van je Windows 11 Education-VM, met een eigen <code>uuid.bios</code>. Hoe je die maakt, staat in <a href="../EnrollDevice/">Een toestel inschrijven</a>. De VM uit dat labo is al geregistreerd en ingeschreven. Registreer de nieuwe kloon op dezelfde manier.</p>
 <p>Windows Autopilot bestaat uit twee delen:</p>
 <ol>
-<li><strong>Het toestel registreren.</strong> Je meldt het toestel aan bij Autopilot met zijn hardware hash. Zo weet Microsoft dat het toestel bij jouw tenant hoort. Dit deel heb je al gedaan in <a href="../EnrollDevice/">Een toestel inschrijven</a>. Daar staat ook wat Autopilot, de OOBE en een hardware hash zijn.</li>
+<li><strong>Het toestel registreren.</strong> Je meldt het toestel aan bij Autopilot met zijn hardware hash. Zo weet Microsoft dat het toestel bij jouw tenant hoort. Dit deel ken je uit <a href="../EnrollDevice/">Een toestel inschrijven</a>. Daar staat ook wat Autopilot, de OOBE en een hardware hash zijn.</li>
 <li><strong>Het opstarten regelen.</strong> Je bepaalt hoe het toestel de eerste keer opstart: welke schermen de gebruiker nog ziet, welke naam het toestel krijgt en welke rechten de eerste gebruiker heeft. Dat doe je met een <strong>deployment profile</strong>. Dit deel behandelt deze pagina.</li>
 </ol>
 <p>Zonder deployment profile moet de gebruiker de <strong>Out-of-Box Experience (OOBE)</strong> zelf doorlopen en alle vragen beantwoorden. Met een deployment profile gebeurt dat automatisch, op dezelfde manier voor elk toestel.</p>
@@ -2675,6 +2696,19 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>Wanneer een geregistreerd toestel opstart en verbinding maakt met internet, vraagt Windows aan Autopilot bij welke tenant het hoort en past het deployment profile toe dat eraan is toegewezen.</p>
 <p><img alt="Autopilot: van registratie tot ingeschreven toestel" src="../assets/diagram-autopilot-flow.png" /></p>
 <p>Verplicht zijn het uploaden van de hardware hash, een device group en een deployment profile. De group tag en de configuration profiles zijn optioneel. Zonder group tag vul je de groep op een andere manier, bijvoorbeeld met alle Autopilot-toestellen of handmatig.</p>
+<h2 id="0-een-tweede-vm-klaarzetten">0. Een tweede VM klaarzetten<a class="headerlink" href="#0-een-tweede-vm-klaarzetten" title="Permanent link">&para;</a></h2>
+<p>De VM uit <a href="../EnrollDevice/">Een toestel inschrijven</a> is al geregistreerd in Autopilot en ingeschreven in Intune. Om een deployment profile te testen heb je een toestel nodig dat nog nieuw is. Daarvoor gebruik je een <strong>tweede VM</strong>: een kloon van je Windows 11 Education-VM.</p>
+<p>Een hardware hash is gebaseerd op onder meer de UUID van het toestel. Een gekopieerde VM heeft dezelfde UUID als het origineel en zou dus als hetzelfde toestel gezien worden. Daarom geef je de kloon een eigen UUID.</p>
+<ol>
+<li>Zet je VM <strong>Windows 11 Education</strong> uit (<strong>Shut Down</strong>, geen <strong>Suspend</strong>) en sluit VMware Workstation.</li>
+<li>Kopieer in File Explorer de map van de VM naar een nieuwe map, bijvoorbeeld <code>Windows 11 - Autopilot</code>.</li>
+<li>Open VMware Workstation en kies <strong>File</strong> → <strong>Open</strong>. Selecteer het <code>.vmx</code>-bestand in de nieuwe map.</li>
+<li>Zet de kloon terug naar de snapshot <strong>Windows 11 Clean Install</strong> via <strong>VM</strong> → <strong>Snapshot</strong> → <strong>Snapshot Manager</strong>.</li>
+<li>Zet de kloon uit en sluit VMware Workstation. Open het <code>.vmx</code>-bestand van de kloon in Kladblok.</li>
+<li>Zoek de regel met <code>uuid.bios</code> en pas enkele tekens aan. Behoud de notatie. Bijvoorbeeld: verander <code>uuid.bios = "56 4d ef 5b 36 4c 82 ba-18 fb b1 4f bb a7 32 a1"</code> in <code>uuid.bios = "56 4d ef 5b 36 4c 82 ba-18 fb b1 4f bb a7 32 a2"</code>.</li>
+<li>Sla het bestand op, start VMware Workstation opnieuw en start de kloon. Meld je aan met het lokale account.</li>
+</ol>
+<p>Registreer de kloon daarna in Autopilot: haal de hardware hash op en upload die, zoals in stap 2 en 3 van <a href="../EnrollDevice/">Een toestel inschrijven</a>. Zodra het deployment profile is toegewezen, reset je de kloon met Sysprep (stap 4 in Een toestel inschrijven), zodat de OOBE het profiel toepast.</p>
 <h2 id="1-autopilot-group-tag">1. Autopilot group tag<a class="headerlink" href="#1-autopilot-group-tag" title="Permanent link">&para;</a></h2>
 <p>Een group tag is een label dat je aan een toestel hangt. Zo kan Entra het toestel automatisch in de juiste groep plaatsen. Deze stap is optioneel, maar we gebruiken ze hier zodat de groep in stap 2 zichzelf vult.</p>
 <ol>
