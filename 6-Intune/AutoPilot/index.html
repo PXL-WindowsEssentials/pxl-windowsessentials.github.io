@@ -2695,7 +2695,7 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p>In deze cursus gebruiken we een group tag en een dynamic device group, in deze volgorde: eerst de group tag op het toestel, daarna de groep, daarna het profiel.</p>
 <p>Wanneer een geregistreerd toestel opstart en verbinding maakt met internet, vraagt Windows aan Autopilot bij welke tenant het hoort en past het deployment profile toe dat eraan is toegewezen.</p>
 <p><img alt="Autopilot: van registratie tot ingeschreven toestel" src="../assets/diagram-autopilot-flow.png" /></p>
-<p>Verplicht zijn het uploaden van de hardware hash, een device group en een deployment profile. De group tag en de configuration profiles zijn optioneel. Zonder group tag vul je de groep op een andere manier, bijvoorbeeld met alle Autopilot-toestellen of handmatig.</p>
+<p>Verplicht zijn het ophalen en uploaden van de hardware hash (zie <a href="../EnrollDevice/">Een toestel inschrijven</a>), een device group en een deployment profile. De group tag en de configuration profiles zijn optioneel. Zonder group tag vul je de groep op een andere manier, bijvoorbeeld met alle Autopilot-toestellen of handmatig.</p>
 <h2 id="0-een-tweede-vm-klaarzetten">0. Een tweede VM klaarzetten<a class="headerlink" href="#0-een-tweede-vm-klaarzetten" title="Permanent link">&para;</a></h2>
 <p>De VM uit <a href="../EnrollDevice/">Een toestel inschrijven</a> is al geregistreerd in Autopilot en ingeschreven in Intune. Om een deployment profile te testen heb je een toestel nodig dat nog nieuw is. Daarvoor gebruik je een <strong>tweede VM</strong>: een kloon van je Windows 11 Education-VM. Klonen is een alternatief voor een volledig nieuwe installatie van Windows 11 in een nieuwe VM, en gaat sneller. Wil je liever opnieuw installeren, dan kan dat ook: volg dan <a href="../../1-Introduction/Windows11Installation/">Windows 11 installeren in VMware Workstation</a> en sla de kloonstappen hieronder over.</p>
 <p>Een hardware hash is gebaseerd op onder meer de UUID van het toestel. Een gekopieerde VM heeft dezelfde UUID als het origineel en zou dus als hetzelfde toestel gezien worden. Daarom geef je de kloon een eigen UUID.</p>
@@ -2707,8 +2707,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Zet de kloon uit en sluit VMware Workstation. Open het <code>.vmx</code>-bestand van de kloon in Kladblok.</li>
 <li>Zoek de regel met <code>uuid.bios</code> en pas enkele tekens aan. Behoud de notatie. Bijvoorbeeld: verander <code>uuid.bios = "56 4d ef 5b 36 4c 82 ba-18 fb b1 4f bb a7 32 a1"</code> in <code>uuid.bios = "56 4d ef 5b 36 4c 82 ba-18 fb b1 4f bb a7 32 a2"</code>.</li>
 <li>Sla het bestand op, start VMware Workstation opnieuw en start de kloon. Meld je aan met het lokale account.</li>
+<li>Haal de hardware hash van de kloon op met <code>Get-WindowsAutopilotInfo</code>, zoals in stap 2 van <a href="../EnrollDevice/">Een toestel inschrijven</a>.</li>
+<li>Upload de hash in Intune, zoals in stap 3 van <a href="../EnrollDevice/">Een toestel inschrijven</a>. De kloon is nu geregistreerd in Autopilot.</li>
 </ol>
-<p>Registreer de kloon daarna in Autopilot: haal de hardware hash op en upload die, zoals in stap 2 en 3 van <a href="../EnrollDevice/">Een toestel inschrijven</a>. Zodra het deployment profile is toegewezen, reset je de kloon met Sysprep (stap 4 in Een toestel inschrijven), zodat de OOBE het profiel toepast.</p>
+<p>Zodra het deployment profile is toegewezen, reset je de kloon met Sysprep (stap 4 in Een toestel inschrijven), zodat de OOBE het profiel toepast.</p>
 <h2 id="1-autopilot-group-tag">1. Autopilot group tag<a class="headerlink" href="#1-autopilot-group-tag" title="Permanent link">&para;</a></h2>
 <p>Een group tag is een label dat je aan een toestel hangt. Zo kan Entra het toestel automatisch in de juiste groep plaatsen. Deze stap is optioneel, maar we gebruiken ze hier zodat de groep in stap 2 zichzelf vult.</p>
 <ol>
