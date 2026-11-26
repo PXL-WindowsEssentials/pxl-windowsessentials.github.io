@@ -2728,6 +2728,10 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <p><img alt="Autopilot-inschrijving in 7 stappen" src="../assets/diagram-autopilot-stappen.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+<p>In de praktijk laat je stap 2 en 3 vaak door je reseller of de fabrikant (zoals Dell, HP of Lenovo) doen. Zij registreren de hardware hash van nieuwe toestellen rechtstreeks in Autopilot voor jouw tenant. Ook stap 4 is dan niet nodig: een nieuw toestel start bij de eerste opstart vanzelf in de OOBE. Wij doen deze stappen zelf, omdat we een virtuele machine gebruiken.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Het uploaden van de hardware hash schrijft het toestel niet in Intune in; het registreert het enkel in Windows Autopilot. Het toestel wordt pas later, tijdens de OOBE, in Intune ingeschreven, wanneer een gebruiker aanmeldt met Microsoft Entra-aanmeldgegevens.</p>
 </div>
 <h2 id="1-mdm-user-scope">1. MDM user scope<a class="headerlink" href="#1-mdm-user-scope" title="Permanent link">&para;</a></h2>
