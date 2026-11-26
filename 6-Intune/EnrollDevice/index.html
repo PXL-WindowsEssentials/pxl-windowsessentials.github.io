@@ -1781,6 +1781,23 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="0. Voor je begint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-een-kloon-van-je-vm-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        0.1. Een kloon van je VM maken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2501,6 +2518,23 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="0. Voor je begint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-een-kloon-van-je-vm-maken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        0.1. Een kloon van je VM maken
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2714,7 +2748,8 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 </ul>
 <p>In deze handleiding schrijf je een virtuele Windows 11-machine als bedrijfseigendom (company-owned device) in via de handmatige methode.</p>
 <h2 id="0-voor-je-begint">0. Voor je begint<a class="headerlink" href="#0-voor-je-begint" title="Permanent link">&para;</a></h2>
-<p>Je registreert je virtuele machine "Windows 11 - lokaal account" in Windows Autopilot door de hardware hash te verzamelen en te uploaden. Daarna reset je de machine en rond je de installatie af door aan te melden met een Microsoft Entra-gebruiker uit je tenant. Daardoor wordt het toestel in Intune ingeschreven.</p>
+<p>Je gebruikt hiervoor een <strong>virtuele machine in VMware Workstation</strong> met <strong>Windows 11 Education</strong> en een <strong>lokaal account</strong>. Die installeer je zoals beschreven in <a href="../../1-Introduction/Windows11Installation/">Windows 11 installeren in VMware Workstation</a>. Gebruik niet die VM zelf, maar een kloon ervan, die je klaarzet in <a href="#01-een-kloon-van-je-vm-maken">0.1</a>.</p>
+<p>Je registreert de kloon in Windows Autopilot door de hardware hash te verzamelen en te uploaden. Daarna reset je de machine en rond je de installatie af door aan te melden met een Microsoft Entra-gebruiker uit je tenant. Daardoor wordt het toestel in Intune ingeschreven.</p>
 <p>Je doorloopt deze stappen:</p>
 <ol>
 <li>De MDM user scope in Intune instellen.</li>
@@ -2733,6 +2768,21 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Het uploaden van de hardware hash schrijft het toestel niet in Intune in; het registreert het enkel in Windows Autopilot. Het toestel wordt pas later, tijdens de OOBE, in Intune ingeschreven, wanneer een gebruiker aanmeldt met Microsoft Entra-aanmeldgegevens.</p>
+</div>
+<h3 id="01-een-kloon-van-je-vm-maken">0.1. Een kloon van je VM maken<a class="headerlink" href="#01-een-kloon-van-je-vm-maken" title="Permanent link">&para;</a></h3>
+<p>Een hardware hash is gebaseerd op onder meer de UUID van het toestel. Een gekopieerde VM heeft dezelfde UUID als het origineel en zou dus als hetzelfde toestel gezien worden. Daarom geef je de kloon een eigen UUID. Elke nieuwe test met Autopilot doe je met een nieuwe kloon.</p>
+<ol>
+<li>Zet je VM <strong>Windows 11 Education</strong> uit (<strong>Shut Down</strong>, geen <strong>Suspend</strong>) en sluit VMware Workstation.</li>
+<li>Kopieer in File Explorer de map van de VM naar een nieuwe map, bijvoorbeeld <code>Windows 11 - Autopilot</code>.</li>
+<li>Open VMware Workstation en kies <strong>File</strong> → <strong>Open</strong>. Selecteer het <code>.vmx</code>-bestand in de nieuwe map.</li>
+<li>Zet de kloon terug naar de snapshot <strong>Windows 11 Clean Install</strong> via <strong>VM</strong> → <strong>Snapshot</strong> → <strong>Snapshot Manager</strong>.</li>
+<li>Zet de kloon uit en sluit VMware Workstation. Open het <code>.vmx</code>-bestand van de kloon in Kladblok.</li>
+<li>Zoek de regel met <code>uuid.bios</code> en pas enkele tekens aan. Behoud de notatie. Bijvoorbeeld: verander <code>uuid.bios = "56 4d ef 5b 36 4c 82 ba-18 fb b1 4f bb a7 32 a1"</code> in <code>uuid.bios = "56 4d ef 5b 36 4c 82 ba-18 fb b1 4f bb a7 32 a2"</code>.</li>
+<li>Sla het bestand op, start VMware Workstation opnieuw en start de kloon. Meld je aan met het lokale account.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In stap 4 hieronder voer je Sysprep uit met <strong>Generalize</strong>. Daarmee verwijdert Windows de gegevens die specifiek zijn voor deze installatie, zodat het toestel zich als nieuw toestel gedraagt.</p>
 </div>
 <h2 id="1-mdm-user-scope">1. MDM user scope<a class="headerlink" href="#1-mdm-user-scope" title="Permanent link">&para;</a></h2>
 <p>In een nieuwe tenant is automatische MDM-inschrijving meestal niet ingeschakeld. Zonder deze instelling schrijft Windows zich niet automatisch in bij Intune. Schakel ze in voor alle gebruikers:</p>
@@ -2782,7 +2832,9 @@ if(document.body)show();else document.addEventListener("DOMContentLoaded",show);
 <li>Open <strong>File Explorer</strong> op je virtuele Windows 11-machine.</li>
 <li>Ga naar de map <code>C:\Windows\System32\Sysprep</code>.</li>
 <li>Voer <strong>sysprep.exe</strong> uit.</li>
-<li>Klik op <strong>OK</strong> in het pop-upvenster dat verschijnt.</li>
+<li>Kies bij <strong>System Cleanup Action</strong> voor <strong>Enter System Out-of-Box Experience (OOBE)</strong>.</li>
+<li>Vink <strong>Generalize</strong> aan.</li>
+<li>Kies bij <strong>Shutdown Options</strong> voor <strong>Reboot</strong> en klik op <strong>OK</strong>.</li>
 </ol>
 <p>Na enkele seconden tot minuten herstart het toestel en start de Windows 11 OOBE.</p>
 <video controls autoplay loop muted playsinline>
